@@ -1,0 +1,37 @@
+grammar org.xtext.airlineregistration.Air with org.eclipse.xtext.common.Terminals
+
+generate air "http://www.xtext.org/airlineregistration/Air"
+
+Model :
+	entities+=Entity*;
+	
+Entity:
+	Airport | Airline | Flight | Schedule | Employee
+;
+	
+Airport :
+	'Airport' name=ID code=STRING location=STRING 'has' 
+		'Airlines'
+		(airlines+=Airline (',' airlines+=Airline)*)?
+;
+
+Airline:
+	'Airline' name=ID description=STRING 'has'
+		'Flights'
+		(flights+=Flight (',' flights+=Flight)*)?
+;
+
+Flight:
+	'Flight' name=ID
+	//Get two existing airports (from and to)
+	//Get an existing airline
+	//Add a time and a date
+;
+
+Schedule:
+	name=ID
+;
+
+Employee:
+	name=ID
+;

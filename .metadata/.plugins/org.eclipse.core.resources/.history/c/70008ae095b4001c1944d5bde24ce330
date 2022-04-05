@@ -1,0 +1,14 @@
+grammar org.xtext.airlineregistration.Air with org.eclipse.xtext.common.Terminals
+
+generate air "http://www.xtext.org/airlineregistration/Air"
+
+Model:
+	airports+=Airport*;
+	
+Airport:
+	'Airport' name=ID code=STRING location=STRING;
+	//Add connection to airlines and flight schedule//
+
+Airline:
+	
+;

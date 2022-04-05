@@ -1,0 +1,43 @@
+grammar org.xtext.airlineregistration.Air with org.eclipse.xtext.common.Terminals
+
+generate air "http://www.xtext.org/airlineregistration/Air"
+
+Model :
+	entities+=Entity*;
+	
+Entity:
+	Airport | Airline | Flight | Schedule | Employee
+;
+	
+Airport :
+	//Example: Airport YUL 'Pierre Trudeau'
+	'Airport' code=ID name=STRING location=STRING 
+;
+
+Airline:
+	//Example: Airline AirCanada 'flights out of canada'
+	'Airline' name=ID description=STRING
+;
+
+Flight:
+	'Flight' name=ID
+	//Get two existing airports (from and to)
+	//TODO: quick issue with this, can go from and to same airport probably....
+		'from' from=[Airport|ID]
+		'to' to=[Airport|ID]
+		'with' airline=[Airline|ID]
+		'at' time=STRING
+	//Get an existing airline
+	//Add a time and a date
+;
+
+Schedule:
+	name=ID
+	//Get a bunch of flights, and add flights to schedule
+;
+
+Employee:
+	//Super type, extend to subtypes kinda of like entity thing
+	// Realte each subtype to their respective airports, or flights
+	name=ID
+;
