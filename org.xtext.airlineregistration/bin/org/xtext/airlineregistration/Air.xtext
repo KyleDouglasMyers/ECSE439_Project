@@ -31,6 +31,8 @@ Flight:
 		'to' to=[Airport|ID]
 		'with' airline=[Airline|ID]
 		'at' time=STRING
+		'pilot' pilot=[Pilot|ID]
+		'staff' staff=[FlightAttendant|ID]  //this might not work
 	
 ;
 
@@ -46,17 +48,17 @@ Employee:
 ;
 
 Pilot:
-	name=ID	
+	'Pilot' name=ID	'with' aireline=[Airline|ID]
 ;
 
 FlightAttendant:
-	name=ID
+	'FlightAttendant' name=ID	'with' aireline=[Airline|ID]
 ;
 
 BagHandler:
-	name=ID
+	'BagHandler' name=ID	'with' aireline=[Airline|ID]
 ;
 
 GatePersonnel:
-	name=ID
+	'BagHandler' name=ID	'with' aireline=[Airport|ID]
 ;
