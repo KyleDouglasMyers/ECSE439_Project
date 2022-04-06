@@ -8,5 +8,8 @@ Bundle-SymbolicName: org.xtext.airlineregistration.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.airlineregistration,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.airlineregistration.ide.contentassist.antlr.internal,
+ org.xtext.airlineregistration.ide.contentassist.antlr

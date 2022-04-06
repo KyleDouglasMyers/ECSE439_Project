@@ -27,17 +27,17 @@ Flight:
 	
 	//TODO: quick issue with this, can go from and to same airport probably....
 	
-		'from' from=[Airport|ID]
-		'to' to=[Airport|ID]
-		'with' airline=[Airline|ID]
+		'from' from=[Airport]
+		'to' to=[Airport]
+		'with' airline=[Airline]
 		'at' time=STRING
-		'pilot' pilot=[Pilot|ID]
-		'staff' staff=[FlightAttendant|ID]  //this might not work
+		'pilot' pilot=[Pilot]
+		'staff' (staff+=FlightAttendant) (',' (staff+=FlightAttendant))*  //this might not work, need more than 1
 	
 ;
 
 Schedule:
-	name=ID
+	name=ID 'with' 'flights' (flights+=Flight) (',' (flights+=Flight))*
 	//Get a bunch of flights, and add flights to schedule
 ;
 
@@ -48,17 +48,17 @@ Employee:
 ;
 
 Pilot:
-	'Pilot' name=ID	'with' aireline=[Airline|ID]
+	'Pilot' name=ID	'with' aireline=[Airline]
 ;
 
 FlightAttendant:
-	'FlightAttendant' name=ID	'with' aireline=[Airline|ID]
+	'FlightAttendant' name=ID	'with' aireline=[Airline]
 ;
 
 BagHandler:
-	'BagHandler' name=ID	'with' aireline=[Airline|ID]
+	'BagHandler' name=ID	'with' airport=[Airline]
 ;
 
 GatePersonnel:
-	'BagHandler' name=ID	'with' aireline=[Airport|ID]
+	'GatePersonnel' name=ID	'with' airport=[Airport]
 ;
