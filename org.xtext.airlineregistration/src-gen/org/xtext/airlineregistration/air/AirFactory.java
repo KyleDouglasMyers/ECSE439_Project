@@ -60,6 +60,15 @@ public interface AirFactory extends EFactory
   Airline createAirline();
 
   /**
+   * Returns a new object of class '<em>Airplane</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Airplane</em>'.
+   * @generated
+   */
+  Airplane createAirplane();
+
+  /**
    * Returns a new object of class '<em>Flight</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -121,6 +130,15 @@ public interface AirFactory extends EFactory
    * @generated
    */
   GatePersonnel createGatePersonnel();
+
+  /**
+   * Returns a new object of class '<em>Passenger</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Passenger</em>'.
+   * @generated
+   */
+  Passenger createPassenger();
 
   /**
    * Returns the package supported by this factory.

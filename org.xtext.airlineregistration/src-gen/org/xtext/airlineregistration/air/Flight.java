@@ -14,11 +14,14 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.Flight#getFlightId <em>Flight Id</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Flight#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getFrom <em>From</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getTo <em>To</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getAirline <em>Airline</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getTime <em>Time</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getPilot <em>Pilot</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Flight#getPlane <em>Plane</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getStaff <em>Staff</em>}</li>
  * </ul>
  *
@@ -28,6 +31,50 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Flight extends Entity
 {
+  /**
+   * Returns the value of the '<em><b>Flight Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Flight Id</em>' attribute.
+   * @see #setFlightId(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getFlight_FlightId()
+   * @model
+   * @generated
+   */
+  String getFlightId();
+
+  /**
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Flight#getFlightId <em>Flight Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Flight Id</em>' attribute.
+   * @see #getFlightId()
+   * @generated
+   */
+  void setFlightId(String value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getFlight_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Flight#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>From</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -139,13 +186,35 @@ public interface Flight extends Entity
   void setPilot(Pilot value);
 
   /**
-   * Returns the value of the '<em><b>Staff</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Plane</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Plane</em>' reference.
+   * @see #setPlane(Airplane)
+   * @see org.xtext.airlineregistration.air.AirPackage#getFlight_Plane()
+   * @model
+   * @generated
+   */
+  Airplane getPlane();
+
+  /**
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Flight#getPlane <em>Plane</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Plane</em>' reference.
+   * @see #getPlane()
+   * @generated
+   */
+  void setPlane(Airplane value);
+
+  /**
+   * Returns the value of the '<em><b>Staff</b></em>' reference list.
    * The list contents are of type {@link org.xtext.airlineregistration.air.FlightAttendant}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Staff</em>' containment reference list.
+   * @return the value of the '<em>Staff</em>' reference list.
    * @see org.xtext.airlineregistration.air.AirPackage#getFlight_Staff()
-   * @model containment="true"
+   * @model
    * @generated
    */
   EList<FlightAttendant> getStaff();

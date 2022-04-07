@@ -69,6 +69,7 @@ public class AirFactoryImpl extends EFactoryImpl implements AirFactory
       case AirPackage.ENTITY: return createEntity();
       case AirPackage.AIRPORT: return createAirport();
       case AirPackage.AIRLINE: return createAirline();
+      case AirPackage.AIRPLANE: return createAirplane();
       case AirPackage.FLIGHT: return createFlight();
       case AirPackage.SCHEDULE: return createSchedule();
       case AirPackage.EMPLOYEE: return createEmployee();
@@ -76,6 +77,7 @@ public class AirFactoryImpl extends EFactoryImpl implements AirFactory
       case AirPackage.FLIGHT_ATTENDANT: return createFlightAttendant();
       case AirPackage.BAG_HANDLER: return createBagHandler();
       case AirPackage.GATE_PERSONNEL: return createGatePersonnel();
+      case AirPackage.PASSENGER: return createPassenger();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -127,6 +129,18 @@ public class AirFactoryImpl extends EFactoryImpl implements AirFactory
   {
     AirlineImpl airline = new AirlineImpl();
     return airline;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Airplane createAirplane()
+  {
+    AirplaneImpl airplane = new AirplaneImpl();
+    return airplane;
   }
 
   /**
@@ -211,6 +225,18 @@ public class AirFactoryImpl extends EFactoryImpl implements AirFactory
   {
     GatePersonnelImpl gatePersonnel = new GatePersonnelImpl();
     return gatePersonnel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Passenger createPassenger()
+  {
+    PassengerImpl passenger = new PassengerImpl();
+    return passenger;
   }
 
   /**

@@ -96,6 +96,11 @@ public class AirAdapterFactory extends AdapterFactoryImpl
         return createAirlineAdapter();
       }
       @Override
+      public Adapter caseAirplane(Airplane object)
+      {
+        return createAirplaneAdapter();
+      }
+      @Override
       public Adapter caseFlight(Flight object)
       {
         return createFlightAdapter();
@@ -129,6 +134,11 @@ public class AirAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGatePersonnel(GatePersonnel object)
       {
         return createGatePersonnelAdapter();
+      }
+      @Override
+      public Adapter casePassenger(Passenger object)
+      {
+        return createPassengerAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -208,6 +218,21 @@ public class AirAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAirlineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.airlineregistration.air.Airplane <em>Airplane</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.airlineregistration.air.Airplane
+   * @generated
+   */
+  public Adapter createAirplaneAdapter()
   {
     return null;
   }
@@ -313,6 +338,21 @@ public class AirAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGatePersonnelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.airlineregistration.air.Passenger <em>Passenger</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.airlineregistration.air.Passenger
+   * @generated
+   */
+  public Adapter createPassengerAdapter()
   {
     return null;
   }

@@ -6,7 +6,6 @@ package org.xtext.airlineregistration.air.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,11 +14,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.airlineregistration.air.AirPackage;
 import org.xtext.airlineregistration.air.Airline;
+import org.xtext.airlineregistration.air.Airplane;
 import org.xtext.airlineregistration.air.Airport;
 import org.xtext.airlineregistration.air.Flight;
 import org.xtext.airlineregistration.air.FlightAttendant;
@@ -33,11 +32,14 @@ import org.xtext.airlineregistration.air.Pilot;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getFlightId <em>Flight Id</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getFrom <em>From</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getTo <em>To</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getAirline <em>Airline</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getTime <em>Time</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getPilot <em>Pilot</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getPlane <em>Plane</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getStaff <em>Staff</em>}</li>
  * </ul>
  *
@@ -45,6 +47,46 @@ import org.xtext.airlineregistration.air.Pilot;
  */
 public class FlightImpl extends EntityImpl implements Flight
 {
+  /**
+   * The default value of the '{@link #getFlightId() <em>Flight Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFlightId()
+   * @generated
+   * @ordered
+   */
+  protected static final String FLIGHT_ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFlightId() <em>Flight Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFlightId()
+   * @generated
+   * @ordered
+   */
+  protected String flightId = FLIGHT_ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
    * <!-- begin-user-doc -->
@@ -106,7 +148,17 @@ public class FlightImpl extends EntityImpl implements Flight
   protected Pilot pilot;
 
   /**
-   * The cached value of the '{@link #getStaff() <em>Staff</em>}' containment reference list.
+   * The cached value of the '{@link #getPlane() <em>Plane</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPlane()
+   * @generated
+   * @ordered
+   */
+  protected Airplane plane;
+
+  /**
+   * The cached value of the '{@link #getStaff() <em>Staff</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStaff()
@@ -134,6 +186,56 @@ public class FlightImpl extends EntityImpl implements Flight
   protected EClass eStaticClass()
   {
     return AirPackage.Literals.FLIGHT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getFlightId()
+  {
+    return flightId;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFlightId(String newFlightId)
+  {
+    String oldFlightId = flightId;
+    flightId = newFlightId;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__FLIGHT_ID, oldFlightId, flightId));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__NAME, oldName, name));
   }
 
   /**
@@ -347,13 +449,29 @@ public class FlightImpl extends EntityImpl implements Flight
    * @generated
    */
   @Override
-  public EList<FlightAttendant> getStaff()
+  public Airplane getPlane()
   {
-    if (staff == null)
+    if (plane != null && plane.eIsProxy())
     {
-      staff = new EObjectContainmentEList<FlightAttendant>(FlightAttendant.class, this, AirPackage.FLIGHT__STAFF);
+      InternalEObject oldPlane = (InternalEObject)plane;
+      plane = (Airplane)eResolveProxy(oldPlane);
+      if (plane != oldPlane)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.FLIGHT__PLANE, oldPlane, plane));
+      }
     }
-    return staff;
+    return plane;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Airplane basicGetPlane()
+  {
+    return plane;
   }
 
   /**
@@ -362,14 +480,27 @@ public class FlightImpl extends EntityImpl implements Flight
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setPlane(Airplane newPlane)
   {
-    switch (featureID)
+    Airplane oldPlane = plane;
+    plane = newPlane;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__PLANE, oldPlane, plane));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<FlightAttendant> getStaff()
+  {
+    if (staff == null)
     {
-      case AirPackage.FLIGHT__STAFF:
-        return ((InternalEList<?>)getStaff()).basicRemove(otherEnd, msgs);
+      staff = new EObjectResolvingEList<FlightAttendant>(FlightAttendant.class, this, AirPackage.FLIGHT__STAFF);
     }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return staff;
   }
 
   /**
@@ -382,6 +513,10 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
+      case AirPackage.FLIGHT__FLIGHT_ID:
+        return getFlightId();
+      case AirPackage.FLIGHT__NAME:
+        return getName();
       case AirPackage.FLIGHT__FROM:
         if (resolve) return getFrom();
         return basicGetFrom();
@@ -396,6 +531,9 @@ public class FlightImpl extends EntityImpl implements Flight
       case AirPackage.FLIGHT__PILOT:
         if (resolve) return getPilot();
         return basicGetPilot();
+      case AirPackage.FLIGHT__PLANE:
+        if (resolve) return getPlane();
+        return basicGetPlane();
       case AirPackage.FLIGHT__STAFF:
         return getStaff();
     }
@@ -413,6 +551,12 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
+      case AirPackage.FLIGHT__FLIGHT_ID:
+        setFlightId((String)newValue);
+        return;
+      case AirPackage.FLIGHT__NAME:
+        setName((String)newValue);
+        return;
       case AirPackage.FLIGHT__FROM:
         setFrom((Airport)newValue);
         return;
@@ -427,6 +571,9 @@ public class FlightImpl extends EntityImpl implements Flight
         return;
       case AirPackage.FLIGHT__PILOT:
         setPilot((Pilot)newValue);
+        return;
+      case AirPackage.FLIGHT__PLANE:
+        setPlane((Airplane)newValue);
         return;
       case AirPackage.FLIGHT__STAFF:
         getStaff().clear();
@@ -446,6 +593,12 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
+      case AirPackage.FLIGHT__FLIGHT_ID:
+        setFlightId(FLIGHT_ID_EDEFAULT);
+        return;
+      case AirPackage.FLIGHT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AirPackage.FLIGHT__FROM:
         setFrom((Airport)null);
         return;
@@ -460,6 +613,9 @@ public class FlightImpl extends EntityImpl implements Flight
         return;
       case AirPackage.FLIGHT__PILOT:
         setPilot((Pilot)null);
+        return;
+      case AirPackage.FLIGHT__PLANE:
+        setPlane((Airplane)null);
         return;
       case AirPackage.FLIGHT__STAFF:
         getStaff().clear();
@@ -478,6 +634,10 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
+      case AirPackage.FLIGHT__FLIGHT_ID:
+        return FLIGHT_ID_EDEFAULT == null ? flightId != null : !FLIGHT_ID_EDEFAULT.equals(flightId);
+      case AirPackage.FLIGHT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AirPackage.FLIGHT__FROM:
         return from != null;
       case AirPackage.FLIGHT__TO:
@@ -488,6 +648,8 @@ public class FlightImpl extends EntityImpl implements Flight
         return TIME_EDEFAULT == null ? time != null : !TIME_EDEFAULT.equals(time);
       case AirPackage.FLIGHT__PILOT:
         return pilot != null;
+      case AirPackage.FLIGHT__PLANE:
+        return plane != null;
       case AirPackage.FLIGHT__STAFF:
         return staff != null && !staff.isEmpty();
     }
@@ -505,7 +667,11 @@ public class FlightImpl extends EntityImpl implements Flight
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (time: ");
+    result.append(" (flightId: ");
+    result.append(flightId);
+    result.append(", name: ");
+    result.append(name);
+    result.append(", time: ");
     result.append(time);
     result.append(')');
     return result.toString();

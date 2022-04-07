@@ -96,22 +96,13 @@ public interface AirPackage extends EPackage
   int ENTITY = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__NAME = 0;
-
-  /**
    * The number of structural features of the '<em>Entity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = 1;
+  int ENTITY_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.AirportImpl <em>Airport</em>}' class.
@@ -124,15 +115,6 @@ public interface AirPackage extends EPackage
   int AIRPORT = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AIRPORT__NAME = ENTITY__NAME;
-
-  /**
    * The feature id for the '<em><b>Code</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -142,13 +124,22 @@ public interface AirPackage extends EPackage
   int AIRPORT__CODE = ENTITY_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AIRPORT__NAME = ENTITY_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Location</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AIRPORT__LOCATION = ENTITY_FEATURE_COUNT + 1;
+  int AIRPORT__LOCATION = ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Airport</em>' class.
@@ -157,7 +148,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AIRPORT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+  int AIRPORT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.AirlineImpl <em>Airline</em>}' class.
@@ -176,7 +167,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AIRLINE__NAME = ENTITY__NAME;
+  int AIRLINE__NAME = ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -185,7 +176,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AIRLINE__DESCRIPTION = ENTITY_FEATURE_COUNT + 0;
+  int AIRLINE__DESCRIPTION = ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Airline</em>' class.
@@ -194,7 +185,53 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AIRLINE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 1;
+  int AIRLINE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.AirplaneImpl <em>Airplane</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.airlineregistration.air.impl.AirplaneImpl
+   * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getAirplane()
+   * @generated
+   */
+  int AIRPLANE = 4;
+
+  /**
+   * The feature id for the '<em><b>Airplane Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AIRPLANE__AIRPLANE_ID = ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Airplane Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AIRPLANE__AIRPLANE_TYPE = ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Seats</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AIRPLANE__SEATS = ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Airplane</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AIRPLANE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.FlightImpl <em>Flight</em>}' class.
@@ -204,7 +241,16 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getFlight()
    * @generated
    */
-  int FLIGHT = 4;
+  int FLIGHT = 5;
+
+  /**
+   * The feature id for the '<em><b>Flight Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLIGHT__FLIGHT_ID = ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -213,7 +259,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__NAME = ENTITY__NAME;
+  int FLIGHT__NAME = ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>From</b></em>' reference.
@@ -222,7 +268,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__FROM = ENTITY_FEATURE_COUNT + 0;
+  int FLIGHT__FROM = ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>To</b></em>' reference.
@@ -231,7 +277,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__TO = ENTITY_FEATURE_COUNT + 1;
+  int FLIGHT__TO = ENTITY_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Airline</b></em>' reference.
@@ -240,7 +286,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__AIRLINE = ENTITY_FEATURE_COUNT + 2;
+  int FLIGHT__AIRLINE = ENTITY_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -249,7 +295,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__TIME = ENTITY_FEATURE_COUNT + 3;
+  int FLIGHT__TIME = ENTITY_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Pilot</b></em>' reference.
@@ -258,16 +304,25 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__PILOT = ENTITY_FEATURE_COUNT + 4;
+  int FLIGHT__PILOT = ENTITY_FEATURE_COUNT + 6;
 
   /**
-   * The feature id for the '<em><b>Staff</b></em>' containment reference list.
+   * The feature id for the '<em><b>Plane</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLIGHT__STAFF = ENTITY_FEATURE_COUNT + 5;
+  int FLIGHT__PLANE = ENTITY_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Staff</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLIGHT__STAFF = ENTITY_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Flight</em>' class.
@@ -276,7 +331,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
+  int FLIGHT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.ScheduleImpl <em>Schedule</em>}' class.
@@ -286,7 +341,7 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getSchedule()
    * @generated
    */
-  int SCHEDULE = 5;
+  int SCHEDULE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -295,7 +350,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCHEDULE__NAME = ENTITY__NAME;
+  int SCHEDULE__NAME = ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Flights</b></em>' containment reference list.
@@ -304,7 +359,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCHEDULE__FLIGHTS = ENTITY_FEATURE_COUNT + 0;
+  int SCHEDULE__FLIGHTS = ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Schedule</em>' class.
@@ -313,7 +368,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCHEDULE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 1;
+  int SCHEDULE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.EmployeeImpl <em>Employee</em>}' class.
@@ -323,7 +378,16 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getEmployee()
    * @generated
    */
-  int EMPLOYEE = 6;
+  int EMPLOYEE = 7;
+
+  /**
+   * The feature id for the '<em><b>Emp Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMPLOYEE__EMP_ID = ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -332,7 +396,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EMPLOYEE__NAME = ENTITY__NAME;
+  int EMPLOYEE__NAME = ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Employee</em>' class.
@@ -341,7 +405,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EMPLOYEE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
+  int EMPLOYEE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.PilotImpl <em>Pilot</em>}' class.
@@ -351,7 +415,16 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getPilot()
    * @generated
    */
-  int PILOT = 7;
+  int PILOT = 8;
+
+  /**
+   * The feature id for the '<em><b>Emp Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PILOT__EMP_ID = EMPLOYEE__EMP_ID;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -363,13 +436,13 @@ public interface AirPackage extends EPackage
   int PILOT__NAME = EMPLOYEE__NAME;
 
   /**
-   * The feature id for the '<em><b>Aireline</b></em>' reference.
+   * The feature id for the '<em><b>Airline</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PILOT__AIRELINE = EMPLOYEE_FEATURE_COUNT + 0;
+  int PILOT__AIRLINE = EMPLOYEE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Pilot</em>' class.
@@ -388,7 +461,16 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getFlightAttendant()
    * @generated
    */
-  int FLIGHT_ATTENDANT = 8;
+  int FLIGHT_ATTENDANT = 9;
+
+  /**
+   * The feature id for the '<em><b>Emp Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLIGHT_ATTENDANT__EMP_ID = EMPLOYEE__EMP_ID;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -400,13 +482,13 @@ public interface AirPackage extends EPackage
   int FLIGHT_ATTENDANT__NAME = EMPLOYEE__NAME;
 
   /**
-   * The feature id for the '<em><b>Aireline</b></em>' reference.
+   * The feature id for the '<em><b>Airline</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLIGHT_ATTENDANT__AIRELINE = EMPLOYEE_FEATURE_COUNT + 0;
+  int FLIGHT_ATTENDANT__AIRLINE = EMPLOYEE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Flight Attendant</em>' class.
@@ -425,7 +507,16 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getBagHandler()
    * @generated
    */
-  int BAG_HANDLER = 9;
+  int BAG_HANDLER = 10;
+
+  /**
+   * The feature id for the '<em><b>Emp Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BAG_HANDLER__EMP_ID = EMPLOYEE__EMP_ID;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -462,7 +553,16 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getGatePersonnel()
    * @generated
    */
-  int GATE_PERSONNEL = 10;
+  int GATE_PERSONNEL = 11;
+
+  /**
+   * The feature id for the '<em><b>Emp Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GATE_PERSONNEL__EMP_ID = EMPLOYEE__EMP_ID;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -490,6 +590,52 @@ public interface AirPackage extends EPackage
    * @ordered
    */
   int GATE_PERSONNEL_FEATURE_COUNT = EMPLOYEE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.PassengerImpl <em>Passenger</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.airlineregistration.air.impl.PassengerImpl
+   * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getPassenger()
+   * @generated
+   */
+  int PASSENGER = 12;
+
+  /**
+   * The feature id for the '<em><b>Email</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PASSENGER__EMAIL = ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PASSENGER__NAME = ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Flight</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PASSENGER__FLIGHT = ENTITY_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Passenger</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PASSENGER_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 3;
 
 
   /**
@@ -524,17 +670,6 @@ public interface AirPackage extends EPackage
   EClass getEntity();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Entity#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.airlineregistration.air.Entity#getName()
-   * @see #getEntity()
-   * @generated
-   */
-  EAttribute getEntity_Name();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.airlineregistration.air.Airport <em>Airport</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -554,6 +689,17 @@ public interface AirPackage extends EPackage
    * @generated
    */
   EAttribute getAirport_Code();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Airport#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.airlineregistration.air.Airport#getName()
+   * @see #getAirport()
+   * @generated
+   */
+  EAttribute getAirport_Name();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Airport#getLocation <em>Location</em>}'.
@@ -577,6 +723,17 @@ public interface AirPackage extends EPackage
   EClass getAirline();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Airline#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.airlineregistration.air.Airline#getName()
+   * @see #getAirline()
+   * @generated
+   */
+  EAttribute getAirline_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Airline#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -588,6 +745,49 @@ public interface AirPackage extends EPackage
   EAttribute getAirline_Description();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.airlineregistration.air.Airplane <em>Airplane</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Airplane</em>'.
+   * @see org.xtext.airlineregistration.air.Airplane
+   * @generated
+   */
+  EClass getAirplane();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Airplane#getAirplaneId <em>Airplane Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Airplane Id</em>'.
+   * @see org.xtext.airlineregistration.air.Airplane#getAirplaneId()
+   * @see #getAirplane()
+   * @generated
+   */
+  EAttribute getAirplane_AirplaneId();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Airplane#getAirplaneType <em>Airplane Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Airplane Type</em>'.
+   * @see org.xtext.airlineregistration.air.Airplane#getAirplaneType()
+   * @see #getAirplane()
+   * @generated
+   */
+  EAttribute getAirplane_AirplaneType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Airplane#getSeats <em>Seats</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Seats</em>'.
+   * @see org.xtext.airlineregistration.air.Airplane#getSeats()
+   * @see #getAirplane()
+   * @generated
+   */
+  EAttribute getAirplane_Seats();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.airlineregistration.air.Flight <em>Flight</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -596,6 +796,28 @@ public interface AirPackage extends EPackage
    * @generated
    */
   EClass getFlight();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Flight#getFlightId <em>Flight Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Flight Id</em>'.
+   * @see org.xtext.airlineregistration.air.Flight#getFlightId()
+   * @see #getFlight()
+   * @generated
+   */
+  EAttribute getFlight_FlightId();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Flight#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.airlineregistration.air.Flight#getName()
+   * @see #getFlight()
+   * @generated
+   */
+  EAttribute getFlight_Name();
 
   /**
    * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Flight#getFrom <em>From</em>}'.
@@ -653,10 +875,21 @@ public interface AirPackage extends EPackage
   EReference getFlight_Pilot();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.airlineregistration.air.Flight#getStaff <em>Staff</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Flight#getPlane <em>Plane</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Staff</em>'.
+   * @return the meta object for the reference '<em>Plane</em>'.
+   * @see org.xtext.airlineregistration.air.Flight#getPlane()
+   * @see #getFlight()
+   * @generated
+   */
+  EReference getFlight_Plane();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.airlineregistration.air.Flight#getStaff <em>Staff</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Staff</em>'.
    * @see org.xtext.airlineregistration.air.Flight#getStaff()
    * @see #getFlight()
    * @generated
@@ -672,6 +905,17 @@ public interface AirPackage extends EPackage
    * @generated
    */
   EClass getSchedule();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Schedule#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.airlineregistration.air.Schedule#getName()
+   * @see #getSchedule()
+   * @generated
+   */
+  EAttribute getSchedule_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.airlineregistration.air.Schedule#getFlights <em>Flights</em>}'.
@@ -695,6 +939,28 @@ public interface AirPackage extends EPackage
   EClass getEmployee();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Employee#getEmpId <em>Emp Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Emp Id</em>'.
+   * @see org.xtext.airlineregistration.air.Employee#getEmpId()
+   * @see #getEmployee()
+   * @generated
+   */
+  EAttribute getEmployee_EmpId();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Employee#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.airlineregistration.air.Employee#getName()
+   * @see #getEmployee()
+   * @generated
+   */
+  EAttribute getEmployee_Name();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.airlineregistration.air.Pilot <em>Pilot</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -705,15 +971,15 @@ public interface AirPackage extends EPackage
   EClass getPilot();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Pilot#getAireline <em>Aireline</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Pilot#getAirline <em>Airline</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Aireline</em>'.
-   * @see org.xtext.airlineregistration.air.Pilot#getAireline()
+   * @return the meta object for the reference '<em>Airline</em>'.
+   * @see org.xtext.airlineregistration.air.Pilot#getAirline()
    * @see #getPilot()
    * @generated
    */
-  EReference getPilot_Aireline();
+  EReference getPilot_Airline();
 
   /**
    * Returns the meta object for class '{@link org.xtext.airlineregistration.air.FlightAttendant <em>Flight Attendant</em>}'.
@@ -726,15 +992,15 @@ public interface AirPackage extends EPackage
   EClass getFlightAttendant();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.FlightAttendant#getAireline <em>Aireline</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.FlightAttendant#getAirline <em>Airline</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Aireline</em>'.
-   * @see org.xtext.airlineregistration.air.FlightAttendant#getAireline()
+   * @return the meta object for the reference '<em>Airline</em>'.
+   * @see org.xtext.airlineregistration.air.FlightAttendant#getAirline()
    * @see #getFlightAttendant()
    * @generated
    */
-  EReference getFlightAttendant_Aireline();
+  EReference getFlightAttendant_Airline();
 
   /**
    * Returns the meta object for class '{@link org.xtext.airlineregistration.air.BagHandler <em>Bag Handler</em>}'.
@@ -777,6 +1043,49 @@ public interface AirPackage extends EPackage
    * @generated
    */
   EReference getGatePersonnel_Airport();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.airlineregistration.air.Passenger <em>Passenger</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Passenger</em>'.
+   * @see org.xtext.airlineregistration.air.Passenger
+   * @generated
+   */
+  EClass getPassenger();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Passenger#getEmail <em>Email</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Email</em>'.
+   * @see org.xtext.airlineregistration.air.Passenger#getEmail()
+   * @see #getPassenger()
+   * @generated
+   */
+  EAttribute getPassenger_Email();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Passenger#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.airlineregistration.air.Passenger#getName()
+   * @see #getPassenger()
+   * @generated
+   */
+  EAttribute getPassenger_Name();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.xtext.airlineregistration.air.Passenger#getFlight <em>Flight</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Flight</em>'.
+   * @see org.xtext.airlineregistration.air.Passenger#getFlight()
+   * @see #getPassenger()
+   * @generated
+   */
+  EReference getPassenger_Flight();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -830,14 +1139,6 @@ public interface AirPackage extends EPackage
     EClass ENTITY = eINSTANCE.getEntity();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
-
-    /**
      * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.AirportImpl <em>Airport</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -854,6 +1155,14 @@ public interface AirPackage extends EPackage
      * @generated
      */
     EAttribute AIRPORT__CODE = eINSTANCE.getAirport_Code();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AIRPORT__NAME = eINSTANCE.getAirport_Name();
 
     /**
      * The meta object literal for the '<em><b>Location</b></em>' attribute feature.
@@ -874,12 +1183,54 @@ public interface AirPackage extends EPackage
     EClass AIRLINE = eINSTANCE.getAirline();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AIRLINE__NAME = eINSTANCE.getAirline_Name();
+
+    /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute AIRLINE__DESCRIPTION = eINSTANCE.getAirline_Description();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.AirplaneImpl <em>Airplane</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.airlineregistration.air.impl.AirplaneImpl
+     * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getAirplane()
+     * @generated
+     */
+    EClass AIRPLANE = eINSTANCE.getAirplane();
+
+    /**
+     * The meta object literal for the '<em><b>Airplane Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AIRPLANE__AIRPLANE_ID = eINSTANCE.getAirplane_AirplaneId();
+
+    /**
+     * The meta object literal for the '<em><b>Airplane Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AIRPLANE__AIRPLANE_TYPE = eINSTANCE.getAirplane_AirplaneType();
+
+    /**
+     * The meta object literal for the '<em><b>Seats</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AIRPLANE__SEATS = eINSTANCE.getAirplane_Seats();
 
     /**
      * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.FlightImpl <em>Flight</em>}' class.
@@ -890,6 +1241,22 @@ public interface AirPackage extends EPackage
      * @generated
      */
     EClass FLIGHT = eINSTANCE.getFlight();
+
+    /**
+     * The meta object literal for the '<em><b>Flight Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FLIGHT__FLIGHT_ID = eINSTANCE.getFlight_FlightId();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FLIGHT__NAME = eINSTANCE.getFlight_Name();
 
     /**
      * The meta object literal for the '<em><b>From</b></em>' reference feature.
@@ -932,7 +1299,15 @@ public interface AirPackage extends EPackage
     EReference FLIGHT__PILOT = eINSTANCE.getFlight_Pilot();
 
     /**
-     * The meta object literal for the '<em><b>Staff</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Plane</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FLIGHT__PLANE = eINSTANCE.getFlight_Plane();
+
+    /**
+     * The meta object literal for the '<em><b>Staff</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -948,6 +1323,14 @@ public interface AirPackage extends EPackage
      * @generated
      */
     EClass SCHEDULE = eINSTANCE.getSchedule();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCHEDULE__NAME = eINSTANCE.getSchedule_Name();
 
     /**
      * The meta object literal for the '<em><b>Flights</b></em>' containment reference list feature.
@@ -968,6 +1351,22 @@ public interface AirPackage extends EPackage
     EClass EMPLOYEE = eINSTANCE.getEmployee();
 
     /**
+     * The meta object literal for the '<em><b>Emp Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EMPLOYEE__EMP_ID = eINSTANCE.getEmployee_EmpId();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EMPLOYEE__NAME = eINSTANCE.getEmployee_Name();
+
+    /**
      * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.PilotImpl <em>Pilot</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -978,12 +1377,12 @@ public interface AirPackage extends EPackage
     EClass PILOT = eINSTANCE.getPilot();
 
     /**
-     * The meta object literal for the '<em><b>Aireline</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Airline</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PILOT__AIRELINE = eINSTANCE.getPilot_Aireline();
+    EReference PILOT__AIRLINE = eINSTANCE.getPilot_Airline();
 
     /**
      * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.FlightAttendantImpl <em>Flight Attendant</em>}' class.
@@ -996,12 +1395,12 @@ public interface AirPackage extends EPackage
     EClass FLIGHT_ATTENDANT = eINSTANCE.getFlightAttendant();
 
     /**
-     * The meta object literal for the '<em><b>Aireline</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Airline</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLIGHT_ATTENDANT__AIRELINE = eINSTANCE.getFlightAttendant_Aireline();
+    EReference FLIGHT_ATTENDANT__AIRLINE = eINSTANCE.getFlightAttendant_Airline();
 
     /**
      * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.BagHandlerImpl <em>Bag Handler</em>}' class.
@@ -1038,6 +1437,40 @@ public interface AirPackage extends EPackage
      * @generated
      */
     EReference GATE_PERSONNEL__AIRPORT = eINSTANCE.getGatePersonnel_Airport();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.PassengerImpl <em>Passenger</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.airlineregistration.air.impl.PassengerImpl
+     * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getPassenger()
+     * @generated
+     */
+    EClass PASSENGER = eINSTANCE.getPassenger();
+
+    /**
+     * The meta object literal for the '<em><b>Email</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PASSENGER__EMAIL = eINSTANCE.getPassenger_Email();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PASSENGER__NAME = eINSTANCE.getPassenger_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Flight</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PASSENGER__FLIGHT = eINSTANCE.getPassenger_Flight();
 
   }
 

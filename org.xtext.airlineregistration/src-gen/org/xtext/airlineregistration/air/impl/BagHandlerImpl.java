@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.airlineregistration.air.AirPackage;
-import org.xtext.airlineregistration.air.Airline;
+import org.xtext.airlineregistration.air.Airport;
 import org.xtext.airlineregistration.air.BagHandler;
 
 /**
@@ -37,7 +37,7 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
    * @generated
    * @ordered
    */
-  protected Airline airport;
+  protected Airport airport;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,12 +66,12 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
    * @generated
    */
   @Override
-  public Airline getAirport()
+  public Airport getAirport()
   {
     if (airport != null && airport.eIsProxy())
     {
       InternalEObject oldAirport = (InternalEObject)airport;
-      airport = (Airline)eResolveProxy(oldAirport);
+      airport = (Airport)eResolveProxy(oldAirport);
       if (airport != oldAirport)
       {
         if (eNotificationRequired())
@@ -86,7 +86,7 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
    * <!-- end-user-doc -->
    * @generated
    */
-  public Airline basicGetAirport()
+  public Airport basicGetAirport()
   {
     return airport;
   }
@@ -97,9 +97,9 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
    * @generated
    */
   @Override
-  public void setAirport(Airline newAirport)
+  public void setAirport(Airport newAirport)
   {
-    Airline oldAirport = airport;
+    Airport oldAirport = airport;
     airport = newAirport;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.BAG_HANDLER__AIRPORT, oldAirport, airport));
@@ -133,7 +133,7 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
     switch (featureID)
     {
       case AirPackage.BAG_HANDLER__AIRPORT:
-        setAirport((Airline)newValue);
+        setAirport((Airport)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,7 +150,7 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
     switch (featureID)
     {
       case AirPackage.BAG_HANDLER__AIRPORT:
-        setAirport((Airline)null);
+        setAirport((Airport)null);
         return;
     }
     super.eUnset(featureID);

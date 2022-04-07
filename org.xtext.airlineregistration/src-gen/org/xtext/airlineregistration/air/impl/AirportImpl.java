@@ -21,6 +21,7 @@ import org.xtext.airlineregistration.air.Airport;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.airlineregistration.air.impl.AirportImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.AirportImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.AirportImpl#getLocation <em>Location</em>}</li>
  * </ul>
  *
@@ -47,6 +48,26 @@ public class AirportImpl extends EntityImpl implements Airport
    * @ordered
    */
   protected String code = CODE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
@@ -120,6 +141,31 @@ public class AirportImpl extends EntityImpl implements Airport
    * @generated
    */
   @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.AIRPORT__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getLocation()
   {
     return location;
@@ -151,6 +197,8 @@ public class AirportImpl extends EntityImpl implements Airport
     {
       case AirPackage.AIRPORT__CODE:
         return getCode();
+      case AirPackage.AIRPORT__NAME:
+        return getName();
       case AirPackage.AIRPORT__LOCATION:
         return getLocation();
     }
@@ -169,6 +217,9 @@ public class AirportImpl extends EntityImpl implements Airport
     {
       case AirPackage.AIRPORT__CODE:
         setCode((String)newValue);
+        return;
+      case AirPackage.AIRPORT__NAME:
+        setName((String)newValue);
         return;
       case AirPackage.AIRPORT__LOCATION:
         setLocation((String)newValue);
@@ -190,6 +241,9 @@ public class AirportImpl extends EntityImpl implements Airport
       case AirPackage.AIRPORT__CODE:
         setCode(CODE_EDEFAULT);
         return;
+      case AirPackage.AIRPORT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AirPackage.AIRPORT__LOCATION:
         setLocation(LOCATION_EDEFAULT);
         return;
@@ -209,6 +263,8 @@ public class AirportImpl extends EntityImpl implements Airport
     {
       case AirPackage.AIRPORT__CODE:
         return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+      case AirPackage.AIRPORT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AirPackage.AIRPORT__LOCATION:
         return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
     }
@@ -228,6 +284,8 @@ public class AirportImpl extends EntityImpl implements Airport
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (code: ");
     result.append(code);
+    result.append(", name: ");
+    result.append(name);
     result.append(", location: ");
     result.append(location);
     result.append(')');

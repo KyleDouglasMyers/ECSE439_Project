@@ -156,6 +156,24 @@ ruleEntity returns [EObject current=null]
 			$current = $this_Employee_4.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_5());
+		}
+		this_Airplane_5=ruleAirplane
+		{
+			$current = $this_Airplane_5.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEntityAccess().getPassengerParserRuleCall_6());
+		}
+		this_Passenger_6=rulePassenger
+		{
+			$current = $this_Passenger_6.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -295,6 +313,83 @@ ruleAirline returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleAirplane
+entryRuleAirplane returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAirplaneRule()); }
+	iv_ruleAirplane=ruleAirplane
+	{ $current=$iv_ruleAirplane.current; }
+	EOF;
+
+// Rule Airplane
+ruleAirplane returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Airplane'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAirplaneAccess().getAirplaneKeyword_0());
+		}
+		(
+			(
+				lv_airplaneId_1_0=RULE_ID
+				{
+					newLeafNode(lv_airplaneId_1_0, grammarAccess.getAirplaneAccess().getAirplaneIdIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAirplaneRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"airplaneId",
+						lv_airplaneId_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_airplaneType_2_0=RULE_STRING
+				{
+					newLeafNode(lv_airplaneType_2_0, grammarAccess.getAirplaneAccess().getAirplaneTypeSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAirplaneRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"airplaneType",
+						lv_airplaneType_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				lv_seats_3_0=RULE_INT
+				{
+					newLeafNode(lv_seats_3_0, grammarAccess.getAirplaneAccess().getSeatsINTTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAirplaneRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"seats",
+						lv_seats_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleFlight
 entryRuleFlight returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getFlightRule()); }
@@ -317,9 +412,27 @@ ruleFlight returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_flightId_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_flightId_1_0, grammarAccess.getFlightAccess().getFlightIdIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFlightRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"flightId",
+						lv_flightId_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getFlightAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -328,14 +441,14 @@ ruleFlight returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='from'
+		otherlv_3='from'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getFlightAccess().getFromKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getFlightAccess().getFromKeyword_3());
 		}
 		(
 			(
@@ -344,15 +457,15 @@ ruleFlight returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFlightRule());
 					}
 				}
-				otherlv_3=RULE_ID
+				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getFlightAccess().getFromAirportCrossReference_3_0());
+					newLeafNode(otherlv_4, grammarAccess.getFlightAccess().getFromAirportCrossReference_4_0());
 				}
 			)
 		)
-		otherlv_4='to'
+		otherlv_5='to'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getFlightAccess().getToKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getFlightAccess().getToKeyword_5());
 		}
 		(
 			(
@@ -361,15 +474,15 @@ ruleFlight returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFlightRule());
 					}
 				}
-				otherlv_5=RULE_ID
+				otherlv_6=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getFlightAccess().getToAirportCrossReference_5_0());
+					newLeafNode(otherlv_6, grammarAccess.getFlightAccess().getToAirportCrossReference_6_0());
 				}
 			)
 		)
-		otherlv_6='with'
+		otherlv_7='with'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getFlightAccess().getWithKeyword_6());
+			newLeafNode(otherlv_7, grammarAccess.getFlightAccess().getWithKeyword_7());
 		}
 		(
 			(
@@ -378,21 +491,21 @@ ruleFlight returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFlightRule());
 					}
 				}
-				otherlv_7=RULE_ID
+				otherlv_8=RULE_ID
 				{
-					newLeafNode(otherlv_7, grammarAccess.getFlightAccess().getAirlineAirlineCrossReference_7_0());
+					newLeafNode(otherlv_8, grammarAccess.getFlightAccess().getAirlineAirlineCrossReference_8_0());
 				}
 			)
 		)
-		otherlv_8='at'
+		otherlv_9='at'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getFlightAccess().getAtKeyword_8());
+			newLeafNode(otherlv_9, grammarAccess.getFlightAccess().getAtKeyword_9());
 		}
 		(
 			(
-				lv_time_9_0=RULE_STRING
+				lv_time_10_0=RULE_STRING
 				{
-					newLeafNode(lv_time_9_0, grammarAccess.getFlightAccess().getTimeSTRINGTerminalRuleCall_9_0());
+					newLeafNode(lv_time_10_0, grammarAccess.getFlightAccess().getTimeSTRINGTerminalRuleCall_10_0());
 				}
 				{
 					if ($current==null) {
@@ -401,14 +514,14 @@ ruleFlight returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"time",
-						lv_time_9_0,
+						lv_time_10_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_10='pilot'
+		otherlv_11='pilot'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getFlightAccess().getPilotKeyword_10());
+			newLeafNode(otherlv_11, grammarAccess.getFlightAccess().getPilotKeyword_11());
 		}
 		(
 			(
@@ -417,56 +530,61 @@ ruleFlight returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFlightRule());
 					}
 				}
-				otherlv_11=RULE_ID
+				otherlv_12=RULE_ID
 				{
-					newLeafNode(otherlv_11, grammarAccess.getFlightAccess().getPilotPilotCrossReference_11_0());
+					newLeafNode(otherlv_12, grammarAccess.getFlightAccess().getPilotPilotCrossReference_12_0());
 				}
 			)
 		)
-		otherlv_12='staff'
+		otherlv_13='airplane'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getFlightAccess().getStaffKeyword_12());
+			newLeafNode(otherlv_13, grammarAccess.getFlightAccess().getAirplaneKeyword_13());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFlightAccess().getStaffFlightAttendantParserRuleCall_13_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFlightRule());
+					}
 				}
-				lv_staff_13_0=ruleFlightAttendant
+				otherlv_14=RULE_ID
+				{
+					newLeafNode(otherlv_14, grammarAccess.getFlightAccess().getPlaneAirplaneCrossReference_14_0());
+				}
+			)
+		)
+		otherlv_15='staff'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getFlightAccess().getStaffKeyword_15());
+		}
+		(
+			(
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFlightRule());
+						$current = createModelElement(grammarAccess.getFlightRule());
 					}
-					add(
-						$current,
-						"staff",
-						lv_staff_13_0,
-						"org.xtext.airlineregistration.Air.FlightAttendant");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_16=RULE_ID
+				{
+					newLeafNode(otherlv_16, grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_16_0());
 				}
 			)
 		)
 		(
-			otherlv_14=','
+			otherlv_17=','
 			{
-				newLeafNode(otherlv_14, grammarAccess.getFlightAccess().getCommaKeyword_14_0());
+				newLeafNode(otherlv_17, grammarAccess.getFlightAccess().getCommaKeyword_17_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFlightAccess().getStaffFlightAttendantParserRuleCall_14_1_0());
-					}
-					lv_staff_15_0=ruleFlightAttendant
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getFlightRule());
+							$current = createModelElement(grammarAccess.getFlightRule());
 						}
-						add(
-							$current,
-							"staff",
-							lv_staff_15_0,
-							"org.xtext.airlineregistration.Air.FlightAttendant");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_18=RULE_ID
+					{
+						newLeafNode(otherlv_18, grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_17_1_0());
 					}
 				)
 			)
@@ -639,9 +757,27 @@ rulePilot returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_empId_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getPilotAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_empId_1_0, grammarAccess.getPilotAccess().getEmpIdIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPilotRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"empId",
+						lv_empId_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getPilotAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -650,14 +786,14 @@ rulePilot returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='with'
+		otherlv_3='with'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getPilotAccess().getWithKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getPilotAccess().getWithKeyword_3());
 		}
 		(
 			(
@@ -666,9 +802,9 @@ rulePilot returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getPilotRule());
 					}
 				}
-				otherlv_3=RULE_ID
+				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getPilotAccess().getAirelineAirlineCrossReference_3_0());
+					newLeafNode(otherlv_4, grammarAccess.getPilotAccess().getAirlineAirlineCrossReference_4_0());
 				}
 			)
 		)
@@ -697,9 +833,27 @@ ruleFlightAttendant returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_empId_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getFlightAttendantAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_empId_1_0, grammarAccess.getFlightAttendantAccess().getEmpIdIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFlightAttendantRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"empId",
+						lv_empId_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getFlightAttendantAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -708,14 +862,14 @@ ruleFlightAttendant returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='with'
+		otherlv_3='with'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getFlightAttendantAccess().getWithKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getFlightAttendantAccess().getWithKeyword_3());
 		}
 		(
 			(
@@ -724,9 +878,9 @@ ruleFlightAttendant returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFlightAttendantRule());
 					}
 				}
-				otherlv_3=RULE_ID
+				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getFlightAttendantAccess().getAirelineAirlineCrossReference_3_0());
+					newLeafNode(otherlv_4, grammarAccess.getFlightAttendantAccess().getAirlineAirlineCrossReference_4_0());
 				}
 			)
 		)
@@ -755,9 +909,27 @@ ruleBagHandler returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_empId_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getBagHandlerAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_empId_1_0, grammarAccess.getBagHandlerAccess().getEmpIdIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBagHandlerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"empId",
+						lv_empId_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getBagHandlerAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -766,14 +938,14 @@ ruleBagHandler returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='with'
+		otherlv_3='with'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getBagHandlerAccess().getWithKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getBagHandlerAccess().getWithKeyword_3());
 		}
 		(
 			(
@@ -782,9 +954,9 @@ ruleBagHandler returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getBagHandlerRule());
 					}
 				}
-				otherlv_3=RULE_ID
+				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getBagHandlerAccess().getAirportAirlineCrossReference_3_0());
+					newLeafNode(otherlv_4, grammarAccess.getBagHandlerAccess().getAirportAirportCrossReference_4_0());
 				}
 			)
 		)
@@ -813,9 +985,27 @@ ruleGatePersonnel returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_empId_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getGatePersonnelAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_empId_1_0, grammarAccess.getGatePersonnelAccess().getEmpIdIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGatePersonnelRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"empId",
+						lv_empId_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getGatePersonnelAccess().getNameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -824,14 +1014,14 @@ ruleGatePersonnel returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_2='with'
+		otherlv_3='with'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getGatePersonnelAccess().getWithKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getGatePersonnelAccess().getWithKeyword_3());
 		}
 		(
 			(
@@ -840,12 +1030,107 @@ ruleGatePersonnel returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getGatePersonnelRule());
 					}
 				}
-				otherlv_3=RULE_ID
+				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getGatePersonnelAccess().getAirportAirportCrossReference_3_0());
+					newLeafNode(otherlv_4, grammarAccess.getGatePersonnelAccess().getAirportAirportCrossReference_4_0());
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRulePassenger
+entryRulePassenger returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPassengerRule()); }
+	iv_rulePassenger=rulePassenger
+	{ $current=$iv_rulePassenger.current; }
+	EOF;
+
+// Rule Passenger
+rulePassenger returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Passenger'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getPassengerAccess().getPassengerKeyword_0());
+		}
+		(
+			(
+				lv_email_1_0=RULE_ID
+				{
+					newLeafNode(lv_email_1_0, grammarAccess.getPassengerAccess().getEmailIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPassengerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"email",
+						lv_email_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPassengerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='with'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getPassengerAccess().getWithKeyword_3());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPassengerRule());
+					}
+				}
+				otherlv_4=RULE_ID
+				{
+					newLeafNode(otherlv_4, grammarAccess.getPassengerAccess().getFlightFlightCrossReference_4_0());
+				}
+			)
+		)
+		(
+			otherlv_5=','
+			{
+				newLeafNode(otherlv_5, grammarAccess.getPassengerAccess().getCommaKeyword_5_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPassengerRule());
+						}
+					}
+					otherlv_6=RULE_ID
+					{
+						newLeafNode(otherlv_6, grammarAccess.getPassengerAccess().getFlightFlightCrossReference_5_1_0());
+					}
+				)
+			)
+		)*
 	)
 ;
 

@@ -22,7 +22,7 @@ import org.xtext.airlineregistration.air.FlightAttendant;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightAttendantImpl#getAireline <em>Aireline</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.FlightAttendantImpl#getAirline <em>Airline</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,14 +30,14 @@ import org.xtext.airlineregistration.air.FlightAttendant;
 public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
 {
   /**
-   * The cached value of the '{@link #getAireline() <em>Aireline</em>}' reference.
+   * The cached value of the '{@link #getAirline() <em>Airline</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAireline()
+   * @see #getAirline()
    * @generated
    * @ordered
    */
-  protected Airline aireline;
+  protected Airline airline;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,19 +66,19 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
    * @generated
    */
   @Override
-  public Airline getAireline()
+  public Airline getAirline()
   {
-    if (aireline != null && aireline.eIsProxy())
+    if (airline != null && airline.eIsProxy())
     {
-      InternalEObject oldAireline = (InternalEObject)aireline;
-      aireline = (Airline)eResolveProxy(oldAireline);
-      if (aireline != oldAireline)
+      InternalEObject oldAirline = (InternalEObject)airline;
+      airline = (Airline)eResolveProxy(oldAirline);
+      if (airline != oldAirline)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.FLIGHT_ATTENDANT__AIRELINE, oldAireline, aireline));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.FLIGHT_ATTENDANT__AIRLINE, oldAirline, airline));
       }
     }
-    return aireline;
+    return airline;
   }
 
   /**
@@ -86,9 +86,9 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
    * <!-- end-user-doc -->
    * @generated
    */
-  public Airline basicGetAireline()
+  public Airline basicGetAirline()
   {
-    return aireline;
+    return airline;
   }
 
   /**
@@ -97,12 +97,12 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
    * @generated
    */
   @Override
-  public void setAireline(Airline newAireline)
+  public void setAirline(Airline newAirline)
   {
-    Airline oldAireline = aireline;
-    aireline = newAireline;
+    Airline oldAirline = airline;
+    airline = newAirline;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT_ATTENDANT__AIRELINE, oldAireline, aireline));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT_ATTENDANT__AIRLINE, oldAirline, airline));
   }
 
   /**
@@ -115,9 +115,9 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT_ATTENDANT__AIRELINE:
-        if (resolve) return getAireline();
-        return basicGetAireline();
+      case AirPackage.FLIGHT_ATTENDANT__AIRLINE:
+        if (resolve) return getAirline();
+        return basicGetAirline();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,8 +132,8 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT_ATTENDANT__AIRELINE:
-        setAireline((Airline)newValue);
+      case AirPackage.FLIGHT_ATTENDANT__AIRLINE:
+        setAirline((Airline)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -149,8 +149,8 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT_ATTENDANT__AIRELINE:
-        setAireline((Airline)null);
+      case AirPackage.FLIGHT_ATTENDANT__AIRLINE:
+        setAirline((Airline)null);
         return;
     }
     super.eUnset(featureID);
@@ -166,8 +166,8 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT_ATTENDANT__AIRELINE:
-        return aireline != null;
+      case AirPackage.FLIGHT_ATTENDANT__AIRLINE:
+        return airline != null;
     }
     return super.eIsSet(featureID);
   }

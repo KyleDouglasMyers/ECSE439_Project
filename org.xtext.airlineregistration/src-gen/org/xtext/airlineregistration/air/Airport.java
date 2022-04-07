@@ -14,6 +14,7 @@ package org.xtext.airlineregistration.air;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.airlineregistration.air.Airport#getCode <em>Code</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Airport#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Airport#getLocation <em>Location</em>}</li>
  * </ul>
  *
@@ -44,6 +45,28 @@ public interface Airport extends Entity
    * @generated
    */
   void setCode(String value);
+
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getAirport_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Airport#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Location</b></em>' attribute.

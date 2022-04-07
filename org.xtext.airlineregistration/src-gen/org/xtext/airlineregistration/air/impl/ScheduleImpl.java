@@ -5,12 +5,15 @@ package org.xtext.airlineregistration.air.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +30,7 @@ import org.xtext.airlineregistration.air.Schedule;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.ScheduleImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.ScheduleImpl#getFlights <em>Flights</em>}</li>
  * </ul>
  *
@@ -34,6 +38,26 @@ import org.xtext.airlineregistration.air.Schedule;
  */
 public class ScheduleImpl extends EntityImpl implements Schedule
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getFlights() <em>Flights</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -63,6 +87,31 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   protected EClass eStaticClass()
   {
     return AirPackage.Literals.SCHEDULE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.SCHEDULE__NAME, oldName, name));
   }
 
   /**
@@ -106,6 +155,8 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   {
     switch (featureID)
     {
+      case AirPackage.SCHEDULE__NAME:
+        return getName();
       case AirPackage.SCHEDULE__FLIGHTS:
         return getFlights();
     }
@@ -123,6 +174,9 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   {
     switch (featureID)
     {
+      case AirPackage.SCHEDULE__NAME:
+        setName((String)newValue);
+        return;
       case AirPackage.SCHEDULE__FLIGHTS:
         getFlights().clear();
         getFlights().addAll((Collection<? extends Flight>)newValue);
@@ -141,6 +195,9 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   {
     switch (featureID)
     {
+      case AirPackage.SCHEDULE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AirPackage.SCHEDULE__FLIGHTS:
         getFlights().clear();
         return;
@@ -158,10 +215,29 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   {
     switch (featureID)
     {
+      case AirPackage.SCHEDULE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AirPackage.SCHEDULE__FLIGHTS:
         return flights != null && !flights.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ScheduleImpl

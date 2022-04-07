@@ -6,7 +6,7 @@ Model :
 	entities+=Entity*;
 	
 Entity:
-	Airport | Airline | Flight | Schedule | Employee
+	Airport | Airline | Flight | Schedule | Employee | Airplane | Passenger
 ;
 	
 Airport :
@@ -19,8 +19,12 @@ Airline:
 	'Airline' name=ID description=STRING
 ;
 
+Airplane:
+	'Airplane' airplaneId=ID airplaneType=STRING seats=INT
+;
+
 Flight:
-	'Flight' name=ID
+	'Flight' flightId=ID name=STRING 
 	//Get two existing airports (from and to)
 	//Get an existing airline
 	//Add a time and a date
@@ -32,7 +36,8 @@ Flight:
 		'with' airline=[Airline]
 		'at' time=STRING
 		'pilot' pilot=[Pilot]
-		'staff' (staff+=FlightAttendant) (',' (staff+=FlightAttendant))*  //this might not work, need more than 1
+		'airplane' plane=[Airplane]
+		'staff' (staff+=[FlightAttendant]) (',' (staff+=[FlightAttendant]))*  //this might not work, need more than 1
 	
 ;
 
@@ -48,17 +53,22 @@ Employee:
 ;
 
 Pilot:
-	'Pilot' name=ID	'with' aireline=[Airline]
+	'Pilot' empId=ID name=STRING 'with' airline=[Airline]
 ;
 
 FlightAttendant:
-	'FlightAttendant' name=ID	'with' aireline=[Airline]
+	'FlightAttendant' empId=ID name=STRING 'with' airline=[Airline]
 ;
 
 BagHandler:
-	'BagHandler' name=ID	'with' airport=[Airline]
+	'BagHandler' empId=ID name=STRING 'with' airport=[Airport]
 ;
 
 GatePersonnel:
-	'GatePersonnel' name=ID	'with' airport=[Airport]
+	'GatePersonnel' empId=ID name=STRING 'with' airport=[Airport]
 ;
+
+Passenger:
+	'Passenger' email=ID name=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
+;
+

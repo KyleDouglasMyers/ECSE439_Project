@@ -9,39 +9,56 @@
     <genClasses ecoreClass="Air.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Air.ecore#//Model/entities"/>
     </genClasses>
-    <genClasses ecoreClass="Air.ecore#//Entity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Entity/name"/>
-    </genClasses>
+    <genClasses ecoreClass="Air.ecore#//Entity"/>
     <genClasses ecoreClass="Air.ecore#//Airport">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Airport/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Airport/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Airport/location"/>
     </genClasses>
     <genClasses ecoreClass="Air.ecore#//Airline">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Airline/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Airline/description"/>
     </genClasses>
+    <genClasses ecoreClass="Air.ecore#//Airplane">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Airplane/airplaneId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Airplane/airplaneType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Airplane/seats"/>
+    </genClasses>
     <genClasses ecoreClass="Air.ecore#//Flight">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Flight/flightId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Flight/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Flight/from"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Flight/to"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Flight/airline"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Flight/time"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Flight/pilot"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Air.ecore#//Flight/staff"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Flight/plane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Flight/staff"/>
     </genClasses>
     <genClasses ecoreClass="Air.ecore#//Schedule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Schedule/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Air.ecore#//Schedule/flights"/>
     </genClasses>
-    <genClasses ecoreClass="Air.ecore#//Employee"/>
+    <genClasses ecoreClass="Air.ecore#//Employee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Employee/empId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Employee/name"/>
+    </genClasses>
     <genClasses ecoreClass="Air.ecore#//Pilot">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Pilot/aireline"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Pilot/airline"/>
     </genClasses>
     <genClasses ecoreClass="Air.ecore#//FlightAttendant">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//FlightAttendant/aireline"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//FlightAttendant/airline"/>
     </genClasses>
     <genClasses ecoreClass="Air.ecore#//BagHandler">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//BagHandler/airport"/>
     </genClasses>
     <genClasses ecoreClass="Air.ecore#//GatePersonnel">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//GatePersonnel/airport"/>
+    </genClasses>
+    <genClasses ecoreClass="Air.ecore#//Passenger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Passenger/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Air.ecore#//Passenger/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Air.ecore#//Passenger/flight"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

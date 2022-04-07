@@ -16,12 +16,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.airlineregistration.air.AirPackage;
 import org.xtext.airlineregistration.air.Airline;
+import org.xtext.airlineregistration.air.Airplane;
 import org.xtext.airlineregistration.air.Airport;
 import org.xtext.airlineregistration.air.BagHandler;
 import org.xtext.airlineregistration.air.Flight;
 import org.xtext.airlineregistration.air.FlightAttendant;
 import org.xtext.airlineregistration.air.GatePersonnel;
 import org.xtext.airlineregistration.air.Model;
+import org.xtext.airlineregistration.air.Passenger;
 import org.xtext.airlineregistration.air.Pilot;
 import org.xtext.airlineregistration.air.Schedule;
 import org.xtext.airlineregistration.services.AirGrammarAccess;
@@ -43,6 +45,9 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case AirPackage.AIRLINE:
 				sequence_Airline(context, (Airline) semanticObject); 
 				return; 
+			case AirPackage.AIRPLANE:
+				sequence_Airplane(context, (Airplane) semanticObject); 
+				return; 
 			case AirPackage.AIRPORT:
 				sequence_Airport(context, (Airport) semanticObject); 
 				return; 
@@ -60,6 +65,9 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case AirPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case AirPackage.PASSENGER:
+				sequence_Passenger(context, (Passenger) semanticObject); 
 				return; 
 			case AirPackage.PILOT:
 				sequence_Pilot(context, (Pilot) semanticObject); 
@@ -84,14 +92,41 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Airline(ISerializationContext context, Airline semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.ENTITY__NAME));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.AIRLINE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.AIRLINE__NAME));
 			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.AIRLINE__DESCRIPTION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.AIRLINE__DESCRIPTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAirlineAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getAirlineAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Entity returns Airplane
+	 *     Airplane returns Airplane
+	 *
+	 * Constraint:
+	 *     (airplaneId=ID airplaneType=STRING seats=INT)
+	 * </pre>
+	 */
+	protected void sequence_Airplane(ISerializationContext context, Airplane semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.AIRPLANE__AIRPLANE_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.AIRPLANE__AIRPLANE_ID));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.AIRPLANE__AIRPLANE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.AIRPLANE__AIRPLANE_TYPE));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.AIRPLANE__SEATS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.AIRPLANE__SEATS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAirplaneAccess().getAirplaneIdIDTerminalRuleCall_1_0(), semanticObject.getAirplaneId());
+		feeder.accept(grammarAccess.getAirplaneAccess().getAirplaneTypeSTRINGTerminalRuleCall_2_0(), semanticObject.getAirplaneType());
+		feeder.accept(grammarAccess.getAirplaneAccess().getSeatsINTTerminalRuleCall_3_0(), semanticObject.getSeats());
 		feeder.finish();
 	}
 	
@@ -110,8 +145,8 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.AIRPORT__CODE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.AIRPORT__CODE));
-			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.ENTITY__NAME));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.AIRPORT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.AIRPORT__NAME));
 			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.AIRPORT__LOCATION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.AIRPORT__LOCATION));
 		}
@@ -131,19 +166,22 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     BagHandler returns BagHandler
 	 *
 	 * Constraint:
-	 *     (name=ID airport=[Airline|ID])
+	 *     (empId=ID name=STRING airport=[Airport|ID])
 	 * </pre>
 	 */
 	protected void sequence_BagHandler(ISerializationContext context, BagHandler semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.ENTITY__NAME));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.EMPLOYEE__EMP_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.EMPLOYEE__EMP_ID));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.EMPLOYEE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.EMPLOYEE__NAME));
 			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.BAG_HANDLER__AIRPORT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.BAG_HANDLER__AIRPORT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBagHandlerAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBagHandlerAccess().getAirportAirlineIDTerminalRuleCall_3_0_1(), semanticObject.eGet(AirPackage.Literals.BAG_HANDLER__AIRPORT, false));
+		feeder.accept(grammarAccess.getBagHandlerAccess().getEmpIdIDTerminalRuleCall_1_0(), semanticObject.getEmpId());
+		feeder.accept(grammarAccess.getBagHandlerAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBagHandlerAccess().getAirportAirportIDTerminalRuleCall_4_0_1(), semanticObject.eGet(AirPackage.Literals.BAG_HANDLER__AIRPORT, false));
 		feeder.finish();
 	}
 	
@@ -156,19 +194,22 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FlightAttendant returns FlightAttendant
 	 *
 	 * Constraint:
-	 *     (name=ID aireline=[Airline|ID])
+	 *     (empId=ID name=STRING airline=[Airline|ID])
 	 * </pre>
 	 */
 	protected void sequence_FlightAttendant(ISerializationContext context, FlightAttendant semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.ENTITY__NAME));
-			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.FLIGHT_ATTENDANT__AIRELINE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.FLIGHT_ATTENDANT__AIRELINE));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.EMPLOYEE__EMP_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.EMPLOYEE__EMP_ID));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.EMPLOYEE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.EMPLOYEE__NAME));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.FLIGHT_ATTENDANT__AIRLINE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.FLIGHT_ATTENDANT__AIRLINE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFlightAttendantAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFlightAttendantAccess().getAirelineAirlineIDTerminalRuleCall_3_0_1(), semanticObject.eGet(AirPackage.Literals.FLIGHT_ATTENDANT__AIRELINE, false));
+		feeder.accept(grammarAccess.getFlightAttendantAccess().getEmpIdIDTerminalRuleCall_1_0(), semanticObject.getEmpId());
+		feeder.accept(grammarAccess.getFlightAttendantAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFlightAttendantAccess().getAirlineAirlineIDTerminalRuleCall_4_0_1(), semanticObject.eGet(AirPackage.Literals.FLIGHT_ATTENDANT__AIRLINE, false));
 		feeder.finish();
 	}
 	
@@ -181,14 +222,16 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID 
+	 *         flightId=ID 
+	 *         name=STRING 
 	 *         from=[Airport|ID] 
 	 *         to=[Airport|ID] 
 	 *         airline=[Airline|ID] 
 	 *         time=STRING 
 	 *         pilot=[Pilot|ID] 
-	 *         staff+=FlightAttendant 
-	 *         staff+=FlightAttendant*
+	 *         plane=[Airplane|ID] 
+	 *         staff+=[FlightAttendant|ID] 
+	 *         staff+=[FlightAttendant|ID]*
 	 *     )
 	 * </pre>
 	 */
@@ -205,19 +248,22 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     GatePersonnel returns GatePersonnel
 	 *
 	 * Constraint:
-	 *     (name=ID airport=[Airport|ID])
+	 *     (empId=ID name=STRING airport=[Airport|ID])
 	 * </pre>
 	 */
 	protected void sequence_GatePersonnel(ISerializationContext context, GatePersonnel semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.ENTITY__NAME));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.EMPLOYEE__EMP_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.EMPLOYEE__EMP_ID));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.EMPLOYEE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.EMPLOYEE__NAME));
 			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.GATE_PERSONNEL__AIRPORT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.GATE_PERSONNEL__AIRPORT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGatePersonnelAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGatePersonnelAccess().getAirportAirportIDTerminalRuleCall_3_0_1(), semanticObject.eGet(AirPackage.Literals.GATE_PERSONNEL__AIRPORT, false));
+		feeder.accept(grammarAccess.getGatePersonnelAccess().getEmpIdIDTerminalRuleCall_1_0(), semanticObject.getEmpId());
+		feeder.accept(grammarAccess.getGatePersonnelAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGatePersonnelAccess().getAirportAirportIDTerminalRuleCall_4_0_1(), semanticObject.eGet(AirPackage.Literals.GATE_PERSONNEL__AIRPORT, false));
 		feeder.finish();
 	}
 	
@@ -239,24 +285,42 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Entity returns Passenger
+	 *     Passenger returns Passenger
+	 *
+	 * Constraint:
+	 *     (email=ID name=STRING flight+=[Flight|ID] flight+=[Flight|ID]*)
+	 * </pre>
+	 */
+	protected void sequence_Passenger(ISerializationContext context, Passenger semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Entity returns Pilot
 	 *     Employee returns Pilot
 	 *     Pilot returns Pilot
 	 *
 	 * Constraint:
-	 *     (name=ID aireline=[Airline|ID])
+	 *     (empId=ID name=STRING airline=[Airline|ID])
 	 * </pre>
 	 */
 	protected void sequence_Pilot(ISerializationContext context, Pilot semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.ENTITY__NAME));
-			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.PILOT__AIRELINE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.PILOT__AIRELINE));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.EMPLOYEE__EMP_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.EMPLOYEE__EMP_ID));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.EMPLOYEE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.EMPLOYEE__NAME));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.PILOT__AIRLINE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.PILOT__AIRLINE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPilotAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getPilotAccess().getAirelineAirlineIDTerminalRuleCall_3_0_1(), semanticObject.eGet(AirPackage.Literals.PILOT__AIRELINE, false));
+		feeder.accept(grammarAccess.getPilotAccess().getEmpIdIDTerminalRuleCall_1_0(), semanticObject.getEmpId());
+		feeder.accept(grammarAccess.getPilotAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getPilotAccess().getAirlineAirlineIDTerminalRuleCall_4_0_1(), semanticObject.eGet(AirPackage.Literals.PILOT__AIRLINE, false));
 		feeder.finish();
 	}
 	

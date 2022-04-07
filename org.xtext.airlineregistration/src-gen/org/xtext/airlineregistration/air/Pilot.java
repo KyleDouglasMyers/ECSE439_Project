@@ -13,7 +13,7 @@ package org.xtext.airlineregistration.air;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Pilot#getAireline <em>Aireline</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Pilot#getAirline <em>Airline</em>}</li>
  * </ul>
  *
  * @see org.xtext.airlineregistration.air.AirPackage#getPilot()
@@ -23,25 +23,25 @@ package org.xtext.airlineregistration.air;
 public interface Pilot extends Employee
 {
   /**
-   * Returns the value of the '<em><b>Aireline</b></em>' reference.
+   * Returns the value of the '<em><b>Airline</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Aireline</em>' reference.
-   * @see #setAireline(Airline)
-   * @see org.xtext.airlineregistration.air.AirPackage#getPilot_Aireline()
+   * @return the value of the '<em>Airline</em>' reference.
+   * @see #setAirline(Airline)
+   * @see org.xtext.airlineregistration.air.AirPackage#getPilot_Airline()
    * @model
    * @generated
    */
-  Airline getAireline();
+  Airline getAirline();
 
   /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Pilot#getAireline <em>Aireline</em>}' reference.
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Pilot#getAirline <em>Airline</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Aireline</em>' reference.
-   * @see #getAireline()
+   * @param value the new value of the '<em>Airline</em>' reference.
+   * @see #getAirline()
    * @generated
    */
-  void setAireline(Airline value);
+  void setAirline(Airline value);
 
 } // Pilot

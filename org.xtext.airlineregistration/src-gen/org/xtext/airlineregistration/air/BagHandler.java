@@ -27,12 +27,12 @@ public interface BagHandler extends Employee
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Airport</em>' reference.
-   * @see #setAirport(Airline)
+   * @see #setAirport(Airport)
    * @see org.xtext.airlineregistration.air.AirPackage#getBagHandler_Airport()
    * @model
    * @generated
    */
-  Airline getAirport();
+  Airport getAirport();
 
   /**
    * Sets the value of the '{@link org.xtext.airlineregistration.air.BagHandler#getAirport <em>Airport</em>}' reference.
@@ -42,6 +42,6 @@ public interface BagHandler extends Employee
    * @see #getAirport()
    * @generated
    */
-  void setAirport(Airline value);
+  void setAirport(Airport value);
 
 } // BagHandler

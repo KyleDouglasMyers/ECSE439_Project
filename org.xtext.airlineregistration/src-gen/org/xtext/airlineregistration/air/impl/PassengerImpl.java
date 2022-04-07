@@ -3,50 +3,58 @@
  */
 package org.xtext.airlineregistration.air.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import org.xtext.airlineregistration.air.AirPackage;
-import org.xtext.airlineregistration.air.Employee;
+import org.xtext.airlineregistration.air.Flight;
+import org.xtext.airlineregistration.air.Passenger;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Employee</b></em>'.
+ * An implementation of the model object '<em><b>Passenger</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.impl.EmployeeImpl#getEmpId <em>Emp Id</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.EmployeeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getEmail <em>Email</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getFlight <em>Flight</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EmployeeImpl extends EntityImpl implements Employee
+public class PassengerImpl extends EntityImpl implements Passenger
 {
   /**
-   * The default value of the '{@link #getEmpId() <em>Emp Id</em>}' attribute.
+   * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEmpId()
+   * @see #getEmail()
    * @generated
    * @ordered
    */
-  protected static final String EMP_ID_EDEFAULT = null;
+  protected static final String EMAIL_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getEmpId() <em>Emp Id</em>}' attribute.
+   * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEmpId()
+   * @see #getEmail()
    * @generated
    * @ordered
    */
-  protected String empId = EMP_ID_EDEFAULT;
+  protected String email = EMAIL_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -69,11 +77,21 @@ public class EmployeeImpl extends EntityImpl implements Employee
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getFlight() <em>Flight</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFlight()
+   * @generated
+   * @ordered
+   */
+  protected EList<Flight> flight;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EmployeeImpl()
+  protected PassengerImpl()
   {
     super();
   }
@@ -86,7 +104,7 @@ public class EmployeeImpl extends EntityImpl implements Employee
   @Override
   protected EClass eStaticClass()
   {
-    return AirPackage.Literals.EMPLOYEE;
+    return AirPackage.Literals.PASSENGER;
   }
 
   /**
@@ -95,9 +113,9 @@ public class EmployeeImpl extends EntityImpl implements Employee
    * @generated
    */
   @Override
-  public String getEmpId()
+  public String getEmail()
   {
-    return empId;
+    return email;
   }
 
   /**
@@ -106,12 +124,12 @@ public class EmployeeImpl extends EntityImpl implements Employee
    * @generated
    */
   @Override
-  public void setEmpId(String newEmpId)
+  public void setEmail(String newEmail)
   {
-    String oldEmpId = empId;
-    empId = newEmpId;
+    String oldEmail = email;
+    email = newEmail;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.EMPLOYEE__EMP_ID, oldEmpId, empId));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.PASSENGER__EMAIL, oldEmail, email));
   }
 
   /**
@@ -136,7 +154,22 @@ public class EmployeeImpl extends EntityImpl implements Employee
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.EMPLOYEE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.PASSENGER__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Flight> getFlight()
+  {
+    if (flight == null)
+    {
+      flight = new EObjectResolvingEList<Flight>(Flight.class, this, AirPackage.PASSENGER__FLIGHT);
+    }
+    return flight;
   }
 
   /**
@@ -149,10 +182,12 @@ public class EmployeeImpl extends EntityImpl implements Employee
   {
     switch (featureID)
     {
-      case AirPackage.EMPLOYEE__EMP_ID:
-        return getEmpId();
-      case AirPackage.EMPLOYEE__NAME:
+      case AirPackage.PASSENGER__EMAIL:
+        return getEmail();
+      case AirPackage.PASSENGER__NAME:
         return getName();
+      case AirPackage.PASSENGER__FLIGHT:
+        return getFlight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -162,16 +197,21 @@ public class EmployeeImpl extends EntityImpl implements Employee
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case AirPackage.EMPLOYEE__EMP_ID:
-        setEmpId((String)newValue);
+      case AirPackage.PASSENGER__EMAIL:
+        setEmail((String)newValue);
         return;
-      case AirPackage.EMPLOYEE__NAME:
+      case AirPackage.PASSENGER__NAME:
         setName((String)newValue);
+        return;
+      case AirPackage.PASSENGER__FLIGHT:
+        getFlight().clear();
+        getFlight().addAll((Collection<? extends Flight>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,11 +227,14 @@ public class EmployeeImpl extends EntityImpl implements Employee
   {
     switch (featureID)
     {
-      case AirPackage.EMPLOYEE__EMP_ID:
-        setEmpId(EMP_ID_EDEFAULT);
+      case AirPackage.PASSENGER__EMAIL:
+        setEmail(EMAIL_EDEFAULT);
         return;
-      case AirPackage.EMPLOYEE__NAME:
+      case AirPackage.PASSENGER__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case AirPackage.PASSENGER__FLIGHT:
+        getFlight().clear();
         return;
     }
     super.eUnset(featureID);
@@ -207,10 +250,12 @@ public class EmployeeImpl extends EntityImpl implements Employee
   {
     switch (featureID)
     {
-      case AirPackage.EMPLOYEE__EMP_ID:
-        return EMP_ID_EDEFAULT == null ? empId != null : !EMP_ID_EDEFAULT.equals(empId);
-      case AirPackage.EMPLOYEE__NAME:
+      case AirPackage.PASSENGER__EMAIL:
+        return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
+      case AirPackage.PASSENGER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AirPackage.PASSENGER__FLIGHT:
+        return flight != null && !flight.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -226,12 +271,12 @@ public class EmployeeImpl extends EntityImpl implements Employee
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (empId: ");
-    result.append(empId);
+    result.append(" (email: ");
+    result.append(email);
     result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //EmployeeImpl
+} //PassengerImpl
