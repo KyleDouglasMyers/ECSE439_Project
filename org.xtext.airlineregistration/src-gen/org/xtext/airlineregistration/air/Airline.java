@@ -13,7 +13,6 @@ package org.xtext.airlineregistration.air;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Airline#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Airline#getDescription <em>Description</em>}</li>
  * </ul>
  *
@@ -23,28 +22,6 @@ package org.xtext.airlineregistration.air;
  */
 public interface Airline extends Entity
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getAirline_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Airline#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
   /**
    * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->

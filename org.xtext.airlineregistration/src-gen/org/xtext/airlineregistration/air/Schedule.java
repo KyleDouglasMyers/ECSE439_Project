@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Schedule#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Schedule#getFlights <em>Flights</em>}</li>
  * </ul>
  *
@@ -24,28 +23,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Schedule extends Entity
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getSchedule_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Schedule#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
   /**
    * Returns the value of the '<em><b>Flights</b></em>' containment reference list.
    * The list contents are of type {@link org.xtext.airlineregistration.air.Flight}.

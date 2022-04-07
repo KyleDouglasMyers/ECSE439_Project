@@ -13,6 +13,7 @@ package org.xtext.airlineregistration.air;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.FlightAttendant#getFaname <em>Faname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.FlightAttendant#getAirline <em>Airline</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package org.xtext.airlineregistration.air;
  */
 public interface FlightAttendant extends Employee
 {
+  /**
+   * Returns the value of the '<em><b>Faname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Faname</em>' attribute.
+   * @see #setFaname(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getFlightAttendant_Faname()
+   * @model
+   * @generated
+   */
+  String getFaname();
+
+  /**
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.FlightAttendant#getFaname <em>Faname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Faname</em>' attribute.
+   * @see #getFaname()
+   * @generated
+   */
+  void setFaname(String value);
+
   /**
    * Returns the value of the '<em><b>Airline</b></em>' reference.
    * <!-- begin-user-doc -->

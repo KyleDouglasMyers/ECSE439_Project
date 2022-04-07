@@ -13,8 +13,7 @@ package org.xtext.airlineregistration.air;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Airplane#getAirplaneId <em>Airplane Id</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.Airplane#getAirplaneType <em>Airplane Type</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Airplane#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Airplane#getSeats <em>Seats</em>}</li>
  * </ul>
  *
@@ -25,48 +24,26 @@ package org.xtext.airlineregistration.air;
 public interface Airplane extends Entity
 {
   /**
-   * Returns the value of the '<em><b>Airplane Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Airplane Id</em>' attribute.
-   * @see #setAirplaneId(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getAirplane_AirplaneId()
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see #setType(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getAirplane_Type()
    * @model
    * @generated
    */
-  String getAirplaneId();
+  String getType();
 
   /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Airplane#getAirplaneId <em>Airplane Id</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Airplane#getType <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Airplane Id</em>' attribute.
-   * @see #getAirplaneId()
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see #getType()
    * @generated
    */
-  void setAirplaneId(String value);
-
-  /**
-   * Returns the value of the '<em><b>Airplane Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Airplane Type</em>' attribute.
-   * @see #setAirplaneType(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getAirplane_AirplaneType()
-   * @model
-   * @generated
-   */
-  String getAirplaneType();
-
-  /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Airplane#getAirplaneType <em>Airplane Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Airplane Type</em>' attribute.
-   * @see #getAirplaneType()
-   * @generated
-   */
-  void setAirplaneType(String value);
+  void setType(String value);
 
   /**
    * Returns the value of the '<em><b>Seats</b></em>' attribute.

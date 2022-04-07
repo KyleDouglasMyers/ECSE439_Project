@@ -27,8 +27,7 @@ import org.xtext.airlineregistration.air.Passenger;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getEmail <em>Email</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getPaname <em>Paname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getFlight <em>Flight</em>}</li>
  * </ul>
  *
@@ -37,44 +36,24 @@ import org.xtext.airlineregistration.air.Passenger;
 public class PassengerImpl extends EntityImpl implements Passenger
 {
   /**
-   * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
+   * The default value of the '{@link #getPaname() <em>Paname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEmail()
+   * @see #getPaname()
    * @generated
    * @ordered
    */
-  protected static final String EMAIL_EDEFAULT = null;
+  protected static final String PANAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
+   * The cached value of the '{@link #getPaname() <em>Paname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEmail()
+   * @see #getPaname()
    * @generated
    * @ordered
    */
-  protected String email = EMAIL_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected String paname = PANAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getFlight() <em>Flight</em>}' reference list.
@@ -113,9 +92,9 @@ public class PassengerImpl extends EntityImpl implements Passenger
    * @generated
    */
   @Override
-  public String getEmail()
+  public String getPaname()
   {
-    return email;
+    return paname;
   }
 
   /**
@@ -124,37 +103,12 @@ public class PassengerImpl extends EntityImpl implements Passenger
    * @generated
    */
   @Override
-  public void setEmail(String newEmail)
+  public void setPaname(String newPaname)
   {
-    String oldEmail = email;
-    email = newEmail;
+    String oldPaname = paname;
+    paname = newPaname;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.PASSENGER__EMAIL, oldEmail, email));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.PASSENGER__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.PASSENGER__PANAME, oldPaname, paname));
   }
 
   /**
@@ -182,10 +136,8 @@ public class PassengerImpl extends EntityImpl implements Passenger
   {
     switch (featureID)
     {
-      case AirPackage.PASSENGER__EMAIL:
-        return getEmail();
-      case AirPackage.PASSENGER__NAME:
-        return getName();
+      case AirPackage.PASSENGER__PANAME:
+        return getPaname();
       case AirPackage.PASSENGER__FLIGHT:
         return getFlight();
     }
@@ -203,11 +155,8 @@ public class PassengerImpl extends EntityImpl implements Passenger
   {
     switch (featureID)
     {
-      case AirPackage.PASSENGER__EMAIL:
-        setEmail((String)newValue);
-        return;
-      case AirPackage.PASSENGER__NAME:
-        setName((String)newValue);
+      case AirPackage.PASSENGER__PANAME:
+        setPaname((String)newValue);
         return;
       case AirPackage.PASSENGER__FLIGHT:
         getFlight().clear();
@@ -227,11 +176,8 @@ public class PassengerImpl extends EntityImpl implements Passenger
   {
     switch (featureID)
     {
-      case AirPackage.PASSENGER__EMAIL:
-        setEmail(EMAIL_EDEFAULT);
-        return;
-      case AirPackage.PASSENGER__NAME:
-        setName(NAME_EDEFAULT);
+      case AirPackage.PASSENGER__PANAME:
+        setPaname(PANAME_EDEFAULT);
         return;
       case AirPackage.PASSENGER__FLIGHT:
         getFlight().clear();
@@ -250,10 +196,8 @@ public class PassengerImpl extends EntityImpl implements Passenger
   {
     switch (featureID)
     {
-      case AirPackage.PASSENGER__EMAIL:
-        return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
-      case AirPackage.PASSENGER__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AirPackage.PASSENGER__PANAME:
+        return PANAME_EDEFAULT == null ? paname != null : !PANAME_EDEFAULT.equals(paname);
       case AirPackage.PASSENGER__FLIGHT:
         return flight != null && !flight.isEmpty();
     }
@@ -271,10 +215,8 @@ public class PassengerImpl extends EntityImpl implements Passenger
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (email: ");
-    result.append(email);
-    result.append(", name: ");
-    result.append(name);
+    result.append(" (paname: ");
+    result.append(paname);
     result.append(')');
     return result.toString();
   }

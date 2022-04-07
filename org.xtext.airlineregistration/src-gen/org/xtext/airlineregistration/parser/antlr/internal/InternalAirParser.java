@@ -505,64 +505,38 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAirport"
-    // InternalAir.g:188:1: ruleAirport returns [EObject current=null] : (otherlv_0= 'Airport' ( (lv_code_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) ) ) ;
+    // InternalAir.g:188:1: ruleAirport returns [EObject current=null] : (otherlv_0= 'Airport' ( (lv_name_1_0= RULE_ID ) ) ( (lv_aname_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) ) ) ;
     public final EObject ruleAirport() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_code_1_0=null;
-        Token lv_name_2_0=null;
+        Token lv_name_1_0=null;
+        Token lv_aname_2_0=null;
         Token lv_location_3_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalAir.g:194:2: ( (otherlv_0= 'Airport' ( (lv_code_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) ) ) )
-            // InternalAir.g:195:2: (otherlv_0= 'Airport' ( (lv_code_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) ) )
+            // InternalAir.g:194:2: ( (otherlv_0= 'Airport' ( (lv_name_1_0= RULE_ID ) ) ( (lv_aname_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) ) ) )
+            // InternalAir.g:195:2: (otherlv_0= 'Airport' ( (lv_name_1_0= RULE_ID ) ) ( (lv_aname_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) ) )
             {
-            // InternalAir.g:195:2: (otherlv_0= 'Airport' ( (lv_code_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) ) )
-            // InternalAir.g:196:3: otherlv_0= 'Airport' ( (lv_code_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) )
+            // InternalAir.g:195:2: (otherlv_0= 'Airport' ( (lv_name_1_0= RULE_ID ) ) ( (lv_aname_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) ) )
+            // InternalAir.g:196:3: otherlv_0= 'Airport' ( (lv_name_1_0= RULE_ID ) ) ( (lv_aname_2_0= RULE_STRING ) ) ( (lv_location_3_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAirportAccess().getAirportKeyword_0());
             		
-            // InternalAir.g:200:3: ( (lv_code_1_0= RULE_ID ) )
-            // InternalAir.g:201:4: (lv_code_1_0= RULE_ID )
+            // InternalAir.g:200:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalAir.g:201:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalAir.g:201:4: (lv_code_1_0= RULE_ID )
-            // InternalAir.g:202:5: lv_code_1_0= RULE_ID
+            // InternalAir.g:201:4: (lv_name_1_0= RULE_ID )
+            // InternalAir.g:202:5: lv_name_1_0= RULE_ID
             {
-            lv_code_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_code_1_0, grammarAccess.getAirportAccess().getCodeIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAirportRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"code",
-            						lv_code_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalAir.g:218:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAir.g:219:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalAir.g:219:4: (lv_name_2_0= RULE_STRING )
-            // InternalAir.g:220:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
-
-            					newLeafNode(lv_name_2_0, grammarAccess.getAirportAccess().getNameSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getAirportAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -571,7 +545,33 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalAir.g:218:3: ( (lv_aname_2_0= RULE_STRING ) )
+            // InternalAir.g:219:4: (lv_aname_2_0= RULE_STRING )
+            {
+            // InternalAir.g:219:4: (lv_aname_2_0= RULE_STRING )
+            // InternalAir.g:220:5: lv_aname_2_0= RULE_STRING
+            {
+            lv_aname_2_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
+
+            					newLeafNode(lv_aname_2_0, grammarAccess.getAirportAccess().getAnameSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getAirportRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"aname",
+            						lv_aname_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -798,38 +798,38 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAirplane"
-    // InternalAir.g:324:1: ruleAirplane returns [EObject current=null] : (otherlv_0= 'Airplane' ( (lv_airplaneId_1_0= RULE_ID ) ) ( (lv_airplaneType_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) ) ) ;
+    // InternalAir.g:324:1: ruleAirplane returns [EObject current=null] : (otherlv_0= 'Airplane' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) ) ) ;
     public final EObject ruleAirplane() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_airplaneId_1_0=null;
-        Token lv_airplaneType_2_0=null;
+        Token lv_name_1_0=null;
+        Token lv_type_2_0=null;
         Token lv_seats_3_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalAir.g:330:2: ( (otherlv_0= 'Airplane' ( (lv_airplaneId_1_0= RULE_ID ) ) ( (lv_airplaneType_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) ) ) )
-            // InternalAir.g:331:2: (otherlv_0= 'Airplane' ( (lv_airplaneId_1_0= RULE_ID ) ) ( (lv_airplaneType_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) ) )
+            // InternalAir.g:330:2: ( (otherlv_0= 'Airplane' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) ) ) )
+            // InternalAir.g:331:2: (otherlv_0= 'Airplane' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) ) )
             {
-            // InternalAir.g:331:2: (otherlv_0= 'Airplane' ( (lv_airplaneId_1_0= RULE_ID ) ) ( (lv_airplaneType_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) ) )
-            // InternalAir.g:332:3: otherlv_0= 'Airplane' ( (lv_airplaneId_1_0= RULE_ID ) ) ( (lv_airplaneType_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) )
+            // InternalAir.g:331:2: (otherlv_0= 'Airplane' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) ) )
+            // InternalAir.g:332:3: otherlv_0= 'Airplane' ( (lv_name_1_0= RULE_ID ) ) ( (lv_type_2_0= RULE_STRING ) ) ( (lv_seats_3_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,13,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAirplaneAccess().getAirplaneKeyword_0());
             		
-            // InternalAir.g:336:3: ( (lv_airplaneId_1_0= RULE_ID ) )
-            // InternalAir.g:337:4: (lv_airplaneId_1_0= RULE_ID )
+            // InternalAir.g:336:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalAir.g:337:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalAir.g:337:4: (lv_airplaneId_1_0= RULE_ID )
-            // InternalAir.g:338:5: lv_airplaneId_1_0= RULE_ID
+            // InternalAir.g:337:4: (lv_name_1_0= RULE_ID )
+            // InternalAir.g:338:5: lv_name_1_0= RULE_ID
             {
-            lv_airplaneId_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_airplaneId_1_0, grammarAccess.getAirplaneAccess().getAirplaneIdIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getAirplaneAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -837,8 +837,8 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					}
             					setWithLastConsumed(
             						current,
-            						"airplaneId",
-            						lv_airplaneId_1_0,
+            						"name",
+            						lv_name_1_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -847,15 +847,15 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalAir.g:354:3: ( (lv_airplaneType_2_0= RULE_STRING ) )
-            // InternalAir.g:355:4: (lv_airplaneType_2_0= RULE_STRING )
+            // InternalAir.g:354:3: ( (lv_type_2_0= RULE_STRING ) )
+            // InternalAir.g:355:4: (lv_type_2_0= RULE_STRING )
             {
-            // InternalAir.g:355:4: (lv_airplaneType_2_0= RULE_STRING )
-            // InternalAir.g:356:5: lv_airplaneType_2_0= RULE_STRING
+            // InternalAir.g:355:4: (lv_type_2_0= RULE_STRING )
+            // InternalAir.g:356:5: lv_type_2_0= RULE_STRING
             {
-            lv_airplaneType_2_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
+            lv_type_2_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
 
-            					newLeafNode(lv_airplaneType_2_0, grammarAccess.getAirplaneAccess().getAirplaneTypeSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_type_2_0, grammarAccess.getAirplaneAccess().getTypeSTRINGTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -863,8 +863,8 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					}
             					setWithLastConsumed(
             						current,
-            						"airplaneType",
-            						lv_airplaneType_2_0,
+            						"type",
+            						lv_type_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -958,13 +958,13 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFlight"
-    // InternalAir.g:401:1: ruleFlight returns [EObject current=null] : (otherlv_0= 'Flight' ( (lv_flightId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )* ) ;
+    // InternalAir.g:401:1: ruleFlight returns [EObject current=null] : (otherlv_0= 'Flight' ( (lv_name_1_0= RULE_ID ) ) ( (lv_fname_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )* ) ;
     public final EObject ruleFlight() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_flightId_1_0=null;
-        Token lv_name_2_0=null;
+        Token lv_name_1_0=null;
+        Token lv_fname_2_0=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
@@ -986,51 +986,25 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAir.g:407:2: ( (otherlv_0= 'Flight' ( (lv_flightId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )* ) )
-            // InternalAir.g:408:2: (otherlv_0= 'Flight' ( (lv_flightId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )* )
+            // InternalAir.g:407:2: ( (otherlv_0= 'Flight' ( (lv_name_1_0= RULE_ID ) ) ( (lv_fname_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )* ) )
+            // InternalAir.g:408:2: (otherlv_0= 'Flight' ( (lv_name_1_0= RULE_ID ) ) ( (lv_fname_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )* )
             {
-            // InternalAir.g:408:2: (otherlv_0= 'Flight' ( (lv_flightId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )* )
-            // InternalAir.g:409:3: otherlv_0= 'Flight' ( (lv_flightId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )*
+            // InternalAir.g:408:2: (otherlv_0= 'Flight' ( (lv_name_1_0= RULE_ID ) ) ( (lv_fname_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )* )
+            // InternalAir.g:409:3: otherlv_0= 'Flight' ( (lv_name_1_0= RULE_ID ) ) ( (lv_fname_2_0= RULE_STRING ) ) otherlv_3= 'from' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'to' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'with' ( (otherlv_8= RULE_ID ) ) otherlv_9= 'at' ( (lv_time_10_0= RULE_STRING ) ) otherlv_11= 'pilot' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'airplane' ( (otherlv_14= RULE_ID ) ) otherlv_15= 'staff' ( (otherlv_16= RULE_ID ) ) (otherlv_17= ',' ( (otherlv_18= RULE_ID ) ) )*
             {
             otherlv_0=(Token)match(input,14,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFlightAccess().getFlightKeyword_0());
             		
-            // InternalAir.g:413:3: ( (lv_flightId_1_0= RULE_ID ) )
-            // InternalAir.g:414:4: (lv_flightId_1_0= RULE_ID )
+            // InternalAir.g:413:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalAir.g:414:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalAir.g:414:4: (lv_flightId_1_0= RULE_ID )
-            // InternalAir.g:415:5: lv_flightId_1_0= RULE_ID
+            // InternalAir.g:414:4: (lv_name_1_0= RULE_ID )
+            // InternalAir.g:415:5: lv_name_1_0= RULE_ID
             {
-            lv_flightId_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_flightId_1_0, grammarAccess.getFlightAccess().getFlightIdIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getFlightRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"flightId",
-            						lv_flightId_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalAir.g:431:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAir.g:432:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalAir.g:432:4: (lv_name_2_0= RULE_STRING )
-            // InternalAir.g:433:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_7); 
-
-            					newLeafNode(lv_name_2_0, grammarAccess.getFlightAccess().getNameSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -1039,7 +1013,33 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalAir.g:431:3: ( (lv_fname_2_0= RULE_STRING ) )
+            // InternalAir.g:432:4: (lv_fname_2_0= RULE_STRING )
+            {
+            // InternalAir.g:432:4: (lv_fname_2_0= RULE_STRING )
+            // InternalAir.g:433:5: lv_fname_2_0= RULE_STRING
+            {
+            lv_fname_2_0=(Token)match(input,RULE_STRING,FOLLOW_7); 
+
+            					newLeafNode(lv_fname_2_0, grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getFlightRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"fname",
+            						lv_fname_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1730,13 +1730,13 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePilot"
-    // InternalAir.g:746:1: rulePilot returns [EObject current=null] : (otherlv_0= 'Pilot' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) ;
+    // InternalAir.g:746:1: rulePilot returns [EObject current=null] : (otherlv_0= 'Pilot' ( (lv_name_1_0= RULE_ID ) ) ( (lv_piname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) ;
     public final EObject rulePilot() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_empId_1_0=null;
-        Token lv_name_2_0=null;
+        Token lv_name_1_0=null;
+        Token lv_piname_2_0=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
 
@@ -1744,51 +1744,25 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAir.g:752:2: ( (otherlv_0= 'Pilot' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) )
-            // InternalAir.g:753:2: (otherlv_0= 'Pilot' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
+            // InternalAir.g:752:2: ( (otherlv_0= 'Pilot' ( (lv_name_1_0= RULE_ID ) ) ( (lv_piname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) )
+            // InternalAir.g:753:2: (otherlv_0= 'Pilot' ( (lv_name_1_0= RULE_ID ) ) ( (lv_piname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
             {
-            // InternalAir.g:753:2: (otherlv_0= 'Pilot' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
-            // InternalAir.g:754:3: otherlv_0= 'Pilot' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) )
+            // InternalAir.g:753:2: (otherlv_0= 'Pilot' ( (lv_name_1_0= RULE_ID ) ) ( (lv_piname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
+            // InternalAir.g:754:3: otherlv_0= 'Pilot' ( (lv_name_1_0= RULE_ID ) ) ( (lv_piname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,24,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPilotAccess().getPilotKeyword_0());
             		
-            // InternalAir.g:758:3: ( (lv_empId_1_0= RULE_ID ) )
-            // InternalAir.g:759:4: (lv_empId_1_0= RULE_ID )
+            // InternalAir.g:758:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalAir.g:759:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalAir.g:759:4: (lv_empId_1_0= RULE_ID )
-            // InternalAir.g:760:5: lv_empId_1_0= RULE_ID
+            // InternalAir.g:759:4: (lv_name_1_0= RULE_ID )
+            // InternalAir.g:760:5: lv_name_1_0= RULE_ID
             {
-            lv_empId_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_empId_1_0, grammarAccess.getPilotAccess().getEmpIdIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getPilotRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"empId",
-            						lv_empId_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalAir.g:776:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAir.g:777:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalAir.g:777:4: (lv_name_2_0= RULE_STRING )
-            // InternalAir.g:778:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
-
-            					newLeafNode(lv_name_2_0, grammarAccess.getPilotAccess().getNameSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getPilotAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -1797,7 +1771,33 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalAir.g:776:3: ( (lv_piname_2_0= RULE_STRING ) )
+            // InternalAir.g:777:4: (lv_piname_2_0= RULE_STRING )
+            {
+            // InternalAir.g:777:4: (lv_piname_2_0= RULE_STRING )
+            // InternalAir.g:778:5: lv_piname_2_0= RULE_STRING
+            {
+            lv_piname_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_piname_2_0, grammarAccess.getPilotAccess().getPinameSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPilotRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"piname",
+            						lv_piname_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1890,13 +1890,13 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFlightAttendant"
-    // InternalAir.g:822:1: ruleFlightAttendant returns [EObject current=null] : (otherlv_0= 'FlightAttendant' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) ;
+    // InternalAir.g:822:1: ruleFlightAttendant returns [EObject current=null] : (otherlv_0= 'FlightAttendant' ( (lv_name_1_0= RULE_ID ) ) ( (lv_faname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) ;
     public final EObject ruleFlightAttendant() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_empId_1_0=null;
-        Token lv_name_2_0=null;
+        Token lv_name_1_0=null;
+        Token lv_faname_2_0=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
 
@@ -1904,51 +1904,25 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAir.g:828:2: ( (otherlv_0= 'FlightAttendant' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) )
-            // InternalAir.g:829:2: (otherlv_0= 'FlightAttendant' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
+            // InternalAir.g:828:2: ( (otherlv_0= 'FlightAttendant' ( (lv_name_1_0= RULE_ID ) ) ( (lv_faname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) )
+            // InternalAir.g:829:2: (otherlv_0= 'FlightAttendant' ( (lv_name_1_0= RULE_ID ) ) ( (lv_faname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
             {
-            // InternalAir.g:829:2: (otherlv_0= 'FlightAttendant' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
-            // InternalAir.g:830:3: otherlv_0= 'FlightAttendant' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) )
+            // InternalAir.g:829:2: (otherlv_0= 'FlightAttendant' ( (lv_name_1_0= RULE_ID ) ) ( (lv_faname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
+            // InternalAir.g:830:3: otherlv_0= 'FlightAttendant' ( (lv_name_1_0= RULE_ID ) ) ( (lv_faname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,25,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getFlightAttendantAccess().getFlightAttendantKeyword_0());
             		
-            // InternalAir.g:834:3: ( (lv_empId_1_0= RULE_ID ) )
-            // InternalAir.g:835:4: (lv_empId_1_0= RULE_ID )
+            // InternalAir.g:834:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalAir.g:835:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalAir.g:835:4: (lv_empId_1_0= RULE_ID )
-            // InternalAir.g:836:5: lv_empId_1_0= RULE_ID
+            // InternalAir.g:835:4: (lv_name_1_0= RULE_ID )
+            // InternalAir.g:836:5: lv_name_1_0= RULE_ID
             {
-            lv_empId_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_empId_1_0, grammarAccess.getFlightAttendantAccess().getEmpIdIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getFlightAttendantRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"empId",
-            						lv_empId_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalAir.g:852:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAir.g:853:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalAir.g:853:4: (lv_name_2_0= RULE_STRING )
-            // InternalAir.g:854:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
-
-            					newLeafNode(lv_name_2_0, grammarAccess.getFlightAttendantAccess().getNameSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getFlightAttendantAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -1957,7 +1931,33 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalAir.g:852:3: ( (lv_faname_2_0= RULE_STRING ) )
+            // InternalAir.g:853:4: (lv_faname_2_0= RULE_STRING )
+            {
+            // InternalAir.g:853:4: (lv_faname_2_0= RULE_STRING )
+            // InternalAir.g:854:5: lv_faname_2_0= RULE_STRING
+            {
+            lv_faname_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_faname_2_0, grammarAccess.getFlightAttendantAccess().getFanameSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getFlightAttendantRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"faname",
+            						lv_faname_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -2050,13 +2050,13 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBagHandler"
-    // InternalAir.g:898:1: ruleBagHandler returns [EObject current=null] : (otherlv_0= 'BagHandler' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) ;
+    // InternalAir.g:898:1: ruleBagHandler returns [EObject current=null] : (otherlv_0= 'BagHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_bhname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) ;
     public final EObject ruleBagHandler() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_empId_1_0=null;
-        Token lv_name_2_0=null;
+        Token lv_name_1_0=null;
+        Token lv_bhname_2_0=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
 
@@ -2064,51 +2064,25 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAir.g:904:2: ( (otherlv_0= 'BagHandler' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) )
-            // InternalAir.g:905:2: (otherlv_0= 'BagHandler' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
+            // InternalAir.g:904:2: ( (otherlv_0= 'BagHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_bhname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) )
+            // InternalAir.g:905:2: (otherlv_0= 'BagHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_bhname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
             {
-            // InternalAir.g:905:2: (otherlv_0= 'BagHandler' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
-            // InternalAir.g:906:3: otherlv_0= 'BagHandler' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) )
+            // InternalAir.g:905:2: (otherlv_0= 'BagHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_bhname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
+            // InternalAir.g:906:3: otherlv_0= 'BagHandler' ( (lv_name_1_0= RULE_ID ) ) ( (lv_bhname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,26,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBagHandlerAccess().getBagHandlerKeyword_0());
             		
-            // InternalAir.g:910:3: ( (lv_empId_1_0= RULE_ID ) )
-            // InternalAir.g:911:4: (lv_empId_1_0= RULE_ID )
+            // InternalAir.g:910:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalAir.g:911:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalAir.g:911:4: (lv_empId_1_0= RULE_ID )
-            // InternalAir.g:912:5: lv_empId_1_0= RULE_ID
+            // InternalAir.g:911:4: (lv_name_1_0= RULE_ID )
+            // InternalAir.g:912:5: lv_name_1_0= RULE_ID
             {
-            lv_empId_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_empId_1_0, grammarAccess.getBagHandlerAccess().getEmpIdIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getBagHandlerRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"empId",
-            						lv_empId_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalAir.g:928:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAir.g:929:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalAir.g:929:4: (lv_name_2_0= RULE_STRING )
-            // InternalAir.g:930:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
-
-            					newLeafNode(lv_name_2_0, grammarAccess.getBagHandlerAccess().getNameSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getBagHandlerAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -2117,7 +2091,33 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalAir.g:928:3: ( (lv_bhname_2_0= RULE_STRING ) )
+            // InternalAir.g:929:4: (lv_bhname_2_0= RULE_STRING )
+            {
+            // InternalAir.g:929:4: (lv_bhname_2_0= RULE_STRING )
+            // InternalAir.g:930:5: lv_bhname_2_0= RULE_STRING
+            {
+            lv_bhname_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_bhname_2_0, grammarAccess.getBagHandlerAccess().getBhnameSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getBagHandlerRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"bhname",
+            						lv_bhname_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -2210,13 +2210,13 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGatePersonnel"
-    // InternalAir.g:974:1: ruleGatePersonnel returns [EObject current=null] : (otherlv_0= 'GatePersonnel' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) ;
+    // InternalAir.g:974:1: ruleGatePersonnel returns [EObject current=null] : (otherlv_0= 'GatePersonnel' ( (lv_name_1_0= RULE_ID ) ) ( (lv_gpname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) ;
     public final EObject ruleGatePersonnel() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_empId_1_0=null;
-        Token lv_name_2_0=null;
+        Token lv_name_1_0=null;
+        Token lv_gpname_2_0=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
 
@@ -2224,51 +2224,25 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAir.g:980:2: ( (otherlv_0= 'GatePersonnel' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) )
-            // InternalAir.g:981:2: (otherlv_0= 'GatePersonnel' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
+            // InternalAir.g:980:2: ( (otherlv_0= 'GatePersonnel' ( (lv_name_1_0= RULE_ID ) ) ( (lv_gpname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) ) )
+            // InternalAir.g:981:2: (otherlv_0= 'GatePersonnel' ( (lv_name_1_0= RULE_ID ) ) ( (lv_gpname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
             {
-            // InternalAir.g:981:2: (otherlv_0= 'GatePersonnel' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
-            // InternalAir.g:982:3: otherlv_0= 'GatePersonnel' ( (lv_empId_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) )
+            // InternalAir.g:981:2: (otherlv_0= 'GatePersonnel' ( (lv_name_1_0= RULE_ID ) ) ( (lv_gpname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) )
+            // InternalAir.g:982:3: otherlv_0= 'GatePersonnel' ( (lv_name_1_0= RULE_ID ) ) ( (lv_gpname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,27,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGatePersonnelAccess().getGatePersonnelKeyword_0());
             		
-            // InternalAir.g:986:3: ( (lv_empId_1_0= RULE_ID ) )
-            // InternalAir.g:987:4: (lv_empId_1_0= RULE_ID )
+            // InternalAir.g:986:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalAir.g:987:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalAir.g:987:4: (lv_empId_1_0= RULE_ID )
-            // InternalAir.g:988:5: lv_empId_1_0= RULE_ID
+            // InternalAir.g:987:4: (lv_name_1_0= RULE_ID )
+            // InternalAir.g:988:5: lv_name_1_0= RULE_ID
             {
-            lv_empId_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
-            					newLeafNode(lv_empId_1_0, grammarAccess.getGatePersonnelAccess().getEmpIdIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getGatePersonnelRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"empId",
-            						lv_empId_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalAir.g:1004:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAir.g:1005:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalAir.g:1005:4: (lv_name_2_0= RULE_STRING )
-            // InternalAir.g:1006:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
-
-            					newLeafNode(lv_name_2_0, grammarAccess.getGatePersonnelAccess().getNameSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getGatePersonnelAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -2277,7 +2251,33 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalAir.g:1004:3: ( (lv_gpname_2_0= RULE_STRING ) )
+            // InternalAir.g:1005:4: (lv_gpname_2_0= RULE_STRING )
+            {
+            // InternalAir.g:1005:4: (lv_gpname_2_0= RULE_STRING )
+            // InternalAir.g:1006:5: lv_gpname_2_0= RULE_STRING
+            {
+            lv_gpname_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_gpname_2_0, grammarAccess.getGatePersonnelAccess().getGpnameSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getGatePersonnelRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"gpname",
+            						lv_gpname_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -2370,13 +2370,13 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePassenger"
-    // InternalAir.g:1050:1: rulePassenger returns [EObject current=null] : (otherlv_0= 'Passenger' ( (lv_email_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* ) ;
+    // InternalAir.g:1050:1: rulePassenger returns [EObject current=null] : (otherlv_0= 'Passenger' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_paname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* ) ;
     public final EObject rulePassenger() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_email_1_0=null;
-        Token lv_name_2_0=null;
+        Token lv_name_1_0=null;
+        Token lv_paname_2_0=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
@@ -2386,51 +2386,25 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAir.g:1056:2: ( (otherlv_0= 'Passenger' ( (lv_email_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* ) )
-            // InternalAir.g:1057:2: (otherlv_0= 'Passenger' ( (lv_email_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )
+            // InternalAir.g:1056:2: ( (otherlv_0= 'Passenger' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_paname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* ) )
+            // InternalAir.g:1057:2: (otherlv_0= 'Passenger' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_paname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )
             {
-            // InternalAir.g:1057:2: (otherlv_0= 'Passenger' ( (lv_email_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )
-            // InternalAir.g:1058:3: otherlv_0= 'Passenger' ( (lv_email_1_0= RULE_ID ) ) ( (lv_name_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )*
+            // InternalAir.g:1057:2: (otherlv_0= 'Passenger' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_paname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )
+            // InternalAir.g:1058:3: otherlv_0= 'Passenger' ( (lv_name_1_0= RULE_STRING ) ) ( (lv_paname_2_0= RULE_STRING ) ) otherlv_3= 'with' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )*
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_4); 
+            otherlv_0=(Token)match(input,28,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPassengerAccess().getPassengerKeyword_0());
             		
-            // InternalAir.g:1062:3: ( (lv_email_1_0= RULE_ID ) )
-            // InternalAir.g:1063:4: (lv_email_1_0= RULE_ID )
+            // InternalAir.g:1062:3: ( (lv_name_1_0= RULE_STRING ) )
+            // InternalAir.g:1063:4: (lv_name_1_0= RULE_STRING )
             {
-            // InternalAir.g:1063:4: (lv_email_1_0= RULE_ID )
-            // InternalAir.g:1064:5: lv_email_1_0= RULE_ID
+            // InternalAir.g:1063:4: (lv_name_1_0= RULE_STRING )
+            // InternalAir.g:1064:5: lv_name_1_0= RULE_STRING
             {
-            lv_email_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
 
-            					newLeafNode(lv_email_1_0, grammarAccess.getPassengerAccess().getEmailIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getPassengerRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"email",
-            						lv_email_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            // InternalAir.g:1080:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAir.g:1081:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalAir.g:1081:4: (lv_name_2_0= RULE_STRING )
-            // InternalAir.g:1082:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
-
-            					newLeafNode(lv_name_2_0, grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -2439,7 +2413,33 @@ public class InternalAirParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            // InternalAir.g:1080:3: ( (lv_paname_2_0= RULE_STRING ) )
+            // InternalAir.g:1081:4: (lv_paname_2_0= RULE_STRING )
+            {
+            // InternalAir.g:1081:4: (lv_paname_2_0= RULE_STRING )
+            // InternalAir.g:1082:5: lv_paname_2_0= RULE_STRING
+            {
+            lv_paname_2_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_paname_2_0, grammarAccess.getPassengerAccess().getPanameSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPassengerRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"paname",
+            						lv_paname_2_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 

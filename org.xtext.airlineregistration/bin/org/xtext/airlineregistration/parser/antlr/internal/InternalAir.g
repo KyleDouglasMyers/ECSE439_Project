@@ -199,27 +199,9 @@ ruleAirport returns [EObject current=null]
 		}
 		(
 			(
-				lv_code_1_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_code_1_0, grammarAccess.getAirportAccess().getCodeIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAirportRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"code",
-						lv_code_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				lv_name_2_0=RULE_STRING
-				{
-					newLeafNode(lv_name_2_0, grammarAccess.getAirportAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getAirportAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -228,7 +210,25 @@ ruleAirport returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_aname_2_0=RULE_STRING
+				{
+					newLeafNode(lv_aname_2_0, grammarAccess.getAirportAccess().getAnameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAirportRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"aname",
+						lv_aname_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -335,9 +335,9 @@ ruleAirplane returns [EObject current=null]
 		}
 		(
 			(
-				lv_airplaneId_1_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_airplaneId_1_0, grammarAccess.getAirplaneAccess().getAirplaneIdIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getAirplaneAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -345,17 +345,17 @@ ruleAirplane returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"airplaneId",
-						lv_airplaneId_1_0,
+						"name",
+						lv_name_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
 		(
 			(
-				lv_airplaneType_2_0=RULE_STRING
+				lv_type_2_0=RULE_STRING
 				{
-					newLeafNode(lv_airplaneType_2_0, grammarAccess.getAirplaneAccess().getAirplaneTypeSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_type_2_0, grammarAccess.getAirplaneAccess().getTypeSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -363,8 +363,8 @@ ruleAirplane returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"airplaneType",
-						lv_airplaneType_2_0,
+						"type",
+						lv_type_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -412,27 +412,9 @@ ruleFlight returns [EObject current=null]
 		}
 		(
 			(
-				lv_flightId_1_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_flightId_1_0, grammarAccess.getFlightAccess().getFlightIdIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"flightId",
-						lv_flightId_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				lv_name_2_0=RULE_STRING
-				{
-					newLeafNode(lv_name_2_0, grammarAccess.getFlightAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -441,7 +423,25 @@ ruleFlight returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_fname_2_0=RULE_STRING
+				{
+					newLeafNode(lv_fname_2_0, grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFlightRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"fname",
+						lv_fname_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -757,27 +757,9 @@ rulePilot returns [EObject current=null]
 		}
 		(
 			(
-				lv_empId_1_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_empId_1_0, grammarAccess.getPilotAccess().getEmpIdIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPilotRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"empId",
-						lv_empId_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				lv_name_2_0=RULE_STRING
-				{
-					newLeafNode(lv_name_2_0, grammarAccess.getPilotAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getPilotAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -786,7 +768,25 @@ rulePilot returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_piname_2_0=RULE_STRING
+				{
+					newLeafNode(lv_piname_2_0, grammarAccess.getPilotAccess().getPinameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPilotRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"piname",
+						lv_piname_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -833,27 +833,9 @@ ruleFlightAttendant returns [EObject current=null]
 		}
 		(
 			(
-				lv_empId_1_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_empId_1_0, grammarAccess.getFlightAttendantAccess().getEmpIdIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightAttendantRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"empId",
-						lv_empId_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				lv_name_2_0=RULE_STRING
-				{
-					newLeafNode(lv_name_2_0, grammarAccess.getFlightAttendantAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getFlightAttendantAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -862,7 +844,25 @@ ruleFlightAttendant returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_faname_2_0=RULE_STRING
+				{
+					newLeafNode(lv_faname_2_0, grammarAccess.getFlightAttendantAccess().getFanameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFlightAttendantRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"faname",
+						lv_faname_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -909,27 +909,9 @@ ruleBagHandler returns [EObject current=null]
 		}
 		(
 			(
-				lv_empId_1_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_empId_1_0, grammarAccess.getBagHandlerAccess().getEmpIdIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBagHandlerRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"empId",
-						lv_empId_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				lv_name_2_0=RULE_STRING
-				{
-					newLeafNode(lv_name_2_0, grammarAccess.getBagHandlerAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getBagHandlerAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -938,7 +920,25 @@ ruleBagHandler returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_bhname_2_0=RULE_STRING
+				{
+					newLeafNode(lv_bhname_2_0, grammarAccess.getBagHandlerAccess().getBhnameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBagHandlerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"bhname",
+						lv_bhname_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -985,27 +985,9 @@ ruleGatePersonnel returns [EObject current=null]
 		}
 		(
 			(
-				lv_empId_1_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_empId_1_0, grammarAccess.getGatePersonnelAccess().getEmpIdIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGatePersonnelRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"empId",
-						lv_empId_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				lv_name_2_0=RULE_STRING
-				{
-					newLeafNode(lv_name_2_0, grammarAccess.getGatePersonnelAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getGatePersonnelAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -1014,7 +996,25 @@ ruleGatePersonnel returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_gpname_2_0=RULE_STRING
+				{
+					newLeafNode(lv_gpname_2_0, grammarAccess.getGatePersonnelAccess().getGpnameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGatePersonnelRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"gpname",
+						lv_gpname_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -1061,27 +1061,9 @@ rulePassenger returns [EObject current=null]
 		}
 		(
 			(
-				lv_email_1_0=RULE_ID
+				lv_name_1_0=RULE_STRING
 				{
-					newLeafNode(lv_email_1_0, grammarAccess.getPassengerAccess().getEmailIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPassengerRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"email",
-						lv_email_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				lv_name_2_0=RULE_STRING
-				{
-					newLeafNode(lv_name_2_0, grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -1090,7 +1072,25 @@ rulePassenger returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				lv_paname_2_0=RULE_STRING
+				{
+					newLeafNode(lv_paname_2_0, grammarAccess.getPassengerAccess().getPanameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPassengerRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"paname",
+						lv_paname_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)

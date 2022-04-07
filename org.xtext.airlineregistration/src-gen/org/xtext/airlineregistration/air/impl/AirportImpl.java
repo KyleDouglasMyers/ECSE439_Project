@@ -20,8 +20,7 @@ import org.xtext.airlineregistration.air.Airport;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.impl.AirportImpl#getCode <em>Code</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.AirportImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.AirportImpl#getAname <em>Aname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.AirportImpl#getLocation <em>Location</em>}</li>
  * </ul>
  *
@@ -30,44 +29,24 @@ import org.xtext.airlineregistration.air.Airport;
 public class AirportImpl extends EntityImpl implements Airport
 {
   /**
-   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
+   * The default value of the '{@link #getAname() <em>Aname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCode()
+   * @see #getAname()
    * @generated
    * @ordered
    */
-  protected static final String CODE_EDEFAULT = null;
+  protected static final String ANAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
+   * The cached value of the '{@link #getAname() <em>Aname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCode()
+   * @see #getAname()
    * @generated
    * @ordered
    */
-  protected String code = CODE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected String aname = ANAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
@@ -116,9 +95,9 @@ public class AirportImpl extends EntityImpl implements Airport
    * @generated
    */
   @Override
-  public String getCode()
+  public String getAname()
   {
-    return code;
+    return aname;
   }
 
   /**
@@ -127,37 +106,12 @@ public class AirportImpl extends EntityImpl implements Airport
    * @generated
    */
   @Override
-  public void setCode(String newCode)
+  public void setAname(String newAname)
   {
-    String oldCode = code;
-    code = newCode;
+    String oldAname = aname;
+    aname = newAname;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.AIRPORT__CODE, oldCode, code));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.AIRPORT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.AIRPORT__ANAME, oldAname, aname));
   }
 
   /**
@@ -195,10 +149,8 @@ public class AirportImpl extends EntityImpl implements Airport
   {
     switch (featureID)
     {
-      case AirPackage.AIRPORT__CODE:
-        return getCode();
-      case AirPackage.AIRPORT__NAME:
-        return getName();
+      case AirPackage.AIRPORT__ANAME:
+        return getAname();
       case AirPackage.AIRPORT__LOCATION:
         return getLocation();
     }
@@ -215,11 +167,8 @@ public class AirportImpl extends EntityImpl implements Airport
   {
     switch (featureID)
     {
-      case AirPackage.AIRPORT__CODE:
-        setCode((String)newValue);
-        return;
-      case AirPackage.AIRPORT__NAME:
-        setName((String)newValue);
+      case AirPackage.AIRPORT__ANAME:
+        setAname((String)newValue);
         return;
       case AirPackage.AIRPORT__LOCATION:
         setLocation((String)newValue);
@@ -238,11 +187,8 @@ public class AirportImpl extends EntityImpl implements Airport
   {
     switch (featureID)
     {
-      case AirPackage.AIRPORT__CODE:
-        setCode(CODE_EDEFAULT);
-        return;
-      case AirPackage.AIRPORT__NAME:
-        setName(NAME_EDEFAULT);
+      case AirPackage.AIRPORT__ANAME:
+        setAname(ANAME_EDEFAULT);
         return;
       case AirPackage.AIRPORT__LOCATION:
         setLocation(LOCATION_EDEFAULT);
@@ -261,10 +207,8 @@ public class AirportImpl extends EntityImpl implements Airport
   {
     switch (featureID)
     {
-      case AirPackage.AIRPORT__CODE:
-        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
-      case AirPackage.AIRPORT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AirPackage.AIRPORT__ANAME:
+        return ANAME_EDEFAULT == null ? aname != null : !ANAME_EDEFAULT.equals(aname);
       case AirPackage.AIRPORT__LOCATION:
         return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
     }
@@ -282,10 +226,8 @@ public class AirportImpl extends EntityImpl implements Airport
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (code: ");
-    result.append(code);
-    result.append(", name: ");
-    result.append(name);
+    result.append(" (aname: ");
+    result.append(aname);
     result.append(", location: ");
     result.append(location);
     result.append(')');

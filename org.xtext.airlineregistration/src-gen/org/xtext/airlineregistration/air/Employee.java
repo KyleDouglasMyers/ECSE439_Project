@@ -9,13 +9,6 @@ package org.xtext.airlineregistration.air;
  * A representation of the model object '<em><b>Employee</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Employee#getEmpId <em>Emp Id</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.Employee#getName <em>Name</em>}</li>
- * </ul>
  *
  * @see org.xtext.airlineregistration.air.AirPackage#getEmployee()
  * @model
@@ -23,48 +16,4 @@ package org.xtext.airlineregistration.air;
  */
 public interface Employee extends Entity
 {
-  /**
-   * Returns the value of the '<em><b>Emp Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Emp Id</em>' attribute.
-   * @see #setEmpId(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getEmployee_EmpId()
-   * @model
-   * @generated
-   */
-  String getEmpId();
-
-  /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Employee#getEmpId <em>Emp Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Emp Id</em>' attribute.
-   * @see #getEmpId()
-   * @generated
-   */
-  void setEmpId(String value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getEmployee_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Employee#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
 } // Employee

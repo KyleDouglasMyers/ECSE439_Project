@@ -13,6 +13,7 @@ package org.xtext.airlineregistration.air;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.GatePersonnel#getGpname <em>Gpname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.GatePersonnel#getAirport <em>Airport</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package org.xtext.airlineregistration.air;
  */
 public interface GatePersonnel extends Employee
 {
+  /**
+   * Returns the value of the '<em><b>Gpname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Gpname</em>' attribute.
+   * @see #setGpname(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getGatePersonnel_Gpname()
+   * @model
+   * @generated
+   */
+  String getGpname();
+
+  /**
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.GatePersonnel#getGpname <em>Gpname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Gpname</em>' attribute.
+   * @see #getGpname()
+   * @generated
+   */
+  void setGpname(String value);
+
   /**
    * Returns the value of the '<em><b>Airport</b></em>' reference.
    * <!-- begin-user-doc -->

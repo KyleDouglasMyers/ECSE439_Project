@@ -13,6 +13,7 @@ package org.xtext.airlineregistration.air;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.BagHandler#getBhname <em>Bhname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.BagHandler#getAirport <em>Airport</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package org.xtext.airlineregistration.air;
  */
 public interface BagHandler extends Employee
 {
+  /**
+   * Returns the value of the '<em><b>Bhname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bhname</em>' attribute.
+   * @see #setBhname(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getBagHandler_Bhname()
+   * @model
+   * @generated
+   */
+  String getBhname();
+
+  /**
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.BagHandler#getBhname <em>Bhname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Bhname</em>' attribute.
+   * @see #getBhname()
+   * @generated
+   */
+  void setBhname(String value);
+
   /**
    * Returns the value of the '<em><b>Airport</b></em>' reference.
    * <!-- begin-user-doc -->

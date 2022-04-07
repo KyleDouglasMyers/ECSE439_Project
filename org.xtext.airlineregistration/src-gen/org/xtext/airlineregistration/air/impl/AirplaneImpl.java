@@ -20,8 +20,7 @@ import org.xtext.airlineregistration.air.Airplane;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.impl.AirplaneImpl#getAirplaneId <em>Airplane Id</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.AirplaneImpl#getAirplaneType <em>Airplane Type</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.AirplaneImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.AirplaneImpl#getSeats <em>Seats</em>}</li>
  * </ul>
  *
@@ -30,44 +29,24 @@ import org.xtext.airlineregistration.air.Airplane;
 public class AirplaneImpl extends EntityImpl implements Airplane
 {
   /**
-   * The default value of the '{@link #getAirplaneId() <em>Airplane Id</em>}' attribute.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAirplaneId()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final String AIRPLANE_ID_EDEFAULT = null;
+  protected static final String TYPE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAirplaneId() <em>Airplane Id</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAirplaneId()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected String airplaneId = AIRPLANE_ID_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getAirplaneType() <em>Airplane Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAirplaneType()
-   * @generated
-   * @ordered
-   */
-  protected static final String AIRPLANE_TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getAirplaneType() <em>Airplane Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAirplaneType()
-   * @generated
-   * @ordered
-   */
-  protected String airplaneType = AIRPLANE_TYPE_EDEFAULT;
+  protected String type = TYPE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getSeats() <em>Seats</em>}' attribute.
@@ -116,9 +95,9 @@ public class AirplaneImpl extends EntityImpl implements Airplane
    * @generated
    */
   @Override
-  public String getAirplaneId()
+  public String getType()
   {
-    return airplaneId;
+    return type;
   }
 
   /**
@@ -127,37 +106,12 @@ public class AirplaneImpl extends EntityImpl implements Airplane
    * @generated
    */
   @Override
-  public void setAirplaneId(String newAirplaneId)
+  public void setType(String newType)
   {
-    String oldAirplaneId = airplaneId;
-    airplaneId = newAirplaneId;
+    String oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.AIRPLANE__AIRPLANE_ID, oldAirplaneId, airplaneId));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getAirplaneType()
-  {
-    return airplaneType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAirplaneType(String newAirplaneType)
-  {
-    String oldAirplaneType = airplaneType;
-    airplaneType = newAirplaneType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.AIRPLANE__AIRPLANE_TYPE, oldAirplaneType, airplaneType));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.AIRPLANE__TYPE, oldType, type));
   }
 
   /**
@@ -195,10 +149,8 @@ public class AirplaneImpl extends EntityImpl implements Airplane
   {
     switch (featureID)
     {
-      case AirPackage.AIRPLANE__AIRPLANE_ID:
-        return getAirplaneId();
-      case AirPackage.AIRPLANE__AIRPLANE_TYPE:
-        return getAirplaneType();
+      case AirPackage.AIRPLANE__TYPE:
+        return getType();
       case AirPackage.AIRPLANE__SEATS:
         return getSeats();
     }
@@ -215,11 +167,8 @@ public class AirplaneImpl extends EntityImpl implements Airplane
   {
     switch (featureID)
     {
-      case AirPackage.AIRPLANE__AIRPLANE_ID:
-        setAirplaneId((String)newValue);
-        return;
-      case AirPackage.AIRPLANE__AIRPLANE_TYPE:
-        setAirplaneType((String)newValue);
+      case AirPackage.AIRPLANE__TYPE:
+        setType((String)newValue);
         return;
       case AirPackage.AIRPLANE__SEATS:
         setSeats((Integer)newValue);
@@ -238,11 +187,8 @@ public class AirplaneImpl extends EntityImpl implements Airplane
   {
     switch (featureID)
     {
-      case AirPackage.AIRPLANE__AIRPLANE_ID:
-        setAirplaneId(AIRPLANE_ID_EDEFAULT);
-        return;
-      case AirPackage.AIRPLANE__AIRPLANE_TYPE:
-        setAirplaneType(AIRPLANE_TYPE_EDEFAULT);
+      case AirPackage.AIRPLANE__TYPE:
+        setType(TYPE_EDEFAULT);
         return;
       case AirPackage.AIRPLANE__SEATS:
         setSeats(SEATS_EDEFAULT);
@@ -261,10 +207,8 @@ public class AirplaneImpl extends EntityImpl implements Airplane
   {
     switch (featureID)
     {
-      case AirPackage.AIRPLANE__AIRPLANE_ID:
-        return AIRPLANE_ID_EDEFAULT == null ? airplaneId != null : !AIRPLANE_ID_EDEFAULT.equals(airplaneId);
-      case AirPackage.AIRPLANE__AIRPLANE_TYPE:
-        return AIRPLANE_TYPE_EDEFAULT == null ? airplaneType != null : !AIRPLANE_TYPE_EDEFAULT.equals(airplaneType);
+      case AirPackage.AIRPLANE__TYPE:
+        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case AirPackage.AIRPLANE__SEATS:
         return seats != SEATS_EDEFAULT;
     }
@@ -282,10 +226,8 @@ public class AirplaneImpl extends EntityImpl implements Airplane
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (airplaneId: ");
-    result.append(airplaneId);
-    result.append(", airplaneType: ");
-    result.append(airplaneType);
+    result.append(" (type: ");
+    result.append(type);
     result.append(", seats: ");
     result.append(seats);
     result.append(')');

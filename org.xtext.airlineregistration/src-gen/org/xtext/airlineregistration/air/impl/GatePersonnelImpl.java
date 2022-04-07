@@ -22,6 +22,7 @@ import org.xtext.airlineregistration.air.GatePersonnel;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.GatePersonnelImpl#getGpname <em>Gpname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.GatePersonnelImpl#getAirport <em>Airport</em>}</li>
  * </ul>
  *
@@ -29,6 +30,26 @@ import org.xtext.airlineregistration.air.GatePersonnel;
  */
 public class GatePersonnelImpl extends EmployeeImpl implements GatePersonnel
 {
+  /**
+   * The default value of the '{@link #getGpname() <em>Gpname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGpname()
+   * @generated
+   * @ordered
+   */
+  protected static final String GPNAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getGpname() <em>Gpname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGpname()
+   * @generated
+   * @ordered
+   */
+  protected String gpname = GPNAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getAirport() <em>Airport</em>}' reference.
    * <!-- begin-user-doc -->
@@ -58,6 +79,31 @@ public class GatePersonnelImpl extends EmployeeImpl implements GatePersonnel
   protected EClass eStaticClass()
   {
     return AirPackage.Literals.GATE_PERSONNEL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getGpname()
+  {
+    return gpname;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setGpname(String newGpname)
+  {
+    String oldGpname = gpname;
+    gpname = newGpname;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.GATE_PERSONNEL__GPNAME, oldGpname, gpname));
   }
 
   /**
@@ -115,6 +161,8 @@ public class GatePersonnelImpl extends EmployeeImpl implements GatePersonnel
   {
     switch (featureID)
     {
+      case AirPackage.GATE_PERSONNEL__GPNAME:
+        return getGpname();
       case AirPackage.GATE_PERSONNEL__AIRPORT:
         if (resolve) return getAirport();
         return basicGetAirport();
@@ -132,6 +180,9 @@ public class GatePersonnelImpl extends EmployeeImpl implements GatePersonnel
   {
     switch (featureID)
     {
+      case AirPackage.GATE_PERSONNEL__GPNAME:
+        setGpname((String)newValue);
+        return;
       case AirPackage.GATE_PERSONNEL__AIRPORT:
         setAirport((Airport)newValue);
         return;
@@ -149,6 +200,9 @@ public class GatePersonnelImpl extends EmployeeImpl implements GatePersonnel
   {
     switch (featureID)
     {
+      case AirPackage.GATE_PERSONNEL__GPNAME:
+        setGpname(GPNAME_EDEFAULT);
+        return;
       case AirPackage.GATE_PERSONNEL__AIRPORT:
         setAirport((Airport)null);
         return;
@@ -166,10 +220,29 @@ public class GatePersonnelImpl extends EmployeeImpl implements GatePersonnel
   {
     switch (featureID)
     {
+      case AirPackage.GATE_PERSONNEL__GPNAME:
+        return GPNAME_EDEFAULT == null ? gpname != null : !GPNAME_EDEFAULT.equals(gpname);
       case AirPackage.GATE_PERSONNEL__AIRPORT:
         return airport != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (gpname: ");
+    result.append(gpname);
+    result.append(')');
+    return result.toString();
   }
 
 } //GatePersonnelImpl

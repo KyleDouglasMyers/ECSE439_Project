@@ -13,6 +13,7 @@ package org.xtext.airlineregistration.air;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.Pilot#getPiname <em>Piname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Pilot#getAirline <em>Airline</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package org.xtext.airlineregistration.air;
  */
 public interface Pilot extends Employee
 {
+  /**
+   * Returns the value of the '<em><b>Piname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Piname</em>' attribute.
+   * @see #setPiname(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getPilot_Piname()
+   * @model
+   * @generated
+   */
+  String getPiname();
+
+  /**
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Pilot#getPiname <em>Piname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Piname</em>' attribute.
+   * @see #getPiname()
+   * @generated
+   */
+  void setPiname(String value);
+
   /**
    * Returns the value of the '<em><b>Airline</b></em>' reference.
    * <!-- begin-user-doc -->

@@ -82,38 +82,38 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.airlineregistration.Air.Airport");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAirportKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCodeIDTerminalRuleCall_1_0 = (RuleCall)cCodeAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cAnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAnameSTRINGTerminalRuleCall_2_0 = (RuleCall)cAnameAssignment_2.eContents().get(0);
 		private final Assignment cLocationAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cLocationSTRINGTerminalRuleCall_3_0 = (RuleCall)cLocationAssignment_3.eContents().get(0);
 		
 		//Airport :
 		//    //Example: Airport YUL 'Pierre Trudeau'
-		//    'Airport' code=ID name=STRING location=STRING
+		//    'Airport' name=ID aname=STRING location=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		////Example: Airport YUL 'Pierre Trudeau'
-		//'Airport' code=ID name=STRING location=STRING
+		//'Airport' name=ID aname=STRING location=STRING
 		public Group getGroup() { return cGroup; }
 		
 		////Example: Airport YUL 'Pierre Trudeau'
 		//'Airport'
 		public Keyword getAirportKeyword_0() { return cAirportKeyword_0; }
 		
-		//code=ID
-		public Assignment getCodeAssignment_1() { return cCodeAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getCodeIDTerminalRuleCall_1_0() { return cCodeIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//aname=STRING
+		public Assignment getAnameAssignment_2() { return cAnameAssignment_2; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getAnameSTRINGTerminalRuleCall_2_0() { return cAnameSTRINGTerminalRuleCall_2_0; }
 		
 		//location=STRING
 		public Assignment getLocationAssignment_3() { return cLocationAssignment_3; }
@@ -160,35 +160,35 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.airlineregistration.Air.Airplane");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAirplaneKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cAirplaneIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAirplaneIdIDTerminalRuleCall_1_0 = (RuleCall)cAirplaneIdAssignment_1.eContents().get(0);
-		private final Assignment cAirplaneTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAirplaneTypeSTRINGTerminalRuleCall_2_0 = (RuleCall)cAirplaneTypeAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeSTRINGTerminalRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Assignment cSeatsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cSeatsINTTerminalRuleCall_3_0 = (RuleCall)cSeatsAssignment_3.eContents().get(0);
 		
 		//Airplane:
-		//    'Airplane' airplaneId=ID airplaneType=STRING seats=INT
+		//    'Airplane' name=ID type=STRING seats=INT
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Airplane' airplaneId=ID airplaneType=STRING seats=INT
+		//'Airplane' name=ID type=STRING seats=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'Airplane'
 		public Keyword getAirplaneKeyword_0() { return cAirplaneKeyword_0; }
 		
-		//airplaneId=ID
-		public Assignment getAirplaneIdAssignment_1() { return cAirplaneIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getAirplaneIdIDTerminalRuleCall_1_0() { return cAirplaneIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//airplaneType=STRING
-		public Assignment getAirplaneTypeAssignment_2() { return cAirplaneTypeAssignment_2; }
+		//type=STRING
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
 		//STRING
-		public RuleCall getAirplaneTypeSTRINGTerminalRuleCall_2_0() { return cAirplaneTypeSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getTypeSTRINGTerminalRuleCall_2_0() { return cTypeSTRINGTerminalRuleCall_2_0; }
 		
 		//seats=INT
 		public Assignment getSeatsAssignment_3() { return cSeatsAssignment_3; }
@@ -200,10 +200,10 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.airlineregistration.Air.Flight");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFlightKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFlightIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cFlightIdIDTerminalRuleCall_1_0 = (RuleCall)cFlightIdAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFnameSTRINGTerminalRuleCall_2_0 = (RuleCall)cFnameAssignment_2.eContents().get(0);
 		private final Keyword cFromKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cFromAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cFromAirportCrossReference_4_0 = (CrossReference)cFromAssignment_4.eContents().get(0);
@@ -238,7 +238,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cStaffFlightAttendantIDTerminalRuleCall_17_1_0_1 = (RuleCall)cStaffFlightAttendantCrossReference_17_1_0.eContents().get(1);
 		
 		//Flight:
-		//    'Flight' flightId=ID name=STRING
+		//    'Flight' name=ID fname=STRING
 		//    //Get two existing airports (from and to)
 		//    //Get an existing airline
 		//    //Add a time and a date
@@ -253,7 +253,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Flight' flightId=ID name=STRING
+		//'Flight' name=ID fname=STRING
 		////Get two existing airports (from and to)
 		////Get an existing airline
 		////Add a time and a date
@@ -270,17 +270,17 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'Flight'
 		public Keyword getFlightKeyword_0() { return cFlightKeyword_0; }
 		
-		//flightId=ID
-		public Assignment getFlightIdAssignment_1() { return cFlightIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getFlightIdIDTerminalRuleCall_1_0() { return cFlightIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//fname=STRING
+		public Assignment getFnameAssignment_2() { return cFnameAssignment_2; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getFnameSTRINGTerminalRuleCall_2_0() { return cFnameSTRINGTerminalRuleCall_2_0; }
 		
 		////Get two existing airports (from and to)
 		////Get an existing airline
@@ -473,37 +473,37 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.airlineregistration.Air.Pilot");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPilotKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cEmpIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cEmpIdIDTerminalRuleCall_1_0 = (RuleCall)cEmpIdAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cPinameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPinameSTRINGTerminalRuleCall_2_0 = (RuleCall)cPinameAssignment_2.eContents().get(0);
 		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cAirlineAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cAirlineAirlineCrossReference_4_0 = (CrossReference)cAirlineAssignment_4.eContents().get(0);
 		private final RuleCall cAirlineAirlineIDTerminalRuleCall_4_0_1 = (RuleCall)cAirlineAirlineCrossReference_4_0.eContents().get(1);
 		
 		//Pilot:
-		//    'Pilot' empId=ID name=STRING 'with' airline=[Airline]
+		//    'Pilot' name=ID piname=STRING 'with' airline=[Airline]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Pilot' empId=ID name=STRING 'with' airline=[Airline]
+		//'Pilot' name=ID piname=STRING 'with' airline=[Airline]
 		public Group getGroup() { return cGroup; }
 		
 		//'Pilot'
 		public Keyword getPilotKeyword_0() { return cPilotKeyword_0; }
 		
-		//empId=ID
-		public Assignment getEmpIdAssignment_1() { return cEmpIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getEmpIdIDTerminalRuleCall_1_0() { return cEmpIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//piname=STRING
+		public Assignment getPinameAssignment_2() { return cPinameAssignment_2; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getPinameSTRINGTerminalRuleCall_2_0() { return cPinameSTRINGTerminalRuleCall_2_0; }
 		
 		//'with'
 		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
@@ -521,37 +521,37 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.airlineregistration.Air.FlightAttendant");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFlightAttendantKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cEmpIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cEmpIdIDTerminalRuleCall_1_0 = (RuleCall)cEmpIdAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cFanameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFanameSTRINGTerminalRuleCall_2_0 = (RuleCall)cFanameAssignment_2.eContents().get(0);
 		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cAirlineAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cAirlineAirlineCrossReference_4_0 = (CrossReference)cAirlineAssignment_4.eContents().get(0);
 		private final RuleCall cAirlineAirlineIDTerminalRuleCall_4_0_1 = (RuleCall)cAirlineAirlineCrossReference_4_0.eContents().get(1);
 		
 		//FlightAttendant:
-		//    'FlightAttendant' empId=ID name=STRING 'with' airline=[Airline]
+		//    'FlightAttendant' name=ID faname=STRING 'with' airline=[Airline]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'FlightAttendant' empId=ID name=STRING 'with' airline=[Airline]
+		//'FlightAttendant' name=ID faname=STRING 'with' airline=[Airline]
 		public Group getGroup() { return cGroup; }
 		
 		//'FlightAttendant'
 		public Keyword getFlightAttendantKeyword_0() { return cFlightAttendantKeyword_0; }
 		
-		//empId=ID
-		public Assignment getEmpIdAssignment_1() { return cEmpIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getEmpIdIDTerminalRuleCall_1_0() { return cEmpIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//faname=STRING
+		public Assignment getFanameAssignment_2() { return cFanameAssignment_2; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getFanameSTRINGTerminalRuleCall_2_0() { return cFanameSTRINGTerminalRuleCall_2_0; }
 		
 		//'with'
 		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
@@ -569,37 +569,37 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.airlineregistration.Air.BagHandler");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBagHandlerKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cEmpIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cEmpIdIDTerminalRuleCall_1_0 = (RuleCall)cEmpIdAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cBhnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBhnameSTRINGTerminalRuleCall_2_0 = (RuleCall)cBhnameAssignment_2.eContents().get(0);
 		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cAirportAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cAirportAirportCrossReference_4_0 = (CrossReference)cAirportAssignment_4.eContents().get(0);
 		private final RuleCall cAirportAirportIDTerminalRuleCall_4_0_1 = (RuleCall)cAirportAirportCrossReference_4_0.eContents().get(1);
 		
 		//BagHandler:
-		//    'BagHandler' empId=ID name=STRING 'with' airport=[Airport]
+		//    'BagHandler' name=ID bhname=STRING 'with' airport=[Airport]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'BagHandler' empId=ID name=STRING 'with' airport=[Airport]
+		//'BagHandler' name=ID bhname=STRING 'with' airport=[Airport]
 		public Group getGroup() { return cGroup; }
 		
 		//'BagHandler'
 		public Keyword getBagHandlerKeyword_0() { return cBagHandlerKeyword_0; }
 		
-		//empId=ID
-		public Assignment getEmpIdAssignment_1() { return cEmpIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getEmpIdIDTerminalRuleCall_1_0() { return cEmpIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//bhname=STRING
+		public Assignment getBhnameAssignment_2() { return cBhnameAssignment_2; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getBhnameSTRINGTerminalRuleCall_2_0() { return cBhnameSTRINGTerminalRuleCall_2_0; }
 		
 		//'with'
 		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
@@ -617,37 +617,37 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.airlineregistration.Air.GatePersonnel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGatePersonnelKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cEmpIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cEmpIdIDTerminalRuleCall_1_0 = (RuleCall)cEmpIdAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cGpnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cGpnameSTRINGTerminalRuleCall_2_0 = (RuleCall)cGpnameAssignment_2.eContents().get(0);
 		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cAirportAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cAirportAirportCrossReference_4_0 = (CrossReference)cAirportAssignment_4.eContents().get(0);
 		private final RuleCall cAirportAirportIDTerminalRuleCall_4_0_1 = (RuleCall)cAirportAirportCrossReference_4_0.eContents().get(1);
 		
 		//GatePersonnel:
-		//    'GatePersonnel' empId=ID name=STRING 'with' airport=[Airport]
+		//    'GatePersonnel' name=ID gpname=STRING 'with' airport=[Airport]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'GatePersonnel' empId=ID name=STRING 'with' airport=[Airport]
+		//'GatePersonnel' name=ID gpname=STRING 'with' airport=[Airport]
 		public Group getGroup() { return cGroup; }
 		
 		//'GatePersonnel'
 		public Keyword getGatePersonnelKeyword_0() { return cGatePersonnelKeyword_0; }
 		
-		//empId=ID
-		public Assignment getEmpIdAssignment_1() { return cEmpIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getEmpIdIDTerminalRuleCall_1_0() { return cEmpIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//gpname=STRING
+		public Assignment getGpnameAssignment_2() { return cGpnameAssignment_2; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getGpnameSTRINGTerminalRuleCall_2_0() { return cGpnameSTRINGTerminalRuleCall_2_0; }
 		
 		//'with'
 		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
@@ -665,10 +665,10 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.airlineregistration.Air.Passenger");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPassengerKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cEmailAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cEmailIDTerminalRuleCall_1_0 = (RuleCall)cEmailAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cPanameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPanameSTRINGTerminalRuleCall_2_0 = (RuleCall)cPanameAssignment_2.eContents().get(0);
 		private final Keyword cWithKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cFlightAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cFlightFlightCrossReference_4_0 = (CrossReference)cFlightAssignment_4.eContents().get(0);
@@ -680,27 +680,27 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cFlightFlightIDTerminalRuleCall_5_1_0_1 = (RuleCall)cFlightFlightCrossReference_5_1_0.eContents().get(1);
 		
 		//Passenger:
-		//    'Passenger' email=ID name=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
+		//    'Passenger' name=STRING paname=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Passenger' email=ID name=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
+		//'Passenger' name=STRING paname=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
 		public Group getGroup() { return cGroup; }
 		
 		//'Passenger'
 		public Keyword getPassengerKeyword_0() { return cPassengerKeyword_0; }
 		
-		//email=ID
-		public Assignment getEmailAssignment_1() { return cEmailAssignment_1; }
-		
-		//ID
-		public RuleCall getEmailIDTerminalRuleCall_1_0() { return cEmailIDTerminalRuleCall_1_0; }
-		
 		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
+		//paname=STRING
+		public Assignment getPanameAssignment_2() { return cPanameAssignment_2; }
+		
+		//STRING
+		public RuleCall getPanameSTRINGTerminalRuleCall_2_0() { return cPanameSTRINGTerminalRuleCall_2_0; }
 		
 		//'with'
 		public Keyword getWithKeyword_3() { return cWithKeyword_3; }
@@ -819,7 +819,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//Airport :
 	//    //Example: Airport YUL 'Pierre Trudeau'
-	//    'Airport' code=ID name=STRING location=STRING
+	//    'Airport' name=ID aname=STRING location=STRING
 	//;
 	public AirportElements getAirportAccess() {
 		return pAirport;
@@ -842,7 +842,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Airplane:
-	//    'Airplane' airplaneId=ID airplaneType=STRING seats=INT
+	//    'Airplane' name=ID type=STRING seats=INT
 	//;
 	public AirplaneElements getAirplaneAccess() {
 		return pAirplane;
@@ -853,7 +853,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Flight:
-	//    'Flight' flightId=ID name=STRING
+	//    'Flight' name=ID fname=STRING
 	//    //Get two existing airports (from and to)
 	//    //Get an existing airline
 	//    //Add a time and a date
@@ -900,7 +900,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Pilot:
-	//    'Pilot' empId=ID name=STRING 'with' airline=[Airline]
+	//    'Pilot' name=ID piname=STRING 'with' airline=[Airline]
 	//;
 	public PilotElements getPilotAccess() {
 		return pPilot;
@@ -911,7 +911,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//FlightAttendant:
-	//    'FlightAttendant' empId=ID name=STRING 'with' airline=[Airline]
+	//    'FlightAttendant' name=ID faname=STRING 'with' airline=[Airline]
 	//;
 	public FlightAttendantElements getFlightAttendantAccess() {
 		return pFlightAttendant;
@@ -922,7 +922,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//BagHandler:
-	//    'BagHandler' empId=ID name=STRING 'with' airport=[Airport]
+	//    'BagHandler' name=ID bhname=STRING 'with' airport=[Airport]
 	//;
 	public BagHandlerElements getBagHandlerAccess() {
 		return pBagHandler;
@@ -933,7 +933,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//GatePersonnel:
-	//    'GatePersonnel' empId=ID name=STRING 'with' airport=[Airport]
+	//    'GatePersonnel' name=ID gpname=STRING 'with' airport=[Airport]
 	//;
 	public GatePersonnelElements getGatePersonnelAccess() {
 		return pGatePersonnel;
@@ -944,7 +944,7 @@ public class AirGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Passenger:
-	//    'Passenger' email=ID name=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
+	//    'Passenger' name=STRING paname=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
 	//;
 	public PassengerElements getPassengerAccess() {
 		return pPassenger;

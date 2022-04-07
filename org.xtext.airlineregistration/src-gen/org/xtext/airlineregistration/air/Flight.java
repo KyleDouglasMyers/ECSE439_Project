@@ -14,8 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Flight#getFlightId <em>Flight Id</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.Flight#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Flight#getFname <em>Fname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getFrom <em>From</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getTo <em>To</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Flight#getAirline <em>Airline</em>}</li>
@@ -32,48 +31,26 @@ import org.eclipse.emf.common.util.EList;
 public interface Flight extends Entity
 {
   /**
-   * Returns the value of the '<em><b>Flight Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Fname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Flight Id</em>' attribute.
-   * @see #setFlightId(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getFlight_FlightId()
+   * @return the value of the '<em>Fname</em>' attribute.
+   * @see #setFname(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getFlight_Fname()
    * @model
    * @generated
    */
-  String getFlightId();
+  String getFname();
 
   /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Flight#getFlightId <em>Flight Id</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Flight#getFname <em>Fname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Flight Id</em>' attribute.
-   * @see #getFlightId()
+   * @param value the new value of the '<em>Fname</em>' attribute.
+   * @see #getFname()
    * @generated
    */
-  void setFlightId(String value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getFlight_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Flight#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  void setFname(String value);
 
   /**
    * Returns the value of the '<em><b>From</b></em>' reference.

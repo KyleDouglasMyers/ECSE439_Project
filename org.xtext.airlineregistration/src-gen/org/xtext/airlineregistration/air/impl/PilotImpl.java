@@ -22,6 +22,7 @@ import org.xtext.airlineregistration.air.Pilot;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.PilotImpl#getPiname <em>Piname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.PilotImpl#getAirline <em>Airline</em>}</li>
  * </ul>
  *
@@ -29,6 +30,26 @@ import org.xtext.airlineregistration.air.Pilot;
  */
 public class PilotImpl extends EmployeeImpl implements Pilot
 {
+  /**
+   * The default value of the '{@link #getPiname() <em>Piname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPiname()
+   * @generated
+   * @ordered
+   */
+  protected static final String PINAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPiname() <em>Piname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPiname()
+   * @generated
+   * @ordered
+   */
+  protected String piname = PINAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getAirline() <em>Airline</em>}' reference.
    * <!-- begin-user-doc -->
@@ -58,6 +79,31 @@ public class PilotImpl extends EmployeeImpl implements Pilot
   protected EClass eStaticClass()
   {
     return AirPackage.Literals.PILOT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getPiname()
+  {
+    return piname;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPiname(String newPiname)
+  {
+    String oldPiname = piname;
+    piname = newPiname;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.PILOT__PINAME, oldPiname, piname));
   }
 
   /**
@@ -115,6 +161,8 @@ public class PilotImpl extends EmployeeImpl implements Pilot
   {
     switch (featureID)
     {
+      case AirPackage.PILOT__PINAME:
+        return getPiname();
       case AirPackage.PILOT__AIRLINE:
         if (resolve) return getAirline();
         return basicGetAirline();
@@ -132,6 +180,9 @@ public class PilotImpl extends EmployeeImpl implements Pilot
   {
     switch (featureID)
     {
+      case AirPackage.PILOT__PINAME:
+        setPiname((String)newValue);
+        return;
       case AirPackage.PILOT__AIRLINE:
         setAirline((Airline)newValue);
         return;
@@ -149,6 +200,9 @@ public class PilotImpl extends EmployeeImpl implements Pilot
   {
     switch (featureID)
     {
+      case AirPackage.PILOT__PINAME:
+        setPiname(PINAME_EDEFAULT);
+        return;
       case AirPackage.PILOT__AIRLINE:
         setAirline((Airline)null);
         return;
@@ -166,10 +220,29 @@ public class PilotImpl extends EmployeeImpl implements Pilot
   {
     switch (featureID)
     {
+      case AirPackage.PILOT__PINAME:
+        return PINAME_EDEFAULT == null ? piname != null : !PINAME_EDEFAULT.equals(piname);
       case AirPackage.PILOT__AIRLINE:
         return airline != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (piname: ");
+    result.append(piname);
+    result.append(')');
+    return result.toString();
   }
 
 } //PilotImpl

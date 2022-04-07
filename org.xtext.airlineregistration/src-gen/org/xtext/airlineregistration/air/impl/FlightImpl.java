@@ -32,8 +32,7 @@ import org.xtext.airlineregistration.air.Pilot;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getFlightId <em>Flight Id</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getFname <em>Fname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getFrom <em>From</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getTo <em>To</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getAirline <em>Airline</em>}</li>
@@ -48,44 +47,24 @@ import org.xtext.airlineregistration.air.Pilot;
 public class FlightImpl extends EntityImpl implements Flight
 {
   /**
-   * The default value of the '{@link #getFlightId() <em>Flight Id</em>}' attribute.
+   * The default value of the '{@link #getFname() <em>Fname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFlightId()
+   * @see #getFname()
    * @generated
    * @ordered
    */
-  protected static final String FLIGHT_ID_EDEFAULT = null;
+  protected static final String FNAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFlightId() <em>Flight Id</em>}' attribute.
+   * The cached value of the '{@link #getFname() <em>Fname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFlightId()
+   * @see #getFname()
    * @generated
    * @ordered
    */
-  protected String flightId = FLIGHT_ID_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected String fname = FNAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
@@ -194,9 +173,9 @@ public class FlightImpl extends EntityImpl implements Flight
    * @generated
    */
   @Override
-  public String getFlightId()
+  public String getFname()
   {
-    return flightId;
+    return fname;
   }
 
   /**
@@ -205,37 +184,12 @@ public class FlightImpl extends EntityImpl implements Flight
    * @generated
    */
   @Override
-  public void setFlightId(String newFlightId)
+  public void setFname(String newFname)
   {
-    String oldFlightId = flightId;
-    flightId = newFlightId;
+    String oldFname = fname;
+    fname = newFname;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__FLIGHT_ID, oldFlightId, flightId));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__FNAME, oldFname, fname));
   }
 
   /**
@@ -513,10 +467,8 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT__FLIGHT_ID:
-        return getFlightId();
-      case AirPackage.FLIGHT__NAME:
-        return getName();
+      case AirPackage.FLIGHT__FNAME:
+        return getFname();
       case AirPackage.FLIGHT__FROM:
         if (resolve) return getFrom();
         return basicGetFrom();
@@ -551,11 +503,8 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT__FLIGHT_ID:
-        setFlightId((String)newValue);
-        return;
-      case AirPackage.FLIGHT__NAME:
-        setName((String)newValue);
+      case AirPackage.FLIGHT__FNAME:
+        setFname((String)newValue);
         return;
       case AirPackage.FLIGHT__FROM:
         setFrom((Airport)newValue);
@@ -593,11 +542,8 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT__FLIGHT_ID:
-        setFlightId(FLIGHT_ID_EDEFAULT);
-        return;
-      case AirPackage.FLIGHT__NAME:
-        setName(NAME_EDEFAULT);
+      case AirPackage.FLIGHT__FNAME:
+        setFname(FNAME_EDEFAULT);
         return;
       case AirPackage.FLIGHT__FROM:
         setFrom((Airport)null);
@@ -634,10 +580,8 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT__FLIGHT_ID:
-        return FLIGHT_ID_EDEFAULT == null ? flightId != null : !FLIGHT_ID_EDEFAULT.equals(flightId);
-      case AirPackage.FLIGHT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AirPackage.FLIGHT__FNAME:
+        return FNAME_EDEFAULT == null ? fname != null : !FNAME_EDEFAULT.equals(fname);
       case AirPackage.FLIGHT__FROM:
         return from != null;
       case AirPackage.FLIGHT__TO:
@@ -667,10 +611,8 @@ public class FlightImpl extends EntityImpl implements Flight
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (flightId: ");
-    result.append(flightId);
-    result.append(", name: ");
-    result.append(name);
+    result.append(" (fname: ");
+    result.append(fname);
     result.append(", time: ");
     result.append(time);
     result.append(')');

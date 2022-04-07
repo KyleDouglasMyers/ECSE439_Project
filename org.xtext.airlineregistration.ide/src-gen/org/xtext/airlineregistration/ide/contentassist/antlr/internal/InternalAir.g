@@ -503,9 +503,9 @@ rule__Airport__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAirportAccess().getCodeAssignment_1()); }
-	(rule__Airport__CodeAssignment_1)
-	{ after(grammarAccess.getAirportAccess().getCodeAssignment_1()); }
+	{ before(grammarAccess.getAirportAccess().getNameAssignment_1()); }
+	(rule__Airport__NameAssignment_1)
+	{ after(grammarAccess.getAirportAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -530,9 +530,9 @@ rule__Airport__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAirportAccess().getNameAssignment_2()); }
-	(rule__Airport__NameAssignment_2)
-	{ after(grammarAccess.getAirportAccess().getNameAssignment_2()); }
+	{ before(grammarAccess.getAirportAccess().getAnameAssignment_2()); }
+	(rule__Airport__AnameAssignment_2)
+	{ after(grammarAccess.getAirportAccess().getAnameAssignment_2()); }
 )
 ;
 finally {
@@ -692,9 +692,9 @@ rule__Airplane__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAirplaneAccess().getAirplaneIdAssignment_1()); }
-	(rule__Airplane__AirplaneIdAssignment_1)
-	{ after(grammarAccess.getAirplaneAccess().getAirplaneIdAssignment_1()); }
+	{ before(grammarAccess.getAirplaneAccess().getNameAssignment_1()); }
+	(rule__Airplane__NameAssignment_1)
+	{ after(grammarAccess.getAirplaneAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -719,9 +719,9 @@ rule__Airplane__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAirplaneAccess().getAirplaneTypeAssignment_2()); }
-	(rule__Airplane__AirplaneTypeAssignment_2)
-	{ after(grammarAccess.getAirplaneAccess().getAirplaneTypeAssignment_2()); }
+	{ before(grammarAccess.getAirplaneAccess().getTypeAssignment_2()); }
+	(rule__Airplane__TypeAssignment_2)
+	{ after(grammarAccess.getAirplaneAccess().getTypeAssignment_2()); }
 )
 ;
 finally {
@@ -800,9 +800,9 @@ rule__Flight__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getFlightIdAssignment_1()); }
-	(rule__Flight__FlightIdAssignment_1)
-	{ after(grammarAccess.getFlightAccess().getFlightIdAssignment_1()); }
+	{ before(grammarAccess.getFlightAccess().getNameAssignment_1()); }
+	(rule__Flight__NameAssignment_1)
+	{ after(grammarAccess.getFlightAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -827,9 +827,9 @@ rule__Flight__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getNameAssignment_2()); }
-	(rule__Flight__NameAssignment_2)
-	{ after(grammarAccess.getFlightAccess().getNameAssignment_2()); }
+	{ before(grammarAccess.getFlightAccess().getFnameAssignment_2()); }
+	(rule__Flight__FnameAssignment_2)
+	{ after(grammarAccess.getFlightAccess().getFnameAssignment_2()); }
 )
 ;
 finally {
@@ -1529,9 +1529,9 @@ rule__Pilot__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPilotAccess().getEmpIdAssignment_1()); }
-	(rule__Pilot__EmpIdAssignment_1)
-	{ after(grammarAccess.getPilotAccess().getEmpIdAssignment_1()); }
+	{ before(grammarAccess.getPilotAccess().getNameAssignment_1()); }
+	(rule__Pilot__NameAssignment_1)
+	{ after(grammarAccess.getPilotAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -1556,9 +1556,9 @@ rule__Pilot__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPilotAccess().getNameAssignment_2()); }
-	(rule__Pilot__NameAssignment_2)
-	{ after(grammarAccess.getPilotAccess().getNameAssignment_2()); }
+	{ before(grammarAccess.getPilotAccess().getPinameAssignment_2()); }
+	(rule__Pilot__PinameAssignment_2)
+	{ after(grammarAccess.getPilotAccess().getPinameAssignment_2()); }
 )
 ;
 finally {
@@ -1664,9 +1664,9 @@ rule__FlightAttendant__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getFlightAttendantAccess().getEmpIdAssignment_1()); }
-	(rule__FlightAttendant__EmpIdAssignment_1)
-	{ after(grammarAccess.getFlightAttendantAccess().getEmpIdAssignment_1()); }
+	{ before(grammarAccess.getFlightAttendantAccess().getNameAssignment_1()); }
+	(rule__FlightAttendant__NameAssignment_1)
+	{ after(grammarAccess.getFlightAttendantAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -1691,9 +1691,9 @@ rule__FlightAttendant__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getFlightAttendantAccess().getNameAssignment_2()); }
-	(rule__FlightAttendant__NameAssignment_2)
-	{ after(grammarAccess.getFlightAttendantAccess().getNameAssignment_2()); }
+	{ before(grammarAccess.getFlightAttendantAccess().getFanameAssignment_2()); }
+	(rule__FlightAttendant__FanameAssignment_2)
+	{ after(grammarAccess.getFlightAttendantAccess().getFanameAssignment_2()); }
 )
 ;
 finally {
@@ -1799,9 +1799,9 @@ rule__BagHandler__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBagHandlerAccess().getEmpIdAssignment_1()); }
-	(rule__BagHandler__EmpIdAssignment_1)
-	{ after(grammarAccess.getBagHandlerAccess().getEmpIdAssignment_1()); }
+	{ before(grammarAccess.getBagHandlerAccess().getNameAssignment_1()); }
+	(rule__BagHandler__NameAssignment_1)
+	{ after(grammarAccess.getBagHandlerAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -1826,9 +1826,9 @@ rule__BagHandler__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBagHandlerAccess().getNameAssignment_2()); }
-	(rule__BagHandler__NameAssignment_2)
-	{ after(grammarAccess.getBagHandlerAccess().getNameAssignment_2()); }
+	{ before(grammarAccess.getBagHandlerAccess().getBhnameAssignment_2()); }
+	(rule__BagHandler__BhnameAssignment_2)
+	{ after(grammarAccess.getBagHandlerAccess().getBhnameAssignment_2()); }
 )
 ;
 finally {
@@ -1934,9 +1934,9 @@ rule__GatePersonnel__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGatePersonnelAccess().getEmpIdAssignment_1()); }
-	(rule__GatePersonnel__EmpIdAssignment_1)
-	{ after(grammarAccess.getGatePersonnelAccess().getEmpIdAssignment_1()); }
+	{ before(grammarAccess.getGatePersonnelAccess().getNameAssignment_1()); }
+	(rule__GatePersonnel__NameAssignment_1)
+	{ after(grammarAccess.getGatePersonnelAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -1961,9 +1961,9 @@ rule__GatePersonnel__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getGatePersonnelAccess().getNameAssignment_2()); }
-	(rule__GatePersonnel__NameAssignment_2)
-	{ after(grammarAccess.getGatePersonnelAccess().getNameAssignment_2()); }
+	{ before(grammarAccess.getGatePersonnelAccess().getGpnameAssignment_2()); }
+	(rule__GatePersonnel__GpnameAssignment_2)
+	{ after(grammarAccess.getGatePersonnelAccess().getGpnameAssignment_2()); }
 )
 ;
 finally {
@@ -2069,9 +2069,9 @@ rule__Passenger__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPassengerAccess().getEmailAssignment_1()); }
-	(rule__Passenger__EmailAssignment_1)
-	{ after(grammarAccess.getPassengerAccess().getEmailAssignment_1()); }
+	{ before(grammarAccess.getPassengerAccess().getNameAssignment_1()); }
+	(rule__Passenger__NameAssignment_1)
+	{ after(grammarAccess.getPassengerAccess().getNameAssignment_1()); }
 )
 ;
 finally {
@@ -2096,9 +2096,9 @@ rule__Passenger__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPassengerAccess().getNameAssignment_2()); }
-	(rule__Passenger__NameAssignment_2)
-	{ after(grammarAccess.getPassengerAccess().getNameAssignment_2()); }
+	{ before(grammarAccess.getPassengerAccess().getPanameAssignment_2()); }
+	(rule__Passenger__PanameAssignment_2)
+	{ after(grammarAccess.getPassengerAccess().getPanameAssignment_2()); }
 )
 ;
 finally {
@@ -2255,30 +2255,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Airport__CodeAssignment_1
+rule__Airport__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAirportAccess().getCodeIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getAirportAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getAirportAccess().getCodeIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getAirportAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Airport__NameAssignment_2
+rule__Airport__AnameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAirportAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getAirportAccess().getAnameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getAirportAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getAirportAccess().getAnameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -2330,30 +2330,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Airplane__AirplaneIdAssignment_1
+rule__Airplane__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAirplaneAccess().getAirplaneIdIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getAirplaneAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getAirplaneAccess().getAirplaneIdIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getAirplaneAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Airplane__AirplaneTypeAssignment_2
+rule__Airplane__TypeAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAirplaneAccess().getAirplaneTypeSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getAirplaneAccess().getTypeSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getAirplaneAccess().getAirplaneTypeSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getAirplaneAccess().getTypeSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -2375,30 +2375,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__FlightIdAssignment_1
+rule__Flight__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getFlightIdIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getFlightAccess().getFlightIdIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__NameAssignment_2
+rule__Flight__FnameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getFlightAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -2598,30 +2598,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Pilot__EmpIdAssignment_1
+rule__Pilot__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPilotAccess().getEmpIdIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getPilotAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getPilotAccess().getEmpIdIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getPilotAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Pilot__NameAssignment_2
+rule__Pilot__PinameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPilotAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getPilotAccess().getPinameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getPilotAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getPilotAccess().getPinameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -2647,30 +2647,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FlightAttendant__EmpIdAssignment_1
+rule__FlightAttendant__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAttendantAccess().getEmpIdIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getFlightAttendantAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getFlightAttendantAccess().getEmpIdIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getFlightAttendantAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FlightAttendant__NameAssignment_2
+rule__FlightAttendant__FanameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAttendantAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getFlightAttendantAccess().getFanameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getFlightAttendantAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getFlightAttendantAccess().getFanameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -2696,30 +2696,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__BagHandler__EmpIdAssignment_1
+rule__BagHandler__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getBagHandlerAccess().getEmpIdIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getBagHandlerAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getBagHandlerAccess().getEmpIdIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getBagHandlerAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__BagHandler__NameAssignment_2
+rule__BagHandler__BhnameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getBagHandlerAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getBagHandlerAccess().getBhnameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getBagHandlerAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getBagHandlerAccess().getBhnameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -2745,30 +2745,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GatePersonnel__EmpIdAssignment_1
+rule__GatePersonnel__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGatePersonnelAccess().getEmpIdIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getGatePersonnelAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getGatePersonnelAccess().getEmpIdIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getGatePersonnelAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__GatePersonnel__NameAssignment_2
+rule__GatePersonnel__GpnameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getGatePersonnelAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getGatePersonnelAccess().getGpnameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getGatePersonnelAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getGatePersonnelAccess().getGpnameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -2794,30 +2794,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Passenger__EmailAssignment_1
+rule__Passenger__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPassengerAccess().getEmailIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getPassengerAccess().getEmailIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_1_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Passenger__NameAssignment_2
+rule__Passenger__PanameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getPassengerAccess().getPanameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getPassengerAccess().getPanameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

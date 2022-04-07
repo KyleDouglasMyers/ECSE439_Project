@@ -11,7 +11,7 @@ Entity:
 	
 Airport :
 	//Example: Airport YUL 'Pierre Trudeau'
-	'Airport' code=ID name=STRING location=STRING 
+	'Airport' name=ID aname=STRING location=STRING 
 ;
 
 Airline:
@@ -20,11 +20,11 @@ Airline:
 ;
 
 Airplane:
-	'Airplane' airplaneId=ID airplaneType=STRING seats=INT
+	'Airplane' name=ID type=STRING seats=INT
 ;
 
 Flight:
-	'Flight' flightId=ID name=STRING 
+	'Flight' name=ID fname=STRING 
 	//Get two existing airports (from and to)
 	//Get an existing airline
 	//Add a time and a date
@@ -53,22 +53,22 @@ Employee:
 ;
 
 Pilot:
-	'Pilot' empId=ID name=STRING 'with' airline=[Airline]
+	'Pilot' name=ID piname=STRING 'with' airline=[Airline]
 ;
 
 FlightAttendant:
-	'FlightAttendant' empId=ID name=STRING 'with' airline=[Airline]
+	'FlightAttendant' name=ID faname=STRING 'with' airline=[Airline]
 ;
 
 BagHandler:
-	'BagHandler' empId=ID name=STRING 'with' airport=[Airport]
+	'BagHandler' name=ID bhname=STRING 'with' airport=[Airport]
 ;
 
 GatePersonnel:
-	'GatePersonnel' empId=ID name=STRING 'with' airport=[Airport]
+	'GatePersonnel' name=ID gpname=STRING 'with' airport=[Airport]
 ;
 
 Passenger:
-	'Passenger' email=ID name=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
+	'Passenger' name=STRING paname=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
 ;
 

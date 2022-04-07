@@ -22,6 +22,7 @@ import org.xtext.airlineregistration.air.BagHandler;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.BagHandlerImpl#getBhname <em>Bhname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.BagHandlerImpl#getAirport <em>Airport</em>}</li>
  * </ul>
  *
@@ -29,6 +30,26 @@ import org.xtext.airlineregistration.air.BagHandler;
  */
 public class BagHandlerImpl extends EmployeeImpl implements BagHandler
 {
+  /**
+   * The default value of the '{@link #getBhname() <em>Bhname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBhname()
+   * @generated
+   * @ordered
+   */
+  protected static final String BHNAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getBhname() <em>Bhname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBhname()
+   * @generated
+   * @ordered
+   */
+  protected String bhname = BHNAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getAirport() <em>Airport</em>}' reference.
    * <!-- begin-user-doc -->
@@ -58,6 +79,31 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
   protected EClass eStaticClass()
   {
     return AirPackage.Literals.BAG_HANDLER;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getBhname()
+  {
+    return bhname;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setBhname(String newBhname)
+  {
+    String oldBhname = bhname;
+    bhname = newBhname;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.BAG_HANDLER__BHNAME, oldBhname, bhname));
   }
 
   /**
@@ -115,6 +161,8 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
   {
     switch (featureID)
     {
+      case AirPackage.BAG_HANDLER__BHNAME:
+        return getBhname();
       case AirPackage.BAG_HANDLER__AIRPORT:
         if (resolve) return getAirport();
         return basicGetAirport();
@@ -132,6 +180,9 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
   {
     switch (featureID)
     {
+      case AirPackage.BAG_HANDLER__BHNAME:
+        setBhname((String)newValue);
+        return;
       case AirPackage.BAG_HANDLER__AIRPORT:
         setAirport((Airport)newValue);
         return;
@@ -149,6 +200,9 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
   {
     switch (featureID)
     {
+      case AirPackage.BAG_HANDLER__BHNAME:
+        setBhname(BHNAME_EDEFAULT);
+        return;
       case AirPackage.BAG_HANDLER__AIRPORT:
         setAirport((Airport)null);
         return;
@@ -166,10 +220,29 @@ public class BagHandlerImpl extends EmployeeImpl implements BagHandler
   {
     switch (featureID)
     {
+      case AirPackage.BAG_HANDLER__BHNAME:
+        return BHNAME_EDEFAULT == null ? bhname != null : !BHNAME_EDEFAULT.equals(bhname);
       case AirPackage.BAG_HANDLER__AIRPORT:
         return airport != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (bhname: ");
+    result.append(bhname);
+    result.append(')');
+    return result.toString();
   }
 
 } //BagHandlerImpl

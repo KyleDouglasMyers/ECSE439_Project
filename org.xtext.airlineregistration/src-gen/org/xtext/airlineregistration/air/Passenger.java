@@ -14,8 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Passenger#getEmail <em>Email</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.Passenger#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Passenger#getPaname <em>Paname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Passenger#getFlight <em>Flight</em>}</li>
  * </ul>
  *
@@ -26,48 +25,26 @@ import org.eclipse.emf.common.util.EList;
 public interface Passenger extends Entity
 {
   /**
-   * Returns the value of the '<em><b>Email</b></em>' attribute.
+   * Returns the value of the '<em><b>Paname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Email</em>' attribute.
-   * @see #setEmail(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getPassenger_Email()
+   * @return the value of the '<em>Paname</em>' attribute.
+   * @see #setPaname(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getPassenger_Paname()
    * @model
    * @generated
    */
-  String getEmail();
+  String getPaname();
 
   /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Passenger#getEmail <em>Email</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Passenger#getPaname <em>Paname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Email</em>' attribute.
-   * @see #getEmail()
+   * @param value the new value of the '<em>Paname</em>' attribute.
+   * @see #getPaname()
    * @generated
    */
-  void setEmail(String value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getPassenger_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Passenger#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  void setPaname(String value);
 
   /**
    * Returns the value of the '<em><b>Flight</b></em>' reference list.

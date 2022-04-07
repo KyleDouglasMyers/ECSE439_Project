@@ -13,8 +13,7 @@ package org.xtext.airlineregistration.air;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Airport#getCode <em>Code</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.Airport#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Airport#getAname <em>Aname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.Airport#getLocation <em>Location</em>}</li>
  * </ul>
  *
@@ -25,48 +24,26 @@ package org.xtext.airlineregistration.air;
 public interface Airport extends Entity
 {
   /**
-   * Returns the value of the '<em><b>Code</b></em>' attribute.
+   * Returns the value of the '<em><b>Aname</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Code</em>' attribute.
-   * @see #setCode(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getAirport_Code()
+   * @return the value of the '<em>Aname</em>' attribute.
+   * @see #setAname(String)
+   * @see org.xtext.airlineregistration.air.AirPackage#getAirport_Aname()
    * @model
    * @generated
    */
-  String getCode();
+  String getAname();
 
   /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Airport#getCode <em>Code</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.airlineregistration.air.Airport#getAname <em>Aname</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Code</em>' attribute.
-   * @see #getCode()
+   * @param value the new value of the '<em>Aname</em>' attribute.
+   * @see #getAname()
    * @generated
    */
-  void setCode(String value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.airlineregistration.air.AirPackage#getAirport_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.airlineregistration.air.Airport#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  void setAname(String value);
 
   /**
    * Returns the value of the '<em><b>Location</b></em>' attribute.

@@ -22,6 +22,7 @@ import org.xtext.airlineregistration.air.FlightAttendant;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.FlightAttendantImpl#getFaname <em>Faname</em>}</li>
  *   <li>{@link org.xtext.airlineregistration.air.impl.FlightAttendantImpl#getAirline <em>Airline</em>}</li>
  * </ul>
  *
@@ -29,6 +30,26 @@ import org.xtext.airlineregistration.air.FlightAttendant;
  */
 public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
 {
+  /**
+   * The default value of the '{@link #getFaname() <em>Faname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFaname()
+   * @generated
+   * @ordered
+   */
+  protected static final String FANAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFaname() <em>Faname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFaname()
+   * @generated
+   * @ordered
+   */
+  protected String faname = FANAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getAirline() <em>Airline</em>}' reference.
    * <!-- begin-user-doc -->
@@ -58,6 +79,31 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   protected EClass eStaticClass()
   {
     return AirPackage.Literals.FLIGHT_ATTENDANT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getFaname()
+  {
+    return faname;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFaname(String newFaname)
+  {
+    String oldFaname = faname;
+    faname = newFaname;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT_ATTENDANT__FANAME, oldFaname, faname));
   }
 
   /**
@@ -115,6 +161,8 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   {
     switch (featureID)
     {
+      case AirPackage.FLIGHT_ATTENDANT__FANAME:
+        return getFaname();
       case AirPackage.FLIGHT_ATTENDANT__AIRLINE:
         if (resolve) return getAirline();
         return basicGetAirline();
@@ -132,6 +180,9 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   {
     switch (featureID)
     {
+      case AirPackage.FLIGHT_ATTENDANT__FANAME:
+        setFaname((String)newValue);
+        return;
       case AirPackage.FLIGHT_ATTENDANT__AIRLINE:
         setAirline((Airline)newValue);
         return;
@@ -149,6 +200,9 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   {
     switch (featureID)
     {
+      case AirPackage.FLIGHT_ATTENDANT__FANAME:
+        setFaname(FANAME_EDEFAULT);
+        return;
       case AirPackage.FLIGHT_ATTENDANT__AIRLINE:
         setAirline((Airline)null);
         return;
@@ -166,10 +220,29 @@ public class FlightAttendantImpl extends EmployeeImpl implements FlightAttendant
   {
     switch (featureID)
     {
+      case AirPackage.FLIGHT_ATTENDANT__FANAME:
+        return FANAME_EDEFAULT == null ? faname != null : !FANAME_EDEFAULT.equals(faname);
       case AirPackage.FLIGHT_ATTENDANT__AIRLINE:
         return airline != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (faname: ");
+    result.append(faname);
+    result.append(')');
+    return result.toString();
   }
 
 } //FlightAttendantImpl
