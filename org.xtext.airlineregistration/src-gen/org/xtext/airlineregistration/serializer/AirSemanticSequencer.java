@@ -19,13 +19,14 @@ import org.xtext.airlineregistration.air.Airline;
 import org.xtext.airlineregistration.air.Airplane;
 import org.xtext.airlineregistration.air.Airport;
 import org.xtext.airlineregistration.air.BagHandler;
-import org.xtext.airlineregistration.air.Flight;
 import org.xtext.airlineregistration.air.FlightAttendant;
 import org.xtext.airlineregistration.air.GatePersonnel;
 import org.xtext.airlineregistration.air.Model;
 import org.xtext.airlineregistration.air.Passenger;
 import org.xtext.airlineregistration.air.Pilot;
 import org.xtext.airlineregistration.air.Schedule;
+import org.xtext.airlineregistration.air.ScheduledFlight;
+import org.xtext.airlineregistration.air.SpecificFlight;
 import org.xtext.airlineregistration.services.AirGrammarAccess;
 
 @SuppressWarnings("all")
@@ -54,9 +55,6 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case AirPackage.BAG_HANDLER:
 				sequence_BagHandler(context, (BagHandler) semanticObject); 
 				return; 
-			case AirPackage.FLIGHT:
-				sequence_Flight(context, (Flight) semanticObject); 
-				return; 
 			case AirPackage.FLIGHT_ATTENDANT:
 				sequence_FlightAttendant(context, (FlightAttendant) semanticObject); 
 				return; 
@@ -74,6 +72,12 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case AirPackage.SCHEDULE:
 				sequence_Schedule(context, (Schedule) semanticObject); 
+				return; 
+			case AirPackage.SCHEDULED_FLIGHT:
+				sequence_ScheduledFlight(context, (ScheduledFlight) semanticObject); 
+				return; 
+			case AirPackage.SPECIFIC_FLIGHT:
+				sequence_SpecificFlight(context, (SpecificFlight) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -217,32 +221,6 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Entity returns Flight
-	 *     Flight returns Flight
-	 *
-	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         fname=STRING 
-	 *         from=[Airport|ID] 
-	 *         to=[Airport|ID] 
-	 *         airline=[Airline|ID] 
-	 *         time=STRING 
-	 *         pilot=[Pilot|ID] 
-	 *         plane=[Airplane|ID] 
-	 *         staff+=[FlightAttendant|ID] 
-	 *         staff+=[FlightAttendant|ID]*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_Flight(ISerializationContext context, Flight semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     Entity returns GatePersonnel
 	 *     Employee returns GatePersonnel
 	 *     GatePersonnel returns GatePersonnel
@@ -289,7 +267,7 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Passenger returns Passenger
 	 *
 	 * Constraint:
-	 *     (name=STRING paname=STRING flight+=[Flight|ID] flight+=[Flight|ID]*)
+	 *     (name=STRING paname=STRING specificFlight+=[SpecificFlight|ID] specificFlight+=[SpecificFlight|ID]*)
 	 * </pre>
 	 */
 	protected void sequence_Passenger(ISerializationContext context, Passenger semanticObject) {
@@ -332,10 +310,67 @@ public class AirSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Schedule returns Schedule
 	 *
 	 * Constraint:
-	 *     (name=ID flights+=Flight flights+=Flight*)
+	 *     (name=ID specificFlights+=[SpecificFlight|ID] specificFlights+=[SpecificFlight|ID]*)
 	 * </pre>
 	 */
 	protected void sequence_Schedule(ISerializationContext context, Schedule semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Entity returns ScheduledFlight
+	 *     ScheduledFlight returns ScheduledFlight
+	 *
+	 * Constraint:
+	 *     (name=ID from=[Airport|ID] to=[Airport|ID] airline=[Airline|ID] time=STRING)
+	 * </pre>
+	 */
+	protected void sequence_ScheduledFlight(ISerializationContext context, ScheduledFlight semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.ENTITY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.ENTITY__NAME));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.SCHEDULED_FLIGHT__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.SCHEDULED_FLIGHT__FROM));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.SCHEDULED_FLIGHT__TO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.SCHEDULED_FLIGHT__TO));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.SCHEDULED_FLIGHT__AIRLINE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.SCHEDULED_FLIGHT__AIRLINE));
+			if (transientValues.isValueTransient(semanticObject, AirPackage.Literals.SCHEDULED_FLIGHT__TIME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AirPackage.Literals.SCHEDULED_FLIGHT__TIME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getScheduledFlightAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getScheduledFlightAccess().getFromAirportIDTerminalRuleCall_3_0_1(), semanticObject.eGet(AirPackage.Literals.SCHEDULED_FLIGHT__FROM, false));
+		feeder.accept(grammarAccess.getScheduledFlightAccess().getToAirportIDTerminalRuleCall_5_0_1(), semanticObject.eGet(AirPackage.Literals.SCHEDULED_FLIGHT__TO, false));
+		feeder.accept(grammarAccess.getScheduledFlightAccess().getAirlineAirlineIDTerminalRuleCall_7_0_1(), semanticObject.eGet(AirPackage.Literals.SCHEDULED_FLIGHT__AIRLINE, false));
+		feeder.accept(grammarAccess.getScheduledFlightAccess().getTimeSTRINGTerminalRuleCall_9_0(), semanticObject.getTime());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Entity returns SpecificFlight
+	 *     SpecificFlight returns SpecificFlight
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         fname=STRING 
+	 *         scheduledFlight=[ScheduledFlight|ID] 
+	 *         date=STRING 
+	 *         pilot=[Pilot|ID] 
+	 *         plane=[Airplane|ID] 
+	 *         staff+=[FlightAttendant|ID] 
+	 *         staff+=[FlightAttendant|ID]*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_SpecificFlight(ISerializationContext context, SpecificFlight semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

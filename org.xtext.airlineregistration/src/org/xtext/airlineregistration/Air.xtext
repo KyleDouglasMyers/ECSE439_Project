@@ -6,7 +6,7 @@ Model :
 	entities+=Entity*;
 	
 Entity:
-	Airport | Airline | Flight | Schedule | Employee | Airplane | Passenger
+	Airport | Airline | ScheduledFlight | SpecificFlight | Schedule | Employee | Airplane | Passenger
 ;
 	
 Airport :
@@ -23,26 +23,28 @@ Airplane:
 	'Airplane' name=ID type=STRING seats=INT
 ;
 
-Flight:
+ScheduledFlight:
+	'ScheduledFlight' name=ID
+	'from' from=[Airport]
+	'to' to=[Airport]
+	'with' airline=[Airline]
+	'at' time=STRING
+;
+
+SpecificFlight:
 	'Flight' name=ID fname=STRING 
 	//Get two existing airports (from and to)
 	//Get an existing airline
 	//Add a time and a date
-	
-	//TODO: quick issue with this, can go from and to same airport probably....
-	
-		'from' from=[Airport]
-		'to' to=[Airport]
-		'with' airline=[Airline]
-		'at' time=STRING
-		'pilot' pilot=[Pilot]
-		'airplane' plane=[Airplane]
-		'staff' (staff+=[FlightAttendant]) (',' (staff+=[FlightAttendant]))*  //this might not work, need more than 1
-	
+	'scheduledFlight' scheduledFlight=[ScheduledFlight]
+	'on' date=STRING
+	'pilot' pilot=[Pilot]
+	'airplane' plane=[Airplane]
+	'staff' (staff+=[FlightAttendant]) (',' (staff+=[FlightAttendant]))*  //this might not work, need more than 1
 ;
 
 Schedule:
-	name=ID 'with' 'flights' (flights+=Flight) (',' (flights+=Flight))*
+	name=ID 'with' 'flights' (specificFlights+=[SpecificFlight]) (',' (specificFlights+=[SpecificFlight]))*
 	//Get a bunch of flights, and add flights to schedule
 ;
 
@@ -69,6 +71,6 @@ GatePersonnel:
 ;
 
 Passenger:
-	'Passenger' name=STRING paname=STRING 'with' (flight+=[Flight]) (',' (flight+=[Flight]))*
+	'Passenger' name=STRING paname=STRING 'with' (specificFlight+=[SpecificFlight]) (',' (specificFlight+=[SpecificFlight]))*
 ;
 

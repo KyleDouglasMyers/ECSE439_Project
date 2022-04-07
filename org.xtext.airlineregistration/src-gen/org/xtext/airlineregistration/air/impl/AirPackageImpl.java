@@ -18,13 +18,14 @@ import org.xtext.airlineregistration.air.Airport;
 import org.xtext.airlineregistration.air.BagHandler;
 import org.xtext.airlineregistration.air.Employee;
 import org.xtext.airlineregistration.air.Entity;
-import org.xtext.airlineregistration.air.Flight;
 import org.xtext.airlineregistration.air.FlightAttendant;
 import org.xtext.airlineregistration.air.GatePersonnel;
 import org.xtext.airlineregistration.air.Model;
 import org.xtext.airlineregistration.air.Passenger;
 import org.xtext.airlineregistration.air.Pilot;
 import org.xtext.airlineregistration.air.Schedule;
+import org.xtext.airlineregistration.air.ScheduledFlight;
+import org.xtext.airlineregistration.air.SpecificFlight;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +75,14 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass flightEClass = null;
+  private EClass scheduledFlightEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass specificFlightEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -326,9 +334,9 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EClass getFlight()
+  public EClass getScheduledFlight()
   {
-    return flightEClass;
+    return scheduledFlightEClass;
   }
 
   /**
@@ -337,9 +345,9 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EAttribute getFlight_Fname()
+  public EReference getScheduledFlight_From()
   {
-    return (EAttribute)flightEClass.getEStructuralFeatures().get(0);
+    return (EReference)scheduledFlightEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -348,9 +356,9 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EReference getFlight_From()
+  public EReference getScheduledFlight_To()
   {
-    return (EReference)flightEClass.getEStructuralFeatures().get(1);
+    return (EReference)scheduledFlightEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -359,9 +367,9 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EReference getFlight_To()
+  public EReference getScheduledFlight_Airline()
   {
-    return (EReference)flightEClass.getEStructuralFeatures().get(2);
+    return (EReference)scheduledFlightEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -370,9 +378,9 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EReference getFlight_Airline()
+  public EAttribute getScheduledFlight_Time()
   {
-    return (EReference)flightEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)scheduledFlightEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -381,9 +389,9 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EAttribute getFlight_Time()
+  public EClass getSpecificFlight()
   {
-    return (EAttribute)flightEClass.getEStructuralFeatures().get(4);
+    return specificFlightEClass;
   }
 
   /**
@@ -392,9 +400,9 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EReference getFlight_Pilot()
+  public EAttribute getSpecificFlight_Fname()
   {
-    return (EReference)flightEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)specificFlightEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -403,9 +411,9 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EReference getFlight_Plane()
+  public EReference getSpecificFlight_ScheduledFlight()
   {
-    return (EReference)flightEClass.getEStructuralFeatures().get(6);
+    return (EReference)specificFlightEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -414,9 +422,42 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EReference getFlight_Staff()
+  public EAttribute getSpecificFlight_Date()
   {
-    return (EReference)flightEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)specificFlightEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSpecificFlight_Pilot()
+  {
+    return (EReference)specificFlightEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSpecificFlight_Plane()
+  {
+    return (EReference)specificFlightEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSpecificFlight_Staff()
+  {
+    return (EReference)specificFlightEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -436,7 +477,7 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EReference getSchedule_Flights()
+  public EReference getSchedule_SpecificFlights()
   {
     return (EReference)scheduleEClass.getEStructuralFeatures().get(0);
   }
@@ -612,7 +653,7 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
    * @generated
    */
   @Override
-  public EReference getPassenger_Flight()
+  public EReference getPassenger_SpecificFlight()
   {
     return (EReference)passengerEClass.getEStructuralFeatures().get(1);
   }
@@ -665,18 +706,22 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
     createEAttribute(airplaneEClass, AIRPLANE__TYPE);
     createEAttribute(airplaneEClass, AIRPLANE__SEATS);
 
-    flightEClass = createEClass(FLIGHT);
-    createEAttribute(flightEClass, FLIGHT__FNAME);
-    createEReference(flightEClass, FLIGHT__FROM);
-    createEReference(flightEClass, FLIGHT__TO);
-    createEReference(flightEClass, FLIGHT__AIRLINE);
-    createEAttribute(flightEClass, FLIGHT__TIME);
-    createEReference(flightEClass, FLIGHT__PILOT);
-    createEReference(flightEClass, FLIGHT__PLANE);
-    createEReference(flightEClass, FLIGHT__STAFF);
+    scheduledFlightEClass = createEClass(SCHEDULED_FLIGHT);
+    createEReference(scheduledFlightEClass, SCHEDULED_FLIGHT__FROM);
+    createEReference(scheduledFlightEClass, SCHEDULED_FLIGHT__TO);
+    createEReference(scheduledFlightEClass, SCHEDULED_FLIGHT__AIRLINE);
+    createEAttribute(scheduledFlightEClass, SCHEDULED_FLIGHT__TIME);
+
+    specificFlightEClass = createEClass(SPECIFIC_FLIGHT);
+    createEAttribute(specificFlightEClass, SPECIFIC_FLIGHT__FNAME);
+    createEReference(specificFlightEClass, SPECIFIC_FLIGHT__SCHEDULED_FLIGHT);
+    createEAttribute(specificFlightEClass, SPECIFIC_FLIGHT__DATE);
+    createEReference(specificFlightEClass, SPECIFIC_FLIGHT__PILOT);
+    createEReference(specificFlightEClass, SPECIFIC_FLIGHT__PLANE);
+    createEReference(specificFlightEClass, SPECIFIC_FLIGHT__STAFF);
 
     scheduleEClass = createEClass(SCHEDULE);
-    createEReference(scheduleEClass, SCHEDULE__FLIGHTS);
+    createEReference(scheduleEClass, SCHEDULE__SPECIFIC_FLIGHTS);
 
     employeeEClass = createEClass(EMPLOYEE);
 
@@ -698,7 +743,7 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
 
     passengerEClass = createEClass(PASSENGER);
     createEAttribute(passengerEClass, PASSENGER__PANAME);
-    createEReference(passengerEClass, PASSENGER__FLIGHT);
+    createEReference(passengerEClass, PASSENGER__SPECIFIC_FLIGHT);
   }
 
   /**
@@ -733,7 +778,8 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
     airportEClass.getESuperTypes().add(this.getEntity());
     airlineEClass.getESuperTypes().add(this.getEntity());
     airplaneEClass.getESuperTypes().add(this.getEntity());
-    flightEClass.getESuperTypes().add(this.getEntity());
+    scheduledFlightEClass.getESuperTypes().add(this.getEntity());
+    specificFlightEClass.getESuperTypes().add(this.getEntity());
     scheduleEClass.getESuperTypes().add(this.getEntity());
     employeeEClass.getESuperTypes().add(this.getEntity());
     pilotEClass.getESuperTypes().add(this.getEmployee());
@@ -760,18 +806,22 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
     initEAttribute(getAirplane_Type(), ecorePackage.getEString(), "type", null, 0, 1, Airplane.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAirplane_Seats(), ecorePackage.getEInt(), "seats", null, 0, 1, Airplane.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(flightEClass, Flight.class, "Flight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFlight_Fname(), ecorePackage.getEString(), "fname", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlight_From(), this.getAirport(), null, "from", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlight_To(), this.getAirport(), null, "to", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlight_Airline(), this.getAirline(), null, "airline", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFlight_Time(), ecorePackage.getEString(), "time", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlight_Pilot(), this.getPilot(), null, "pilot", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlight_Plane(), this.getAirplane(), null, "plane", null, 0, 1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlight_Staff(), this.getFlightAttendant(), null, "staff", null, 0, -1, Flight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(scheduledFlightEClass, ScheduledFlight.class, "ScheduledFlight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getScheduledFlight_From(), this.getAirport(), null, "from", null, 0, 1, ScheduledFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScheduledFlight_To(), this.getAirport(), null, "to", null, 0, 1, ScheduledFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScheduledFlight_Airline(), this.getAirline(), null, "airline", null, 0, 1, ScheduledFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getScheduledFlight_Time(), ecorePackage.getEString(), "time", null, 0, 1, ScheduledFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(specificFlightEClass, SpecificFlight.class, "SpecificFlight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpecificFlight_Fname(), ecorePackage.getEString(), "fname", null, 0, 1, SpecificFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSpecificFlight_ScheduledFlight(), this.getScheduledFlight(), null, "scheduledFlight", null, 0, 1, SpecificFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpecificFlight_Date(), ecorePackage.getEString(), "date", null, 0, 1, SpecificFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSpecificFlight_Pilot(), this.getPilot(), null, "pilot", null, 0, 1, SpecificFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSpecificFlight_Plane(), this.getAirplane(), null, "plane", null, 0, 1, SpecificFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSpecificFlight_Staff(), this.getFlightAttendant(), null, "staff", null, 0, -1, SpecificFlight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scheduleEClass, Schedule.class, "Schedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSchedule_Flights(), this.getFlight(), null, "flights", null, 0, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSchedule_SpecificFlights(), this.getSpecificFlight(), null, "specificFlights", null, 0, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -793,7 +843,7 @@ public class AirPackageImpl extends EPackageImpl implements AirPackage
 
     initEClass(passengerEClass, Passenger.class, "Passenger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPassenger_Paname(), ecorePackage.getEString(), "paname", null, 0, 1, Passenger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPassenger_Flight(), this.getFlight(), null, "flight", null, 0, -1, Passenger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPassenger_SpecificFlight(), this.getSpecificFlight(), null, "specificFlight", null, 0, -1, Passenger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

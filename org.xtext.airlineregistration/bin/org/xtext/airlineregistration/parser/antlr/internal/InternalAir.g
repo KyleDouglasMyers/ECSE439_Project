@@ -131,47 +131,56 @@ ruleEntity returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEntityAccess().getFlightParserRuleCall_2());
+			newCompositeNode(grammarAccess.getEntityAccess().getScheduledFlightParserRuleCall_2());
 		}
-		this_Flight_2=ruleFlight
+		this_ScheduledFlight_2=ruleScheduledFlight
 		{
-			$current = $this_Flight_2.current;
+			$current = $this_ScheduledFlight_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEntityAccess().getScheduleParserRuleCall_3());
+			newCompositeNode(grammarAccess.getEntityAccess().getSpecificFlightParserRuleCall_3());
 		}
-		this_Schedule_3=ruleSchedule
+		this_SpecificFlight_3=ruleSpecificFlight
 		{
-			$current = $this_Schedule_3.current;
+			$current = $this_SpecificFlight_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_4());
+			newCompositeNode(grammarAccess.getEntityAccess().getScheduleParserRuleCall_4());
 		}
-		this_Employee_4=ruleEmployee
+		this_Schedule_4=ruleSchedule
 		{
-			$current = $this_Employee_4.current;
+			$current = $this_Schedule_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_5());
+			newCompositeNode(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_5());
 		}
-		this_Airplane_5=ruleAirplane
+		this_Employee_5=ruleEmployee
 		{
-			$current = $this_Airplane_5.current;
+			$current = $this_Employee_5.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEntityAccess().getPassengerParserRuleCall_6());
+			newCompositeNode(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_6());
 		}
-		this_Passenger_6=rulePassenger
+		this_Airplane_6=ruleAirplane
 		{
-			$current = $this_Passenger_6.current;
+			$current = $this_Airplane_6.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEntityAccess().getPassengerParserRuleCall_7());
+		}
+		this_Passenger_7=rulePassenger
+		{
+			$current = $this_Passenger_7.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -390,15 +399,129 @@ ruleAirplane returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleFlight
-entryRuleFlight returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getFlightRule()); }
-	iv_ruleFlight=ruleFlight
-	{ $current=$iv_ruleFlight.current; }
+// Entry rule entryRuleScheduledFlight
+entryRuleScheduledFlight returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getScheduledFlightRule()); }
+	iv_ruleScheduledFlight=ruleScheduledFlight
+	{ $current=$iv_ruleScheduledFlight.current; }
 	EOF;
 
-// Rule Flight
-ruleFlight returns [EObject current=null]
+// Rule ScheduledFlight
+ruleScheduledFlight returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ScheduledFlight'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getScheduledFlightAccess().getScheduledFlightKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getScheduledFlightAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getScheduledFlightRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='from'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getScheduledFlightAccess().getFromKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getScheduledFlightRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getScheduledFlightAccess().getFromAirportCrossReference_3_0());
+				}
+			)
+		)
+		otherlv_4='to'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getScheduledFlightAccess().getToKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getScheduledFlightRule());
+					}
+				}
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getScheduledFlightAccess().getToAirportCrossReference_5_0());
+				}
+			)
+		)
+		otherlv_6='with'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getScheduledFlightAccess().getWithKeyword_6());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getScheduledFlightRule());
+					}
+				}
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getScheduledFlightAccess().getAirlineAirlineCrossReference_7_0());
+				}
+			)
+		)
+		otherlv_8='at'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getScheduledFlightAccess().getAtKeyword_8());
+		}
+		(
+			(
+				lv_time_9_0=RULE_STRING
+				{
+					newLeafNode(lv_time_9_0, grammarAccess.getScheduledFlightAccess().getTimeSTRINGTerminalRuleCall_9_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getScheduledFlightRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"time",
+						lv_time_9_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSpecificFlight
+entryRuleSpecificFlight returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSpecificFlightRule()); }
+	iv_ruleSpecificFlight=ruleSpecificFlight
+	{ $current=$iv_ruleSpecificFlight.current; }
+	EOF;
+
+// Rule SpecificFlight
+ruleSpecificFlight returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -408,17 +531,17 @@ ruleFlight returns [EObject current=null]
 	(
 		otherlv_0='Flight'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFlightAccess().getFlightKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getSpecificFlightAccess().getFlightKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getSpecificFlightAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
+						$current = createModelElement(grammarAccess.getSpecificFlightRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -432,11 +555,11 @@ ruleFlight returns [EObject current=null]
 			(
 				lv_fname_2_0=RULE_STRING
 				{
-					newLeafNode(lv_fname_2_0, grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_fname_2_0, grammarAccess.getSpecificFlightAccess().getFnameSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
+						$current = createModelElement(grammarAccess.getSpecificFlightRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -446,145 +569,111 @@ ruleFlight returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='from'
+		otherlv_3='scheduledFlight'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getFlightAccess().getFromKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getSpecificFlightAccess().getScheduledFlightKeyword_3());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
+						$current = createModelElement(grammarAccess.getSpecificFlightRule());
 					}
 				}
 				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_4, grammarAccess.getFlightAccess().getFromAirportCrossReference_4_0());
+					newLeafNode(otherlv_4, grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightCrossReference_4_0());
 				}
 			)
 		)
-		otherlv_5='to'
+		otherlv_5='on'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getFlightAccess().getToKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getSpecificFlightAccess().getOnKeyword_5());
 		}
 		(
 			(
+				lv_date_6_0=RULE_STRING
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
-					}
-				}
-				otherlv_6=RULE_ID
-				{
-					newLeafNode(otherlv_6, grammarAccess.getFlightAccess().getToAirportCrossReference_6_0());
-				}
-			)
-		)
-		otherlv_7='with'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getFlightAccess().getWithKeyword_7());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
-					}
-				}
-				otherlv_8=RULE_ID
-				{
-					newLeafNode(otherlv_8, grammarAccess.getFlightAccess().getAirlineAirlineCrossReference_8_0());
-				}
-			)
-		)
-		otherlv_9='at'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getFlightAccess().getAtKeyword_9());
-		}
-		(
-			(
-				lv_time_10_0=RULE_STRING
-				{
-					newLeafNode(lv_time_10_0, grammarAccess.getFlightAccess().getTimeSTRINGTerminalRuleCall_10_0());
+					newLeafNode(lv_date_6_0, grammarAccess.getSpecificFlightAccess().getDateSTRINGTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
+						$current = createModelElement(grammarAccess.getSpecificFlightRule());
 					}
 					setWithLastConsumed(
 						$current,
-						"time",
-						lv_time_10_0,
+						"date",
+						lv_date_6_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_11='pilot'
+		otherlv_7='pilot'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getFlightAccess().getPilotKeyword_11());
+			newLeafNode(otherlv_7, grammarAccess.getSpecificFlightAccess().getPilotKeyword_7());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
+						$current = createModelElement(grammarAccess.getSpecificFlightRule());
+					}
+				}
+				otherlv_8=RULE_ID
+				{
+					newLeafNode(otherlv_8, grammarAccess.getSpecificFlightAccess().getPilotPilotCrossReference_8_0());
+				}
+			)
+		)
+		otherlv_9='airplane'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getSpecificFlightAccess().getAirplaneKeyword_9());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpecificFlightRule());
+					}
+				}
+				otherlv_10=RULE_ID
+				{
+					newLeafNode(otherlv_10, grammarAccess.getSpecificFlightAccess().getPlaneAirplaneCrossReference_10_0());
+				}
+			)
+		)
+		otherlv_11='staff'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getSpecificFlightAccess().getStaffKeyword_11());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSpecificFlightRule());
 					}
 				}
 				otherlv_12=RULE_ID
 				{
-					newLeafNode(otherlv_12, grammarAccess.getFlightAccess().getPilotPilotCrossReference_12_0());
-				}
-			)
-		)
-		otherlv_13='airplane'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getFlightAccess().getAirplaneKeyword_13());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
-					}
-				}
-				otherlv_14=RULE_ID
-				{
-					newLeafNode(otherlv_14, grammarAccess.getFlightAccess().getPlaneAirplaneCrossReference_14_0());
-				}
-			)
-		)
-		otherlv_15='staff'
-		{
-			newLeafNode(otherlv_15, grammarAccess.getFlightAccess().getStaffKeyword_15());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFlightRule());
-					}
-				}
-				otherlv_16=RULE_ID
-				{
-					newLeafNode(otherlv_16, grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_16_0());
+					newLeafNode(otherlv_12, grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_12_0());
 				}
 			)
 		)
 		(
-			otherlv_17=','
+			otherlv_13=','
 			{
-				newLeafNode(otherlv_17, grammarAccess.getFlightAccess().getCommaKeyword_17_0());
+				newLeafNode(otherlv_13, grammarAccess.getSpecificFlightAccess().getCommaKeyword_13_0());
 			}
 			(
 				(
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getFlightRule());
+							$current = createModelElement(grammarAccess.getSpecificFlightRule());
 						}
 					}
-					otherlv_18=RULE_ID
+					otherlv_14=RULE_ID
 					{
-						newLeafNode(otherlv_18, grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_17_1_0());
+						newLeafNode(otherlv_14, grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_13_1_0());
 					}
 				)
 			)
@@ -637,19 +726,13 @@ ruleSchedule returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_3_0());
-				}
-				lv_flights_3_0=ruleFlight
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getScheduleRule());
+						$current = createModelElement(grammarAccess.getScheduleRule());
 					}
-					add(
-						$current,
-						"flights",
-						lv_flights_3_0,
-						"org.xtext.airlineregistration.Air.Flight");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_3_0());
 				}
 			)
 		)
@@ -661,19 +744,13 @@ ruleSchedule returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_4_1_0());
-					}
-					lv_flights_5_0=ruleFlight
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getScheduleRule());
+							$current = createModelElement(grammarAccess.getScheduleRule());
 						}
-						add(
-							$current,
-							"flights",
-							lv_flights_5_0,
-							"org.xtext.airlineregistration.Air.Flight");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_5=RULE_ID
+					{
+						newLeafNode(otherlv_5, grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_4_1_0());
 					}
 				)
 			)
@@ -1108,7 +1185,7 @@ rulePassenger returns [EObject current=null]
 				}
 				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_4, grammarAccess.getPassengerAccess().getFlightFlightCrossReference_4_0());
+					newLeafNode(otherlv_4, grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_4_0());
 				}
 			)
 		)
@@ -1126,7 +1203,7 @@ rulePassenger returns [EObject current=null]
 					}
 					otherlv_6=RULE_ID
 					{
-						newLeafNode(otherlv_6, grammarAccess.getPassengerAccess().getFlightFlightCrossReference_5_1_0());
+						newLeafNode(otherlv_6, grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_5_1_0());
 					}
 				)
 			)

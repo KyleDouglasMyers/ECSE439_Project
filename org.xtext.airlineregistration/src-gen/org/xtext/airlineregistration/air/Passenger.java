@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.airlineregistration.air.Passenger#getPaname <em>Paname</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.Passenger#getFlight <em>Flight</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Passenger#getSpecificFlight <em>Specific Flight</em>}</li>
  * </ul>
  *
  * @see org.xtext.airlineregistration.air.AirPackage#getPassenger()
@@ -47,15 +47,15 @@ public interface Passenger extends Entity
   void setPaname(String value);
 
   /**
-   * Returns the value of the '<em><b>Flight</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.airlineregistration.air.Flight}.
+   * Returns the value of the '<em><b>Specific Flight</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.airlineregistration.air.SpecificFlight}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Flight</em>' reference list.
-   * @see org.xtext.airlineregistration.air.AirPackage#getPassenger_Flight()
+   * @return the value of the '<em>Specific Flight</em>' reference list.
+   * @see org.xtext.airlineregistration.air.AirPackage#getPassenger_SpecificFlight()
    * @model
    * @generated
    */
-  EList<Flight> getFlight();
+  EList<SpecificFlight> getSpecificFlight();
 
 } // Passenger

@@ -70,7 +70,8 @@ public class AirFactoryImpl extends EFactoryImpl implements AirFactory
       case AirPackage.AIRPORT: return createAirport();
       case AirPackage.AIRLINE: return createAirline();
       case AirPackage.AIRPLANE: return createAirplane();
-      case AirPackage.FLIGHT: return createFlight();
+      case AirPackage.SCHEDULED_FLIGHT: return createScheduledFlight();
+      case AirPackage.SPECIFIC_FLIGHT: return createSpecificFlight();
       case AirPackage.SCHEDULE: return createSchedule();
       case AirPackage.EMPLOYEE: return createEmployee();
       case AirPackage.PILOT: return createPilot();
@@ -149,10 +150,22 @@ public class AirFactoryImpl extends EFactoryImpl implements AirFactory
    * @generated
    */
   @Override
-  public Flight createFlight()
+  public ScheduledFlight createScheduledFlight()
   {
-    FlightImpl flight = new FlightImpl();
-    return flight;
+    ScheduledFlightImpl scheduledFlight = new ScheduledFlightImpl();
+    return scheduledFlight;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SpecificFlight createSpecificFlight()
+  {
+    SpecificFlightImpl specificFlight = new SpecificFlightImpl();
+    return specificFlight;
   }
 
   /**

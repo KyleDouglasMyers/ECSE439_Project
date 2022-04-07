@@ -69,13 +69,22 @@ public interface AirFactory extends EFactory
   Airplane createAirplane();
 
   /**
-   * Returns a new object of class '<em>Flight</em>'.
+   * Returns a new object of class '<em>Scheduled Flight</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Flight</em>'.
+   * @return a new object of class '<em>Scheduled Flight</em>'.
    * @generated
    */
-  Flight createFlight();
+  ScheduledFlight createScheduledFlight();
+
+  /**
+   * Returns a new object of class '<em>Specific Flight</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Specific Flight</em>'.
+   * @generated
+   */
+  SpecificFlight createSpecificFlight();
 
   /**
    * Returns a new object of class '<em>Schedule</em>'.

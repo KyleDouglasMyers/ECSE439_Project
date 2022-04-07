@@ -174,25 +174,50 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleFlight
-entryRuleFlight
+// Entry rule entryRuleScheduledFlight
+entryRuleScheduledFlight
 :
-{ before(grammarAccess.getFlightRule()); }
-	 ruleFlight
-{ after(grammarAccess.getFlightRule()); } 
+{ before(grammarAccess.getScheduledFlightRule()); }
+	 ruleScheduledFlight
+{ after(grammarAccess.getScheduledFlightRule()); } 
 	 EOF 
 ;
 
-// Rule Flight
-ruleFlight 
+// Rule ScheduledFlight
+ruleScheduledFlight 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getFlightAccess().getGroup()); }
-		(rule__Flight__Group__0)
-		{ after(grammarAccess.getFlightAccess().getGroup()); }
+		{ before(grammarAccess.getScheduledFlightAccess().getGroup()); }
+		(rule__ScheduledFlight__Group__0)
+		{ after(grammarAccess.getScheduledFlightAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleSpecificFlight
+entryRuleSpecificFlight
+:
+{ before(grammarAccess.getSpecificFlightRule()); }
+	 ruleSpecificFlight
+{ after(grammarAccess.getSpecificFlightRule()); } 
+	 EOF 
+;
+
+// Rule SpecificFlight
+ruleSpecificFlight 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getSpecificFlightAccess().getGroup()); }
+		(rule__SpecificFlight__Group__0)
+		{ after(grammarAccess.getSpecificFlightAccess().getGroup()); }
 	)
 ;
 finally {
@@ -392,33 +417,39 @@ rule__Entity__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getEntityAccess().getFlightParserRuleCall_2()); }
-		ruleFlight
-		{ after(grammarAccess.getEntityAccess().getFlightParserRuleCall_2()); }
+		{ before(grammarAccess.getEntityAccess().getScheduledFlightParserRuleCall_2()); }
+		ruleScheduledFlight
+		{ after(grammarAccess.getEntityAccess().getScheduledFlightParserRuleCall_2()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getEntityAccess().getScheduleParserRuleCall_3()); }
+		{ before(grammarAccess.getEntityAccess().getSpecificFlightParserRuleCall_3()); }
+		ruleSpecificFlight
+		{ after(grammarAccess.getEntityAccess().getSpecificFlightParserRuleCall_3()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getEntityAccess().getScheduleParserRuleCall_4()); }
 		ruleSchedule
-		{ after(grammarAccess.getEntityAccess().getScheduleParserRuleCall_3()); }
+		{ after(grammarAccess.getEntityAccess().getScheduleParserRuleCall_4()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_4()); }
+		{ before(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_5()); }
 		ruleEmployee
-		{ after(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_4()); }
+		{ after(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_5()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_5()); }
+		{ before(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_6()); }
 		ruleAirplane
-		{ after(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_5()); }
+		{ after(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_6()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getEntityAccess().getPassengerParserRuleCall_6()); }
+		{ before(grammarAccess.getEntityAccess().getPassengerParserRuleCall_7()); }
 		rulePassenger
-		{ after(grammarAccess.getEntityAccess().getPassengerParserRuleCall_6()); }
+		{ after(grammarAccess.getEntityAccess().getPassengerParserRuleCall_7()); }
 	)
 ;
 finally {
@@ -755,485 +786,647 @@ finally {
 }
 
 
-rule__Flight__Group__0
+rule__ScheduledFlight__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__0__Impl
-	rule__Flight__Group__1
+	rule__ScheduledFlight__Group__0__Impl
+	rule__ScheduledFlight__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__0__Impl
+rule__ScheduledFlight__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getFlightKeyword_0()); }
-	'Flight'
-	{ after(grammarAccess.getFlightAccess().getFlightKeyword_0()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getScheduledFlightKeyword_0()); }
+	'ScheduledFlight'
+	{ after(grammarAccess.getScheduledFlightAccess().getScheduledFlightKeyword_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__1
+rule__ScheduledFlight__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__1__Impl
-	rule__Flight__Group__2
+	rule__ScheduledFlight__Group__1__Impl
+	rule__ScheduledFlight__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__1__Impl
+rule__ScheduledFlight__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getNameAssignment_1()); }
-	(rule__Flight__NameAssignment_1)
-	{ after(grammarAccess.getFlightAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getNameAssignment_1()); }
+	(rule__ScheduledFlight__NameAssignment_1)
+	{ after(grammarAccess.getScheduledFlightAccess().getNameAssignment_1()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__2
+rule__ScheduledFlight__Group__2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__2__Impl
-	rule__Flight__Group__3
+	rule__ScheduledFlight__Group__2__Impl
+	rule__ScheduledFlight__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__2__Impl
+rule__ScheduledFlight__Group__2__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getFnameAssignment_2()); }
-	(rule__Flight__FnameAssignment_2)
-	{ after(grammarAccess.getFlightAccess().getFnameAssignment_2()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Flight__Group__3
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Flight__Group__3__Impl
-	rule__Flight__Group__4
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Flight__Group__3__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getFlightAccess().getFromKeyword_3()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getFromKeyword_2()); }
 	'from'
-	{ after(grammarAccess.getFlightAccess().getFromKeyword_3()); }
+	{ after(grammarAccess.getScheduledFlightAccess().getFromKeyword_2()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__4
+rule__ScheduledFlight__Group__3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__4__Impl
-	rule__Flight__Group__5
+	rule__ScheduledFlight__Group__3__Impl
+	rule__ScheduledFlight__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__4__Impl
+rule__ScheduledFlight__Group__3__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getFromAssignment_4()); }
-	(rule__Flight__FromAssignment_4)
-	{ after(grammarAccess.getFlightAccess().getFromAssignment_4()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getFromAssignment_3()); }
+	(rule__ScheduledFlight__FromAssignment_3)
+	{ after(grammarAccess.getScheduledFlightAccess().getFromAssignment_3()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__5
+rule__ScheduledFlight__Group__4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__5__Impl
-	rule__Flight__Group__6
+	rule__ScheduledFlight__Group__4__Impl
+	rule__ScheduledFlight__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__5__Impl
+rule__ScheduledFlight__Group__4__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getToKeyword_5()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getToKeyword_4()); }
 	'to'
-	{ after(grammarAccess.getFlightAccess().getToKeyword_5()); }
+	{ after(grammarAccess.getScheduledFlightAccess().getToKeyword_4()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__6
+rule__ScheduledFlight__Group__5
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__6__Impl
-	rule__Flight__Group__7
+	rule__ScheduledFlight__Group__5__Impl
+	rule__ScheduledFlight__Group__6
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__6__Impl
+rule__ScheduledFlight__Group__5__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getToAssignment_6()); }
-	(rule__Flight__ToAssignment_6)
-	{ after(grammarAccess.getFlightAccess().getToAssignment_6()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getToAssignment_5()); }
+	(rule__ScheduledFlight__ToAssignment_5)
+	{ after(grammarAccess.getScheduledFlightAccess().getToAssignment_5()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__7
+rule__ScheduledFlight__Group__6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__7__Impl
-	rule__Flight__Group__8
+	rule__ScheduledFlight__Group__6__Impl
+	rule__ScheduledFlight__Group__7
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__7__Impl
+rule__ScheduledFlight__Group__6__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getWithKeyword_7()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getWithKeyword_6()); }
 	'with'
-	{ after(grammarAccess.getFlightAccess().getWithKeyword_7()); }
+	{ after(grammarAccess.getScheduledFlightAccess().getWithKeyword_6()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__8
+rule__ScheduledFlight__Group__7
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__8__Impl
-	rule__Flight__Group__9
+	rule__ScheduledFlight__Group__7__Impl
+	rule__ScheduledFlight__Group__8
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__8__Impl
+rule__ScheduledFlight__Group__7__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getAirlineAssignment_8()); }
-	(rule__Flight__AirlineAssignment_8)
-	{ after(grammarAccess.getFlightAccess().getAirlineAssignment_8()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getAirlineAssignment_7()); }
+	(rule__ScheduledFlight__AirlineAssignment_7)
+	{ after(grammarAccess.getScheduledFlightAccess().getAirlineAssignment_7()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__9
+rule__ScheduledFlight__Group__8
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__9__Impl
-	rule__Flight__Group__10
+	rule__ScheduledFlight__Group__8__Impl
+	rule__ScheduledFlight__Group__9
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__9__Impl
+rule__ScheduledFlight__Group__8__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getAtKeyword_9()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getAtKeyword_8()); }
 	'at'
-	{ after(grammarAccess.getFlightAccess().getAtKeyword_9()); }
+	{ after(grammarAccess.getScheduledFlightAccess().getAtKeyword_8()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__10
+rule__ScheduledFlight__Group__9
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__10__Impl
-	rule__Flight__Group__11
+	rule__ScheduledFlight__Group__9__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__10__Impl
+rule__ScheduledFlight__Group__9__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getTimeAssignment_10()); }
-	(rule__Flight__TimeAssignment_10)
-	{ after(grammarAccess.getFlightAccess().getTimeAssignment_10()); }
+	{ before(grammarAccess.getScheduledFlightAccess().getTimeAssignment_9()); }
+	(rule__ScheduledFlight__TimeAssignment_9)
+	{ after(grammarAccess.getScheduledFlightAccess().getTimeAssignment_9()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__11
+
+rule__SpecificFlight__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__11__Impl
-	rule__Flight__Group__12
+	rule__SpecificFlight__Group__0__Impl
+	rule__SpecificFlight__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__11__Impl
+rule__SpecificFlight__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getPilotKeyword_11()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getFlightKeyword_0()); }
+	'Flight'
+	{ after(grammarAccess.getSpecificFlightAccess().getFlightKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SpecificFlight__Group__1__Impl
+	rule__SpecificFlight__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSpecificFlightAccess().getNameAssignment_1()); }
+	(rule__SpecificFlight__NameAssignment_1)
+	{ after(grammarAccess.getSpecificFlightAccess().getNameAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SpecificFlight__Group__2__Impl
+	rule__SpecificFlight__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSpecificFlightAccess().getFnameAssignment_2()); }
+	(rule__SpecificFlight__FnameAssignment_2)
+	{ after(grammarAccess.getSpecificFlightAccess().getFnameAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SpecificFlight__Group__3__Impl
+	rule__SpecificFlight__Group__4
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSpecificFlightAccess().getScheduledFlightKeyword_3()); }
+	'scheduledFlight'
+	{ after(grammarAccess.getSpecificFlightAccess().getScheduledFlightKeyword_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SpecificFlight__Group__4__Impl
+	rule__SpecificFlight__Group__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSpecificFlightAccess().getScheduledFlightAssignment_4()); }
+	(rule__SpecificFlight__ScheduledFlightAssignment_4)
+	{ after(grammarAccess.getSpecificFlightAccess().getScheduledFlightAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SpecificFlight__Group__5__Impl
+	rule__SpecificFlight__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSpecificFlightAccess().getOnKeyword_5()); }
+	'on'
+	{ after(grammarAccess.getSpecificFlightAccess().getOnKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SpecificFlight__Group__6__Impl
+	rule__SpecificFlight__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSpecificFlightAccess().getDateAssignment_6()); }
+	(rule__SpecificFlight__DateAssignment_6)
+	{ after(grammarAccess.getSpecificFlightAccess().getDateAssignment_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__SpecificFlight__Group__7__Impl
+	rule__SpecificFlight__Group__8
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__Group__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getSpecificFlightAccess().getPilotKeyword_7()); }
 	'pilot'
-	{ after(grammarAccess.getFlightAccess().getPilotKeyword_11()); }
+	{ after(grammarAccess.getSpecificFlightAccess().getPilotKeyword_7()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__12
+rule__SpecificFlight__Group__8
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__12__Impl
-	rule__Flight__Group__13
+	rule__SpecificFlight__Group__8__Impl
+	rule__SpecificFlight__Group__9
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__12__Impl
+rule__SpecificFlight__Group__8__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getPilotAssignment_12()); }
-	(rule__Flight__PilotAssignment_12)
-	{ after(grammarAccess.getFlightAccess().getPilotAssignment_12()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getPilotAssignment_8()); }
+	(rule__SpecificFlight__PilotAssignment_8)
+	{ after(grammarAccess.getSpecificFlightAccess().getPilotAssignment_8()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__13
+rule__SpecificFlight__Group__9
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__13__Impl
-	rule__Flight__Group__14
+	rule__SpecificFlight__Group__9__Impl
+	rule__SpecificFlight__Group__10
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__13__Impl
+rule__SpecificFlight__Group__9__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getAirplaneKeyword_13()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getAirplaneKeyword_9()); }
 	'airplane'
-	{ after(grammarAccess.getFlightAccess().getAirplaneKeyword_13()); }
+	{ after(grammarAccess.getSpecificFlightAccess().getAirplaneKeyword_9()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__14
+rule__SpecificFlight__Group__10
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__14__Impl
-	rule__Flight__Group__15
+	rule__SpecificFlight__Group__10__Impl
+	rule__SpecificFlight__Group__11
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__14__Impl
+rule__SpecificFlight__Group__10__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getPlaneAssignment_14()); }
-	(rule__Flight__PlaneAssignment_14)
-	{ after(grammarAccess.getFlightAccess().getPlaneAssignment_14()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getPlaneAssignment_10()); }
+	(rule__SpecificFlight__PlaneAssignment_10)
+	{ after(grammarAccess.getSpecificFlightAccess().getPlaneAssignment_10()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__15
+rule__SpecificFlight__Group__11
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__15__Impl
-	rule__Flight__Group__16
+	rule__SpecificFlight__Group__11__Impl
+	rule__SpecificFlight__Group__12
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__15__Impl
+rule__SpecificFlight__Group__11__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getStaffKeyword_15()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getStaffKeyword_11()); }
 	'staff'
-	{ after(grammarAccess.getFlightAccess().getStaffKeyword_15()); }
+	{ after(grammarAccess.getSpecificFlightAccess().getStaffKeyword_11()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__16
+rule__SpecificFlight__Group__12
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__16__Impl
-	rule__Flight__Group__17
+	rule__SpecificFlight__Group__12__Impl
+	rule__SpecificFlight__Group__13
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__16__Impl
+rule__SpecificFlight__Group__12__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getStaffAssignment_16()); }
-	(rule__Flight__StaffAssignment_16)
-	{ after(grammarAccess.getFlightAccess().getStaffAssignment_16()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getStaffAssignment_12()); }
+	(rule__SpecificFlight__StaffAssignment_12)
+	{ after(grammarAccess.getSpecificFlightAccess().getStaffAssignment_12()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__17
+rule__SpecificFlight__Group__13
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group__17__Impl
+	rule__SpecificFlight__Group__13__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group__17__Impl
+rule__SpecificFlight__Group__13__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getGroup_17()); }
-	(rule__Flight__Group_17__0)*
-	{ after(grammarAccess.getFlightAccess().getGroup_17()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getGroup_13()); }
+	(rule__SpecificFlight__Group_13__0)*
+	{ after(grammarAccess.getSpecificFlightAccess().getGroup_13()); }
 )
 ;
 finally {
@@ -1241,53 +1434,53 @@ finally {
 }
 
 
-rule__Flight__Group_17__0
+rule__SpecificFlight__Group_13__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group_17__0__Impl
-	rule__Flight__Group_17__1
+	rule__SpecificFlight__Group_13__0__Impl
+	rule__SpecificFlight__Group_13__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group_17__0__Impl
+rule__SpecificFlight__Group_13__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getCommaKeyword_17_0()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getCommaKeyword_13_0()); }
 	','
-	{ after(grammarAccess.getFlightAccess().getCommaKeyword_17_0()); }
+	{ after(grammarAccess.getSpecificFlightAccess().getCommaKeyword_13_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group_17__1
+rule__SpecificFlight__Group_13__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Flight__Group_17__1__Impl
+	rule__SpecificFlight__Group_13__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__Group_17__1__Impl
+rule__SpecificFlight__Group_13__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFlightAccess().getStaffAssignment_17_1()); }
-	(rule__Flight__StaffAssignment_17_1)
-	{ after(grammarAccess.getFlightAccess().getStaffAssignment_17_1()); }
+	{ before(grammarAccess.getSpecificFlightAccess().getStaffAssignment_13_1()); }
+	(rule__SpecificFlight__StaffAssignment_13_1)
+	{ after(grammarAccess.getSpecificFlightAccess().getStaffAssignment_13_1()); }
 )
 ;
 finally {
@@ -1394,9 +1587,9 @@ rule__Schedule__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getScheduleAccess().getFlightsAssignment_3()); }
-	(rule__Schedule__FlightsAssignment_3)
-	{ after(grammarAccess.getScheduleAccess().getFlightsAssignment_3()); }
+	{ before(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_3()); }
+	(rule__Schedule__SpecificFlightsAssignment_3)
+	{ after(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_3()); }
 )
 ;
 finally {
@@ -1474,9 +1667,9 @@ rule__Schedule__Group_4__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getScheduleAccess().getFlightsAssignment_4_1()); }
-	(rule__Schedule__FlightsAssignment_4_1)
-	{ after(grammarAccess.getScheduleAccess().getFlightsAssignment_4_1()); }
+	{ before(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_4_1()); }
+	(rule__Schedule__SpecificFlightsAssignment_4_1)
+	{ after(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_4_1()); }
 )
 ;
 finally {
@@ -2150,9 +2343,9 @@ rule__Passenger__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPassengerAccess().getFlightAssignment_4()); }
-	(rule__Passenger__FlightAssignment_4)
-	{ after(grammarAccess.getPassengerAccess().getFlightAssignment_4()); }
+	{ before(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_4()); }
+	(rule__Passenger__SpecificFlightAssignment_4)
+	{ after(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_4()); }
 )
 ;
 finally {
@@ -2230,9 +2423,9 @@ rule__Passenger__Group_5__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getPassengerAccess().getFlightAssignment_5_1()); }
-	(rule__Passenger__FlightAssignment_5_1)
-	{ after(grammarAccess.getPassengerAccess().getFlightAssignment_5_1()); }
+	{ before(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_5_1()); }
+	(rule__Passenger__SpecificFlightAssignment_5_1)
+	{ after(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_5_1()); }
 )
 ;
 finally {
@@ -2375,178 +2568,227 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__NameAssignment_1
+rule__ScheduledFlight__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getScheduledFlightAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getScheduledFlightAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__FnameAssignment_2
+rule__ScheduledFlight__FromAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getScheduledFlightAccess().getFromAirportCrossReference_3_0()); }
+		(
+			{ before(grammarAccess.getScheduledFlightAccess().getFromAirportIDTerminalRuleCall_3_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getScheduledFlightAccess().getFromAirportIDTerminalRuleCall_3_0_1()); }
+		)
+		{ after(grammarAccess.getScheduledFlightAccess().getFromAirportCrossReference_3_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ScheduledFlight__ToAssignment_5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getScheduledFlightAccess().getToAirportCrossReference_5_0()); }
+		(
+			{ before(grammarAccess.getScheduledFlightAccess().getToAirportIDTerminalRuleCall_5_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getScheduledFlightAccess().getToAirportIDTerminalRuleCall_5_0_1()); }
+		)
+		{ after(grammarAccess.getScheduledFlightAccess().getToAirportCrossReference_5_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ScheduledFlight__AirlineAssignment_7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getScheduledFlightAccess().getAirlineAirlineCrossReference_7_0()); }
+		(
+			{ before(grammarAccess.getScheduledFlightAccess().getAirlineAirlineIDTerminalRuleCall_7_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getScheduledFlightAccess().getAirlineAirlineIDTerminalRuleCall_7_0_1()); }
+		)
+		{ after(grammarAccess.getScheduledFlightAccess().getAirlineAirlineCrossReference_7_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ScheduledFlight__TimeAssignment_9
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getScheduledFlightAccess().getTimeSTRINGTerminalRuleCall_9_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); }
+		{ after(grammarAccess.getScheduledFlightAccess().getTimeSTRINGTerminalRuleCall_9_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__FromAssignment_4
+rule__SpecificFlight__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getFromAirportCrossReference_4_0()); }
-		(
-			{ before(grammarAccess.getFlightAccess().getFromAirportIDTerminalRuleCall_4_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getFlightAccess().getFromAirportIDTerminalRuleCall_4_0_1()); }
-		)
-		{ after(grammarAccess.getFlightAccess().getFromAirportCrossReference_4_0()); }
+		{ before(grammarAccess.getSpecificFlightAccess().getNameIDTerminalRuleCall_1_0()); }
+		RULE_ID
+		{ after(grammarAccess.getSpecificFlightAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__ToAssignment_6
+rule__SpecificFlight__FnameAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getToAirportCrossReference_6_0()); }
-		(
-			{ before(grammarAccess.getFlightAccess().getToAirportIDTerminalRuleCall_6_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getFlightAccess().getToAirportIDTerminalRuleCall_6_0_1()); }
-		)
-		{ after(grammarAccess.getFlightAccess().getToAirportCrossReference_6_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Flight__AirlineAssignment_8
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getFlightAccess().getAirlineAirlineCrossReference_8_0()); }
-		(
-			{ before(grammarAccess.getFlightAccess().getAirlineAirlineIDTerminalRuleCall_8_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getFlightAccess().getAirlineAirlineIDTerminalRuleCall_8_0_1()); }
-		)
-		{ after(grammarAccess.getFlightAccess().getAirlineAirlineCrossReference_8_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Flight__TimeAssignment_10
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getFlightAccess().getTimeSTRINGTerminalRuleCall_10_0()); }
+		{ before(grammarAccess.getSpecificFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getFlightAccess().getTimeSTRINGTerminalRuleCall_10_0()); }
+		{ after(grammarAccess.getSpecificFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__PilotAssignment_12
+rule__SpecificFlight__ScheduledFlightAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getPilotPilotCrossReference_12_0()); }
+		{ before(grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightCrossReference_4_0()); }
 		(
-			{ before(grammarAccess.getFlightAccess().getPilotPilotIDTerminalRuleCall_12_0_1()); }
+			{ before(grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightIDTerminalRuleCall_4_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getFlightAccess().getPilotPilotIDTerminalRuleCall_12_0_1()); }
+			{ after(grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightIDTerminalRuleCall_4_0_1()); }
 		)
-		{ after(grammarAccess.getFlightAccess().getPilotPilotCrossReference_12_0()); }
+		{ after(grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightCrossReference_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__PlaneAssignment_14
+rule__SpecificFlight__DateAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getPlaneAirplaneCrossReference_14_0()); }
-		(
-			{ before(grammarAccess.getFlightAccess().getPlaneAirplaneIDTerminalRuleCall_14_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getFlightAccess().getPlaneAirplaneIDTerminalRuleCall_14_0_1()); }
-		)
-		{ after(grammarAccess.getFlightAccess().getPlaneAirplaneCrossReference_14_0()); }
+		{ before(grammarAccess.getSpecificFlightAccess().getDateSTRINGTerminalRuleCall_6_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getSpecificFlightAccess().getDateSTRINGTerminalRuleCall_6_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__StaffAssignment_16
+rule__SpecificFlight__PilotAssignment_8
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_16_0()); }
+		{ before(grammarAccess.getSpecificFlightAccess().getPilotPilotCrossReference_8_0()); }
 		(
-			{ before(grammarAccess.getFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_16_0_1()); }
+			{ before(grammarAccess.getSpecificFlightAccess().getPilotPilotIDTerminalRuleCall_8_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_16_0_1()); }
+			{ after(grammarAccess.getSpecificFlightAccess().getPilotPilotIDTerminalRuleCall_8_0_1()); }
 		)
-		{ after(grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_16_0()); }
+		{ after(grammarAccess.getSpecificFlightAccess().getPilotPilotCrossReference_8_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Flight__StaffAssignment_17_1
+rule__SpecificFlight__PlaneAssignment_10
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_17_1_0()); }
+		{ before(grammarAccess.getSpecificFlightAccess().getPlaneAirplaneCrossReference_10_0()); }
 		(
-			{ before(grammarAccess.getFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_17_1_0_1()); }
+			{ before(grammarAccess.getSpecificFlightAccess().getPlaneAirplaneIDTerminalRuleCall_10_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_17_1_0_1()); }
+			{ after(grammarAccess.getSpecificFlightAccess().getPlaneAirplaneIDTerminalRuleCall_10_0_1()); }
 		)
-		{ after(grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_17_1_0()); }
+		{ after(grammarAccess.getSpecificFlightAccess().getPlaneAirplaneCrossReference_10_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__StaffAssignment_12
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_12_0()); }
+		(
+			{ before(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_12_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_12_0_1()); }
+		)
+		{ after(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_12_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__SpecificFlight__StaffAssignment_13_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_13_1_0()); }
+		(
+			{ before(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_13_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_13_1_0_1()); }
+		)
+		{ after(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_13_1_0()); }
 	)
 ;
 finally {
@@ -2568,30 +2810,38 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Schedule__FlightsAssignment_3
+rule__Schedule__SpecificFlightsAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_3_0()); }
-		ruleFlight
-		{ after(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_3_0()); }
+		{ before(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_3_0()); }
+		(
+			{ before(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightIDTerminalRuleCall_3_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightIDTerminalRuleCall_3_0_1()); }
+		)
+		{ after(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_3_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Schedule__FlightsAssignment_4_1
+rule__Schedule__SpecificFlightsAssignment_4_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_4_1_0()); }
-		ruleFlight
-		{ after(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_4_1_0()); }
+		{ before(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_4_1_0()); }
+		(
+			{ before(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightIDTerminalRuleCall_4_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightIDTerminalRuleCall_4_1_0_1()); }
+		)
+		{ after(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_4_1_0()); }
 	)
 ;
 finally {
@@ -2824,38 +3074,38 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Passenger__FlightAssignment_4
+rule__Passenger__SpecificFlightAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPassengerAccess().getFlightFlightCrossReference_4_0()); }
+		{ before(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_4_0()); }
 		(
-			{ before(grammarAccess.getPassengerAccess().getFlightFlightIDTerminalRuleCall_4_0_1()); }
+			{ before(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightIDTerminalRuleCall_4_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getPassengerAccess().getFlightFlightIDTerminalRuleCall_4_0_1()); }
+			{ after(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightIDTerminalRuleCall_4_0_1()); }
 		)
-		{ after(grammarAccess.getPassengerAccess().getFlightFlightCrossReference_4_0()); }
+		{ after(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Passenger__FlightAssignment_5_1
+rule__Passenger__SpecificFlightAssignment_5_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getPassengerAccess().getFlightFlightCrossReference_5_1_0()); }
+		{ before(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_5_1_0()); }
 		(
-			{ before(grammarAccess.getPassengerAccess().getFlightFlightIDTerminalRuleCall_5_1_0_1()); }
+			{ before(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightIDTerminalRuleCall_5_1_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getPassengerAccess().getFlightFlightIDTerminalRuleCall_5_1_0_1()); }
+			{ after(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightIDTerminalRuleCall_5_1_0_1()); }
 		)
-		{ after(grammarAccess.getPassengerAccess().getFlightFlightCrossReference_5_1_0()); }
+		{ after(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_5_1_0()); }
 	)
 ;
 finally {

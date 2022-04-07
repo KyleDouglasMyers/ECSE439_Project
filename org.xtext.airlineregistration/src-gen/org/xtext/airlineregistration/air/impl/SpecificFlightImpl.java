@@ -17,34 +17,31 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.airlineregistration.air.AirPackage;
-import org.xtext.airlineregistration.air.Airline;
 import org.xtext.airlineregistration.air.Airplane;
-import org.xtext.airlineregistration.air.Airport;
-import org.xtext.airlineregistration.air.Flight;
 import org.xtext.airlineregistration.air.FlightAttendant;
 import org.xtext.airlineregistration.air.Pilot;
+import org.xtext.airlineregistration.air.ScheduledFlight;
+import org.xtext.airlineregistration.air.SpecificFlight;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Flight</b></em>'.
+ * An implementation of the model object '<em><b>Specific Flight</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getFname <em>Fname</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getFrom <em>From</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getTo <em>To</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getAirline <em>Airline</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getTime <em>Time</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getPilot <em>Pilot</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getPlane <em>Plane</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.FlightImpl#getStaff <em>Staff</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.SpecificFlightImpl#getFname <em>Fname</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.SpecificFlightImpl#getScheduledFlight <em>Scheduled Flight</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.SpecificFlightImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.SpecificFlightImpl#getPilot <em>Pilot</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.SpecificFlightImpl#getPlane <em>Plane</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.SpecificFlightImpl#getStaff <em>Staff</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FlightImpl extends EntityImpl implements Flight
+public class SpecificFlightImpl extends EntityImpl implements SpecificFlight
 {
   /**
    * The default value of the '{@link #getFname() <em>Fname</em>}' attribute.
@@ -67,54 +64,34 @@ public class FlightImpl extends EntityImpl implements Flight
   protected String fname = FNAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
+   * The cached value of the '{@link #getScheduledFlight() <em>Scheduled Flight</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFrom()
+   * @see #getScheduledFlight()
    * @generated
    * @ordered
    */
-  protected Airport from;
+  protected ScheduledFlight scheduledFlight;
 
   /**
-   * The cached value of the '{@link #getTo() <em>To</em>}' reference.
+   * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTo()
+   * @see #getDate()
    * @generated
    * @ordered
    */
-  protected Airport to;
+  protected static final String DATE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAirline() <em>Airline</em>}' reference.
+   * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAirline()
+   * @see #getDate()
    * @generated
    * @ordered
    */
-  protected Airline airline;
-
-  /**
-   * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTime()
-   * @generated
-   * @ordered
-   */
-  protected static final String TIME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTime() <em>Time</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTime()
-   * @generated
-   * @ordered
-   */
-  protected String time = TIME_EDEFAULT;
+  protected String date = DATE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPilot() <em>Pilot</em>}' reference.
@@ -151,7 +128,7 @@ public class FlightImpl extends EntityImpl implements Flight
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FlightImpl()
+  protected SpecificFlightImpl()
   {
     super();
   }
@@ -164,7 +141,7 @@ public class FlightImpl extends EntityImpl implements Flight
   @Override
   protected EClass eStaticClass()
   {
-    return AirPackage.Literals.FLIGHT;
+    return AirPackage.Literals.SPECIFIC_FLIGHT;
   }
 
   /**
@@ -189,7 +166,7 @@ public class FlightImpl extends EntityImpl implements Flight
     String oldFname = fname;
     fname = newFname;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__FNAME, oldFname, fname));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.SPECIFIC_FLIGHT__FNAME, oldFname, fname));
   }
 
   /**
@@ -198,19 +175,19 @@ public class FlightImpl extends EntityImpl implements Flight
    * @generated
    */
   @Override
-  public Airport getFrom()
+  public ScheduledFlight getScheduledFlight()
   {
-    if (from != null && from.eIsProxy())
+    if (scheduledFlight != null && scheduledFlight.eIsProxy())
     {
-      InternalEObject oldFrom = (InternalEObject)from;
-      from = (Airport)eResolveProxy(oldFrom);
-      if (from != oldFrom)
+      InternalEObject oldScheduledFlight = (InternalEObject)scheduledFlight;
+      scheduledFlight = (ScheduledFlight)eResolveProxy(oldScheduledFlight);
+      if (scheduledFlight != oldScheduledFlight)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.FLIGHT__FROM, oldFrom, from));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.SPECIFIC_FLIGHT__SCHEDULED_FLIGHT, oldScheduledFlight, scheduledFlight));
       }
     }
-    return from;
+    return scheduledFlight;
   }
 
   /**
@@ -218,9 +195,9 @@ public class FlightImpl extends EntityImpl implements Flight
    * <!-- end-user-doc -->
    * @generated
    */
-  public Airport basicGetFrom()
+  public ScheduledFlight basicGetScheduledFlight()
   {
-    return from;
+    return scheduledFlight;
   }
 
   /**
@@ -229,12 +206,12 @@ public class FlightImpl extends EntityImpl implements Flight
    * @generated
    */
   @Override
-  public void setFrom(Airport newFrom)
+  public void setScheduledFlight(ScheduledFlight newScheduledFlight)
   {
-    Airport oldFrom = from;
-    from = newFrom;
+    ScheduledFlight oldScheduledFlight = scheduledFlight;
+    scheduledFlight = newScheduledFlight;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__FROM, oldFrom, from));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.SPECIFIC_FLIGHT__SCHEDULED_FLIGHT, oldScheduledFlight, scheduledFlight));
   }
 
   /**
@@ -243,29 +220,9 @@ public class FlightImpl extends EntityImpl implements Flight
    * @generated
    */
   @Override
-  public Airport getTo()
+  public String getDate()
   {
-    if (to != null && to.eIsProxy())
-    {
-      InternalEObject oldTo = (InternalEObject)to;
-      to = (Airport)eResolveProxy(oldTo);
-      if (to != oldTo)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.FLIGHT__TO, oldTo, to));
-      }
-    }
-    return to;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Airport basicGetTo()
-  {
-    return to;
+    return date;
   }
 
   /**
@@ -274,82 +231,12 @@ public class FlightImpl extends EntityImpl implements Flight
    * @generated
    */
   @Override
-  public void setTo(Airport newTo)
+  public void setDate(String newDate)
   {
-    Airport oldTo = to;
-    to = newTo;
+    String oldDate = date;
+    date = newDate;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__TO, oldTo, to));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Airline getAirline()
-  {
-    if (airline != null && airline.eIsProxy())
-    {
-      InternalEObject oldAirline = (InternalEObject)airline;
-      airline = (Airline)eResolveProxy(oldAirline);
-      if (airline != oldAirline)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.FLIGHT__AIRLINE, oldAirline, airline));
-      }
-    }
-    return airline;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Airline basicGetAirline()
-  {
-    return airline;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setAirline(Airline newAirline)
-  {
-    Airline oldAirline = airline;
-    airline = newAirline;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__AIRLINE, oldAirline, airline));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getTime()
-  {
-    return time;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setTime(String newTime)
-  {
-    String oldTime = time;
-    time = newTime;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__TIME, oldTime, time));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.SPECIFIC_FLIGHT__DATE, oldDate, date));
   }
 
   /**
@@ -367,7 +254,7 @@ public class FlightImpl extends EntityImpl implements Flight
       if (pilot != oldPilot)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.FLIGHT__PILOT, oldPilot, pilot));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.SPECIFIC_FLIGHT__PILOT, oldPilot, pilot));
       }
     }
     return pilot;
@@ -394,7 +281,7 @@ public class FlightImpl extends EntityImpl implements Flight
     Pilot oldPilot = pilot;
     pilot = newPilot;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__PILOT, oldPilot, pilot));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.SPECIFIC_FLIGHT__PILOT, oldPilot, pilot));
   }
 
   /**
@@ -412,7 +299,7 @@ public class FlightImpl extends EntityImpl implements Flight
       if (plane != oldPlane)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.FLIGHT__PLANE, oldPlane, plane));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AirPackage.SPECIFIC_FLIGHT__PLANE, oldPlane, plane));
       }
     }
     return plane;
@@ -439,7 +326,7 @@ public class FlightImpl extends EntityImpl implements Flight
     Airplane oldPlane = plane;
     plane = newPlane;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.FLIGHT__PLANE, oldPlane, plane));
+      eNotify(new ENotificationImpl(this, Notification.SET, AirPackage.SPECIFIC_FLIGHT__PLANE, oldPlane, plane));
   }
 
   /**
@@ -452,7 +339,7 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     if (staff == null)
     {
-      staff = new EObjectResolvingEList<FlightAttendant>(FlightAttendant.class, this, AirPackage.FLIGHT__STAFF);
+      staff = new EObjectResolvingEList<FlightAttendant>(FlightAttendant.class, this, AirPackage.SPECIFIC_FLIGHT__STAFF);
     }
     return staff;
   }
@@ -467,26 +354,20 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT__FNAME:
+      case AirPackage.SPECIFIC_FLIGHT__FNAME:
         return getFname();
-      case AirPackage.FLIGHT__FROM:
-        if (resolve) return getFrom();
-        return basicGetFrom();
-      case AirPackage.FLIGHT__TO:
-        if (resolve) return getTo();
-        return basicGetTo();
-      case AirPackage.FLIGHT__AIRLINE:
-        if (resolve) return getAirline();
-        return basicGetAirline();
-      case AirPackage.FLIGHT__TIME:
-        return getTime();
-      case AirPackage.FLIGHT__PILOT:
+      case AirPackage.SPECIFIC_FLIGHT__SCHEDULED_FLIGHT:
+        if (resolve) return getScheduledFlight();
+        return basicGetScheduledFlight();
+      case AirPackage.SPECIFIC_FLIGHT__DATE:
+        return getDate();
+      case AirPackage.SPECIFIC_FLIGHT__PILOT:
         if (resolve) return getPilot();
         return basicGetPilot();
-      case AirPackage.FLIGHT__PLANE:
+      case AirPackage.SPECIFIC_FLIGHT__PLANE:
         if (resolve) return getPlane();
         return basicGetPlane();
-      case AirPackage.FLIGHT__STAFF:
+      case AirPackage.SPECIFIC_FLIGHT__STAFF:
         return getStaff();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -503,28 +384,22 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT__FNAME:
+      case AirPackage.SPECIFIC_FLIGHT__FNAME:
         setFname((String)newValue);
         return;
-      case AirPackage.FLIGHT__FROM:
-        setFrom((Airport)newValue);
+      case AirPackage.SPECIFIC_FLIGHT__SCHEDULED_FLIGHT:
+        setScheduledFlight((ScheduledFlight)newValue);
         return;
-      case AirPackage.FLIGHT__TO:
-        setTo((Airport)newValue);
+      case AirPackage.SPECIFIC_FLIGHT__DATE:
+        setDate((String)newValue);
         return;
-      case AirPackage.FLIGHT__AIRLINE:
-        setAirline((Airline)newValue);
-        return;
-      case AirPackage.FLIGHT__TIME:
-        setTime((String)newValue);
-        return;
-      case AirPackage.FLIGHT__PILOT:
+      case AirPackage.SPECIFIC_FLIGHT__PILOT:
         setPilot((Pilot)newValue);
         return;
-      case AirPackage.FLIGHT__PLANE:
+      case AirPackage.SPECIFIC_FLIGHT__PLANE:
         setPlane((Airplane)newValue);
         return;
-      case AirPackage.FLIGHT__STAFF:
+      case AirPackage.SPECIFIC_FLIGHT__STAFF:
         getStaff().clear();
         getStaff().addAll((Collection<? extends FlightAttendant>)newValue);
         return;
@@ -542,28 +417,22 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT__FNAME:
+      case AirPackage.SPECIFIC_FLIGHT__FNAME:
         setFname(FNAME_EDEFAULT);
         return;
-      case AirPackage.FLIGHT__FROM:
-        setFrom((Airport)null);
+      case AirPackage.SPECIFIC_FLIGHT__SCHEDULED_FLIGHT:
+        setScheduledFlight((ScheduledFlight)null);
         return;
-      case AirPackage.FLIGHT__TO:
-        setTo((Airport)null);
+      case AirPackage.SPECIFIC_FLIGHT__DATE:
+        setDate(DATE_EDEFAULT);
         return;
-      case AirPackage.FLIGHT__AIRLINE:
-        setAirline((Airline)null);
-        return;
-      case AirPackage.FLIGHT__TIME:
-        setTime(TIME_EDEFAULT);
-        return;
-      case AirPackage.FLIGHT__PILOT:
+      case AirPackage.SPECIFIC_FLIGHT__PILOT:
         setPilot((Pilot)null);
         return;
-      case AirPackage.FLIGHT__PLANE:
+      case AirPackage.SPECIFIC_FLIGHT__PLANE:
         setPlane((Airplane)null);
         return;
-      case AirPackage.FLIGHT__STAFF:
+      case AirPackage.SPECIFIC_FLIGHT__STAFF:
         getStaff().clear();
         return;
     }
@@ -580,21 +449,17 @@ public class FlightImpl extends EntityImpl implements Flight
   {
     switch (featureID)
     {
-      case AirPackage.FLIGHT__FNAME:
+      case AirPackage.SPECIFIC_FLIGHT__FNAME:
         return FNAME_EDEFAULT == null ? fname != null : !FNAME_EDEFAULT.equals(fname);
-      case AirPackage.FLIGHT__FROM:
-        return from != null;
-      case AirPackage.FLIGHT__TO:
-        return to != null;
-      case AirPackage.FLIGHT__AIRLINE:
-        return airline != null;
-      case AirPackage.FLIGHT__TIME:
-        return TIME_EDEFAULT == null ? time != null : !TIME_EDEFAULT.equals(time);
-      case AirPackage.FLIGHT__PILOT:
+      case AirPackage.SPECIFIC_FLIGHT__SCHEDULED_FLIGHT:
+        return scheduledFlight != null;
+      case AirPackage.SPECIFIC_FLIGHT__DATE:
+        return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
+      case AirPackage.SPECIFIC_FLIGHT__PILOT:
         return pilot != null;
-      case AirPackage.FLIGHT__PLANE:
+      case AirPackage.SPECIFIC_FLIGHT__PLANE:
         return plane != null;
-      case AirPackage.FLIGHT__STAFF:
+      case AirPackage.SPECIFIC_FLIGHT__STAFF:
         return staff != null && !staff.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -613,10 +478,10 @@ public class FlightImpl extends EntityImpl implements Flight
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (fname: ");
     result.append(fname);
-    result.append(", time: ");
-    result.append(time);
+    result.append(", date: ");
+    result.append(date);
     result.append(')');
     return result.toString();
   }
 
-} //FlightImpl
+} //SpecificFlightImpl

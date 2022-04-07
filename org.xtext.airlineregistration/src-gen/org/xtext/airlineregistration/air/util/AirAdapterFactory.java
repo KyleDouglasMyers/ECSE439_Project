@@ -101,9 +101,14 @@ public class AirAdapterFactory extends AdapterFactoryImpl
         return createAirplaneAdapter();
       }
       @Override
-      public Adapter caseFlight(Flight object)
+      public Adapter caseScheduledFlight(ScheduledFlight object)
       {
-        return createFlightAdapter();
+        return createScheduledFlightAdapter();
+      }
+      @Override
+      public Adapter caseSpecificFlight(SpecificFlight object)
+      {
+        return createSpecificFlightAdapter();
       }
       @Override
       public Adapter caseSchedule(Schedule object)
@@ -238,16 +243,31 @@ public class AirAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.airlineregistration.air.Flight <em>Flight</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.airlineregistration.air.ScheduledFlight <em>Scheduled Flight</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.airlineregistration.air.Flight
+   * @see org.xtext.airlineregistration.air.ScheduledFlight
    * @generated
    */
-  public Adapter createFlightAdapter()
+  public Adapter createScheduledFlightAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.airlineregistration.air.SpecificFlight <em>Specific Flight</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.airlineregistration.air.SpecificFlight
+   * @generated
+   */
+  public Adapter createSpecificFlightAdapter()
   {
     return null;
   }

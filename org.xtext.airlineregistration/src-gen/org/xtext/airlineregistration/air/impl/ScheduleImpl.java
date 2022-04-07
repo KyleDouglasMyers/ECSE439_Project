@@ -5,19 +5,15 @@ package org.xtext.airlineregistration.air.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.airlineregistration.air.AirPackage;
-import org.xtext.airlineregistration.air.Flight;
 import org.xtext.airlineregistration.air.Schedule;
+import org.xtext.airlineregistration.air.SpecificFlight;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +23,7 @@ import org.xtext.airlineregistration.air.Schedule;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.impl.ScheduleImpl#getFlights <em>Flights</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.ScheduleImpl#getSpecificFlights <em>Specific Flights</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +31,14 @@ import org.xtext.airlineregistration.air.Schedule;
 public class ScheduleImpl extends EntityImpl implements Schedule
 {
   /**
-   * The cached value of the '{@link #getFlights() <em>Flights</em>}' containment reference list.
+   * The cached value of the '{@link #getSpecificFlights() <em>Specific Flights</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFlights()
+   * @see #getSpecificFlights()
    * @generated
    * @ordered
    */
-  protected EList<Flight> flights;
+  protected EList<SpecificFlight> specificFlights;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,29 +67,13 @@ public class ScheduleImpl extends EntityImpl implements Schedule
    * @generated
    */
   @Override
-  public EList<Flight> getFlights()
+  public EList<SpecificFlight> getSpecificFlights()
   {
-    if (flights == null)
+    if (specificFlights == null)
     {
-      flights = new EObjectContainmentEList<Flight>(Flight.class, this, AirPackage.SCHEDULE__FLIGHTS);
+      specificFlights = new EObjectResolvingEList<SpecificFlight>(SpecificFlight.class, this, AirPackage.SCHEDULE__SPECIFIC_FLIGHTS);
     }
-    return flights;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case AirPackage.SCHEDULE__FLIGHTS:
-        return ((InternalEList<?>)getFlights()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return specificFlights;
   }
 
   /**
@@ -106,8 +86,8 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   {
     switch (featureID)
     {
-      case AirPackage.SCHEDULE__FLIGHTS:
-        return getFlights();
+      case AirPackage.SCHEDULE__SPECIFIC_FLIGHTS:
+        return getSpecificFlights();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +103,9 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   {
     switch (featureID)
     {
-      case AirPackage.SCHEDULE__FLIGHTS:
-        getFlights().clear();
-        getFlights().addAll((Collection<? extends Flight>)newValue);
+      case AirPackage.SCHEDULE__SPECIFIC_FLIGHTS:
+        getSpecificFlights().clear();
+        getSpecificFlights().addAll((Collection<? extends SpecificFlight>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +121,8 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   {
     switch (featureID)
     {
-      case AirPackage.SCHEDULE__FLIGHTS:
-        getFlights().clear();
+      case AirPackage.SCHEDULE__SPECIFIC_FLIGHTS:
+        getSpecificFlights().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +138,8 @@ public class ScheduleImpl extends EntityImpl implements Schedule
   {
     switch (featureID)
     {
-      case AirPackage.SCHEDULE__FLIGHTS:
-        return flights != null && !flights.isEmpty();
+      case AirPackage.SCHEDULE__SPECIFIC_FLIGHTS:
+        return specificFlights != null && !specificFlights.isEmpty();
     }
     return super.eIsSet(featureID);
   }

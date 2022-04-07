@@ -243,14 +243,14 @@ public interface AirPackage extends EPackage
   int AIRPLANE_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.FlightImpl <em>Flight</em>}' class.
+   * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.ScheduledFlightImpl <em>Scheduled Flight</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.airlineregistration.air.impl.FlightImpl
-   * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getFlight()
+   * @see org.xtext.airlineregistration.air.impl.ScheduledFlightImpl
+   * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getScheduledFlight()
    * @generated
    */
-  int FLIGHT = 5;
+  int SCHEDULED_FLIGHT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -259,16 +259,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__NAME = ENTITY__NAME;
-
-  /**
-   * The feature id for the '<em><b>Fname</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLIGHT__FNAME = ENTITY_FEATURE_COUNT + 0;
+  int SCHEDULED_FLIGHT__NAME = ENTITY__NAME;
 
   /**
    * The feature id for the '<em><b>From</b></em>' reference.
@@ -277,7 +268,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__FROM = ENTITY_FEATURE_COUNT + 1;
+  int SCHEDULED_FLIGHT__FROM = ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>To</b></em>' reference.
@@ -286,7 +277,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__TO = ENTITY_FEATURE_COUNT + 2;
+  int SCHEDULED_FLIGHT__TO = ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Airline</b></em>' reference.
@@ -295,7 +286,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__AIRLINE = ENTITY_FEATURE_COUNT + 3;
+  int SCHEDULED_FLIGHT__AIRLINE = ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Time</b></em>' attribute.
@@ -304,7 +295,62 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__TIME = ENTITY_FEATURE_COUNT + 4;
+  int SCHEDULED_FLIGHT__TIME = ENTITY_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Scheduled Flight</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCHEDULED_FLIGHT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.SpecificFlightImpl <em>Specific Flight</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.airlineregistration.air.impl.SpecificFlightImpl
+   * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getSpecificFlight()
+   * @generated
+   */
+  int SPECIFIC_FLIGHT = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFIC_FLIGHT__NAME = ENTITY__NAME;
+
+  /**
+   * The feature id for the '<em><b>Fname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFIC_FLIGHT__FNAME = ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Scheduled Flight</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFIC_FLIGHT__SCHEDULED_FLIGHT = ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Date</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIFIC_FLIGHT__DATE = ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Pilot</b></em>' reference.
@@ -313,7 +359,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__PILOT = ENTITY_FEATURE_COUNT + 5;
+  int SPECIFIC_FLIGHT__PILOT = ENTITY_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Plane</b></em>' reference.
@@ -322,7 +368,7 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__PLANE = ENTITY_FEATURE_COUNT + 6;
+  int SPECIFIC_FLIGHT__PLANE = ENTITY_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -331,16 +377,16 @@ public interface AirPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLIGHT__STAFF = ENTITY_FEATURE_COUNT + 7;
+  int SPECIFIC_FLIGHT__STAFF = ENTITY_FEATURE_COUNT + 5;
 
   /**
-   * The number of structural features of the '<em>Flight</em>' class.
+   * The number of structural features of the '<em>Specific Flight</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLIGHT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 8;
+  int SPECIFIC_FLIGHT_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link org.xtext.airlineregistration.air.impl.ScheduleImpl <em>Schedule</em>}' class.
@@ -350,7 +396,7 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getSchedule()
    * @generated
    */
-  int SCHEDULE = 6;
+  int SCHEDULE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -362,13 +408,13 @@ public interface AirPackage extends EPackage
   int SCHEDULE__NAME = ENTITY__NAME;
 
   /**
-   * The feature id for the '<em><b>Flights</b></em>' containment reference list.
+   * The feature id for the '<em><b>Specific Flights</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCHEDULE__FLIGHTS = ENTITY_FEATURE_COUNT + 0;
+  int SCHEDULE__SPECIFIC_FLIGHTS = ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Schedule</em>' class.
@@ -387,7 +433,7 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getEmployee()
    * @generated
    */
-  int EMPLOYEE = 7;
+  int EMPLOYEE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -415,7 +461,7 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getPilot()
    * @generated
    */
-  int PILOT = 8;
+  int PILOT = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -461,7 +507,7 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getFlightAttendant()
    * @generated
    */
-  int FLIGHT_ATTENDANT = 9;
+  int FLIGHT_ATTENDANT = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -507,7 +553,7 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getBagHandler()
    * @generated
    */
-  int BAG_HANDLER = 10;
+  int BAG_HANDLER = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -553,7 +599,7 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getGatePersonnel()
    * @generated
    */
-  int GATE_PERSONNEL = 11;
+  int GATE_PERSONNEL = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -599,7 +645,7 @@ public interface AirPackage extends EPackage
    * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getPassenger()
    * @generated
    */
-  int PASSENGER = 12;
+  int PASSENGER = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -620,13 +666,13 @@ public interface AirPackage extends EPackage
   int PASSENGER__PANAME = ENTITY_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Flight</b></em>' reference list.
+   * The feature id for the '<em><b>Specific Flight</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PASSENGER__FLIGHT = ENTITY_FEATURE_COUNT + 1;
+  int PASSENGER__SPECIFIC_FLIGHT = ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Passenger</em>' class.
@@ -766,102 +812,134 @@ public interface AirPackage extends EPackage
   EAttribute getAirplane_Seats();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.airlineregistration.air.Flight <em>Flight</em>}'.
+   * Returns the meta object for class '{@link org.xtext.airlineregistration.air.ScheduledFlight <em>Scheduled Flight</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Flight</em>'.
-   * @see org.xtext.airlineregistration.air.Flight
+   * @return the meta object for class '<em>Scheduled Flight</em>'.
+   * @see org.xtext.airlineregistration.air.ScheduledFlight
    * @generated
    */
-  EClass getFlight();
+  EClass getScheduledFlight();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Flight#getFname <em>Fname</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fname</em>'.
-   * @see org.xtext.airlineregistration.air.Flight#getFname()
-   * @see #getFlight()
-   * @generated
-   */
-  EAttribute getFlight_Fname();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Flight#getFrom <em>From</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.ScheduledFlight#getFrom <em>From</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>From</em>'.
-   * @see org.xtext.airlineregistration.air.Flight#getFrom()
-   * @see #getFlight()
+   * @see org.xtext.airlineregistration.air.ScheduledFlight#getFrom()
+   * @see #getScheduledFlight()
    * @generated
    */
-  EReference getFlight_From();
+  EReference getScheduledFlight_From();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Flight#getTo <em>To</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.ScheduledFlight#getTo <em>To</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>To</em>'.
-   * @see org.xtext.airlineregistration.air.Flight#getTo()
-   * @see #getFlight()
+   * @see org.xtext.airlineregistration.air.ScheduledFlight#getTo()
+   * @see #getScheduledFlight()
    * @generated
    */
-  EReference getFlight_To();
+  EReference getScheduledFlight_To();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Flight#getAirline <em>Airline</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.ScheduledFlight#getAirline <em>Airline</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Airline</em>'.
-   * @see org.xtext.airlineregistration.air.Flight#getAirline()
-   * @see #getFlight()
+   * @see org.xtext.airlineregistration.air.ScheduledFlight#getAirline()
+   * @see #getScheduledFlight()
    * @generated
    */
-  EReference getFlight_Airline();
+  EReference getScheduledFlight_Airline();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.Flight#getTime <em>Time</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.ScheduledFlight#getTime <em>Time</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Time</em>'.
-   * @see org.xtext.airlineregistration.air.Flight#getTime()
-   * @see #getFlight()
+   * @see org.xtext.airlineregistration.air.ScheduledFlight#getTime()
+   * @see #getScheduledFlight()
    * @generated
    */
-  EAttribute getFlight_Time();
+  EAttribute getScheduledFlight_Time();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Flight#getPilot <em>Pilot</em>}'.
+   * Returns the meta object for class '{@link org.xtext.airlineregistration.air.SpecificFlight <em>Specific Flight</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Specific Flight</em>'.
+   * @see org.xtext.airlineregistration.air.SpecificFlight
+   * @generated
+   */
+  EClass getSpecificFlight();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.SpecificFlight#getFname <em>Fname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Fname</em>'.
+   * @see org.xtext.airlineregistration.air.SpecificFlight#getFname()
+   * @see #getSpecificFlight()
+   * @generated
+   */
+  EAttribute getSpecificFlight_Fname();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.SpecificFlight#getScheduledFlight <em>Scheduled Flight</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Scheduled Flight</em>'.
+   * @see org.xtext.airlineregistration.air.SpecificFlight#getScheduledFlight()
+   * @see #getSpecificFlight()
+   * @generated
+   */
+  EReference getSpecificFlight_ScheduledFlight();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.airlineregistration.air.SpecificFlight#getDate <em>Date</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Date</em>'.
+   * @see org.xtext.airlineregistration.air.SpecificFlight#getDate()
+   * @see #getSpecificFlight()
+   * @generated
+   */
+  EAttribute getSpecificFlight_Date();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.SpecificFlight#getPilot <em>Pilot</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Pilot</em>'.
-   * @see org.xtext.airlineregistration.air.Flight#getPilot()
-   * @see #getFlight()
+   * @see org.xtext.airlineregistration.air.SpecificFlight#getPilot()
+   * @see #getSpecificFlight()
    * @generated
    */
-  EReference getFlight_Pilot();
+  EReference getSpecificFlight_Pilot();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.Flight#getPlane <em>Plane</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.airlineregistration.air.SpecificFlight#getPlane <em>Plane</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Plane</em>'.
-   * @see org.xtext.airlineregistration.air.Flight#getPlane()
-   * @see #getFlight()
+   * @see org.xtext.airlineregistration.air.SpecificFlight#getPlane()
+   * @see #getSpecificFlight()
    * @generated
    */
-  EReference getFlight_Plane();
+  EReference getSpecificFlight_Plane();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.airlineregistration.air.Flight#getStaff <em>Staff</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.airlineregistration.air.SpecificFlight#getStaff <em>Staff</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Staff</em>'.
-   * @see org.xtext.airlineregistration.air.Flight#getStaff()
-   * @see #getFlight()
+   * @see org.xtext.airlineregistration.air.SpecificFlight#getStaff()
+   * @see #getSpecificFlight()
    * @generated
    */
-  EReference getFlight_Staff();
+  EReference getSpecificFlight_Staff();
 
   /**
    * Returns the meta object for class '{@link org.xtext.airlineregistration.air.Schedule <em>Schedule</em>}'.
@@ -874,15 +952,15 @@ public interface AirPackage extends EPackage
   EClass getSchedule();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.airlineregistration.air.Schedule#getFlights <em>Flights</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.airlineregistration.air.Schedule#getSpecificFlights <em>Specific Flights</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Flights</em>'.
-   * @see org.xtext.airlineregistration.air.Schedule#getFlights()
+   * @return the meta object for the reference list '<em>Specific Flights</em>'.
+   * @see org.xtext.airlineregistration.air.Schedule#getSpecificFlights()
    * @see #getSchedule()
    * @generated
    */
-  EReference getSchedule_Flights();
+  EReference getSchedule_SpecificFlights();
 
   /**
    * Returns the meta object for class '{@link org.xtext.airlineregistration.air.Employee <em>Employee</em>}'.
@@ -1044,15 +1122,15 @@ public interface AirPackage extends EPackage
   EAttribute getPassenger_Paname();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.airlineregistration.air.Passenger#getFlight <em>Flight</em>}'.
+   * Returns the meta object for the reference list '{@link org.xtext.airlineregistration.air.Passenger#getSpecificFlight <em>Specific Flight</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Flight</em>'.
-   * @see org.xtext.airlineregistration.air.Passenger#getFlight()
+   * @return the meta object for the reference list '<em>Specific Flight</em>'.
+   * @see org.xtext.airlineregistration.air.Passenger#getSpecificFlight()
    * @see #getPassenger()
    * @generated
    */
-  EReference getPassenger_Flight();
+  EReference getPassenger_SpecificFlight();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1184,22 +1262,14 @@ public interface AirPackage extends EPackage
     EAttribute AIRPLANE__SEATS = eINSTANCE.getAirplane_Seats();
 
     /**
-     * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.FlightImpl <em>Flight</em>}' class.
+     * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.ScheduledFlightImpl <em>Scheduled Flight</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.airlineregistration.air.impl.FlightImpl
-     * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getFlight()
+     * @see org.xtext.airlineregistration.air.impl.ScheduledFlightImpl
+     * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getScheduledFlight()
      * @generated
      */
-    EClass FLIGHT = eINSTANCE.getFlight();
-
-    /**
-     * The meta object literal for the '<em><b>Fname</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FLIGHT__FNAME = eINSTANCE.getFlight_Fname();
+    EClass SCHEDULED_FLIGHT = eINSTANCE.getScheduledFlight();
 
     /**
      * The meta object literal for the '<em><b>From</b></em>' reference feature.
@@ -1207,7 +1277,7 @@ public interface AirPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLIGHT__FROM = eINSTANCE.getFlight_From();
+    EReference SCHEDULED_FLIGHT__FROM = eINSTANCE.getScheduledFlight_From();
 
     /**
      * The meta object literal for the '<em><b>To</b></em>' reference feature.
@@ -1215,7 +1285,7 @@ public interface AirPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLIGHT__TO = eINSTANCE.getFlight_To();
+    EReference SCHEDULED_FLIGHT__TO = eINSTANCE.getScheduledFlight_To();
 
     /**
      * The meta object literal for the '<em><b>Airline</b></em>' reference feature.
@@ -1223,7 +1293,7 @@ public interface AirPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLIGHT__AIRLINE = eINSTANCE.getFlight_Airline();
+    EReference SCHEDULED_FLIGHT__AIRLINE = eINSTANCE.getScheduledFlight_Airline();
 
     /**
      * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
@@ -1231,7 +1301,41 @@ public interface AirPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FLIGHT__TIME = eINSTANCE.getFlight_Time();
+    EAttribute SCHEDULED_FLIGHT__TIME = eINSTANCE.getScheduledFlight_Time();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.SpecificFlightImpl <em>Specific Flight</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.airlineregistration.air.impl.SpecificFlightImpl
+     * @see org.xtext.airlineregistration.air.impl.AirPackageImpl#getSpecificFlight()
+     * @generated
+     */
+    EClass SPECIFIC_FLIGHT = eINSTANCE.getSpecificFlight();
+
+    /**
+     * The meta object literal for the '<em><b>Fname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPECIFIC_FLIGHT__FNAME = eINSTANCE.getSpecificFlight_Fname();
+
+    /**
+     * The meta object literal for the '<em><b>Scheduled Flight</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SPECIFIC_FLIGHT__SCHEDULED_FLIGHT = eINSTANCE.getSpecificFlight_ScheduledFlight();
+
+    /**
+     * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPECIFIC_FLIGHT__DATE = eINSTANCE.getSpecificFlight_Date();
 
     /**
      * The meta object literal for the '<em><b>Pilot</b></em>' reference feature.
@@ -1239,7 +1343,7 @@ public interface AirPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLIGHT__PILOT = eINSTANCE.getFlight_Pilot();
+    EReference SPECIFIC_FLIGHT__PILOT = eINSTANCE.getSpecificFlight_Pilot();
 
     /**
      * The meta object literal for the '<em><b>Plane</b></em>' reference feature.
@@ -1247,7 +1351,7 @@ public interface AirPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLIGHT__PLANE = eINSTANCE.getFlight_Plane();
+    EReference SPECIFIC_FLIGHT__PLANE = eINSTANCE.getSpecificFlight_Plane();
 
     /**
      * The meta object literal for the '<em><b>Staff</b></em>' reference list feature.
@@ -1255,7 +1359,7 @@ public interface AirPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FLIGHT__STAFF = eINSTANCE.getFlight_Staff();
+    EReference SPECIFIC_FLIGHT__STAFF = eINSTANCE.getSpecificFlight_Staff();
 
     /**
      * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.ScheduleImpl <em>Schedule</em>}' class.
@@ -1268,12 +1372,12 @@ public interface AirPackage extends EPackage
     EClass SCHEDULE = eINSTANCE.getSchedule();
 
     /**
-     * The meta object literal for the '<em><b>Flights</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Specific Flights</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SCHEDULE__FLIGHTS = eINSTANCE.getSchedule_Flights();
+    EReference SCHEDULE__SPECIFIC_FLIGHTS = eINSTANCE.getSchedule_SpecificFlights();
 
     /**
      * The meta object literal for the '{@link org.xtext.airlineregistration.air.impl.EmployeeImpl <em>Employee</em>}' class.
@@ -1408,12 +1512,12 @@ public interface AirPackage extends EPackage
     EAttribute PASSENGER__PANAME = eINSTANCE.getPassenger_Paname();
 
     /**
-     * The meta object literal for the '<em><b>Flight</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Specific Flight</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PASSENGER__FLIGHT = eINSTANCE.getPassenger_Flight();
+    EReference PASSENGER__SPECIFIC_FLIGHT = eINSTANCE.getPassenger_SpecificFlight();
 
   }
 

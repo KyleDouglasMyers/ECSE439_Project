@@ -1,0 +1,30 @@
+Airport YUL "Pierre Elliott Trudeau" "Montreal"
+Airport TRT "Pearson" "Toronto"
+Airport LAX "Los Angeles International Airport" "Los Angeles"
+Airline AirCanada "Flights out of Canada"
+Airline Delta "Flights in the US of A"
+Airplane a1 "BOEING777" 500
+Airplane a2 "Millenium Falcon" 3
+ScheduledFlight sf1 from YUL to TRT with AirCanada at "10:00AM" 
+ScheduledFlight sf2 from TRT to YUL with AirCanada at "10:00AM"
+ScheduledFlight sf3 from YUL to TRT with AirCanada at "05:00PM" 
+ScheduledFlight sf4 from TRT to YUL with AirCanada at "05:00PM"
+ScheduledFlight sf5 from YUL to LAX with Delta at "12:00PM"
+ScheduledFlight sf6 from LAX to YUL with Delta at "12:00PM"
+Flight f1 "AC100" scheduledFlight sf1 on "20/08/2022" pilot pid2 airplane a1 staff faid3
+Flight f2 "DT200" scheduledFlight sf5 on "29/04/2022" pilot pid1 airplane a2 staff faid1, faid2
+Pilot pid1 "Kvothe" with AirCanada
+Pilot pid2 "Kaladin" with AirCanada
+Pilot pid3 "Dalinar" with Delta
+FlightAttendant faid1 "Simmon" with AirCanada
+FlightAttendant faid2 "Willem" with AirCanada
+FlightAttendant faid3 "Shallan" with Delta
+BagHandler bhid1 "Teft" with YUL
+GatePersonnel gpid1 "Moash" with YUL
+BagHandler bhid2 "Rock" with TRT
+GatePersonnel gpid2 "Lopen" with TRT
+BagHandler bhid3 "Fela" with LAX
+GatePersonnel gpid3 "Mola" with LAX
+Passenger "mikachu2904@gmail.com" "Michael Beyrouthy" with f1, f2
+Passenger "maelmugerwa99@gmail.com" "Mael Mugerwa" with f1
+Passenger "kyledaboss@gmail.com" "Kyle Myers" with f2

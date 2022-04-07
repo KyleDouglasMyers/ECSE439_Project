@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.airlineregistration.air.AirPackage;
-import org.xtext.airlineregistration.air.Flight;
 import org.xtext.airlineregistration.air.Passenger;
+import org.xtext.airlineregistration.air.SpecificFlight;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.xtext.airlineregistration.air.Passenger;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getPaname <em>Paname</em>}</li>
- *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getFlight <em>Flight</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.impl.PassengerImpl#getSpecificFlight <em>Specific Flight</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,14 +56,14 @@ public class PassengerImpl extends EntityImpl implements Passenger
   protected String paname = PANAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getFlight() <em>Flight</em>}' reference list.
+   * The cached value of the '{@link #getSpecificFlight() <em>Specific Flight</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFlight()
+   * @see #getSpecificFlight()
    * @generated
    * @ordered
    */
-  protected EList<Flight> flight;
+  protected EList<SpecificFlight> specificFlight;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,13 +117,13 @@ public class PassengerImpl extends EntityImpl implements Passenger
    * @generated
    */
   @Override
-  public EList<Flight> getFlight()
+  public EList<SpecificFlight> getSpecificFlight()
   {
-    if (flight == null)
+    if (specificFlight == null)
     {
-      flight = new EObjectResolvingEList<Flight>(Flight.class, this, AirPackage.PASSENGER__FLIGHT);
+      specificFlight = new EObjectResolvingEList<SpecificFlight>(SpecificFlight.class, this, AirPackage.PASSENGER__SPECIFIC_FLIGHT);
     }
-    return flight;
+    return specificFlight;
   }
 
   /**
@@ -138,8 +138,8 @@ public class PassengerImpl extends EntityImpl implements Passenger
     {
       case AirPackage.PASSENGER__PANAME:
         return getPaname();
-      case AirPackage.PASSENGER__FLIGHT:
-        return getFlight();
+      case AirPackage.PASSENGER__SPECIFIC_FLIGHT:
+        return getSpecificFlight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -158,9 +158,9 @@ public class PassengerImpl extends EntityImpl implements Passenger
       case AirPackage.PASSENGER__PANAME:
         setPaname((String)newValue);
         return;
-      case AirPackage.PASSENGER__FLIGHT:
-        getFlight().clear();
-        getFlight().addAll((Collection<? extends Flight>)newValue);
+      case AirPackage.PASSENGER__SPECIFIC_FLIGHT:
+        getSpecificFlight().clear();
+        getSpecificFlight().addAll((Collection<? extends SpecificFlight>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -179,8 +179,8 @@ public class PassengerImpl extends EntityImpl implements Passenger
       case AirPackage.PASSENGER__PANAME:
         setPaname(PANAME_EDEFAULT);
         return;
-      case AirPackage.PASSENGER__FLIGHT:
-        getFlight().clear();
+      case AirPackage.PASSENGER__SPECIFIC_FLIGHT:
+        getSpecificFlight().clear();
         return;
     }
     super.eUnset(featureID);
@@ -198,8 +198,8 @@ public class PassengerImpl extends EntityImpl implements Passenger
     {
       case AirPackage.PASSENGER__PANAME:
         return PANAME_EDEFAULT == null ? paname != null : !PANAME_EDEFAULT.equals(paname);
-      case AirPackage.PASSENGER__FLIGHT:
-        return flight != null && !flight.isEmpty();
+      case AirPackage.PASSENGER__SPECIFIC_FLIGHT:
+        return specificFlight != null && !specificFlight.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -19,20 +19,24 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="seats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Flight" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScheduledFlight" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Airport"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Airport"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="airline" eType="#//Airline"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificFlight" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scheduledFlight" eType="#//ScheduledFlight"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pilot" eType="#//Pilot"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="plane" eType="#//Airplane"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="staff" unique="false" upperBound="-1"
         eType="#//FlightAttendant"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Schedule" eSuperTypes="#//Entity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flights" upperBound="-1"
-        eType="#//Flight" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificFlights" unique="false"
+        upperBound="-1" eType="#//SpecificFlight"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Employee" eSuperTypes="#//Entity"/>
   <eClassifiers xsi:type="ecore:EClass" name="Pilot" eSuperTypes="#//Employee">
@@ -53,7 +57,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Passenger" eSuperTypes="#//Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="paname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flight" unique="false"
-        upperBound="-1" eType="#//Flight"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specificFlight" unique="false"
+        upperBound="-1" eType="#//SpecificFlight"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.airlineregistration.air.Schedule#getFlights <em>Flights</em>}</li>
+ *   <li>{@link org.xtext.airlineregistration.air.Schedule#getSpecificFlights <em>Specific Flights</em>}</li>
  * </ul>
  *
  * @see org.xtext.airlineregistration.air.AirPackage#getSchedule()
@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
 public interface Schedule extends Entity
 {
   /**
-   * Returns the value of the '<em><b>Flights</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.airlineregistration.air.Flight}.
+   * Returns the value of the '<em><b>Specific Flights</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.airlineregistration.air.SpecificFlight}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Flights</em>' containment reference list.
-   * @see org.xtext.airlineregistration.air.AirPackage#getSchedule_Flights()
-   * @model containment="true"
+   * @return the value of the '<em>Specific Flights</em>' reference list.
+   * @see org.xtext.airlineregistration.air.AirPackage#getSchedule_SpecificFlights()
+   * @model
    * @generated
    */
-  EList<Flight> getFlights();
+  EList<SpecificFlight> getSpecificFlights();
 
 } // Schedule

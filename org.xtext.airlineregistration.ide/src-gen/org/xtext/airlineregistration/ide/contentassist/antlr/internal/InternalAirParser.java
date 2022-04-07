@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAirParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Airport'", "'Airline'", "'Airplane'", "'Flight'", "'from'", "'to'", "'with'", "'at'", "'pilot'", "'airplane'", "'staff'", "','", "'flights'", "'Pilot'", "'FlightAttendant'", "'BagHandler'", "'GatePersonnel'", "'Passenger'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Airport'", "'Airline'", "'Airplane'", "'ScheduledFlight'", "'from'", "'to'", "'with'", "'at'", "'Flight'", "'scheduledFlight'", "'on'", "'pilot'", "'airplane'", "'staff'", "','", "'flights'", "'Pilot'", "'FlightAttendant'", "'BagHandler'", "'GatePersonnel'", "'Passenger'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -36,6 +36,8 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -43,6 +45,7 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int RULE_INT=6;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -136,7 +139,7 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==RULE_ID||(LA1_0>=11 && LA1_0<=14)||(LA1_0>=24 && LA1_0<=28)) ) {
+                if ( (LA1_0==RULE_ID||(LA1_0>=11 && LA1_0<=14)||LA1_0==19||(LA1_0>=27 && LA1_0<=31)) ) {
                     alt1=1;
                 }
 
@@ -489,20 +492,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleAirplane"
 
 
-    // $ANTLR start "entryRuleFlight"
-    // InternalAir.g:178:1: entryRuleFlight : ruleFlight EOF ;
-    public final void entryRuleFlight() throws RecognitionException {
+    // $ANTLR start "entryRuleScheduledFlight"
+    // InternalAir.g:178:1: entryRuleScheduledFlight : ruleScheduledFlight EOF ;
+    public final void entryRuleScheduledFlight() throws RecognitionException {
         try {
-            // InternalAir.g:179:1: ( ruleFlight EOF )
-            // InternalAir.g:180:1: ruleFlight EOF
+            // InternalAir.g:179:1: ( ruleScheduledFlight EOF )
+            // InternalAir.g:180:1: ruleScheduledFlight EOF
             {
-             before(grammarAccess.getFlightRule()); 
+             before(grammarAccess.getScheduledFlightRule()); 
             pushFollow(FOLLOW_1);
-            ruleFlight();
+            ruleScheduledFlight();
 
             state._fsp--;
 
-             after(grammarAccess.getFlightRule()); 
+             after(grammarAccess.getScheduledFlightRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -516,35 +519,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleFlight"
+    // $ANTLR end "entryRuleScheduledFlight"
 
 
-    // $ANTLR start "ruleFlight"
-    // InternalAir.g:187:1: ruleFlight : ( ( rule__Flight__Group__0 ) ) ;
-    public final void ruleFlight() throws RecognitionException {
+    // $ANTLR start "ruleScheduledFlight"
+    // InternalAir.g:187:1: ruleScheduledFlight : ( ( rule__ScheduledFlight__Group__0 ) ) ;
+    public final void ruleScheduledFlight() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:191:2: ( ( ( rule__Flight__Group__0 ) ) )
-            // InternalAir.g:192:2: ( ( rule__Flight__Group__0 ) )
+            // InternalAir.g:191:2: ( ( ( rule__ScheduledFlight__Group__0 ) ) )
+            // InternalAir.g:192:2: ( ( rule__ScheduledFlight__Group__0 ) )
             {
-            // InternalAir.g:192:2: ( ( rule__Flight__Group__0 ) )
-            // InternalAir.g:193:3: ( rule__Flight__Group__0 )
+            // InternalAir.g:192:2: ( ( rule__ScheduledFlight__Group__0 ) )
+            // InternalAir.g:193:3: ( rule__ScheduledFlight__Group__0 )
             {
-             before(grammarAccess.getFlightAccess().getGroup()); 
-            // InternalAir.g:194:3: ( rule__Flight__Group__0 )
-            // InternalAir.g:194:4: rule__Flight__Group__0
+             before(grammarAccess.getScheduledFlightAccess().getGroup()); 
+            // InternalAir.g:194:3: ( rule__ScheduledFlight__Group__0 )
+            // InternalAir.g:194:4: rule__ScheduledFlight__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__0();
+            rule__ScheduledFlight__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getGroup()); 
+             after(grammarAccess.getScheduledFlightAccess().getGroup()); 
 
             }
 
@@ -563,15 +566,92 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleFlight"
+    // $ANTLR end "ruleScheduledFlight"
+
+
+    // $ANTLR start "entryRuleSpecificFlight"
+    // InternalAir.g:203:1: entryRuleSpecificFlight : ruleSpecificFlight EOF ;
+    public final void entryRuleSpecificFlight() throws RecognitionException {
+        try {
+            // InternalAir.g:204:1: ( ruleSpecificFlight EOF )
+            // InternalAir.g:205:1: ruleSpecificFlight EOF
+            {
+             before(grammarAccess.getSpecificFlightRule()); 
+            pushFollow(FOLLOW_1);
+            ruleSpecificFlight();
+
+            state._fsp--;
+
+             after(grammarAccess.getSpecificFlightRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSpecificFlight"
+
+
+    // $ANTLR start "ruleSpecificFlight"
+    // InternalAir.g:212:1: ruleSpecificFlight : ( ( rule__SpecificFlight__Group__0 ) ) ;
+    public final void ruleSpecificFlight() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:216:2: ( ( ( rule__SpecificFlight__Group__0 ) ) )
+            // InternalAir.g:217:2: ( ( rule__SpecificFlight__Group__0 ) )
+            {
+            // InternalAir.g:217:2: ( ( rule__SpecificFlight__Group__0 ) )
+            // InternalAir.g:218:3: ( rule__SpecificFlight__Group__0 )
+            {
+             before(grammarAccess.getSpecificFlightAccess().getGroup()); 
+            // InternalAir.g:219:3: ( rule__SpecificFlight__Group__0 )
+            // InternalAir.g:219:4: rule__SpecificFlight__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSpecificFlightAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSpecificFlight"
 
 
     // $ANTLR start "entryRuleSchedule"
-    // InternalAir.g:203:1: entryRuleSchedule : ruleSchedule EOF ;
+    // InternalAir.g:228:1: entryRuleSchedule : ruleSchedule EOF ;
     public final void entryRuleSchedule() throws RecognitionException {
         try {
-            // InternalAir.g:204:1: ( ruleSchedule EOF )
-            // InternalAir.g:205:1: ruleSchedule EOF
+            // InternalAir.g:229:1: ( ruleSchedule EOF )
+            // InternalAir.g:230:1: ruleSchedule EOF
             {
              before(grammarAccess.getScheduleRule()); 
             pushFollow(FOLLOW_1);
@@ -597,21 +677,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleSchedule"
-    // InternalAir.g:212:1: ruleSchedule : ( ( rule__Schedule__Group__0 ) ) ;
+    // InternalAir.g:237:1: ruleSchedule : ( ( rule__Schedule__Group__0 ) ) ;
     public final void ruleSchedule() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:216:2: ( ( ( rule__Schedule__Group__0 ) ) )
-            // InternalAir.g:217:2: ( ( rule__Schedule__Group__0 ) )
+            // InternalAir.g:241:2: ( ( ( rule__Schedule__Group__0 ) ) )
+            // InternalAir.g:242:2: ( ( rule__Schedule__Group__0 ) )
             {
-            // InternalAir.g:217:2: ( ( rule__Schedule__Group__0 ) )
-            // InternalAir.g:218:3: ( rule__Schedule__Group__0 )
+            // InternalAir.g:242:2: ( ( rule__Schedule__Group__0 ) )
+            // InternalAir.g:243:3: ( rule__Schedule__Group__0 )
             {
              before(grammarAccess.getScheduleAccess().getGroup()); 
-            // InternalAir.g:219:3: ( rule__Schedule__Group__0 )
-            // InternalAir.g:219:4: rule__Schedule__Group__0
+            // InternalAir.g:244:3: ( rule__Schedule__Group__0 )
+            // InternalAir.g:244:4: rule__Schedule__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Schedule__Group__0();
@@ -644,11 +724,11 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleEmployee"
-    // InternalAir.g:228:1: entryRuleEmployee : ruleEmployee EOF ;
+    // InternalAir.g:253:1: entryRuleEmployee : ruleEmployee EOF ;
     public final void entryRuleEmployee() throws RecognitionException {
         try {
-            // InternalAir.g:229:1: ( ruleEmployee EOF )
-            // InternalAir.g:230:1: ruleEmployee EOF
+            // InternalAir.g:254:1: ( ruleEmployee EOF )
+            // InternalAir.g:255:1: ruleEmployee EOF
             {
              before(grammarAccess.getEmployeeRule()); 
             pushFollow(FOLLOW_1);
@@ -674,21 +754,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleEmployee"
-    // InternalAir.g:237:1: ruleEmployee : ( ( rule__Employee__Alternatives ) ) ;
+    // InternalAir.g:262:1: ruleEmployee : ( ( rule__Employee__Alternatives ) ) ;
     public final void ruleEmployee() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:241:2: ( ( ( rule__Employee__Alternatives ) ) )
-            // InternalAir.g:242:2: ( ( rule__Employee__Alternatives ) )
+            // InternalAir.g:266:2: ( ( ( rule__Employee__Alternatives ) ) )
+            // InternalAir.g:267:2: ( ( rule__Employee__Alternatives ) )
             {
-            // InternalAir.g:242:2: ( ( rule__Employee__Alternatives ) )
-            // InternalAir.g:243:3: ( rule__Employee__Alternatives )
+            // InternalAir.g:267:2: ( ( rule__Employee__Alternatives ) )
+            // InternalAir.g:268:3: ( rule__Employee__Alternatives )
             {
              before(grammarAccess.getEmployeeAccess().getAlternatives()); 
-            // InternalAir.g:244:3: ( rule__Employee__Alternatives )
-            // InternalAir.g:244:4: rule__Employee__Alternatives
+            // InternalAir.g:269:3: ( rule__Employee__Alternatives )
+            // InternalAir.g:269:4: rule__Employee__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Employee__Alternatives();
@@ -721,11 +801,11 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePilot"
-    // InternalAir.g:253:1: entryRulePilot : rulePilot EOF ;
+    // InternalAir.g:278:1: entryRulePilot : rulePilot EOF ;
     public final void entryRulePilot() throws RecognitionException {
         try {
-            // InternalAir.g:254:1: ( rulePilot EOF )
-            // InternalAir.g:255:1: rulePilot EOF
+            // InternalAir.g:279:1: ( rulePilot EOF )
+            // InternalAir.g:280:1: rulePilot EOF
             {
              before(grammarAccess.getPilotRule()); 
             pushFollow(FOLLOW_1);
@@ -751,21 +831,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePilot"
-    // InternalAir.g:262:1: rulePilot : ( ( rule__Pilot__Group__0 ) ) ;
+    // InternalAir.g:287:1: rulePilot : ( ( rule__Pilot__Group__0 ) ) ;
     public final void rulePilot() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:266:2: ( ( ( rule__Pilot__Group__0 ) ) )
-            // InternalAir.g:267:2: ( ( rule__Pilot__Group__0 ) )
+            // InternalAir.g:291:2: ( ( ( rule__Pilot__Group__0 ) ) )
+            // InternalAir.g:292:2: ( ( rule__Pilot__Group__0 ) )
             {
-            // InternalAir.g:267:2: ( ( rule__Pilot__Group__0 ) )
-            // InternalAir.g:268:3: ( rule__Pilot__Group__0 )
+            // InternalAir.g:292:2: ( ( rule__Pilot__Group__0 ) )
+            // InternalAir.g:293:3: ( rule__Pilot__Group__0 )
             {
              before(grammarAccess.getPilotAccess().getGroup()); 
-            // InternalAir.g:269:3: ( rule__Pilot__Group__0 )
-            // InternalAir.g:269:4: rule__Pilot__Group__0
+            // InternalAir.g:294:3: ( rule__Pilot__Group__0 )
+            // InternalAir.g:294:4: rule__Pilot__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Pilot__Group__0();
@@ -798,11 +878,11 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleFlightAttendant"
-    // InternalAir.g:278:1: entryRuleFlightAttendant : ruleFlightAttendant EOF ;
+    // InternalAir.g:303:1: entryRuleFlightAttendant : ruleFlightAttendant EOF ;
     public final void entryRuleFlightAttendant() throws RecognitionException {
         try {
-            // InternalAir.g:279:1: ( ruleFlightAttendant EOF )
-            // InternalAir.g:280:1: ruleFlightAttendant EOF
+            // InternalAir.g:304:1: ( ruleFlightAttendant EOF )
+            // InternalAir.g:305:1: ruleFlightAttendant EOF
             {
              before(grammarAccess.getFlightAttendantRule()); 
             pushFollow(FOLLOW_1);
@@ -828,21 +908,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleFlightAttendant"
-    // InternalAir.g:287:1: ruleFlightAttendant : ( ( rule__FlightAttendant__Group__0 ) ) ;
+    // InternalAir.g:312:1: ruleFlightAttendant : ( ( rule__FlightAttendant__Group__0 ) ) ;
     public final void ruleFlightAttendant() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:291:2: ( ( ( rule__FlightAttendant__Group__0 ) ) )
-            // InternalAir.g:292:2: ( ( rule__FlightAttendant__Group__0 ) )
+            // InternalAir.g:316:2: ( ( ( rule__FlightAttendant__Group__0 ) ) )
+            // InternalAir.g:317:2: ( ( rule__FlightAttendant__Group__0 ) )
             {
-            // InternalAir.g:292:2: ( ( rule__FlightAttendant__Group__0 ) )
-            // InternalAir.g:293:3: ( rule__FlightAttendant__Group__0 )
+            // InternalAir.g:317:2: ( ( rule__FlightAttendant__Group__0 ) )
+            // InternalAir.g:318:3: ( rule__FlightAttendant__Group__0 )
             {
              before(grammarAccess.getFlightAttendantAccess().getGroup()); 
-            // InternalAir.g:294:3: ( rule__FlightAttendant__Group__0 )
-            // InternalAir.g:294:4: rule__FlightAttendant__Group__0
+            // InternalAir.g:319:3: ( rule__FlightAttendant__Group__0 )
+            // InternalAir.g:319:4: rule__FlightAttendant__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__FlightAttendant__Group__0();
@@ -875,11 +955,11 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleBagHandler"
-    // InternalAir.g:303:1: entryRuleBagHandler : ruleBagHandler EOF ;
+    // InternalAir.g:328:1: entryRuleBagHandler : ruleBagHandler EOF ;
     public final void entryRuleBagHandler() throws RecognitionException {
         try {
-            // InternalAir.g:304:1: ( ruleBagHandler EOF )
-            // InternalAir.g:305:1: ruleBagHandler EOF
+            // InternalAir.g:329:1: ( ruleBagHandler EOF )
+            // InternalAir.g:330:1: ruleBagHandler EOF
             {
              before(grammarAccess.getBagHandlerRule()); 
             pushFollow(FOLLOW_1);
@@ -905,21 +985,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleBagHandler"
-    // InternalAir.g:312:1: ruleBagHandler : ( ( rule__BagHandler__Group__0 ) ) ;
+    // InternalAir.g:337:1: ruleBagHandler : ( ( rule__BagHandler__Group__0 ) ) ;
     public final void ruleBagHandler() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:316:2: ( ( ( rule__BagHandler__Group__0 ) ) )
-            // InternalAir.g:317:2: ( ( rule__BagHandler__Group__0 ) )
+            // InternalAir.g:341:2: ( ( ( rule__BagHandler__Group__0 ) ) )
+            // InternalAir.g:342:2: ( ( rule__BagHandler__Group__0 ) )
             {
-            // InternalAir.g:317:2: ( ( rule__BagHandler__Group__0 ) )
-            // InternalAir.g:318:3: ( rule__BagHandler__Group__0 )
+            // InternalAir.g:342:2: ( ( rule__BagHandler__Group__0 ) )
+            // InternalAir.g:343:3: ( rule__BagHandler__Group__0 )
             {
              before(grammarAccess.getBagHandlerAccess().getGroup()); 
-            // InternalAir.g:319:3: ( rule__BagHandler__Group__0 )
-            // InternalAir.g:319:4: rule__BagHandler__Group__0
+            // InternalAir.g:344:3: ( rule__BagHandler__Group__0 )
+            // InternalAir.g:344:4: rule__BagHandler__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__BagHandler__Group__0();
@@ -952,11 +1032,11 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleGatePersonnel"
-    // InternalAir.g:328:1: entryRuleGatePersonnel : ruleGatePersonnel EOF ;
+    // InternalAir.g:353:1: entryRuleGatePersonnel : ruleGatePersonnel EOF ;
     public final void entryRuleGatePersonnel() throws RecognitionException {
         try {
-            // InternalAir.g:329:1: ( ruleGatePersonnel EOF )
-            // InternalAir.g:330:1: ruleGatePersonnel EOF
+            // InternalAir.g:354:1: ( ruleGatePersonnel EOF )
+            // InternalAir.g:355:1: ruleGatePersonnel EOF
             {
              before(grammarAccess.getGatePersonnelRule()); 
             pushFollow(FOLLOW_1);
@@ -982,21 +1062,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleGatePersonnel"
-    // InternalAir.g:337:1: ruleGatePersonnel : ( ( rule__GatePersonnel__Group__0 ) ) ;
+    // InternalAir.g:362:1: ruleGatePersonnel : ( ( rule__GatePersonnel__Group__0 ) ) ;
     public final void ruleGatePersonnel() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:341:2: ( ( ( rule__GatePersonnel__Group__0 ) ) )
-            // InternalAir.g:342:2: ( ( rule__GatePersonnel__Group__0 ) )
+            // InternalAir.g:366:2: ( ( ( rule__GatePersonnel__Group__0 ) ) )
+            // InternalAir.g:367:2: ( ( rule__GatePersonnel__Group__0 ) )
             {
-            // InternalAir.g:342:2: ( ( rule__GatePersonnel__Group__0 ) )
-            // InternalAir.g:343:3: ( rule__GatePersonnel__Group__0 )
+            // InternalAir.g:367:2: ( ( rule__GatePersonnel__Group__0 ) )
+            // InternalAir.g:368:3: ( rule__GatePersonnel__Group__0 )
             {
              before(grammarAccess.getGatePersonnelAccess().getGroup()); 
-            // InternalAir.g:344:3: ( rule__GatePersonnel__Group__0 )
-            // InternalAir.g:344:4: rule__GatePersonnel__Group__0
+            // InternalAir.g:369:3: ( rule__GatePersonnel__Group__0 )
+            // InternalAir.g:369:4: rule__GatePersonnel__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__GatePersonnel__Group__0();
@@ -1029,11 +1109,11 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePassenger"
-    // InternalAir.g:353:1: entryRulePassenger : rulePassenger EOF ;
+    // InternalAir.g:378:1: entryRulePassenger : rulePassenger EOF ;
     public final void entryRulePassenger() throws RecognitionException {
         try {
-            // InternalAir.g:354:1: ( rulePassenger EOF )
-            // InternalAir.g:355:1: rulePassenger EOF
+            // InternalAir.g:379:1: ( rulePassenger EOF )
+            // InternalAir.g:380:1: rulePassenger EOF
             {
              before(grammarAccess.getPassengerRule()); 
             pushFollow(FOLLOW_1);
@@ -1059,21 +1139,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePassenger"
-    // InternalAir.g:362:1: rulePassenger : ( ( rule__Passenger__Group__0 ) ) ;
+    // InternalAir.g:387:1: rulePassenger : ( ( rule__Passenger__Group__0 ) ) ;
     public final void rulePassenger() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:366:2: ( ( ( rule__Passenger__Group__0 ) ) )
-            // InternalAir.g:367:2: ( ( rule__Passenger__Group__0 ) )
+            // InternalAir.g:391:2: ( ( ( rule__Passenger__Group__0 ) ) )
+            // InternalAir.g:392:2: ( ( rule__Passenger__Group__0 ) )
             {
-            // InternalAir.g:367:2: ( ( rule__Passenger__Group__0 ) )
-            // InternalAir.g:368:3: ( rule__Passenger__Group__0 )
+            // InternalAir.g:392:2: ( ( rule__Passenger__Group__0 ) )
+            // InternalAir.g:393:3: ( rule__Passenger__Group__0 )
             {
              before(grammarAccess.getPassengerAccess().getGroup()); 
-            // InternalAir.g:369:3: ( rule__Passenger__Group__0 )
-            // InternalAir.g:369:4: rule__Passenger__Group__0
+            // InternalAir.g:394:3: ( rule__Passenger__Group__0 )
+            // InternalAir.g:394:4: rule__Passenger__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Passenger__Group__0();
@@ -1106,14 +1186,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Alternatives"
-    // InternalAir.g:377:1: rule__Entity__Alternatives : ( ( ruleAirport ) | ( ruleAirline ) | ( ruleFlight ) | ( ruleSchedule ) | ( ruleEmployee ) | ( ruleAirplane ) | ( rulePassenger ) );
+    // InternalAir.g:402:1: rule__Entity__Alternatives : ( ( ruleAirport ) | ( ruleAirline ) | ( ruleScheduledFlight ) | ( ruleSpecificFlight ) | ( ruleSchedule ) | ( ruleEmployee ) | ( ruleAirplane ) | ( rulePassenger ) );
     public final void rule__Entity__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:381:1: ( ( ruleAirport ) | ( ruleAirline ) | ( ruleFlight ) | ( ruleSchedule ) | ( ruleEmployee ) | ( ruleAirplane ) | ( rulePassenger ) )
-            int alt2=7;
+            // InternalAir.g:406:1: ( ( ruleAirport ) | ( ruleAirline ) | ( ruleScheduledFlight ) | ( ruleSpecificFlight ) | ( ruleSchedule ) | ( ruleEmployee ) | ( ruleAirplane ) | ( rulePassenger ) )
+            int alt2=8;
             switch ( input.LA(1) ) {
             case 11:
                 {
@@ -1130,27 +1210,32 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                 alt2=3;
                 }
                 break;
-            case RULE_ID:
+            case 19:
                 {
                 alt2=4;
                 }
                 break;
-            case 24:
-            case 25:
-            case 26:
-            case 27:
+            case RULE_ID:
                 {
                 alt2=5;
                 }
                 break;
-            case 13:
+            case 27:
+            case 28:
+            case 29:
+            case 30:
                 {
                 alt2=6;
                 }
                 break;
-            case 28:
+            case 13:
                 {
                 alt2=7;
+                }
+                break;
+            case 31:
+                {
+                alt2=8;
                 }
                 break;
             default:
@@ -1162,10 +1247,10 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
             switch (alt2) {
                 case 1 :
-                    // InternalAir.g:382:2: ( ruleAirport )
+                    // InternalAir.g:407:2: ( ruleAirport )
                     {
-                    // InternalAir.g:382:2: ( ruleAirport )
-                    // InternalAir.g:383:3: ruleAirport
+                    // InternalAir.g:407:2: ( ruleAirport )
+                    // InternalAir.g:408:3: ruleAirport
                     {
                      before(grammarAccess.getEntityAccess().getAirportParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1181,10 +1266,10 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalAir.g:388:2: ( ruleAirline )
+                    // InternalAir.g:413:2: ( ruleAirline )
                     {
-                    // InternalAir.g:388:2: ( ruleAirline )
-                    // InternalAir.g:389:3: ruleAirline
+                    // InternalAir.g:413:2: ( ruleAirline )
+                    // InternalAir.g:414:3: ruleAirline
                     {
                      before(grammarAccess.getEntityAccess().getAirlineParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1200,18 +1285,18 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalAir.g:394:2: ( ruleFlight )
+                    // InternalAir.g:419:2: ( ruleScheduledFlight )
                     {
-                    // InternalAir.g:394:2: ( ruleFlight )
-                    // InternalAir.g:395:3: ruleFlight
+                    // InternalAir.g:419:2: ( ruleScheduledFlight )
+                    // InternalAir.g:420:3: ruleScheduledFlight
                     {
-                     before(grammarAccess.getEntityAccess().getFlightParserRuleCall_2()); 
+                     before(grammarAccess.getEntityAccess().getScheduledFlightParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
-                    ruleFlight();
+                    ruleScheduledFlight();
 
                     state._fsp--;
 
-                     after(grammarAccess.getEntityAccess().getFlightParserRuleCall_2()); 
+                     after(grammarAccess.getEntityAccess().getScheduledFlightParserRuleCall_2()); 
 
                     }
 
@@ -1219,18 +1304,18 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalAir.g:400:2: ( ruleSchedule )
+                    // InternalAir.g:425:2: ( ruleSpecificFlight )
                     {
-                    // InternalAir.g:400:2: ( ruleSchedule )
-                    // InternalAir.g:401:3: ruleSchedule
+                    // InternalAir.g:425:2: ( ruleSpecificFlight )
+                    // InternalAir.g:426:3: ruleSpecificFlight
                     {
-                     before(grammarAccess.getEntityAccess().getScheduleParserRuleCall_3()); 
+                     before(grammarAccess.getEntityAccess().getSpecificFlightParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
-                    ruleSchedule();
+                    ruleSpecificFlight();
 
                     state._fsp--;
 
-                     after(grammarAccess.getEntityAccess().getScheduleParserRuleCall_3()); 
+                     after(grammarAccess.getEntityAccess().getSpecificFlightParserRuleCall_3()); 
 
                     }
 
@@ -1238,18 +1323,18 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalAir.g:406:2: ( ruleEmployee )
+                    // InternalAir.g:431:2: ( ruleSchedule )
                     {
-                    // InternalAir.g:406:2: ( ruleEmployee )
-                    // InternalAir.g:407:3: ruleEmployee
+                    // InternalAir.g:431:2: ( ruleSchedule )
+                    // InternalAir.g:432:3: ruleSchedule
                     {
-                     before(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_4()); 
+                     before(grammarAccess.getEntityAccess().getScheduleParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
-                    ruleEmployee();
+                    ruleSchedule();
 
                     state._fsp--;
 
-                     after(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_4()); 
+                     after(grammarAccess.getEntityAccess().getScheduleParserRuleCall_4()); 
 
                     }
 
@@ -1257,18 +1342,18 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalAir.g:412:2: ( ruleAirplane )
+                    // InternalAir.g:437:2: ( ruleEmployee )
                     {
-                    // InternalAir.g:412:2: ( ruleAirplane )
-                    // InternalAir.g:413:3: ruleAirplane
+                    // InternalAir.g:437:2: ( ruleEmployee )
+                    // InternalAir.g:438:3: ruleEmployee
                     {
-                     before(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_5()); 
+                     before(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_5()); 
                     pushFollow(FOLLOW_2);
-                    ruleAirplane();
+                    ruleEmployee();
 
                     state._fsp--;
 
-                     after(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_5()); 
+                     after(grammarAccess.getEntityAccess().getEmployeeParserRuleCall_5()); 
 
                     }
 
@@ -1276,18 +1361,37 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalAir.g:418:2: ( rulePassenger )
+                    // InternalAir.g:443:2: ( ruleAirplane )
                     {
-                    // InternalAir.g:418:2: ( rulePassenger )
-                    // InternalAir.g:419:3: rulePassenger
+                    // InternalAir.g:443:2: ( ruleAirplane )
+                    // InternalAir.g:444:3: ruleAirplane
                     {
-                     before(grammarAccess.getEntityAccess().getPassengerParserRuleCall_6()); 
+                     before(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_6()); 
+                    pushFollow(FOLLOW_2);
+                    ruleAirplane();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getEntityAccess().getAirplaneParserRuleCall_6()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 8 :
+                    // InternalAir.g:449:2: ( rulePassenger )
+                    {
+                    // InternalAir.g:449:2: ( rulePassenger )
+                    // InternalAir.g:450:3: rulePassenger
+                    {
+                     before(grammarAccess.getEntityAccess().getPassengerParserRuleCall_7()); 
                     pushFollow(FOLLOW_2);
                     rulePassenger();
 
                     state._fsp--;
 
-                     after(grammarAccess.getEntityAccess().getPassengerParserRuleCall_6()); 
+                     after(grammarAccess.getEntityAccess().getPassengerParserRuleCall_7()); 
 
                     }
 
@@ -1312,31 +1416,31 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Employee__Alternatives"
-    // InternalAir.g:428:1: rule__Employee__Alternatives : ( ( rulePilot ) | ( ruleFlightAttendant ) | ( ruleBagHandler ) | ( ruleGatePersonnel ) );
+    // InternalAir.g:459:1: rule__Employee__Alternatives : ( ( rulePilot ) | ( ruleFlightAttendant ) | ( ruleBagHandler ) | ( ruleGatePersonnel ) );
     public final void rule__Employee__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:432:1: ( ( rulePilot ) | ( ruleFlightAttendant ) | ( ruleBagHandler ) | ( ruleGatePersonnel ) )
+            // InternalAir.g:463:1: ( ( rulePilot ) | ( ruleFlightAttendant ) | ( ruleBagHandler ) | ( ruleGatePersonnel ) )
             int alt3=4;
             switch ( input.LA(1) ) {
-            case 24:
+            case 27:
                 {
                 alt3=1;
                 }
                 break;
-            case 25:
+            case 28:
                 {
                 alt3=2;
                 }
                 break;
-            case 26:
+            case 29:
                 {
                 alt3=3;
                 }
                 break;
-            case 27:
+            case 30:
                 {
                 alt3=4;
                 }
@@ -1350,10 +1454,10 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
             switch (alt3) {
                 case 1 :
-                    // InternalAir.g:433:2: ( rulePilot )
+                    // InternalAir.g:464:2: ( rulePilot )
                     {
-                    // InternalAir.g:433:2: ( rulePilot )
-                    // InternalAir.g:434:3: rulePilot
+                    // InternalAir.g:464:2: ( rulePilot )
+                    // InternalAir.g:465:3: rulePilot
                     {
                      before(grammarAccess.getEmployeeAccess().getPilotParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1369,10 +1473,10 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalAir.g:439:2: ( ruleFlightAttendant )
+                    // InternalAir.g:470:2: ( ruleFlightAttendant )
                     {
-                    // InternalAir.g:439:2: ( ruleFlightAttendant )
-                    // InternalAir.g:440:3: ruleFlightAttendant
+                    // InternalAir.g:470:2: ( ruleFlightAttendant )
+                    // InternalAir.g:471:3: ruleFlightAttendant
                     {
                      before(grammarAccess.getEmployeeAccess().getFlightAttendantParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1388,10 +1492,10 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalAir.g:445:2: ( ruleBagHandler )
+                    // InternalAir.g:476:2: ( ruleBagHandler )
                     {
-                    // InternalAir.g:445:2: ( ruleBagHandler )
-                    // InternalAir.g:446:3: ruleBagHandler
+                    // InternalAir.g:476:2: ( ruleBagHandler )
+                    // InternalAir.g:477:3: ruleBagHandler
                     {
                      before(grammarAccess.getEmployeeAccess().getBagHandlerParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -1407,10 +1511,10 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalAir.g:451:2: ( ruleGatePersonnel )
+                    // InternalAir.g:482:2: ( ruleGatePersonnel )
                     {
-                    // InternalAir.g:451:2: ( ruleGatePersonnel )
-                    // InternalAir.g:452:3: ruleGatePersonnel
+                    // InternalAir.g:482:2: ( ruleGatePersonnel )
+                    // InternalAir.g:483:3: ruleGatePersonnel
                     {
                      before(grammarAccess.getEmployeeAccess().getGatePersonnelParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -1443,14 +1547,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__Group__0"
-    // InternalAir.g:461:1: rule__Airport__Group__0 : rule__Airport__Group__0__Impl rule__Airport__Group__1 ;
+    // InternalAir.g:492:1: rule__Airport__Group__0 : rule__Airport__Group__0__Impl rule__Airport__Group__1 ;
     public final void rule__Airport__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:465:1: ( rule__Airport__Group__0__Impl rule__Airport__Group__1 )
-            // InternalAir.g:466:2: rule__Airport__Group__0__Impl rule__Airport__Group__1
+            // InternalAir.g:496:1: ( rule__Airport__Group__0__Impl rule__Airport__Group__1 )
+            // InternalAir.g:497:2: rule__Airport__Group__0__Impl rule__Airport__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Airport__Group__0__Impl();
@@ -1481,17 +1585,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__Group__0__Impl"
-    // InternalAir.g:473:1: rule__Airport__Group__0__Impl : ( 'Airport' ) ;
+    // InternalAir.g:504:1: rule__Airport__Group__0__Impl : ( 'Airport' ) ;
     public final void rule__Airport__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:477:1: ( ( 'Airport' ) )
-            // InternalAir.g:478:1: ( 'Airport' )
+            // InternalAir.g:508:1: ( ( 'Airport' ) )
+            // InternalAir.g:509:1: ( 'Airport' )
             {
-            // InternalAir.g:478:1: ( 'Airport' )
-            // InternalAir.g:479:2: 'Airport'
+            // InternalAir.g:509:1: ( 'Airport' )
+            // InternalAir.g:510:2: 'Airport'
             {
              before(grammarAccess.getAirportAccess().getAirportKeyword_0()); 
             match(input,11,FOLLOW_2); 
@@ -1518,14 +1622,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__Group__1"
-    // InternalAir.g:488:1: rule__Airport__Group__1 : rule__Airport__Group__1__Impl rule__Airport__Group__2 ;
+    // InternalAir.g:519:1: rule__Airport__Group__1 : rule__Airport__Group__1__Impl rule__Airport__Group__2 ;
     public final void rule__Airport__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:492:1: ( rule__Airport__Group__1__Impl rule__Airport__Group__2 )
-            // InternalAir.g:493:2: rule__Airport__Group__1__Impl rule__Airport__Group__2
+            // InternalAir.g:523:1: ( rule__Airport__Group__1__Impl rule__Airport__Group__2 )
+            // InternalAir.g:524:2: rule__Airport__Group__1__Impl rule__Airport__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Airport__Group__1__Impl();
@@ -1556,21 +1660,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__Group__1__Impl"
-    // InternalAir.g:500:1: rule__Airport__Group__1__Impl : ( ( rule__Airport__NameAssignment_1 ) ) ;
+    // InternalAir.g:531:1: rule__Airport__Group__1__Impl : ( ( rule__Airport__NameAssignment_1 ) ) ;
     public final void rule__Airport__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:504:1: ( ( ( rule__Airport__NameAssignment_1 ) ) )
-            // InternalAir.g:505:1: ( ( rule__Airport__NameAssignment_1 ) )
+            // InternalAir.g:535:1: ( ( ( rule__Airport__NameAssignment_1 ) ) )
+            // InternalAir.g:536:1: ( ( rule__Airport__NameAssignment_1 ) )
             {
-            // InternalAir.g:505:1: ( ( rule__Airport__NameAssignment_1 ) )
-            // InternalAir.g:506:2: ( rule__Airport__NameAssignment_1 )
+            // InternalAir.g:536:1: ( ( rule__Airport__NameAssignment_1 ) )
+            // InternalAir.g:537:2: ( rule__Airport__NameAssignment_1 )
             {
              before(grammarAccess.getAirportAccess().getNameAssignment_1()); 
-            // InternalAir.g:507:2: ( rule__Airport__NameAssignment_1 )
-            // InternalAir.g:507:3: rule__Airport__NameAssignment_1
+            // InternalAir.g:538:2: ( rule__Airport__NameAssignment_1 )
+            // InternalAir.g:538:3: rule__Airport__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Airport__NameAssignment_1();
@@ -1603,14 +1707,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__Group__2"
-    // InternalAir.g:515:1: rule__Airport__Group__2 : rule__Airport__Group__2__Impl rule__Airport__Group__3 ;
+    // InternalAir.g:546:1: rule__Airport__Group__2 : rule__Airport__Group__2__Impl rule__Airport__Group__3 ;
     public final void rule__Airport__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:519:1: ( rule__Airport__Group__2__Impl rule__Airport__Group__3 )
-            // InternalAir.g:520:2: rule__Airport__Group__2__Impl rule__Airport__Group__3
+            // InternalAir.g:550:1: ( rule__Airport__Group__2__Impl rule__Airport__Group__3 )
+            // InternalAir.g:551:2: rule__Airport__Group__2__Impl rule__Airport__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__Airport__Group__2__Impl();
@@ -1641,21 +1745,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__Group__2__Impl"
-    // InternalAir.g:527:1: rule__Airport__Group__2__Impl : ( ( rule__Airport__AnameAssignment_2 ) ) ;
+    // InternalAir.g:558:1: rule__Airport__Group__2__Impl : ( ( rule__Airport__AnameAssignment_2 ) ) ;
     public final void rule__Airport__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:531:1: ( ( ( rule__Airport__AnameAssignment_2 ) ) )
-            // InternalAir.g:532:1: ( ( rule__Airport__AnameAssignment_2 ) )
+            // InternalAir.g:562:1: ( ( ( rule__Airport__AnameAssignment_2 ) ) )
+            // InternalAir.g:563:1: ( ( rule__Airport__AnameAssignment_2 ) )
             {
-            // InternalAir.g:532:1: ( ( rule__Airport__AnameAssignment_2 ) )
-            // InternalAir.g:533:2: ( rule__Airport__AnameAssignment_2 )
+            // InternalAir.g:563:1: ( ( rule__Airport__AnameAssignment_2 ) )
+            // InternalAir.g:564:2: ( rule__Airport__AnameAssignment_2 )
             {
              before(grammarAccess.getAirportAccess().getAnameAssignment_2()); 
-            // InternalAir.g:534:2: ( rule__Airport__AnameAssignment_2 )
-            // InternalAir.g:534:3: rule__Airport__AnameAssignment_2
+            // InternalAir.g:565:2: ( rule__Airport__AnameAssignment_2 )
+            // InternalAir.g:565:3: rule__Airport__AnameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Airport__AnameAssignment_2();
@@ -1688,14 +1792,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__Group__3"
-    // InternalAir.g:542:1: rule__Airport__Group__3 : rule__Airport__Group__3__Impl ;
+    // InternalAir.g:573:1: rule__Airport__Group__3 : rule__Airport__Group__3__Impl ;
     public final void rule__Airport__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:546:1: ( rule__Airport__Group__3__Impl )
-            // InternalAir.g:547:2: rule__Airport__Group__3__Impl
+            // InternalAir.g:577:1: ( rule__Airport__Group__3__Impl )
+            // InternalAir.g:578:2: rule__Airport__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Airport__Group__3__Impl();
@@ -1721,21 +1825,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__Group__3__Impl"
-    // InternalAir.g:553:1: rule__Airport__Group__3__Impl : ( ( rule__Airport__LocationAssignment_3 ) ) ;
+    // InternalAir.g:584:1: rule__Airport__Group__3__Impl : ( ( rule__Airport__LocationAssignment_3 ) ) ;
     public final void rule__Airport__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:557:1: ( ( ( rule__Airport__LocationAssignment_3 ) ) )
-            // InternalAir.g:558:1: ( ( rule__Airport__LocationAssignment_3 ) )
+            // InternalAir.g:588:1: ( ( ( rule__Airport__LocationAssignment_3 ) ) )
+            // InternalAir.g:589:1: ( ( rule__Airport__LocationAssignment_3 ) )
             {
-            // InternalAir.g:558:1: ( ( rule__Airport__LocationAssignment_3 ) )
-            // InternalAir.g:559:2: ( rule__Airport__LocationAssignment_3 )
+            // InternalAir.g:589:1: ( ( rule__Airport__LocationAssignment_3 ) )
+            // InternalAir.g:590:2: ( rule__Airport__LocationAssignment_3 )
             {
              before(grammarAccess.getAirportAccess().getLocationAssignment_3()); 
-            // InternalAir.g:560:2: ( rule__Airport__LocationAssignment_3 )
-            // InternalAir.g:560:3: rule__Airport__LocationAssignment_3
+            // InternalAir.g:591:2: ( rule__Airport__LocationAssignment_3 )
+            // InternalAir.g:591:3: rule__Airport__LocationAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Airport__LocationAssignment_3();
@@ -1768,14 +1872,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airline__Group__0"
-    // InternalAir.g:569:1: rule__Airline__Group__0 : rule__Airline__Group__0__Impl rule__Airline__Group__1 ;
+    // InternalAir.g:600:1: rule__Airline__Group__0 : rule__Airline__Group__0__Impl rule__Airline__Group__1 ;
     public final void rule__Airline__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:573:1: ( rule__Airline__Group__0__Impl rule__Airline__Group__1 )
-            // InternalAir.g:574:2: rule__Airline__Group__0__Impl rule__Airline__Group__1
+            // InternalAir.g:604:1: ( rule__Airline__Group__0__Impl rule__Airline__Group__1 )
+            // InternalAir.g:605:2: rule__Airline__Group__0__Impl rule__Airline__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Airline__Group__0__Impl();
@@ -1806,17 +1910,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airline__Group__0__Impl"
-    // InternalAir.g:581:1: rule__Airline__Group__0__Impl : ( 'Airline' ) ;
+    // InternalAir.g:612:1: rule__Airline__Group__0__Impl : ( 'Airline' ) ;
     public final void rule__Airline__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:585:1: ( ( 'Airline' ) )
-            // InternalAir.g:586:1: ( 'Airline' )
+            // InternalAir.g:616:1: ( ( 'Airline' ) )
+            // InternalAir.g:617:1: ( 'Airline' )
             {
-            // InternalAir.g:586:1: ( 'Airline' )
-            // InternalAir.g:587:2: 'Airline'
+            // InternalAir.g:617:1: ( 'Airline' )
+            // InternalAir.g:618:2: 'Airline'
             {
              before(grammarAccess.getAirlineAccess().getAirlineKeyword_0()); 
             match(input,12,FOLLOW_2); 
@@ -1843,14 +1947,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airline__Group__1"
-    // InternalAir.g:596:1: rule__Airline__Group__1 : rule__Airline__Group__1__Impl rule__Airline__Group__2 ;
+    // InternalAir.g:627:1: rule__Airline__Group__1 : rule__Airline__Group__1__Impl rule__Airline__Group__2 ;
     public final void rule__Airline__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:600:1: ( rule__Airline__Group__1__Impl rule__Airline__Group__2 )
-            // InternalAir.g:601:2: rule__Airline__Group__1__Impl rule__Airline__Group__2
+            // InternalAir.g:631:1: ( rule__Airline__Group__1__Impl rule__Airline__Group__2 )
+            // InternalAir.g:632:2: rule__Airline__Group__1__Impl rule__Airline__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Airline__Group__1__Impl();
@@ -1881,21 +1985,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airline__Group__1__Impl"
-    // InternalAir.g:608:1: rule__Airline__Group__1__Impl : ( ( rule__Airline__NameAssignment_1 ) ) ;
+    // InternalAir.g:639:1: rule__Airline__Group__1__Impl : ( ( rule__Airline__NameAssignment_1 ) ) ;
     public final void rule__Airline__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:612:1: ( ( ( rule__Airline__NameAssignment_1 ) ) )
-            // InternalAir.g:613:1: ( ( rule__Airline__NameAssignment_1 ) )
+            // InternalAir.g:643:1: ( ( ( rule__Airline__NameAssignment_1 ) ) )
+            // InternalAir.g:644:1: ( ( rule__Airline__NameAssignment_1 ) )
             {
-            // InternalAir.g:613:1: ( ( rule__Airline__NameAssignment_1 ) )
-            // InternalAir.g:614:2: ( rule__Airline__NameAssignment_1 )
+            // InternalAir.g:644:1: ( ( rule__Airline__NameAssignment_1 ) )
+            // InternalAir.g:645:2: ( rule__Airline__NameAssignment_1 )
             {
              before(grammarAccess.getAirlineAccess().getNameAssignment_1()); 
-            // InternalAir.g:615:2: ( rule__Airline__NameAssignment_1 )
-            // InternalAir.g:615:3: rule__Airline__NameAssignment_1
+            // InternalAir.g:646:2: ( rule__Airline__NameAssignment_1 )
+            // InternalAir.g:646:3: rule__Airline__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Airline__NameAssignment_1();
@@ -1928,14 +2032,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airline__Group__2"
-    // InternalAir.g:623:1: rule__Airline__Group__2 : rule__Airline__Group__2__Impl ;
+    // InternalAir.g:654:1: rule__Airline__Group__2 : rule__Airline__Group__2__Impl ;
     public final void rule__Airline__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:627:1: ( rule__Airline__Group__2__Impl )
-            // InternalAir.g:628:2: rule__Airline__Group__2__Impl
+            // InternalAir.g:658:1: ( rule__Airline__Group__2__Impl )
+            // InternalAir.g:659:2: rule__Airline__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Airline__Group__2__Impl();
@@ -1961,21 +2065,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airline__Group__2__Impl"
-    // InternalAir.g:634:1: rule__Airline__Group__2__Impl : ( ( rule__Airline__DescriptionAssignment_2 ) ) ;
+    // InternalAir.g:665:1: rule__Airline__Group__2__Impl : ( ( rule__Airline__DescriptionAssignment_2 ) ) ;
     public final void rule__Airline__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:638:1: ( ( ( rule__Airline__DescriptionAssignment_2 ) ) )
-            // InternalAir.g:639:1: ( ( rule__Airline__DescriptionAssignment_2 ) )
+            // InternalAir.g:669:1: ( ( ( rule__Airline__DescriptionAssignment_2 ) ) )
+            // InternalAir.g:670:1: ( ( rule__Airline__DescriptionAssignment_2 ) )
             {
-            // InternalAir.g:639:1: ( ( rule__Airline__DescriptionAssignment_2 ) )
-            // InternalAir.g:640:2: ( rule__Airline__DescriptionAssignment_2 )
+            // InternalAir.g:670:1: ( ( rule__Airline__DescriptionAssignment_2 ) )
+            // InternalAir.g:671:2: ( rule__Airline__DescriptionAssignment_2 )
             {
              before(grammarAccess.getAirlineAccess().getDescriptionAssignment_2()); 
-            // InternalAir.g:641:2: ( rule__Airline__DescriptionAssignment_2 )
-            // InternalAir.g:641:3: rule__Airline__DescriptionAssignment_2
+            // InternalAir.g:672:2: ( rule__Airline__DescriptionAssignment_2 )
+            // InternalAir.g:672:3: rule__Airline__DescriptionAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Airline__DescriptionAssignment_2();
@@ -2008,14 +2112,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__Group__0"
-    // InternalAir.g:650:1: rule__Airplane__Group__0 : rule__Airplane__Group__0__Impl rule__Airplane__Group__1 ;
+    // InternalAir.g:681:1: rule__Airplane__Group__0 : rule__Airplane__Group__0__Impl rule__Airplane__Group__1 ;
     public final void rule__Airplane__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:654:1: ( rule__Airplane__Group__0__Impl rule__Airplane__Group__1 )
-            // InternalAir.g:655:2: rule__Airplane__Group__0__Impl rule__Airplane__Group__1
+            // InternalAir.g:685:1: ( rule__Airplane__Group__0__Impl rule__Airplane__Group__1 )
+            // InternalAir.g:686:2: rule__Airplane__Group__0__Impl rule__Airplane__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Airplane__Group__0__Impl();
@@ -2046,17 +2150,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__Group__0__Impl"
-    // InternalAir.g:662:1: rule__Airplane__Group__0__Impl : ( 'Airplane' ) ;
+    // InternalAir.g:693:1: rule__Airplane__Group__0__Impl : ( 'Airplane' ) ;
     public final void rule__Airplane__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:666:1: ( ( 'Airplane' ) )
-            // InternalAir.g:667:1: ( 'Airplane' )
+            // InternalAir.g:697:1: ( ( 'Airplane' ) )
+            // InternalAir.g:698:1: ( 'Airplane' )
             {
-            // InternalAir.g:667:1: ( 'Airplane' )
-            // InternalAir.g:668:2: 'Airplane'
+            // InternalAir.g:698:1: ( 'Airplane' )
+            // InternalAir.g:699:2: 'Airplane'
             {
              before(grammarAccess.getAirplaneAccess().getAirplaneKeyword_0()); 
             match(input,13,FOLLOW_2); 
@@ -2083,14 +2187,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__Group__1"
-    // InternalAir.g:677:1: rule__Airplane__Group__1 : rule__Airplane__Group__1__Impl rule__Airplane__Group__2 ;
+    // InternalAir.g:708:1: rule__Airplane__Group__1 : rule__Airplane__Group__1__Impl rule__Airplane__Group__2 ;
     public final void rule__Airplane__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:681:1: ( rule__Airplane__Group__1__Impl rule__Airplane__Group__2 )
-            // InternalAir.g:682:2: rule__Airplane__Group__1__Impl rule__Airplane__Group__2
+            // InternalAir.g:712:1: ( rule__Airplane__Group__1__Impl rule__Airplane__Group__2 )
+            // InternalAir.g:713:2: rule__Airplane__Group__1__Impl rule__Airplane__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Airplane__Group__1__Impl();
@@ -2121,21 +2225,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__Group__1__Impl"
-    // InternalAir.g:689:1: rule__Airplane__Group__1__Impl : ( ( rule__Airplane__NameAssignment_1 ) ) ;
+    // InternalAir.g:720:1: rule__Airplane__Group__1__Impl : ( ( rule__Airplane__NameAssignment_1 ) ) ;
     public final void rule__Airplane__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:693:1: ( ( ( rule__Airplane__NameAssignment_1 ) ) )
-            // InternalAir.g:694:1: ( ( rule__Airplane__NameAssignment_1 ) )
+            // InternalAir.g:724:1: ( ( ( rule__Airplane__NameAssignment_1 ) ) )
+            // InternalAir.g:725:1: ( ( rule__Airplane__NameAssignment_1 ) )
             {
-            // InternalAir.g:694:1: ( ( rule__Airplane__NameAssignment_1 ) )
-            // InternalAir.g:695:2: ( rule__Airplane__NameAssignment_1 )
+            // InternalAir.g:725:1: ( ( rule__Airplane__NameAssignment_1 ) )
+            // InternalAir.g:726:2: ( rule__Airplane__NameAssignment_1 )
             {
              before(grammarAccess.getAirplaneAccess().getNameAssignment_1()); 
-            // InternalAir.g:696:2: ( rule__Airplane__NameAssignment_1 )
-            // InternalAir.g:696:3: rule__Airplane__NameAssignment_1
+            // InternalAir.g:727:2: ( rule__Airplane__NameAssignment_1 )
+            // InternalAir.g:727:3: rule__Airplane__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Airplane__NameAssignment_1();
@@ -2168,14 +2272,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__Group__2"
-    // InternalAir.g:704:1: rule__Airplane__Group__2 : rule__Airplane__Group__2__Impl rule__Airplane__Group__3 ;
+    // InternalAir.g:735:1: rule__Airplane__Group__2 : rule__Airplane__Group__2__Impl rule__Airplane__Group__3 ;
     public final void rule__Airplane__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:708:1: ( rule__Airplane__Group__2__Impl rule__Airplane__Group__3 )
-            // InternalAir.g:709:2: rule__Airplane__Group__2__Impl rule__Airplane__Group__3
+            // InternalAir.g:739:1: ( rule__Airplane__Group__2__Impl rule__Airplane__Group__3 )
+            // InternalAir.g:740:2: rule__Airplane__Group__2__Impl rule__Airplane__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Airplane__Group__2__Impl();
@@ -2206,21 +2310,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__Group__2__Impl"
-    // InternalAir.g:716:1: rule__Airplane__Group__2__Impl : ( ( rule__Airplane__TypeAssignment_2 ) ) ;
+    // InternalAir.g:747:1: rule__Airplane__Group__2__Impl : ( ( rule__Airplane__TypeAssignment_2 ) ) ;
     public final void rule__Airplane__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:720:1: ( ( ( rule__Airplane__TypeAssignment_2 ) ) )
-            // InternalAir.g:721:1: ( ( rule__Airplane__TypeAssignment_2 ) )
+            // InternalAir.g:751:1: ( ( ( rule__Airplane__TypeAssignment_2 ) ) )
+            // InternalAir.g:752:1: ( ( rule__Airplane__TypeAssignment_2 ) )
             {
-            // InternalAir.g:721:1: ( ( rule__Airplane__TypeAssignment_2 ) )
-            // InternalAir.g:722:2: ( rule__Airplane__TypeAssignment_2 )
+            // InternalAir.g:752:1: ( ( rule__Airplane__TypeAssignment_2 ) )
+            // InternalAir.g:753:2: ( rule__Airplane__TypeAssignment_2 )
             {
              before(grammarAccess.getAirplaneAccess().getTypeAssignment_2()); 
-            // InternalAir.g:723:2: ( rule__Airplane__TypeAssignment_2 )
-            // InternalAir.g:723:3: rule__Airplane__TypeAssignment_2
+            // InternalAir.g:754:2: ( rule__Airplane__TypeAssignment_2 )
+            // InternalAir.g:754:3: rule__Airplane__TypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Airplane__TypeAssignment_2();
@@ -2253,14 +2357,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__Group__3"
-    // InternalAir.g:731:1: rule__Airplane__Group__3 : rule__Airplane__Group__3__Impl ;
+    // InternalAir.g:762:1: rule__Airplane__Group__3 : rule__Airplane__Group__3__Impl ;
     public final void rule__Airplane__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:735:1: ( rule__Airplane__Group__3__Impl )
-            // InternalAir.g:736:2: rule__Airplane__Group__3__Impl
+            // InternalAir.g:766:1: ( rule__Airplane__Group__3__Impl )
+            // InternalAir.g:767:2: rule__Airplane__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Airplane__Group__3__Impl();
@@ -2286,21 +2390,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__Group__3__Impl"
-    // InternalAir.g:742:1: rule__Airplane__Group__3__Impl : ( ( rule__Airplane__SeatsAssignment_3 ) ) ;
+    // InternalAir.g:773:1: rule__Airplane__Group__3__Impl : ( ( rule__Airplane__SeatsAssignment_3 ) ) ;
     public final void rule__Airplane__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:746:1: ( ( ( rule__Airplane__SeatsAssignment_3 ) ) )
-            // InternalAir.g:747:1: ( ( rule__Airplane__SeatsAssignment_3 ) )
+            // InternalAir.g:777:1: ( ( ( rule__Airplane__SeatsAssignment_3 ) ) )
+            // InternalAir.g:778:1: ( ( rule__Airplane__SeatsAssignment_3 ) )
             {
-            // InternalAir.g:747:1: ( ( rule__Airplane__SeatsAssignment_3 ) )
-            // InternalAir.g:748:2: ( rule__Airplane__SeatsAssignment_3 )
+            // InternalAir.g:778:1: ( ( rule__Airplane__SeatsAssignment_3 ) )
+            // InternalAir.g:779:2: ( rule__Airplane__SeatsAssignment_3 )
             {
              before(grammarAccess.getAirplaneAccess().getSeatsAssignment_3()); 
-            // InternalAir.g:749:2: ( rule__Airplane__SeatsAssignment_3 )
-            // InternalAir.g:749:3: rule__Airplane__SeatsAssignment_3
+            // InternalAir.g:780:2: ( rule__Airplane__SeatsAssignment_3 )
+            // InternalAir.g:780:3: rule__Airplane__SeatsAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Airplane__SeatsAssignment_3();
@@ -2332,23 +2436,23 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Airplane__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__0"
-    // InternalAir.g:758:1: rule__Flight__Group__0 : rule__Flight__Group__0__Impl rule__Flight__Group__1 ;
-    public final void rule__Flight__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__0"
+    // InternalAir.g:789:1: rule__ScheduledFlight__Group__0 : rule__ScheduledFlight__Group__0__Impl rule__ScheduledFlight__Group__1 ;
+    public final void rule__ScheduledFlight__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:762:1: ( rule__Flight__Group__0__Impl rule__Flight__Group__1 )
-            // InternalAir.g:763:2: rule__Flight__Group__0__Impl rule__Flight__Group__1
+            // InternalAir.g:793:1: ( rule__ScheduledFlight__Group__0__Impl rule__ScheduledFlight__Group__1 )
+            // InternalAir.g:794:2: rule__ScheduledFlight__Group__0__Impl rule__ScheduledFlight__Group__1
             {
             pushFollow(FOLLOW_4);
-            rule__Flight__Group__0__Impl();
+            rule__ScheduledFlight__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__1();
+            rule__ScheduledFlight__Group__1();
 
             state._fsp--;
 
@@ -2367,25 +2471,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__0"
+    // $ANTLR end "rule__ScheduledFlight__Group__0"
 
 
-    // $ANTLR start "rule__Flight__Group__0__Impl"
-    // InternalAir.g:770:1: rule__Flight__Group__0__Impl : ( 'Flight' ) ;
-    public final void rule__Flight__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__0__Impl"
+    // InternalAir.g:801:1: rule__ScheduledFlight__Group__0__Impl : ( 'ScheduledFlight' ) ;
+    public final void rule__ScheduledFlight__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:774:1: ( ( 'Flight' ) )
-            // InternalAir.g:775:1: ( 'Flight' )
+            // InternalAir.g:805:1: ( ( 'ScheduledFlight' ) )
+            // InternalAir.g:806:1: ( 'ScheduledFlight' )
             {
-            // InternalAir.g:775:1: ( 'Flight' )
-            // InternalAir.g:776:2: 'Flight'
+            // InternalAir.g:806:1: ( 'ScheduledFlight' )
+            // InternalAir.g:807:2: 'ScheduledFlight'
             {
-             before(grammarAccess.getFlightAccess().getFlightKeyword_0()); 
+             before(grammarAccess.getScheduledFlightAccess().getScheduledFlightKeyword_0()); 
             match(input,14,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getFlightKeyword_0()); 
+             after(grammarAccess.getScheduledFlightAccess().getScheduledFlightKeyword_0()); 
 
             }
 
@@ -2404,111 +2508,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__0__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__1"
-    // InternalAir.g:785:1: rule__Flight__Group__1 : rule__Flight__Group__1__Impl rule__Flight__Group__2 ;
-    public final void rule__Flight__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalAir.g:789:1: ( rule__Flight__Group__1__Impl rule__Flight__Group__2 )
-            // InternalAir.g:790:2: rule__Flight__Group__1__Impl rule__Flight__Group__2
-            {
-            pushFollow(FOLLOW_5);
-            rule__Flight__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Flight__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Flight__Group__1"
-
-
-    // $ANTLR start "rule__Flight__Group__1__Impl"
-    // InternalAir.g:797:1: rule__Flight__Group__1__Impl : ( ( rule__Flight__NameAssignment_1 ) ) ;
-    public final void rule__Flight__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__1"
+    // InternalAir.g:816:1: rule__ScheduledFlight__Group__1 : rule__ScheduledFlight__Group__1__Impl rule__ScheduledFlight__Group__2 ;
+    public final void rule__ScheduledFlight__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:801:1: ( ( ( rule__Flight__NameAssignment_1 ) ) )
-            // InternalAir.g:802:1: ( ( rule__Flight__NameAssignment_1 ) )
-            {
-            // InternalAir.g:802:1: ( ( rule__Flight__NameAssignment_1 ) )
-            // InternalAir.g:803:2: ( rule__Flight__NameAssignment_1 )
-            {
-             before(grammarAccess.getFlightAccess().getNameAssignment_1()); 
-            // InternalAir.g:804:2: ( rule__Flight__NameAssignment_1 )
-            // InternalAir.g:804:3: rule__Flight__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Flight__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFlightAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Flight__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Flight__Group__2"
-    // InternalAir.g:812:1: rule__Flight__Group__2 : rule__Flight__Group__2__Impl rule__Flight__Group__3 ;
-    public final void rule__Flight__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalAir.g:816:1: ( rule__Flight__Group__2__Impl rule__Flight__Group__3 )
-            // InternalAir.g:817:2: rule__Flight__Group__2__Impl rule__Flight__Group__3
+            // InternalAir.g:820:1: ( rule__ScheduledFlight__Group__1__Impl rule__ScheduledFlight__Group__2 )
+            // InternalAir.g:821:2: rule__ScheduledFlight__Group__1__Impl rule__ScheduledFlight__Group__2
             {
             pushFollow(FOLLOW_7);
-            rule__Flight__Group__2__Impl();
+            rule__ScheduledFlight__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__3();
+            rule__ScheduledFlight__Group__2();
 
             state._fsp--;
 
@@ -2527,35 +2546,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__2"
+    // $ANTLR end "rule__ScheduledFlight__Group__1"
 
 
-    // $ANTLR start "rule__Flight__Group__2__Impl"
-    // InternalAir.g:824:1: rule__Flight__Group__2__Impl : ( ( rule__Flight__FnameAssignment_2 ) ) ;
-    public final void rule__Flight__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__1__Impl"
+    // InternalAir.g:828:1: rule__ScheduledFlight__Group__1__Impl : ( ( rule__ScheduledFlight__NameAssignment_1 ) ) ;
+    public final void rule__ScheduledFlight__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:828:1: ( ( ( rule__Flight__FnameAssignment_2 ) ) )
-            // InternalAir.g:829:1: ( ( rule__Flight__FnameAssignment_2 ) )
+            // InternalAir.g:832:1: ( ( ( rule__ScheduledFlight__NameAssignment_1 ) ) )
+            // InternalAir.g:833:1: ( ( rule__ScheduledFlight__NameAssignment_1 ) )
             {
-            // InternalAir.g:829:1: ( ( rule__Flight__FnameAssignment_2 ) )
-            // InternalAir.g:830:2: ( rule__Flight__FnameAssignment_2 )
+            // InternalAir.g:833:1: ( ( rule__ScheduledFlight__NameAssignment_1 ) )
+            // InternalAir.g:834:2: ( rule__ScheduledFlight__NameAssignment_1 )
             {
-             before(grammarAccess.getFlightAccess().getFnameAssignment_2()); 
-            // InternalAir.g:831:2: ( rule__Flight__FnameAssignment_2 )
-            // InternalAir.g:831:3: rule__Flight__FnameAssignment_2
+             before(grammarAccess.getScheduledFlightAccess().getNameAssignment_1()); 
+            // InternalAir.g:835:2: ( rule__ScheduledFlight__NameAssignment_1 )
+            // InternalAir.g:835:3: rule__ScheduledFlight__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__FnameAssignment_2();
+            rule__ScheduledFlight__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getFnameAssignment_2()); 
+             after(grammarAccess.getScheduledFlightAccess().getNameAssignment_1()); 
 
             }
 
@@ -2574,26 +2593,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__2__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__3"
-    // InternalAir.g:839:1: rule__Flight__Group__3 : rule__Flight__Group__3__Impl rule__Flight__Group__4 ;
-    public final void rule__Flight__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__2"
+    // InternalAir.g:843:1: rule__ScheduledFlight__Group__2 : rule__ScheduledFlight__Group__2__Impl rule__ScheduledFlight__Group__3 ;
+    public final void rule__ScheduledFlight__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:843:1: ( rule__Flight__Group__3__Impl rule__Flight__Group__4 )
-            // InternalAir.g:844:2: rule__Flight__Group__3__Impl rule__Flight__Group__4
+            // InternalAir.g:847:1: ( rule__ScheduledFlight__Group__2__Impl rule__ScheduledFlight__Group__3 )
+            // InternalAir.g:848:2: rule__ScheduledFlight__Group__2__Impl rule__ScheduledFlight__Group__3
             {
             pushFollow(FOLLOW_4);
-            rule__Flight__Group__3__Impl();
+            rule__ScheduledFlight__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__4();
+            rule__ScheduledFlight__Group__3();
 
             state._fsp--;
 
@@ -2612,25 +2631,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__3"
+    // $ANTLR end "rule__ScheduledFlight__Group__2"
 
 
-    // $ANTLR start "rule__Flight__Group__3__Impl"
-    // InternalAir.g:851:1: rule__Flight__Group__3__Impl : ( 'from' ) ;
-    public final void rule__Flight__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__2__Impl"
+    // InternalAir.g:855:1: rule__ScheduledFlight__Group__2__Impl : ( 'from' ) ;
+    public final void rule__ScheduledFlight__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:855:1: ( ( 'from' ) )
-            // InternalAir.g:856:1: ( 'from' )
+            // InternalAir.g:859:1: ( ( 'from' ) )
+            // InternalAir.g:860:1: ( 'from' )
             {
-            // InternalAir.g:856:1: ( 'from' )
-            // InternalAir.g:857:2: 'from'
+            // InternalAir.g:860:1: ( 'from' )
+            // InternalAir.g:861:2: 'from'
             {
-             before(grammarAccess.getFlightAccess().getFromKeyword_3()); 
+             before(grammarAccess.getScheduledFlightAccess().getFromKeyword_2()); 
             match(input,15,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getFromKeyword_3()); 
+             after(grammarAccess.getScheduledFlightAccess().getFromKeyword_2()); 
 
             }
 
@@ -2649,26 +2668,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__3__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__4"
-    // InternalAir.g:866:1: rule__Flight__Group__4 : rule__Flight__Group__4__Impl rule__Flight__Group__5 ;
-    public final void rule__Flight__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__3"
+    // InternalAir.g:870:1: rule__ScheduledFlight__Group__3 : rule__ScheduledFlight__Group__3__Impl rule__ScheduledFlight__Group__4 ;
+    public final void rule__ScheduledFlight__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:870:1: ( rule__Flight__Group__4__Impl rule__Flight__Group__5 )
-            // InternalAir.g:871:2: rule__Flight__Group__4__Impl rule__Flight__Group__5
+            // InternalAir.g:874:1: ( rule__ScheduledFlight__Group__3__Impl rule__ScheduledFlight__Group__4 )
+            // InternalAir.g:875:2: rule__ScheduledFlight__Group__3__Impl rule__ScheduledFlight__Group__4
             {
             pushFollow(FOLLOW_8);
-            rule__Flight__Group__4__Impl();
+            rule__ScheduledFlight__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__5();
+            rule__ScheduledFlight__Group__4();
 
             state._fsp--;
 
@@ -2687,35 +2706,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__4"
+    // $ANTLR end "rule__ScheduledFlight__Group__3"
 
 
-    // $ANTLR start "rule__Flight__Group__4__Impl"
-    // InternalAir.g:878:1: rule__Flight__Group__4__Impl : ( ( rule__Flight__FromAssignment_4 ) ) ;
-    public final void rule__Flight__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__3__Impl"
+    // InternalAir.g:882:1: rule__ScheduledFlight__Group__3__Impl : ( ( rule__ScheduledFlight__FromAssignment_3 ) ) ;
+    public final void rule__ScheduledFlight__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:882:1: ( ( ( rule__Flight__FromAssignment_4 ) ) )
-            // InternalAir.g:883:1: ( ( rule__Flight__FromAssignment_4 ) )
+            // InternalAir.g:886:1: ( ( ( rule__ScheduledFlight__FromAssignment_3 ) ) )
+            // InternalAir.g:887:1: ( ( rule__ScheduledFlight__FromAssignment_3 ) )
             {
-            // InternalAir.g:883:1: ( ( rule__Flight__FromAssignment_4 ) )
-            // InternalAir.g:884:2: ( rule__Flight__FromAssignment_4 )
+            // InternalAir.g:887:1: ( ( rule__ScheduledFlight__FromAssignment_3 ) )
+            // InternalAir.g:888:2: ( rule__ScheduledFlight__FromAssignment_3 )
             {
-             before(grammarAccess.getFlightAccess().getFromAssignment_4()); 
-            // InternalAir.g:885:2: ( rule__Flight__FromAssignment_4 )
-            // InternalAir.g:885:3: rule__Flight__FromAssignment_4
+             before(grammarAccess.getScheduledFlightAccess().getFromAssignment_3()); 
+            // InternalAir.g:889:2: ( rule__ScheduledFlight__FromAssignment_3 )
+            // InternalAir.g:889:3: rule__ScheduledFlight__FromAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__FromAssignment_4();
+            rule__ScheduledFlight__FromAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getFromAssignment_4()); 
+             after(grammarAccess.getScheduledFlightAccess().getFromAssignment_3()); 
 
             }
 
@@ -2734,26 +2753,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__4__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__5"
-    // InternalAir.g:893:1: rule__Flight__Group__5 : rule__Flight__Group__5__Impl rule__Flight__Group__6 ;
-    public final void rule__Flight__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__4"
+    // InternalAir.g:897:1: rule__ScheduledFlight__Group__4 : rule__ScheduledFlight__Group__4__Impl rule__ScheduledFlight__Group__5 ;
+    public final void rule__ScheduledFlight__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:897:1: ( rule__Flight__Group__5__Impl rule__Flight__Group__6 )
-            // InternalAir.g:898:2: rule__Flight__Group__5__Impl rule__Flight__Group__6
+            // InternalAir.g:901:1: ( rule__ScheduledFlight__Group__4__Impl rule__ScheduledFlight__Group__5 )
+            // InternalAir.g:902:2: rule__ScheduledFlight__Group__4__Impl rule__ScheduledFlight__Group__5
             {
             pushFollow(FOLLOW_4);
-            rule__Flight__Group__5__Impl();
+            rule__ScheduledFlight__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__6();
+            rule__ScheduledFlight__Group__5();
 
             state._fsp--;
 
@@ -2772,25 +2791,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__5"
+    // $ANTLR end "rule__ScheduledFlight__Group__4"
 
 
-    // $ANTLR start "rule__Flight__Group__5__Impl"
-    // InternalAir.g:905:1: rule__Flight__Group__5__Impl : ( 'to' ) ;
-    public final void rule__Flight__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__4__Impl"
+    // InternalAir.g:909:1: rule__ScheduledFlight__Group__4__Impl : ( 'to' ) ;
+    public final void rule__ScheduledFlight__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:909:1: ( ( 'to' ) )
-            // InternalAir.g:910:1: ( 'to' )
+            // InternalAir.g:913:1: ( ( 'to' ) )
+            // InternalAir.g:914:1: ( 'to' )
             {
-            // InternalAir.g:910:1: ( 'to' )
-            // InternalAir.g:911:2: 'to'
+            // InternalAir.g:914:1: ( 'to' )
+            // InternalAir.g:915:2: 'to'
             {
-             before(grammarAccess.getFlightAccess().getToKeyword_5()); 
+             before(grammarAccess.getScheduledFlightAccess().getToKeyword_4()); 
             match(input,16,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getToKeyword_5()); 
+             after(grammarAccess.getScheduledFlightAccess().getToKeyword_4()); 
 
             }
 
@@ -2809,26 +2828,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__5__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__6"
-    // InternalAir.g:920:1: rule__Flight__Group__6 : rule__Flight__Group__6__Impl rule__Flight__Group__7 ;
-    public final void rule__Flight__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__5"
+    // InternalAir.g:924:1: rule__ScheduledFlight__Group__5 : rule__ScheduledFlight__Group__5__Impl rule__ScheduledFlight__Group__6 ;
+    public final void rule__ScheduledFlight__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:924:1: ( rule__Flight__Group__6__Impl rule__Flight__Group__7 )
-            // InternalAir.g:925:2: rule__Flight__Group__6__Impl rule__Flight__Group__7
+            // InternalAir.g:928:1: ( rule__ScheduledFlight__Group__5__Impl rule__ScheduledFlight__Group__6 )
+            // InternalAir.g:929:2: rule__ScheduledFlight__Group__5__Impl rule__ScheduledFlight__Group__6
             {
             pushFollow(FOLLOW_9);
-            rule__Flight__Group__6__Impl();
+            rule__ScheduledFlight__Group__5__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__7();
+            rule__ScheduledFlight__Group__6();
 
             state._fsp--;
 
@@ -2847,35 +2866,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__6"
+    // $ANTLR end "rule__ScheduledFlight__Group__5"
 
 
-    // $ANTLR start "rule__Flight__Group__6__Impl"
-    // InternalAir.g:932:1: rule__Flight__Group__6__Impl : ( ( rule__Flight__ToAssignment_6 ) ) ;
-    public final void rule__Flight__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__5__Impl"
+    // InternalAir.g:936:1: rule__ScheduledFlight__Group__5__Impl : ( ( rule__ScheduledFlight__ToAssignment_5 ) ) ;
+    public final void rule__ScheduledFlight__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:936:1: ( ( ( rule__Flight__ToAssignment_6 ) ) )
-            // InternalAir.g:937:1: ( ( rule__Flight__ToAssignment_6 ) )
+            // InternalAir.g:940:1: ( ( ( rule__ScheduledFlight__ToAssignment_5 ) ) )
+            // InternalAir.g:941:1: ( ( rule__ScheduledFlight__ToAssignment_5 ) )
             {
-            // InternalAir.g:937:1: ( ( rule__Flight__ToAssignment_6 ) )
-            // InternalAir.g:938:2: ( rule__Flight__ToAssignment_6 )
+            // InternalAir.g:941:1: ( ( rule__ScheduledFlight__ToAssignment_5 ) )
+            // InternalAir.g:942:2: ( rule__ScheduledFlight__ToAssignment_5 )
             {
-             before(grammarAccess.getFlightAccess().getToAssignment_6()); 
-            // InternalAir.g:939:2: ( rule__Flight__ToAssignment_6 )
-            // InternalAir.g:939:3: rule__Flight__ToAssignment_6
+             before(grammarAccess.getScheduledFlightAccess().getToAssignment_5()); 
+            // InternalAir.g:943:2: ( rule__ScheduledFlight__ToAssignment_5 )
+            // InternalAir.g:943:3: rule__ScheduledFlight__ToAssignment_5
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__ToAssignment_6();
+            rule__ScheduledFlight__ToAssignment_5();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getToAssignment_6()); 
+             after(grammarAccess.getScheduledFlightAccess().getToAssignment_5()); 
 
             }
 
@@ -2894,26 +2913,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__6__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__7"
-    // InternalAir.g:947:1: rule__Flight__Group__7 : rule__Flight__Group__7__Impl rule__Flight__Group__8 ;
-    public final void rule__Flight__Group__7() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__6"
+    // InternalAir.g:951:1: rule__ScheduledFlight__Group__6 : rule__ScheduledFlight__Group__6__Impl rule__ScheduledFlight__Group__7 ;
+    public final void rule__ScheduledFlight__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:951:1: ( rule__Flight__Group__7__Impl rule__Flight__Group__8 )
-            // InternalAir.g:952:2: rule__Flight__Group__7__Impl rule__Flight__Group__8
+            // InternalAir.g:955:1: ( rule__ScheduledFlight__Group__6__Impl rule__ScheduledFlight__Group__7 )
+            // InternalAir.g:956:2: rule__ScheduledFlight__Group__6__Impl rule__ScheduledFlight__Group__7
             {
             pushFollow(FOLLOW_4);
-            rule__Flight__Group__7__Impl();
+            rule__ScheduledFlight__Group__6__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__8();
+            rule__ScheduledFlight__Group__7();
 
             state._fsp--;
 
@@ -2932,25 +2951,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__7"
+    // $ANTLR end "rule__ScheduledFlight__Group__6"
 
 
-    // $ANTLR start "rule__Flight__Group__7__Impl"
-    // InternalAir.g:959:1: rule__Flight__Group__7__Impl : ( 'with' ) ;
-    public final void rule__Flight__Group__7__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__6__Impl"
+    // InternalAir.g:963:1: rule__ScheduledFlight__Group__6__Impl : ( 'with' ) ;
+    public final void rule__ScheduledFlight__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:963:1: ( ( 'with' ) )
-            // InternalAir.g:964:1: ( 'with' )
+            // InternalAir.g:967:1: ( ( 'with' ) )
+            // InternalAir.g:968:1: ( 'with' )
             {
-            // InternalAir.g:964:1: ( 'with' )
-            // InternalAir.g:965:2: 'with'
+            // InternalAir.g:968:1: ( 'with' )
+            // InternalAir.g:969:2: 'with'
             {
-             before(grammarAccess.getFlightAccess().getWithKeyword_7()); 
+             before(grammarAccess.getScheduledFlightAccess().getWithKeyword_6()); 
             match(input,17,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getWithKeyword_7()); 
+             after(grammarAccess.getScheduledFlightAccess().getWithKeyword_6()); 
 
             }
 
@@ -2969,26 +2988,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__7__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__8"
-    // InternalAir.g:974:1: rule__Flight__Group__8 : rule__Flight__Group__8__Impl rule__Flight__Group__9 ;
-    public final void rule__Flight__Group__8() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__7"
+    // InternalAir.g:978:1: rule__ScheduledFlight__Group__7 : rule__ScheduledFlight__Group__7__Impl rule__ScheduledFlight__Group__8 ;
+    public final void rule__ScheduledFlight__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:978:1: ( rule__Flight__Group__8__Impl rule__Flight__Group__9 )
-            // InternalAir.g:979:2: rule__Flight__Group__8__Impl rule__Flight__Group__9
+            // InternalAir.g:982:1: ( rule__ScheduledFlight__Group__7__Impl rule__ScheduledFlight__Group__8 )
+            // InternalAir.g:983:2: rule__ScheduledFlight__Group__7__Impl rule__ScheduledFlight__Group__8
             {
             pushFollow(FOLLOW_10);
-            rule__Flight__Group__8__Impl();
+            rule__ScheduledFlight__Group__7__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__9();
+            rule__ScheduledFlight__Group__8();
 
             state._fsp--;
 
@@ -3007,35 +3026,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__8"
+    // $ANTLR end "rule__ScheduledFlight__Group__7"
 
 
-    // $ANTLR start "rule__Flight__Group__8__Impl"
-    // InternalAir.g:986:1: rule__Flight__Group__8__Impl : ( ( rule__Flight__AirlineAssignment_8 ) ) ;
-    public final void rule__Flight__Group__8__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__7__Impl"
+    // InternalAir.g:990:1: rule__ScheduledFlight__Group__7__Impl : ( ( rule__ScheduledFlight__AirlineAssignment_7 ) ) ;
+    public final void rule__ScheduledFlight__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:990:1: ( ( ( rule__Flight__AirlineAssignment_8 ) ) )
-            // InternalAir.g:991:1: ( ( rule__Flight__AirlineAssignment_8 ) )
+            // InternalAir.g:994:1: ( ( ( rule__ScheduledFlight__AirlineAssignment_7 ) ) )
+            // InternalAir.g:995:1: ( ( rule__ScheduledFlight__AirlineAssignment_7 ) )
             {
-            // InternalAir.g:991:1: ( ( rule__Flight__AirlineAssignment_8 ) )
-            // InternalAir.g:992:2: ( rule__Flight__AirlineAssignment_8 )
+            // InternalAir.g:995:1: ( ( rule__ScheduledFlight__AirlineAssignment_7 ) )
+            // InternalAir.g:996:2: ( rule__ScheduledFlight__AirlineAssignment_7 )
             {
-             before(grammarAccess.getFlightAccess().getAirlineAssignment_8()); 
-            // InternalAir.g:993:2: ( rule__Flight__AirlineAssignment_8 )
-            // InternalAir.g:993:3: rule__Flight__AirlineAssignment_8
+             before(grammarAccess.getScheduledFlightAccess().getAirlineAssignment_7()); 
+            // InternalAir.g:997:2: ( rule__ScheduledFlight__AirlineAssignment_7 )
+            // InternalAir.g:997:3: rule__ScheduledFlight__AirlineAssignment_7
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__AirlineAssignment_8();
+            rule__ScheduledFlight__AirlineAssignment_7();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getAirlineAssignment_8()); 
+             after(grammarAccess.getScheduledFlightAccess().getAirlineAssignment_7()); 
 
             }
 
@@ -3054,26 +3073,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__8__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__9"
-    // InternalAir.g:1001:1: rule__Flight__Group__9 : rule__Flight__Group__9__Impl rule__Flight__Group__10 ;
-    public final void rule__Flight__Group__9() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__8"
+    // InternalAir.g:1005:1: rule__ScheduledFlight__Group__8 : rule__ScheduledFlight__Group__8__Impl rule__ScheduledFlight__Group__9 ;
+    public final void rule__ScheduledFlight__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1005:1: ( rule__Flight__Group__9__Impl rule__Flight__Group__10 )
-            // InternalAir.g:1006:2: rule__Flight__Group__9__Impl rule__Flight__Group__10
+            // InternalAir.g:1009:1: ( rule__ScheduledFlight__Group__8__Impl rule__ScheduledFlight__Group__9 )
+            // InternalAir.g:1010:2: rule__ScheduledFlight__Group__8__Impl rule__ScheduledFlight__Group__9
             {
             pushFollow(FOLLOW_5);
-            rule__Flight__Group__9__Impl();
+            rule__ScheduledFlight__Group__8__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__10();
+            rule__ScheduledFlight__Group__9();
 
             state._fsp--;
 
@@ -3092,25 +3111,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__9"
+    // $ANTLR end "rule__ScheduledFlight__Group__8"
 
 
-    // $ANTLR start "rule__Flight__Group__9__Impl"
-    // InternalAir.g:1013:1: rule__Flight__Group__9__Impl : ( 'at' ) ;
-    public final void rule__Flight__Group__9__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__8__Impl"
+    // InternalAir.g:1017:1: rule__ScheduledFlight__Group__8__Impl : ( 'at' ) ;
+    public final void rule__ScheduledFlight__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1017:1: ( ( 'at' ) )
-            // InternalAir.g:1018:1: ( 'at' )
+            // InternalAir.g:1021:1: ( ( 'at' ) )
+            // InternalAir.g:1022:1: ( 'at' )
             {
-            // InternalAir.g:1018:1: ( 'at' )
-            // InternalAir.g:1019:2: 'at'
+            // InternalAir.g:1022:1: ( 'at' )
+            // InternalAir.g:1023:2: 'at'
             {
-             before(grammarAccess.getFlightAccess().getAtKeyword_9()); 
+             before(grammarAccess.getScheduledFlightAccess().getAtKeyword_8()); 
             match(input,18,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getAtKeyword_9()); 
+             after(grammarAccess.getScheduledFlightAccess().getAtKeyword_8()); 
 
             }
 
@@ -3129,26 +3148,266 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__9__Impl"
+    // $ANTLR end "rule__ScheduledFlight__Group__8__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__10"
-    // InternalAir.g:1028:1: rule__Flight__Group__10 : rule__Flight__Group__10__Impl rule__Flight__Group__11 ;
-    public final void rule__Flight__Group__10() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__Group__9"
+    // InternalAir.g:1032:1: rule__ScheduledFlight__Group__9 : rule__ScheduledFlight__Group__9__Impl ;
+    public final void rule__ScheduledFlight__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1032:1: ( rule__Flight__Group__10__Impl rule__Flight__Group__11 )
-            // InternalAir.g:1033:2: rule__Flight__Group__10__Impl rule__Flight__Group__11
+            // InternalAir.g:1036:1: ( rule__ScheduledFlight__Group__9__Impl )
+            // InternalAir.g:1037:2: rule__ScheduledFlight__Group__9__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ScheduledFlight__Group__9__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ScheduledFlight__Group__9"
+
+
+    // $ANTLR start "rule__ScheduledFlight__Group__9__Impl"
+    // InternalAir.g:1043:1: rule__ScheduledFlight__Group__9__Impl : ( ( rule__ScheduledFlight__TimeAssignment_9 ) ) ;
+    public final void rule__ScheduledFlight__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1047:1: ( ( ( rule__ScheduledFlight__TimeAssignment_9 ) ) )
+            // InternalAir.g:1048:1: ( ( rule__ScheduledFlight__TimeAssignment_9 ) )
+            {
+            // InternalAir.g:1048:1: ( ( rule__ScheduledFlight__TimeAssignment_9 ) )
+            // InternalAir.g:1049:2: ( rule__ScheduledFlight__TimeAssignment_9 )
+            {
+             before(grammarAccess.getScheduledFlightAccess().getTimeAssignment_9()); 
+            // InternalAir.g:1050:2: ( rule__ScheduledFlight__TimeAssignment_9 )
+            // InternalAir.g:1050:3: rule__ScheduledFlight__TimeAssignment_9
+            {
+            pushFollow(FOLLOW_2);
+            rule__ScheduledFlight__TimeAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getScheduledFlightAccess().getTimeAssignment_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ScheduledFlight__Group__9__Impl"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__0"
+    // InternalAir.g:1059:1: rule__SpecificFlight__Group__0 : rule__SpecificFlight__Group__0__Impl rule__SpecificFlight__Group__1 ;
+    public final void rule__SpecificFlight__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1063:1: ( rule__SpecificFlight__Group__0__Impl rule__SpecificFlight__Group__1 )
+            // InternalAir.g:1064:2: rule__SpecificFlight__Group__0__Impl rule__SpecificFlight__Group__1
+            {
+            pushFollow(FOLLOW_4);
+            rule__SpecificFlight__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__0"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__0__Impl"
+    // InternalAir.g:1071:1: rule__SpecificFlight__Group__0__Impl : ( 'Flight' ) ;
+    public final void rule__SpecificFlight__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1075:1: ( ( 'Flight' ) )
+            // InternalAir.g:1076:1: ( 'Flight' )
+            {
+            // InternalAir.g:1076:1: ( 'Flight' )
+            // InternalAir.g:1077:2: 'Flight'
+            {
+             before(grammarAccess.getSpecificFlightAccess().getFlightKeyword_0()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getFlightKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__0__Impl"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__1"
+    // InternalAir.g:1086:1: rule__SpecificFlight__Group__1 : rule__SpecificFlight__Group__1__Impl rule__SpecificFlight__Group__2 ;
+    public final void rule__SpecificFlight__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1090:1: ( rule__SpecificFlight__Group__1__Impl rule__SpecificFlight__Group__2 )
+            // InternalAir.g:1091:2: rule__SpecificFlight__Group__1__Impl rule__SpecificFlight__Group__2
+            {
+            pushFollow(FOLLOW_5);
+            rule__SpecificFlight__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__1"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__1__Impl"
+    // InternalAir.g:1098:1: rule__SpecificFlight__Group__1__Impl : ( ( rule__SpecificFlight__NameAssignment_1 ) ) ;
+    public final void rule__SpecificFlight__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1102:1: ( ( ( rule__SpecificFlight__NameAssignment_1 ) ) )
+            // InternalAir.g:1103:1: ( ( rule__SpecificFlight__NameAssignment_1 ) )
+            {
+            // InternalAir.g:1103:1: ( ( rule__SpecificFlight__NameAssignment_1 ) )
+            // InternalAir.g:1104:2: ( rule__SpecificFlight__NameAssignment_1 )
+            {
+             before(grammarAccess.getSpecificFlightAccess().getNameAssignment_1()); 
+            // InternalAir.g:1105:2: ( rule__SpecificFlight__NameAssignment_1 )
+            // InternalAir.g:1105:3: rule__SpecificFlight__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSpecificFlightAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__1__Impl"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__2"
+    // InternalAir.g:1113:1: rule__SpecificFlight__Group__2 : rule__SpecificFlight__Group__2__Impl rule__SpecificFlight__Group__3 ;
+    public final void rule__SpecificFlight__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1117:1: ( rule__SpecificFlight__Group__2__Impl rule__SpecificFlight__Group__3 )
+            // InternalAir.g:1118:2: rule__SpecificFlight__Group__2__Impl rule__SpecificFlight__Group__3
             {
             pushFollow(FOLLOW_11);
-            rule__Flight__Group__10__Impl();
+            rule__SpecificFlight__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__11();
+            rule__SpecificFlight__Group__3();
 
             state._fsp--;
 
@@ -3167,35 +3426,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__10"
+    // $ANTLR end "rule__SpecificFlight__Group__2"
 
 
-    // $ANTLR start "rule__Flight__Group__10__Impl"
-    // InternalAir.g:1040:1: rule__Flight__Group__10__Impl : ( ( rule__Flight__TimeAssignment_10 ) ) ;
-    public final void rule__Flight__Group__10__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__2__Impl"
+    // InternalAir.g:1125:1: rule__SpecificFlight__Group__2__Impl : ( ( rule__SpecificFlight__FnameAssignment_2 ) ) ;
+    public final void rule__SpecificFlight__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1044:1: ( ( ( rule__Flight__TimeAssignment_10 ) ) )
-            // InternalAir.g:1045:1: ( ( rule__Flight__TimeAssignment_10 ) )
+            // InternalAir.g:1129:1: ( ( ( rule__SpecificFlight__FnameAssignment_2 ) ) )
+            // InternalAir.g:1130:1: ( ( rule__SpecificFlight__FnameAssignment_2 ) )
             {
-            // InternalAir.g:1045:1: ( ( rule__Flight__TimeAssignment_10 ) )
-            // InternalAir.g:1046:2: ( rule__Flight__TimeAssignment_10 )
+            // InternalAir.g:1130:1: ( ( rule__SpecificFlight__FnameAssignment_2 ) )
+            // InternalAir.g:1131:2: ( rule__SpecificFlight__FnameAssignment_2 )
             {
-             before(grammarAccess.getFlightAccess().getTimeAssignment_10()); 
-            // InternalAir.g:1047:2: ( rule__Flight__TimeAssignment_10 )
-            // InternalAir.g:1047:3: rule__Flight__TimeAssignment_10
+             before(grammarAccess.getSpecificFlightAccess().getFnameAssignment_2()); 
+            // InternalAir.g:1132:2: ( rule__SpecificFlight__FnameAssignment_2 )
+            // InternalAir.g:1132:3: rule__SpecificFlight__FnameAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__TimeAssignment_10();
+            rule__SpecificFlight__FnameAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getTimeAssignment_10()); 
+             after(grammarAccess.getSpecificFlightAccess().getFnameAssignment_2()); 
 
             }
 
@@ -3214,26 +3473,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__10__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__11"
-    // InternalAir.g:1055:1: rule__Flight__Group__11 : rule__Flight__Group__11__Impl rule__Flight__Group__12 ;
-    public final void rule__Flight__Group__11() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__3"
+    // InternalAir.g:1140:1: rule__SpecificFlight__Group__3 : rule__SpecificFlight__Group__3__Impl rule__SpecificFlight__Group__4 ;
+    public final void rule__SpecificFlight__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1059:1: ( rule__Flight__Group__11__Impl rule__Flight__Group__12 )
-            // InternalAir.g:1060:2: rule__Flight__Group__11__Impl rule__Flight__Group__12
+            // InternalAir.g:1144:1: ( rule__SpecificFlight__Group__3__Impl rule__SpecificFlight__Group__4 )
+            // InternalAir.g:1145:2: rule__SpecificFlight__Group__3__Impl rule__SpecificFlight__Group__4
             {
             pushFollow(FOLLOW_4);
-            rule__Flight__Group__11__Impl();
+            rule__SpecificFlight__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__12();
+            rule__SpecificFlight__Group__4();
 
             state._fsp--;
 
@@ -3252,25 +3511,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__11"
+    // $ANTLR end "rule__SpecificFlight__Group__3"
 
 
-    // $ANTLR start "rule__Flight__Group__11__Impl"
-    // InternalAir.g:1067:1: rule__Flight__Group__11__Impl : ( 'pilot' ) ;
-    public final void rule__Flight__Group__11__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__3__Impl"
+    // InternalAir.g:1152:1: rule__SpecificFlight__Group__3__Impl : ( 'scheduledFlight' ) ;
+    public final void rule__SpecificFlight__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1071:1: ( ( 'pilot' ) )
-            // InternalAir.g:1072:1: ( 'pilot' )
+            // InternalAir.g:1156:1: ( ( 'scheduledFlight' ) )
+            // InternalAir.g:1157:1: ( 'scheduledFlight' )
             {
-            // InternalAir.g:1072:1: ( 'pilot' )
-            // InternalAir.g:1073:2: 'pilot'
+            // InternalAir.g:1157:1: ( 'scheduledFlight' )
+            // InternalAir.g:1158:2: 'scheduledFlight'
             {
-             before(grammarAccess.getFlightAccess().getPilotKeyword_11()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getPilotKeyword_11()); 
+             before(grammarAccess.getSpecificFlightAccess().getScheduledFlightKeyword_3()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getScheduledFlightKeyword_3()); 
 
             }
 
@@ -3289,26 +3548,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__11__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__12"
-    // InternalAir.g:1082:1: rule__Flight__Group__12 : rule__Flight__Group__12__Impl rule__Flight__Group__13 ;
-    public final void rule__Flight__Group__12() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__4"
+    // InternalAir.g:1167:1: rule__SpecificFlight__Group__4 : rule__SpecificFlight__Group__4__Impl rule__SpecificFlight__Group__5 ;
+    public final void rule__SpecificFlight__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1086:1: ( rule__Flight__Group__12__Impl rule__Flight__Group__13 )
-            // InternalAir.g:1087:2: rule__Flight__Group__12__Impl rule__Flight__Group__13
+            // InternalAir.g:1171:1: ( rule__SpecificFlight__Group__4__Impl rule__SpecificFlight__Group__5 )
+            // InternalAir.g:1172:2: rule__SpecificFlight__Group__4__Impl rule__SpecificFlight__Group__5
             {
             pushFollow(FOLLOW_12);
-            rule__Flight__Group__12__Impl();
+            rule__SpecificFlight__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__13();
+            rule__SpecificFlight__Group__5();
 
             state._fsp--;
 
@@ -3327,35 +3586,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__12"
+    // $ANTLR end "rule__SpecificFlight__Group__4"
 
 
-    // $ANTLR start "rule__Flight__Group__12__Impl"
-    // InternalAir.g:1094:1: rule__Flight__Group__12__Impl : ( ( rule__Flight__PilotAssignment_12 ) ) ;
-    public final void rule__Flight__Group__12__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__4__Impl"
+    // InternalAir.g:1179:1: rule__SpecificFlight__Group__4__Impl : ( ( rule__SpecificFlight__ScheduledFlightAssignment_4 ) ) ;
+    public final void rule__SpecificFlight__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1098:1: ( ( ( rule__Flight__PilotAssignment_12 ) ) )
-            // InternalAir.g:1099:1: ( ( rule__Flight__PilotAssignment_12 ) )
+            // InternalAir.g:1183:1: ( ( ( rule__SpecificFlight__ScheduledFlightAssignment_4 ) ) )
+            // InternalAir.g:1184:1: ( ( rule__SpecificFlight__ScheduledFlightAssignment_4 ) )
             {
-            // InternalAir.g:1099:1: ( ( rule__Flight__PilotAssignment_12 ) )
-            // InternalAir.g:1100:2: ( rule__Flight__PilotAssignment_12 )
+            // InternalAir.g:1184:1: ( ( rule__SpecificFlight__ScheduledFlightAssignment_4 ) )
+            // InternalAir.g:1185:2: ( rule__SpecificFlight__ScheduledFlightAssignment_4 )
             {
-             before(grammarAccess.getFlightAccess().getPilotAssignment_12()); 
-            // InternalAir.g:1101:2: ( rule__Flight__PilotAssignment_12 )
-            // InternalAir.g:1101:3: rule__Flight__PilotAssignment_12
+             before(grammarAccess.getSpecificFlightAccess().getScheduledFlightAssignment_4()); 
+            // InternalAir.g:1186:2: ( rule__SpecificFlight__ScheduledFlightAssignment_4 )
+            // InternalAir.g:1186:3: rule__SpecificFlight__ScheduledFlightAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__PilotAssignment_12();
+            rule__SpecificFlight__ScheduledFlightAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getPilotAssignment_12()); 
+             after(grammarAccess.getSpecificFlightAccess().getScheduledFlightAssignment_4()); 
 
             }
 
@@ -3374,26 +3633,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__12__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__13"
-    // InternalAir.g:1109:1: rule__Flight__Group__13 : rule__Flight__Group__13__Impl rule__Flight__Group__14 ;
-    public final void rule__Flight__Group__13() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__5"
+    // InternalAir.g:1194:1: rule__SpecificFlight__Group__5 : rule__SpecificFlight__Group__5__Impl rule__SpecificFlight__Group__6 ;
+    public final void rule__SpecificFlight__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1113:1: ( rule__Flight__Group__13__Impl rule__Flight__Group__14 )
-            // InternalAir.g:1114:2: rule__Flight__Group__13__Impl rule__Flight__Group__14
+            // InternalAir.g:1198:1: ( rule__SpecificFlight__Group__5__Impl rule__SpecificFlight__Group__6 )
+            // InternalAir.g:1199:2: rule__SpecificFlight__Group__5__Impl rule__SpecificFlight__Group__6
             {
-            pushFollow(FOLLOW_4);
-            rule__Flight__Group__13__Impl();
+            pushFollow(FOLLOW_5);
+            rule__SpecificFlight__Group__5__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__14();
+            rule__SpecificFlight__Group__6();
 
             state._fsp--;
 
@@ -3412,25 +3671,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__13"
+    // $ANTLR end "rule__SpecificFlight__Group__5"
 
 
-    // $ANTLR start "rule__Flight__Group__13__Impl"
-    // InternalAir.g:1121:1: rule__Flight__Group__13__Impl : ( 'airplane' ) ;
-    public final void rule__Flight__Group__13__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__5__Impl"
+    // InternalAir.g:1206:1: rule__SpecificFlight__Group__5__Impl : ( 'on' ) ;
+    public final void rule__SpecificFlight__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1125:1: ( ( 'airplane' ) )
-            // InternalAir.g:1126:1: ( 'airplane' )
+            // InternalAir.g:1210:1: ( ( 'on' ) )
+            // InternalAir.g:1211:1: ( 'on' )
             {
-            // InternalAir.g:1126:1: ( 'airplane' )
-            // InternalAir.g:1127:2: 'airplane'
+            // InternalAir.g:1211:1: ( 'on' )
+            // InternalAir.g:1212:2: 'on'
             {
-             before(grammarAccess.getFlightAccess().getAirplaneKeyword_13()); 
-            match(input,20,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getAirplaneKeyword_13()); 
+             before(grammarAccess.getSpecificFlightAccess().getOnKeyword_5()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getOnKeyword_5()); 
 
             }
 
@@ -3449,26 +3708,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__13__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__14"
-    // InternalAir.g:1136:1: rule__Flight__Group__14 : rule__Flight__Group__14__Impl rule__Flight__Group__15 ;
-    public final void rule__Flight__Group__14() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__6"
+    // InternalAir.g:1221:1: rule__SpecificFlight__Group__6 : rule__SpecificFlight__Group__6__Impl rule__SpecificFlight__Group__7 ;
+    public final void rule__SpecificFlight__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1140:1: ( rule__Flight__Group__14__Impl rule__Flight__Group__15 )
-            // InternalAir.g:1141:2: rule__Flight__Group__14__Impl rule__Flight__Group__15
+            // InternalAir.g:1225:1: ( rule__SpecificFlight__Group__6__Impl rule__SpecificFlight__Group__7 )
+            // InternalAir.g:1226:2: rule__SpecificFlight__Group__6__Impl rule__SpecificFlight__Group__7
             {
             pushFollow(FOLLOW_13);
-            rule__Flight__Group__14__Impl();
+            rule__SpecificFlight__Group__6__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__15();
+            rule__SpecificFlight__Group__7();
 
             state._fsp--;
 
@@ -3487,35 +3746,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__14"
+    // $ANTLR end "rule__SpecificFlight__Group__6"
 
 
-    // $ANTLR start "rule__Flight__Group__14__Impl"
-    // InternalAir.g:1148:1: rule__Flight__Group__14__Impl : ( ( rule__Flight__PlaneAssignment_14 ) ) ;
-    public final void rule__Flight__Group__14__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__6__Impl"
+    // InternalAir.g:1233:1: rule__SpecificFlight__Group__6__Impl : ( ( rule__SpecificFlight__DateAssignment_6 ) ) ;
+    public final void rule__SpecificFlight__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1152:1: ( ( ( rule__Flight__PlaneAssignment_14 ) ) )
-            // InternalAir.g:1153:1: ( ( rule__Flight__PlaneAssignment_14 ) )
+            // InternalAir.g:1237:1: ( ( ( rule__SpecificFlight__DateAssignment_6 ) ) )
+            // InternalAir.g:1238:1: ( ( rule__SpecificFlight__DateAssignment_6 ) )
             {
-            // InternalAir.g:1153:1: ( ( rule__Flight__PlaneAssignment_14 ) )
-            // InternalAir.g:1154:2: ( rule__Flight__PlaneAssignment_14 )
+            // InternalAir.g:1238:1: ( ( rule__SpecificFlight__DateAssignment_6 ) )
+            // InternalAir.g:1239:2: ( rule__SpecificFlight__DateAssignment_6 )
             {
-             before(grammarAccess.getFlightAccess().getPlaneAssignment_14()); 
-            // InternalAir.g:1155:2: ( rule__Flight__PlaneAssignment_14 )
-            // InternalAir.g:1155:3: rule__Flight__PlaneAssignment_14
+             before(grammarAccess.getSpecificFlightAccess().getDateAssignment_6()); 
+            // InternalAir.g:1240:2: ( rule__SpecificFlight__DateAssignment_6 )
+            // InternalAir.g:1240:3: rule__SpecificFlight__DateAssignment_6
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__PlaneAssignment_14();
+            rule__SpecificFlight__DateAssignment_6();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getPlaneAssignment_14()); 
+             after(grammarAccess.getSpecificFlightAccess().getDateAssignment_6()); 
 
             }
 
@@ -3534,26 +3793,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__14__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__15"
-    // InternalAir.g:1163:1: rule__Flight__Group__15 : rule__Flight__Group__15__Impl rule__Flight__Group__16 ;
-    public final void rule__Flight__Group__15() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__7"
+    // InternalAir.g:1248:1: rule__SpecificFlight__Group__7 : rule__SpecificFlight__Group__7__Impl rule__SpecificFlight__Group__8 ;
+    public final void rule__SpecificFlight__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1167:1: ( rule__Flight__Group__15__Impl rule__Flight__Group__16 )
-            // InternalAir.g:1168:2: rule__Flight__Group__15__Impl rule__Flight__Group__16
+            // InternalAir.g:1252:1: ( rule__SpecificFlight__Group__7__Impl rule__SpecificFlight__Group__8 )
+            // InternalAir.g:1253:2: rule__SpecificFlight__Group__7__Impl rule__SpecificFlight__Group__8
             {
             pushFollow(FOLLOW_4);
-            rule__Flight__Group__15__Impl();
+            rule__SpecificFlight__Group__7__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__16();
+            rule__SpecificFlight__Group__8();
 
             state._fsp--;
 
@@ -3572,25 +3831,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__15"
+    // $ANTLR end "rule__SpecificFlight__Group__7"
 
 
-    // $ANTLR start "rule__Flight__Group__15__Impl"
-    // InternalAir.g:1175:1: rule__Flight__Group__15__Impl : ( 'staff' ) ;
-    public final void rule__Flight__Group__15__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__7__Impl"
+    // InternalAir.g:1260:1: rule__SpecificFlight__Group__7__Impl : ( 'pilot' ) ;
+    public final void rule__SpecificFlight__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1179:1: ( ( 'staff' ) )
-            // InternalAir.g:1180:1: ( 'staff' )
+            // InternalAir.g:1264:1: ( ( 'pilot' ) )
+            // InternalAir.g:1265:1: ( 'pilot' )
             {
-            // InternalAir.g:1180:1: ( 'staff' )
-            // InternalAir.g:1181:2: 'staff'
+            // InternalAir.g:1265:1: ( 'pilot' )
+            // InternalAir.g:1266:2: 'pilot'
             {
-             before(grammarAccess.getFlightAccess().getStaffKeyword_15()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getStaffKeyword_15()); 
+             before(grammarAccess.getSpecificFlightAccess().getPilotKeyword_7()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getPilotKeyword_7()); 
 
             }
 
@@ -3609,26 +3868,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__15__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__16"
-    // InternalAir.g:1190:1: rule__Flight__Group__16 : rule__Flight__Group__16__Impl rule__Flight__Group__17 ;
-    public final void rule__Flight__Group__16() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__8"
+    // InternalAir.g:1275:1: rule__SpecificFlight__Group__8 : rule__SpecificFlight__Group__8__Impl rule__SpecificFlight__Group__9 ;
+    public final void rule__SpecificFlight__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1194:1: ( rule__Flight__Group__16__Impl rule__Flight__Group__17 )
-            // InternalAir.g:1195:2: rule__Flight__Group__16__Impl rule__Flight__Group__17
+            // InternalAir.g:1279:1: ( rule__SpecificFlight__Group__8__Impl rule__SpecificFlight__Group__9 )
+            // InternalAir.g:1280:2: rule__SpecificFlight__Group__8__Impl rule__SpecificFlight__Group__9
             {
             pushFollow(FOLLOW_14);
-            rule__Flight__Group__16__Impl();
+            rule__SpecificFlight__Group__8__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__17();
+            rule__SpecificFlight__Group__9();
 
             state._fsp--;
 
@@ -3647,35 +3906,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__16"
+    // $ANTLR end "rule__SpecificFlight__Group__8"
 
 
-    // $ANTLR start "rule__Flight__Group__16__Impl"
-    // InternalAir.g:1202:1: rule__Flight__Group__16__Impl : ( ( rule__Flight__StaffAssignment_16 ) ) ;
-    public final void rule__Flight__Group__16__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__8__Impl"
+    // InternalAir.g:1287:1: rule__SpecificFlight__Group__8__Impl : ( ( rule__SpecificFlight__PilotAssignment_8 ) ) ;
+    public final void rule__SpecificFlight__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1206:1: ( ( ( rule__Flight__StaffAssignment_16 ) ) )
-            // InternalAir.g:1207:1: ( ( rule__Flight__StaffAssignment_16 ) )
+            // InternalAir.g:1291:1: ( ( ( rule__SpecificFlight__PilotAssignment_8 ) ) )
+            // InternalAir.g:1292:1: ( ( rule__SpecificFlight__PilotAssignment_8 ) )
             {
-            // InternalAir.g:1207:1: ( ( rule__Flight__StaffAssignment_16 ) )
-            // InternalAir.g:1208:2: ( rule__Flight__StaffAssignment_16 )
+            // InternalAir.g:1292:1: ( ( rule__SpecificFlight__PilotAssignment_8 ) )
+            // InternalAir.g:1293:2: ( rule__SpecificFlight__PilotAssignment_8 )
             {
-             before(grammarAccess.getFlightAccess().getStaffAssignment_16()); 
-            // InternalAir.g:1209:2: ( rule__Flight__StaffAssignment_16 )
-            // InternalAir.g:1209:3: rule__Flight__StaffAssignment_16
+             before(grammarAccess.getSpecificFlightAccess().getPilotAssignment_8()); 
+            // InternalAir.g:1294:2: ( rule__SpecificFlight__PilotAssignment_8 )
+            // InternalAir.g:1294:3: rule__SpecificFlight__PilotAssignment_8
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__StaffAssignment_16();
+            rule__SpecificFlight__PilotAssignment_8();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getStaffAssignment_16()); 
+             after(grammarAccess.getSpecificFlightAccess().getPilotAssignment_8()); 
 
             }
 
@@ -3694,21 +3953,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__16__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group__8__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group__17"
-    // InternalAir.g:1217:1: rule__Flight__Group__17 : rule__Flight__Group__17__Impl ;
-    public final void rule__Flight__Group__17() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__9"
+    // InternalAir.g:1302:1: rule__SpecificFlight__Group__9 : rule__SpecificFlight__Group__9__Impl rule__SpecificFlight__Group__10 ;
+    public final void rule__SpecificFlight__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1221:1: ( rule__Flight__Group__17__Impl )
-            // InternalAir.g:1222:2: rule__Flight__Group__17__Impl
+            // InternalAir.g:1306:1: ( rule__SpecificFlight__Group__9__Impl rule__SpecificFlight__Group__10 )
+            // InternalAir.g:1307:2: rule__SpecificFlight__Group__9__Impl rule__SpecificFlight__Group__10
             {
+            pushFollow(FOLLOW_4);
+            rule__SpecificFlight__Group__9__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__Flight__Group__17__Impl();
+            rule__SpecificFlight__Group__10();
 
             state._fsp--;
 
@@ -3727,46 +3991,355 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__17"
+    // $ANTLR end "rule__SpecificFlight__Group__9"
 
 
-    // $ANTLR start "rule__Flight__Group__17__Impl"
-    // InternalAir.g:1228:1: rule__Flight__Group__17__Impl : ( ( rule__Flight__Group_17__0 )* ) ;
-    public final void rule__Flight__Group__17__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group__9__Impl"
+    // InternalAir.g:1314:1: rule__SpecificFlight__Group__9__Impl : ( 'airplane' ) ;
+    public final void rule__SpecificFlight__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1232:1: ( ( ( rule__Flight__Group_17__0 )* ) )
-            // InternalAir.g:1233:1: ( ( rule__Flight__Group_17__0 )* )
+            // InternalAir.g:1318:1: ( ( 'airplane' ) )
+            // InternalAir.g:1319:1: ( 'airplane' )
             {
-            // InternalAir.g:1233:1: ( ( rule__Flight__Group_17__0 )* )
-            // InternalAir.g:1234:2: ( rule__Flight__Group_17__0 )*
+            // InternalAir.g:1319:1: ( 'airplane' )
+            // InternalAir.g:1320:2: 'airplane'
             {
-             before(grammarAccess.getFlightAccess().getGroup_17()); 
-            // InternalAir.g:1235:2: ( rule__Flight__Group_17__0 )*
+             before(grammarAccess.getSpecificFlightAccess().getAirplaneKeyword_9()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getAirplaneKeyword_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__9__Impl"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__10"
+    // InternalAir.g:1329:1: rule__SpecificFlight__Group__10 : rule__SpecificFlight__Group__10__Impl rule__SpecificFlight__Group__11 ;
+    public final void rule__SpecificFlight__Group__10() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1333:1: ( rule__SpecificFlight__Group__10__Impl rule__SpecificFlight__Group__11 )
+            // InternalAir.g:1334:2: rule__SpecificFlight__Group__10__Impl rule__SpecificFlight__Group__11
+            {
+            pushFollow(FOLLOW_15);
+            rule__SpecificFlight__Group__10__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__Group__11();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__10"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__10__Impl"
+    // InternalAir.g:1341:1: rule__SpecificFlight__Group__10__Impl : ( ( rule__SpecificFlight__PlaneAssignment_10 ) ) ;
+    public final void rule__SpecificFlight__Group__10__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1345:1: ( ( ( rule__SpecificFlight__PlaneAssignment_10 ) ) )
+            // InternalAir.g:1346:1: ( ( rule__SpecificFlight__PlaneAssignment_10 ) )
+            {
+            // InternalAir.g:1346:1: ( ( rule__SpecificFlight__PlaneAssignment_10 ) )
+            // InternalAir.g:1347:2: ( rule__SpecificFlight__PlaneAssignment_10 )
+            {
+             before(grammarAccess.getSpecificFlightAccess().getPlaneAssignment_10()); 
+            // InternalAir.g:1348:2: ( rule__SpecificFlight__PlaneAssignment_10 )
+            // InternalAir.g:1348:3: rule__SpecificFlight__PlaneAssignment_10
+            {
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__PlaneAssignment_10();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSpecificFlightAccess().getPlaneAssignment_10()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__10__Impl"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__11"
+    // InternalAir.g:1356:1: rule__SpecificFlight__Group__11 : rule__SpecificFlight__Group__11__Impl rule__SpecificFlight__Group__12 ;
+    public final void rule__SpecificFlight__Group__11() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1360:1: ( rule__SpecificFlight__Group__11__Impl rule__SpecificFlight__Group__12 )
+            // InternalAir.g:1361:2: rule__SpecificFlight__Group__11__Impl rule__SpecificFlight__Group__12
+            {
+            pushFollow(FOLLOW_4);
+            rule__SpecificFlight__Group__11__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__Group__12();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__11"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__11__Impl"
+    // InternalAir.g:1368:1: rule__SpecificFlight__Group__11__Impl : ( 'staff' ) ;
+    public final void rule__SpecificFlight__Group__11__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1372:1: ( ( 'staff' ) )
+            // InternalAir.g:1373:1: ( 'staff' )
+            {
+            // InternalAir.g:1373:1: ( 'staff' )
+            // InternalAir.g:1374:2: 'staff'
+            {
+             before(grammarAccess.getSpecificFlightAccess().getStaffKeyword_11()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getStaffKeyword_11()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__11__Impl"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__12"
+    // InternalAir.g:1383:1: rule__SpecificFlight__Group__12 : rule__SpecificFlight__Group__12__Impl rule__SpecificFlight__Group__13 ;
+    public final void rule__SpecificFlight__Group__12() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1387:1: ( rule__SpecificFlight__Group__12__Impl rule__SpecificFlight__Group__13 )
+            // InternalAir.g:1388:2: rule__SpecificFlight__Group__12__Impl rule__SpecificFlight__Group__13
+            {
+            pushFollow(FOLLOW_16);
+            rule__SpecificFlight__Group__12__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__Group__13();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__12"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__12__Impl"
+    // InternalAir.g:1395:1: rule__SpecificFlight__Group__12__Impl : ( ( rule__SpecificFlight__StaffAssignment_12 ) ) ;
+    public final void rule__SpecificFlight__Group__12__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1399:1: ( ( ( rule__SpecificFlight__StaffAssignment_12 ) ) )
+            // InternalAir.g:1400:1: ( ( rule__SpecificFlight__StaffAssignment_12 ) )
+            {
+            // InternalAir.g:1400:1: ( ( rule__SpecificFlight__StaffAssignment_12 ) )
+            // InternalAir.g:1401:2: ( rule__SpecificFlight__StaffAssignment_12 )
+            {
+             before(grammarAccess.getSpecificFlightAccess().getStaffAssignment_12()); 
+            // InternalAir.g:1402:2: ( rule__SpecificFlight__StaffAssignment_12 )
+            // InternalAir.g:1402:3: rule__SpecificFlight__StaffAssignment_12
+            {
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__StaffAssignment_12();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSpecificFlightAccess().getStaffAssignment_12()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__12__Impl"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__13"
+    // InternalAir.g:1410:1: rule__SpecificFlight__Group__13 : rule__SpecificFlight__Group__13__Impl ;
+    public final void rule__SpecificFlight__Group__13() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1414:1: ( rule__SpecificFlight__Group__13__Impl )
+            // InternalAir.g:1415:2: rule__SpecificFlight__Group__13__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__SpecificFlight__Group__13__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__Group__13"
+
+
+    // $ANTLR start "rule__SpecificFlight__Group__13__Impl"
+    // InternalAir.g:1421:1: rule__SpecificFlight__Group__13__Impl : ( ( rule__SpecificFlight__Group_13__0 )* ) ;
+    public final void rule__SpecificFlight__Group__13__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:1425:1: ( ( ( rule__SpecificFlight__Group_13__0 )* ) )
+            // InternalAir.g:1426:1: ( ( rule__SpecificFlight__Group_13__0 )* )
+            {
+            // InternalAir.g:1426:1: ( ( rule__SpecificFlight__Group_13__0 )* )
+            // InternalAir.g:1427:2: ( rule__SpecificFlight__Group_13__0 )*
+            {
+             before(grammarAccess.getSpecificFlightAccess().getGroup_13()); 
+            // InternalAir.g:1428:2: ( rule__SpecificFlight__Group_13__0 )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==22) ) {
-                    int LA4_2 = input.LA(2);
-
-                    if ( (LA4_2==RULE_ID) ) {
-                        alt4=1;
-                    }
-
-
+                if ( (LA4_0==25) ) {
+                    alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalAir.g:1235:3: rule__Flight__Group_17__0
+            	    // InternalAir.g:1428:3: rule__SpecificFlight__Group_13__0
             	    {
-            	    pushFollow(FOLLOW_15);
-            	    rule__Flight__Group_17__0();
+            	    pushFollow(FOLLOW_17);
+            	    rule__SpecificFlight__Group_13__0();
 
             	    state._fsp--;
 
@@ -3779,7 +4352,7 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getFlightAccess().getGroup_17()); 
+             after(grammarAccess.getSpecificFlightAccess().getGroup_13()); 
 
             }
 
@@ -3798,26 +4371,26 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group__17__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group__13__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group_17__0"
-    // InternalAir.g:1244:1: rule__Flight__Group_17__0 : rule__Flight__Group_17__0__Impl rule__Flight__Group_17__1 ;
-    public final void rule__Flight__Group_17__0() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group_13__0"
+    // InternalAir.g:1437:1: rule__SpecificFlight__Group_13__0 : rule__SpecificFlight__Group_13__0__Impl rule__SpecificFlight__Group_13__1 ;
+    public final void rule__SpecificFlight__Group_13__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1248:1: ( rule__Flight__Group_17__0__Impl rule__Flight__Group_17__1 )
-            // InternalAir.g:1249:2: rule__Flight__Group_17__0__Impl rule__Flight__Group_17__1
+            // InternalAir.g:1441:1: ( rule__SpecificFlight__Group_13__0__Impl rule__SpecificFlight__Group_13__1 )
+            // InternalAir.g:1442:2: rule__SpecificFlight__Group_13__0__Impl rule__SpecificFlight__Group_13__1
             {
             pushFollow(FOLLOW_4);
-            rule__Flight__Group_17__0__Impl();
+            rule__SpecificFlight__Group_13__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Flight__Group_17__1();
+            rule__SpecificFlight__Group_13__1();
 
             state._fsp--;
 
@@ -3836,25 +4409,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group_17__0"
+    // $ANTLR end "rule__SpecificFlight__Group_13__0"
 
 
-    // $ANTLR start "rule__Flight__Group_17__0__Impl"
-    // InternalAir.g:1256:1: rule__Flight__Group_17__0__Impl : ( ',' ) ;
-    public final void rule__Flight__Group_17__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group_13__0__Impl"
+    // InternalAir.g:1449:1: rule__SpecificFlight__Group_13__0__Impl : ( ',' ) ;
+    public final void rule__SpecificFlight__Group_13__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1260:1: ( ( ',' ) )
-            // InternalAir.g:1261:1: ( ',' )
+            // InternalAir.g:1453:1: ( ( ',' ) )
+            // InternalAir.g:1454:1: ( ',' )
             {
-            // InternalAir.g:1261:1: ( ',' )
-            // InternalAir.g:1262:2: ','
+            // InternalAir.g:1454:1: ( ',' )
+            // InternalAir.g:1455:2: ','
             {
-             before(grammarAccess.getFlightAccess().getCommaKeyword_17_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getCommaKeyword_17_0()); 
+             before(grammarAccess.getSpecificFlightAccess().getCommaKeyword_13_0()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getCommaKeyword_13_0()); 
 
             }
 
@@ -3873,21 +4446,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group_17__0__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group_13__0__Impl"
 
 
-    // $ANTLR start "rule__Flight__Group_17__1"
-    // InternalAir.g:1271:1: rule__Flight__Group_17__1 : rule__Flight__Group_17__1__Impl ;
-    public final void rule__Flight__Group_17__1() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group_13__1"
+    // InternalAir.g:1464:1: rule__SpecificFlight__Group_13__1 : rule__SpecificFlight__Group_13__1__Impl ;
+    public final void rule__SpecificFlight__Group_13__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1275:1: ( rule__Flight__Group_17__1__Impl )
-            // InternalAir.g:1276:2: rule__Flight__Group_17__1__Impl
+            // InternalAir.g:1468:1: ( rule__SpecificFlight__Group_13__1__Impl )
+            // InternalAir.g:1469:2: rule__SpecificFlight__Group_13__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__Group_17__1__Impl();
+            rule__SpecificFlight__Group_13__1__Impl();
 
             state._fsp--;
 
@@ -3906,35 +4479,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group_17__1"
+    // $ANTLR end "rule__SpecificFlight__Group_13__1"
 
 
-    // $ANTLR start "rule__Flight__Group_17__1__Impl"
-    // InternalAir.g:1282:1: rule__Flight__Group_17__1__Impl : ( ( rule__Flight__StaffAssignment_17_1 ) ) ;
-    public final void rule__Flight__Group_17__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__Group_13__1__Impl"
+    // InternalAir.g:1475:1: rule__SpecificFlight__Group_13__1__Impl : ( ( rule__SpecificFlight__StaffAssignment_13_1 ) ) ;
+    public final void rule__SpecificFlight__Group_13__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1286:1: ( ( ( rule__Flight__StaffAssignment_17_1 ) ) )
-            // InternalAir.g:1287:1: ( ( rule__Flight__StaffAssignment_17_1 ) )
+            // InternalAir.g:1479:1: ( ( ( rule__SpecificFlight__StaffAssignment_13_1 ) ) )
+            // InternalAir.g:1480:1: ( ( rule__SpecificFlight__StaffAssignment_13_1 ) )
             {
-            // InternalAir.g:1287:1: ( ( rule__Flight__StaffAssignment_17_1 ) )
-            // InternalAir.g:1288:2: ( rule__Flight__StaffAssignment_17_1 )
+            // InternalAir.g:1480:1: ( ( rule__SpecificFlight__StaffAssignment_13_1 ) )
+            // InternalAir.g:1481:2: ( rule__SpecificFlight__StaffAssignment_13_1 )
             {
-             before(grammarAccess.getFlightAccess().getStaffAssignment_17_1()); 
-            // InternalAir.g:1289:2: ( rule__Flight__StaffAssignment_17_1 )
-            // InternalAir.g:1289:3: rule__Flight__StaffAssignment_17_1
+             before(grammarAccess.getSpecificFlightAccess().getStaffAssignment_13_1()); 
+            // InternalAir.g:1482:2: ( rule__SpecificFlight__StaffAssignment_13_1 )
+            // InternalAir.g:1482:3: rule__SpecificFlight__StaffAssignment_13_1
             {
             pushFollow(FOLLOW_2);
-            rule__Flight__StaffAssignment_17_1();
+            rule__SpecificFlight__StaffAssignment_13_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFlightAccess().getStaffAssignment_17_1()); 
+             after(grammarAccess.getSpecificFlightAccess().getStaffAssignment_13_1()); 
 
             }
 
@@ -3953,18 +4526,18 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__Group_17__1__Impl"
+    // $ANTLR end "rule__SpecificFlight__Group_13__1__Impl"
 
 
     // $ANTLR start "rule__Schedule__Group__0"
-    // InternalAir.g:1298:1: rule__Schedule__Group__0 : rule__Schedule__Group__0__Impl rule__Schedule__Group__1 ;
+    // InternalAir.g:1491:1: rule__Schedule__Group__0 : rule__Schedule__Group__0__Impl rule__Schedule__Group__1 ;
     public final void rule__Schedule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1302:1: ( rule__Schedule__Group__0__Impl rule__Schedule__Group__1 )
-            // InternalAir.g:1303:2: rule__Schedule__Group__0__Impl rule__Schedule__Group__1
+            // InternalAir.g:1495:1: ( rule__Schedule__Group__0__Impl rule__Schedule__Group__1 )
+            // InternalAir.g:1496:2: rule__Schedule__Group__0__Impl rule__Schedule__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__Schedule__Group__0__Impl();
@@ -3995,21 +4568,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__0__Impl"
-    // InternalAir.g:1310:1: rule__Schedule__Group__0__Impl : ( ( rule__Schedule__NameAssignment_0 ) ) ;
+    // InternalAir.g:1503:1: rule__Schedule__Group__0__Impl : ( ( rule__Schedule__NameAssignment_0 ) ) ;
     public final void rule__Schedule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1314:1: ( ( ( rule__Schedule__NameAssignment_0 ) ) )
-            // InternalAir.g:1315:1: ( ( rule__Schedule__NameAssignment_0 ) )
+            // InternalAir.g:1507:1: ( ( ( rule__Schedule__NameAssignment_0 ) ) )
+            // InternalAir.g:1508:1: ( ( rule__Schedule__NameAssignment_0 ) )
             {
-            // InternalAir.g:1315:1: ( ( rule__Schedule__NameAssignment_0 ) )
-            // InternalAir.g:1316:2: ( rule__Schedule__NameAssignment_0 )
+            // InternalAir.g:1508:1: ( ( rule__Schedule__NameAssignment_0 ) )
+            // InternalAir.g:1509:2: ( rule__Schedule__NameAssignment_0 )
             {
              before(grammarAccess.getScheduleAccess().getNameAssignment_0()); 
-            // InternalAir.g:1317:2: ( rule__Schedule__NameAssignment_0 )
-            // InternalAir.g:1317:3: rule__Schedule__NameAssignment_0
+            // InternalAir.g:1510:2: ( rule__Schedule__NameAssignment_0 )
+            // InternalAir.g:1510:3: rule__Schedule__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Schedule__NameAssignment_0();
@@ -4042,16 +4615,16 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__1"
-    // InternalAir.g:1325:1: rule__Schedule__Group__1 : rule__Schedule__Group__1__Impl rule__Schedule__Group__2 ;
+    // InternalAir.g:1518:1: rule__Schedule__Group__1 : rule__Schedule__Group__1__Impl rule__Schedule__Group__2 ;
     public final void rule__Schedule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1329:1: ( rule__Schedule__Group__1__Impl rule__Schedule__Group__2 )
-            // InternalAir.g:1330:2: rule__Schedule__Group__1__Impl rule__Schedule__Group__2
+            // InternalAir.g:1522:1: ( rule__Schedule__Group__1__Impl rule__Schedule__Group__2 )
+            // InternalAir.g:1523:2: rule__Schedule__Group__1__Impl rule__Schedule__Group__2
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_18);
             rule__Schedule__Group__1__Impl();
 
             state._fsp--;
@@ -4080,17 +4653,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__1__Impl"
-    // InternalAir.g:1337:1: rule__Schedule__Group__1__Impl : ( 'with' ) ;
+    // InternalAir.g:1530:1: rule__Schedule__Group__1__Impl : ( 'with' ) ;
     public final void rule__Schedule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1341:1: ( ( 'with' ) )
-            // InternalAir.g:1342:1: ( 'with' )
+            // InternalAir.g:1534:1: ( ( 'with' ) )
+            // InternalAir.g:1535:1: ( 'with' )
             {
-            // InternalAir.g:1342:1: ( 'with' )
-            // InternalAir.g:1343:2: 'with'
+            // InternalAir.g:1535:1: ( 'with' )
+            // InternalAir.g:1536:2: 'with'
             {
              before(grammarAccess.getScheduleAccess().getWithKeyword_1()); 
             match(input,17,FOLLOW_2); 
@@ -4117,16 +4690,16 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__2"
-    // InternalAir.g:1352:1: rule__Schedule__Group__2 : rule__Schedule__Group__2__Impl rule__Schedule__Group__3 ;
+    // InternalAir.g:1545:1: rule__Schedule__Group__2 : rule__Schedule__Group__2__Impl rule__Schedule__Group__3 ;
     public final void rule__Schedule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1356:1: ( rule__Schedule__Group__2__Impl rule__Schedule__Group__3 )
-            // InternalAir.g:1357:2: rule__Schedule__Group__2__Impl rule__Schedule__Group__3
+            // InternalAir.g:1549:1: ( rule__Schedule__Group__2__Impl rule__Schedule__Group__3 )
+            // InternalAir.g:1550:2: rule__Schedule__Group__2__Impl rule__Schedule__Group__3
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_4);
             rule__Schedule__Group__2__Impl();
 
             state._fsp--;
@@ -4155,20 +4728,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__2__Impl"
-    // InternalAir.g:1364:1: rule__Schedule__Group__2__Impl : ( 'flights' ) ;
+    // InternalAir.g:1557:1: rule__Schedule__Group__2__Impl : ( 'flights' ) ;
     public final void rule__Schedule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1368:1: ( ( 'flights' ) )
-            // InternalAir.g:1369:1: ( 'flights' )
+            // InternalAir.g:1561:1: ( ( 'flights' ) )
+            // InternalAir.g:1562:1: ( 'flights' )
             {
-            // InternalAir.g:1369:1: ( 'flights' )
-            // InternalAir.g:1370:2: 'flights'
+            // InternalAir.g:1562:1: ( 'flights' )
+            // InternalAir.g:1563:2: 'flights'
             {
              before(grammarAccess.getScheduleAccess().getFlightsKeyword_2()); 
-            match(input,23,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getScheduleAccess().getFlightsKeyword_2()); 
 
             }
@@ -4192,16 +4765,16 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__3"
-    // InternalAir.g:1379:1: rule__Schedule__Group__3 : rule__Schedule__Group__3__Impl rule__Schedule__Group__4 ;
+    // InternalAir.g:1572:1: rule__Schedule__Group__3 : rule__Schedule__Group__3__Impl rule__Schedule__Group__4 ;
     public final void rule__Schedule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1383:1: ( rule__Schedule__Group__3__Impl rule__Schedule__Group__4 )
-            // InternalAir.g:1384:2: rule__Schedule__Group__3__Impl rule__Schedule__Group__4
+            // InternalAir.g:1576:1: ( rule__Schedule__Group__3__Impl rule__Schedule__Group__4 )
+            // InternalAir.g:1577:2: rule__Schedule__Group__3__Impl rule__Schedule__Group__4
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__Schedule__Group__3__Impl();
 
             state._fsp--;
@@ -4230,31 +4803,31 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__3__Impl"
-    // InternalAir.g:1391:1: rule__Schedule__Group__3__Impl : ( ( rule__Schedule__FlightsAssignment_3 ) ) ;
+    // InternalAir.g:1584:1: rule__Schedule__Group__3__Impl : ( ( rule__Schedule__SpecificFlightsAssignment_3 ) ) ;
     public final void rule__Schedule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1395:1: ( ( ( rule__Schedule__FlightsAssignment_3 ) ) )
-            // InternalAir.g:1396:1: ( ( rule__Schedule__FlightsAssignment_3 ) )
+            // InternalAir.g:1588:1: ( ( ( rule__Schedule__SpecificFlightsAssignment_3 ) ) )
+            // InternalAir.g:1589:1: ( ( rule__Schedule__SpecificFlightsAssignment_3 ) )
             {
-            // InternalAir.g:1396:1: ( ( rule__Schedule__FlightsAssignment_3 ) )
-            // InternalAir.g:1397:2: ( rule__Schedule__FlightsAssignment_3 )
+            // InternalAir.g:1589:1: ( ( rule__Schedule__SpecificFlightsAssignment_3 ) )
+            // InternalAir.g:1590:2: ( rule__Schedule__SpecificFlightsAssignment_3 )
             {
-             before(grammarAccess.getScheduleAccess().getFlightsAssignment_3()); 
-            // InternalAir.g:1398:2: ( rule__Schedule__FlightsAssignment_3 )
-            // InternalAir.g:1398:3: rule__Schedule__FlightsAssignment_3
+             before(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_3()); 
+            // InternalAir.g:1591:2: ( rule__Schedule__SpecificFlightsAssignment_3 )
+            // InternalAir.g:1591:3: rule__Schedule__SpecificFlightsAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Schedule__FlightsAssignment_3();
+            rule__Schedule__SpecificFlightsAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getScheduleAccess().getFlightsAssignment_3()); 
+             after(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_3()); 
 
             }
 
@@ -4277,14 +4850,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__4"
-    // InternalAir.g:1406:1: rule__Schedule__Group__4 : rule__Schedule__Group__4__Impl ;
+    // InternalAir.g:1599:1: rule__Schedule__Group__4 : rule__Schedule__Group__4__Impl ;
     public final void rule__Schedule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1410:1: ( rule__Schedule__Group__4__Impl )
-            // InternalAir.g:1411:2: rule__Schedule__Group__4__Impl
+            // InternalAir.g:1603:1: ( rule__Schedule__Group__4__Impl )
+            // InternalAir.g:1604:2: rule__Schedule__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Schedule__Group__4__Impl();
@@ -4310,35 +4883,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group__4__Impl"
-    // InternalAir.g:1417:1: rule__Schedule__Group__4__Impl : ( ( rule__Schedule__Group_4__0 )* ) ;
+    // InternalAir.g:1610:1: rule__Schedule__Group__4__Impl : ( ( rule__Schedule__Group_4__0 )* ) ;
     public final void rule__Schedule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1421:1: ( ( ( rule__Schedule__Group_4__0 )* ) )
-            // InternalAir.g:1422:1: ( ( rule__Schedule__Group_4__0 )* )
+            // InternalAir.g:1614:1: ( ( ( rule__Schedule__Group_4__0 )* ) )
+            // InternalAir.g:1615:1: ( ( rule__Schedule__Group_4__0 )* )
             {
-            // InternalAir.g:1422:1: ( ( rule__Schedule__Group_4__0 )* )
-            // InternalAir.g:1423:2: ( rule__Schedule__Group_4__0 )*
+            // InternalAir.g:1615:1: ( ( rule__Schedule__Group_4__0 )* )
+            // InternalAir.g:1616:2: ( rule__Schedule__Group_4__0 )*
             {
              before(grammarAccess.getScheduleAccess().getGroup_4()); 
-            // InternalAir.g:1424:2: ( rule__Schedule__Group_4__0 )*
+            // InternalAir.g:1617:2: ( rule__Schedule__Group_4__0 )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==22) ) {
+                if ( (LA5_0==25) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalAir.g:1424:3: rule__Schedule__Group_4__0
+            	    // InternalAir.g:1617:3: rule__Schedule__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_15);
+            	    pushFollow(FOLLOW_17);
             	    rule__Schedule__Group_4__0();
 
             	    state._fsp--;
@@ -4375,16 +4948,16 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group_4__0"
-    // InternalAir.g:1433:1: rule__Schedule__Group_4__0 : rule__Schedule__Group_4__0__Impl rule__Schedule__Group_4__1 ;
+    // InternalAir.g:1626:1: rule__Schedule__Group_4__0 : rule__Schedule__Group_4__0__Impl rule__Schedule__Group_4__1 ;
     public final void rule__Schedule__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1437:1: ( rule__Schedule__Group_4__0__Impl rule__Schedule__Group_4__1 )
-            // InternalAir.g:1438:2: rule__Schedule__Group_4__0__Impl rule__Schedule__Group_4__1
+            // InternalAir.g:1630:1: ( rule__Schedule__Group_4__0__Impl rule__Schedule__Group_4__1 )
+            // InternalAir.g:1631:2: rule__Schedule__Group_4__0__Impl rule__Schedule__Group_4__1
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_4);
             rule__Schedule__Group_4__0__Impl();
 
             state._fsp--;
@@ -4413,20 +4986,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group_4__0__Impl"
-    // InternalAir.g:1445:1: rule__Schedule__Group_4__0__Impl : ( ',' ) ;
+    // InternalAir.g:1638:1: rule__Schedule__Group_4__0__Impl : ( ',' ) ;
     public final void rule__Schedule__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1449:1: ( ( ',' ) )
-            // InternalAir.g:1450:1: ( ',' )
+            // InternalAir.g:1642:1: ( ( ',' ) )
+            // InternalAir.g:1643:1: ( ',' )
             {
-            // InternalAir.g:1450:1: ( ',' )
-            // InternalAir.g:1451:2: ','
+            // InternalAir.g:1643:1: ( ',' )
+            // InternalAir.g:1644:2: ','
             {
              before(grammarAccess.getScheduleAccess().getCommaKeyword_4_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getScheduleAccess().getCommaKeyword_4_0()); 
 
             }
@@ -4450,14 +5023,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group_4__1"
-    // InternalAir.g:1460:1: rule__Schedule__Group_4__1 : rule__Schedule__Group_4__1__Impl ;
+    // InternalAir.g:1653:1: rule__Schedule__Group_4__1 : rule__Schedule__Group_4__1__Impl ;
     public final void rule__Schedule__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1464:1: ( rule__Schedule__Group_4__1__Impl )
-            // InternalAir.g:1465:2: rule__Schedule__Group_4__1__Impl
+            // InternalAir.g:1657:1: ( rule__Schedule__Group_4__1__Impl )
+            // InternalAir.g:1658:2: rule__Schedule__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Schedule__Group_4__1__Impl();
@@ -4483,31 +5056,31 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Schedule__Group_4__1__Impl"
-    // InternalAir.g:1471:1: rule__Schedule__Group_4__1__Impl : ( ( rule__Schedule__FlightsAssignment_4_1 ) ) ;
+    // InternalAir.g:1664:1: rule__Schedule__Group_4__1__Impl : ( ( rule__Schedule__SpecificFlightsAssignment_4_1 ) ) ;
     public final void rule__Schedule__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1475:1: ( ( ( rule__Schedule__FlightsAssignment_4_1 ) ) )
-            // InternalAir.g:1476:1: ( ( rule__Schedule__FlightsAssignment_4_1 ) )
+            // InternalAir.g:1668:1: ( ( ( rule__Schedule__SpecificFlightsAssignment_4_1 ) ) )
+            // InternalAir.g:1669:1: ( ( rule__Schedule__SpecificFlightsAssignment_4_1 ) )
             {
-            // InternalAir.g:1476:1: ( ( rule__Schedule__FlightsAssignment_4_1 ) )
-            // InternalAir.g:1477:2: ( rule__Schedule__FlightsAssignment_4_1 )
+            // InternalAir.g:1669:1: ( ( rule__Schedule__SpecificFlightsAssignment_4_1 ) )
+            // InternalAir.g:1670:2: ( rule__Schedule__SpecificFlightsAssignment_4_1 )
             {
-             before(grammarAccess.getScheduleAccess().getFlightsAssignment_4_1()); 
-            // InternalAir.g:1478:2: ( rule__Schedule__FlightsAssignment_4_1 )
-            // InternalAir.g:1478:3: rule__Schedule__FlightsAssignment_4_1
+             before(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_4_1()); 
+            // InternalAir.g:1671:2: ( rule__Schedule__SpecificFlightsAssignment_4_1 )
+            // InternalAir.g:1671:3: rule__Schedule__SpecificFlightsAssignment_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__Schedule__FlightsAssignment_4_1();
+            rule__Schedule__SpecificFlightsAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getScheduleAccess().getFlightsAssignment_4_1()); 
+             after(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_4_1()); 
 
             }
 
@@ -4530,14 +5103,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__0"
-    // InternalAir.g:1487:1: rule__Pilot__Group__0 : rule__Pilot__Group__0__Impl rule__Pilot__Group__1 ;
+    // InternalAir.g:1680:1: rule__Pilot__Group__0 : rule__Pilot__Group__0__Impl rule__Pilot__Group__1 ;
     public final void rule__Pilot__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1491:1: ( rule__Pilot__Group__0__Impl rule__Pilot__Group__1 )
-            // InternalAir.g:1492:2: rule__Pilot__Group__0__Impl rule__Pilot__Group__1
+            // InternalAir.g:1684:1: ( rule__Pilot__Group__0__Impl rule__Pilot__Group__1 )
+            // InternalAir.g:1685:2: rule__Pilot__Group__0__Impl rule__Pilot__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Pilot__Group__0__Impl();
@@ -4568,20 +5141,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__0__Impl"
-    // InternalAir.g:1499:1: rule__Pilot__Group__0__Impl : ( 'Pilot' ) ;
+    // InternalAir.g:1692:1: rule__Pilot__Group__0__Impl : ( 'Pilot' ) ;
     public final void rule__Pilot__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1503:1: ( ( 'Pilot' ) )
-            // InternalAir.g:1504:1: ( 'Pilot' )
+            // InternalAir.g:1696:1: ( ( 'Pilot' ) )
+            // InternalAir.g:1697:1: ( 'Pilot' )
             {
-            // InternalAir.g:1504:1: ( 'Pilot' )
-            // InternalAir.g:1505:2: 'Pilot'
+            // InternalAir.g:1697:1: ( 'Pilot' )
+            // InternalAir.g:1698:2: 'Pilot'
             {
              before(grammarAccess.getPilotAccess().getPilotKeyword_0()); 
-            match(input,24,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getPilotAccess().getPilotKeyword_0()); 
 
             }
@@ -4605,14 +5178,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__1"
-    // InternalAir.g:1514:1: rule__Pilot__Group__1 : rule__Pilot__Group__1__Impl rule__Pilot__Group__2 ;
+    // InternalAir.g:1707:1: rule__Pilot__Group__1 : rule__Pilot__Group__1__Impl rule__Pilot__Group__2 ;
     public final void rule__Pilot__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1518:1: ( rule__Pilot__Group__1__Impl rule__Pilot__Group__2 )
-            // InternalAir.g:1519:2: rule__Pilot__Group__1__Impl rule__Pilot__Group__2
+            // InternalAir.g:1711:1: ( rule__Pilot__Group__1__Impl rule__Pilot__Group__2 )
+            // InternalAir.g:1712:2: rule__Pilot__Group__1__Impl rule__Pilot__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Pilot__Group__1__Impl();
@@ -4643,21 +5216,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__1__Impl"
-    // InternalAir.g:1526:1: rule__Pilot__Group__1__Impl : ( ( rule__Pilot__NameAssignment_1 ) ) ;
+    // InternalAir.g:1719:1: rule__Pilot__Group__1__Impl : ( ( rule__Pilot__NameAssignment_1 ) ) ;
     public final void rule__Pilot__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1530:1: ( ( ( rule__Pilot__NameAssignment_1 ) ) )
-            // InternalAir.g:1531:1: ( ( rule__Pilot__NameAssignment_1 ) )
+            // InternalAir.g:1723:1: ( ( ( rule__Pilot__NameAssignment_1 ) ) )
+            // InternalAir.g:1724:1: ( ( rule__Pilot__NameAssignment_1 ) )
             {
-            // InternalAir.g:1531:1: ( ( rule__Pilot__NameAssignment_1 ) )
-            // InternalAir.g:1532:2: ( rule__Pilot__NameAssignment_1 )
+            // InternalAir.g:1724:1: ( ( rule__Pilot__NameAssignment_1 ) )
+            // InternalAir.g:1725:2: ( rule__Pilot__NameAssignment_1 )
             {
              before(grammarAccess.getPilotAccess().getNameAssignment_1()); 
-            // InternalAir.g:1533:2: ( rule__Pilot__NameAssignment_1 )
-            // InternalAir.g:1533:3: rule__Pilot__NameAssignment_1
+            // InternalAir.g:1726:2: ( rule__Pilot__NameAssignment_1 )
+            // InternalAir.g:1726:3: rule__Pilot__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Pilot__NameAssignment_1();
@@ -4690,14 +5263,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__2"
-    // InternalAir.g:1541:1: rule__Pilot__Group__2 : rule__Pilot__Group__2__Impl rule__Pilot__Group__3 ;
+    // InternalAir.g:1734:1: rule__Pilot__Group__2 : rule__Pilot__Group__2__Impl rule__Pilot__Group__3 ;
     public final void rule__Pilot__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1545:1: ( rule__Pilot__Group__2__Impl rule__Pilot__Group__3 )
-            // InternalAir.g:1546:2: rule__Pilot__Group__2__Impl rule__Pilot__Group__3
+            // InternalAir.g:1738:1: ( rule__Pilot__Group__2__Impl rule__Pilot__Group__3 )
+            // InternalAir.g:1739:2: rule__Pilot__Group__2__Impl rule__Pilot__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__Pilot__Group__2__Impl();
@@ -4728,21 +5301,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__2__Impl"
-    // InternalAir.g:1553:1: rule__Pilot__Group__2__Impl : ( ( rule__Pilot__PinameAssignment_2 ) ) ;
+    // InternalAir.g:1746:1: rule__Pilot__Group__2__Impl : ( ( rule__Pilot__PinameAssignment_2 ) ) ;
     public final void rule__Pilot__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1557:1: ( ( ( rule__Pilot__PinameAssignment_2 ) ) )
-            // InternalAir.g:1558:1: ( ( rule__Pilot__PinameAssignment_2 ) )
+            // InternalAir.g:1750:1: ( ( ( rule__Pilot__PinameAssignment_2 ) ) )
+            // InternalAir.g:1751:1: ( ( rule__Pilot__PinameAssignment_2 ) )
             {
-            // InternalAir.g:1558:1: ( ( rule__Pilot__PinameAssignment_2 ) )
-            // InternalAir.g:1559:2: ( rule__Pilot__PinameAssignment_2 )
+            // InternalAir.g:1751:1: ( ( rule__Pilot__PinameAssignment_2 ) )
+            // InternalAir.g:1752:2: ( rule__Pilot__PinameAssignment_2 )
             {
              before(grammarAccess.getPilotAccess().getPinameAssignment_2()); 
-            // InternalAir.g:1560:2: ( rule__Pilot__PinameAssignment_2 )
-            // InternalAir.g:1560:3: rule__Pilot__PinameAssignment_2
+            // InternalAir.g:1753:2: ( rule__Pilot__PinameAssignment_2 )
+            // InternalAir.g:1753:3: rule__Pilot__PinameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Pilot__PinameAssignment_2();
@@ -4775,14 +5348,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__3"
-    // InternalAir.g:1568:1: rule__Pilot__Group__3 : rule__Pilot__Group__3__Impl rule__Pilot__Group__4 ;
+    // InternalAir.g:1761:1: rule__Pilot__Group__3 : rule__Pilot__Group__3__Impl rule__Pilot__Group__4 ;
     public final void rule__Pilot__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1572:1: ( rule__Pilot__Group__3__Impl rule__Pilot__Group__4 )
-            // InternalAir.g:1573:2: rule__Pilot__Group__3__Impl rule__Pilot__Group__4
+            // InternalAir.g:1765:1: ( rule__Pilot__Group__3__Impl rule__Pilot__Group__4 )
+            // InternalAir.g:1766:2: rule__Pilot__Group__3__Impl rule__Pilot__Group__4
             {
             pushFollow(FOLLOW_4);
             rule__Pilot__Group__3__Impl();
@@ -4813,17 +5386,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__3__Impl"
-    // InternalAir.g:1580:1: rule__Pilot__Group__3__Impl : ( 'with' ) ;
+    // InternalAir.g:1773:1: rule__Pilot__Group__3__Impl : ( 'with' ) ;
     public final void rule__Pilot__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1584:1: ( ( 'with' ) )
-            // InternalAir.g:1585:1: ( 'with' )
+            // InternalAir.g:1777:1: ( ( 'with' ) )
+            // InternalAir.g:1778:1: ( 'with' )
             {
-            // InternalAir.g:1585:1: ( 'with' )
-            // InternalAir.g:1586:2: 'with'
+            // InternalAir.g:1778:1: ( 'with' )
+            // InternalAir.g:1779:2: 'with'
             {
              before(grammarAccess.getPilotAccess().getWithKeyword_3()); 
             match(input,17,FOLLOW_2); 
@@ -4850,14 +5423,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__4"
-    // InternalAir.g:1595:1: rule__Pilot__Group__4 : rule__Pilot__Group__4__Impl ;
+    // InternalAir.g:1788:1: rule__Pilot__Group__4 : rule__Pilot__Group__4__Impl ;
     public final void rule__Pilot__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1599:1: ( rule__Pilot__Group__4__Impl )
-            // InternalAir.g:1600:2: rule__Pilot__Group__4__Impl
+            // InternalAir.g:1792:1: ( rule__Pilot__Group__4__Impl )
+            // InternalAir.g:1793:2: rule__Pilot__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Pilot__Group__4__Impl();
@@ -4883,21 +5456,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__Group__4__Impl"
-    // InternalAir.g:1606:1: rule__Pilot__Group__4__Impl : ( ( rule__Pilot__AirlineAssignment_4 ) ) ;
+    // InternalAir.g:1799:1: rule__Pilot__Group__4__Impl : ( ( rule__Pilot__AirlineAssignment_4 ) ) ;
     public final void rule__Pilot__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1610:1: ( ( ( rule__Pilot__AirlineAssignment_4 ) ) )
-            // InternalAir.g:1611:1: ( ( rule__Pilot__AirlineAssignment_4 ) )
+            // InternalAir.g:1803:1: ( ( ( rule__Pilot__AirlineAssignment_4 ) ) )
+            // InternalAir.g:1804:1: ( ( rule__Pilot__AirlineAssignment_4 ) )
             {
-            // InternalAir.g:1611:1: ( ( rule__Pilot__AirlineAssignment_4 ) )
-            // InternalAir.g:1612:2: ( rule__Pilot__AirlineAssignment_4 )
+            // InternalAir.g:1804:1: ( ( rule__Pilot__AirlineAssignment_4 ) )
+            // InternalAir.g:1805:2: ( rule__Pilot__AirlineAssignment_4 )
             {
              before(grammarAccess.getPilotAccess().getAirlineAssignment_4()); 
-            // InternalAir.g:1613:2: ( rule__Pilot__AirlineAssignment_4 )
-            // InternalAir.g:1613:3: rule__Pilot__AirlineAssignment_4
+            // InternalAir.g:1806:2: ( rule__Pilot__AirlineAssignment_4 )
+            // InternalAir.g:1806:3: rule__Pilot__AirlineAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Pilot__AirlineAssignment_4();
@@ -4930,14 +5503,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__0"
-    // InternalAir.g:1622:1: rule__FlightAttendant__Group__0 : rule__FlightAttendant__Group__0__Impl rule__FlightAttendant__Group__1 ;
+    // InternalAir.g:1815:1: rule__FlightAttendant__Group__0 : rule__FlightAttendant__Group__0__Impl rule__FlightAttendant__Group__1 ;
     public final void rule__FlightAttendant__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1626:1: ( rule__FlightAttendant__Group__0__Impl rule__FlightAttendant__Group__1 )
-            // InternalAir.g:1627:2: rule__FlightAttendant__Group__0__Impl rule__FlightAttendant__Group__1
+            // InternalAir.g:1819:1: ( rule__FlightAttendant__Group__0__Impl rule__FlightAttendant__Group__1 )
+            // InternalAir.g:1820:2: rule__FlightAttendant__Group__0__Impl rule__FlightAttendant__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__FlightAttendant__Group__0__Impl();
@@ -4968,20 +5541,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__0__Impl"
-    // InternalAir.g:1634:1: rule__FlightAttendant__Group__0__Impl : ( 'FlightAttendant' ) ;
+    // InternalAir.g:1827:1: rule__FlightAttendant__Group__0__Impl : ( 'FlightAttendant' ) ;
     public final void rule__FlightAttendant__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1638:1: ( ( 'FlightAttendant' ) )
-            // InternalAir.g:1639:1: ( 'FlightAttendant' )
+            // InternalAir.g:1831:1: ( ( 'FlightAttendant' ) )
+            // InternalAir.g:1832:1: ( 'FlightAttendant' )
             {
-            // InternalAir.g:1639:1: ( 'FlightAttendant' )
-            // InternalAir.g:1640:2: 'FlightAttendant'
+            // InternalAir.g:1832:1: ( 'FlightAttendant' )
+            // InternalAir.g:1833:2: 'FlightAttendant'
             {
              before(grammarAccess.getFlightAttendantAccess().getFlightAttendantKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getFlightAttendantAccess().getFlightAttendantKeyword_0()); 
 
             }
@@ -5005,14 +5578,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__1"
-    // InternalAir.g:1649:1: rule__FlightAttendant__Group__1 : rule__FlightAttendant__Group__1__Impl rule__FlightAttendant__Group__2 ;
+    // InternalAir.g:1842:1: rule__FlightAttendant__Group__1 : rule__FlightAttendant__Group__1__Impl rule__FlightAttendant__Group__2 ;
     public final void rule__FlightAttendant__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1653:1: ( rule__FlightAttendant__Group__1__Impl rule__FlightAttendant__Group__2 )
-            // InternalAir.g:1654:2: rule__FlightAttendant__Group__1__Impl rule__FlightAttendant__Group__2
+            // InternalAir.g:1846:1: ( rule__FlightAttendant__Group__1__Impl rule__FlightAttendant__Group__2 )
+            // InternalAir.g:1847:2: rule__FlightAttendant__Group__1__Impl rule__FlightAttendant__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__FlightAttendant__Group__1__Impl();
@@ -5043,21 +5616,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__1__Impl"
-    // InternalAir.g:1661:1: rule__FlightAttendant__Group__1__Impl : ( ( rule__FlightAttendant__NameAssignment_1 ) ) ;
+    // InternalAir.g:1854:1: rule__FlightAttendant__Group__1__Impl : ( ( rule__FlightAttendant__NameAssignment_1 ) ) ;
     public final void rule__FlightAttendant__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1665:1: ( ( ( rule__FlightAttendant__NameAssignment_1 ) ) )
-            // InternalAir.g:1666:1: ( ( rule__FlightAttendant__NameAssignment_1 ) )
+            // InternalAir.g:1858:1: ( ( ( rule__FlightAttendant__NameAssignment_1 ) ) )
+            // InternalAir.g:1859:1: ( ( rule__FlightAttendant__NameAssignment_1 ) )
             {
-            // InternalAir.g:1666:1: ( ( rule__FlightAttendant__NameAssignment_1 ) )
-            // InternalAir.g:1667:2: ( rule__FlightAttendant__NameAssignment_1 )
+            // InternalAir.g:1859:1: ( ( rule__FlightAttendant__NameAssignment_1 ) )
+            // InternalAir.g:1860:2: ( rule__FlightAttendant__NameAssignment_1 )
             {
              before(grammarAccess.getFlightAttendantAccess().getNameAssignment_1()); 
-            // InternalAir.g:1668:2: ( rule__FlightAttendant__NameAssignment_1 )
-            // InternalAir.g:1668:3: rule__FlightAttendant__NameAssignment_1
+            // InternalAir.g:1861:2: ( rule__FlightAttendant__NameAssignment_1 )
+            // InternalAir.g:1861:3: rule__FlightAttendant__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__FlightAttendant__NameAssignment_1();
@@ -5090,14 +5663,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__2"
-    // InternalAir.g:1676:1: rule__FlightAttendant__Group__2 : rule__FlightAttendant__Group__2__Impl rule__FlightAttendant__Group__3 ;
+    // InternalAir.g:1869:1: rule__FlightAttendant__Group__2 : rule__FlightAttendant__Group__2__Impl rule__FlightAttendant__Group__3 ;
     public final void rule__FlightAttendant__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1680:1: ( rule__FlightAttendant__Group__2__Impl rule__FlightAttendant__Group__3 )
-            // InternalAir.g:1681:2: rule__FlightAttendant__Group__2__Impl rule__FlightAttendant__Group__3
+            // InternalAir.g:1873:1: ( rule__FlightAttendant__Group__2__Impl rule__FlightAttendant__Group__3 )
+            // InternalAir.g:1874:2: rule__FlightAttendant__Group__2__Impl rule__FlightAttendant__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__FlightAttendant__Group__2__Impl();
@@ -5128,21 +5701,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__2__Impl"
-    // InternalAir.g:1688:1: rule__FlightAttendant__Group__2__Impl : ( ( rule__FlightAttendant__FanameAssignment_2 ) ) ;
+    // InternalAir.g:1881:1: rule__FlightAttendant__Group__2__Impl : ( ( rule__FlightAttendant__FanameAssignment_2 ) ) ;
     public final void rule__FlightAttendant__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1692:1: ( ( ( rule__FlightAttendant__FanameAssignment_2 ) ) )
-            // InternalAir.g:1693:1: ( ( rule__FlightAttendant__FanameAssignment_2 ) )
+            // InternalAir.g:1885:1: ( ( ( rule__FlightAttendant__FanameAssignment_2 ) ) )
+            // InternalAir.g:1886:1: ( ( rule__FlightAttendant__FanameAssignment_2 ) )
             {
-            // InternalAir.g:1693:1: ( ( rule__FlightAttendant__FanameAssignment_2 ) )
-            // InternalAir.g:1694:2: ( rule__FlightAttendant__FanameAssignment_2 )
+            // InternalAir.g:1886:1: ( ( rule__FlightAttendant__FanameAssignment_2 ) )
+            // InternalAir.g:1887:2: ( rule__FlightAttendant__FanameAssignment_2 )
             {
              before(grammarAccess.getFlightAttendantAccess().getFanameAssignment_2()); 
-            // InternalAir.g:1695:2: ( rule__FlightAttendant__FanameAssignment_2 )
-            // InternalAir.g:1695:3: rule__FlightAttendant__FanameAssignment_2
+            // InternalAir.g:1888:2: ( rule__FlightAttendant__FanameAssignment_2 )
+            // InternalAir.g:1888:3: rule__FlightAttendant__FanameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FlightAttendant__FanameAssignment_2();
@@ -5175,14 +5748,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__3"
-    // InternalAir.g:1703:1: rule__FlightAttendant__Group__3 : rule__FlightAttendant__Group__3__Impl rule__FlightAttendant__Group__4 ;
+    // InternalAir.g:1896:1: rule__FlightAttendant__Group__3 : rule__FlightAttendant__Group__3__Impl rule__FlightAttendant__Group__4 ;
     public final void rule__FlightAttendant__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1707:1: ( rule__FlightAttendant__Group__3__Impl rule__FlightAttendant__Group__4 )
-            // InternalAir.g:1708:2: rule__FlightAttendant__Group__3__Impl rule__FlightAttendant__Group__4
+            // InternalAir.g:1900:1: ( rule__FlightAttendant__Group__3__Impl rule__FlightAttendant__Group__4 )
+            // InternalAir.g:1901:2: rule__FlightAttendant__Group__3__Impl rule__FlightAttendant__Group__4
             {
             pushFollow(FOLLOW_4);
             rule__FlightAttendant__Group__3__Impl();
@@ -5213,17 +5786,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__3__Impl"
-    // InternalAir.g:1715:1: rule__FlightAttendant__Group__3__Impl : ( 'with' ) ;
+    // InternalAir.g:1908:1: rule__FlightAttendant__Group__3__Impl : ( 'with' ) ;
     public final void rule__FlightAttendant__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1719:1: ( ( 'with' ) )
-            // InternalAir.g:1720:1: ( 'with' )
+            // InternalAir.g:1912:1: ( ( 'with' ) )
+            // InternalAir.g:1913:1: ( 'with' )
             {
-            // InternalAir.g:1720:1: ( 'with' )
-            // InternalAir.g:1721:2: 'with'
+            // InternalAir.g:1913:1: ( 'with' )
+            // InternalAir.g:1914:2: 'with'
             {
              before(grammarAccess.getFlightAttendantAccess().getWithKeyword_3()); 
             match(input,17,FOLLOW_2); 
@@ -5250,14 +5823,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__4"
-    // InternalAir.g:1730:1: rule__FlightAttendant__Group__4 : rule__FlightAttendant__Group__4__Impl ;
+    // InternalAir.g:1923:1: rule__FlightAttendant__Group__4 : rule__FlightAttendant__Group__4__Impl ;
     public final void rule__FlightAttendant__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1734:1: ( rule__FlightAttendant__Group__4__Impl )
-            // InternalAir.g:1735:2: rule__FlightAttendant__Group__4__Impl
+            // InternalAir.g:1927:1: ( rule__FlightAttendant__Group__4__Impl )
+            // InternalAir.g:1928:2: rule__FlightAttendant__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FlightAttendant__Group__4__Impl();
@@ -5283,21 +5856,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__Group__4__Impl"
-    // InternalAir.g:1741:1: rule__FlightAttendant__Group__4__Impl : ( ( rule__FlightAttendant__AirlineAssignment_4 ) ) ;
+    // InternalAir.g:1934:1: rule__FlightAttendant__Group__4__Impl : ( ( rule__FlightAttendant__AirlineAssignment_4 ) ) ;
     public final void rule__FlightAttendant__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1745:1: ( ( ( rule__FlightAttendant__AirlineAssignment_4 ) ) )
-            // InternalAir.g:1746:1: ( ( rule__FlightAttendant__AirlineAssignment_4 ) )
+            // InternalAir.g:1938:1: ( ( ( rule__FlightAttendant__AirlineAssignment_4 ) ) )
+            // InternalAir.g:1939:1: ( ( rule__FlightAttendant__AirlineAssignment_4 ) )
             {
-            // InternalAir.g:1746:1: ( ( rule__FlightAttendant__AirlineAssignment_4 ) )
-            // InternalAir.g:1747:2: ( rule__FlightAttendant__AirlineAssignment_4 )
+            // InternalAir.g:1939:1: ( ( rule__FlightAttendant__AirlineAssignment_4 ) )
+            // InternalAir.g:1940:2: ( rule__FlightAttendant__AirlineAssignment_4 )
             {
              before(grammarAccess.getFlightAttendantAccess().getAirlineAssignment_4()); 
-            // InternalAir.g:1748:2: ( rule__FlightAttendant__AirlineAssignment_4 )
-            // InternalAir.g:1748:3: rule__FlightAttendant__AirlineAssignment_4
+            // InternalAir.g:1941:2: ( rule__FlightAttendant__AirlineAssignment_4 )
+            // InternalAir.g:1941:3: rule__FlightAttendant__AirlineAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__FlightAttendant__AirlineAssignment_4();
@@ -5330,14 +5903,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__0"
-    // InternalAir.g:1757:1: rule__BagHandler__Group__0 : rule__BagHandler__Group__0__Impl rule__BagHandler__Group__1 ;
+    // InternalAir.g:1950:1: rule__BagHandler__Group__0 : rule__BagHandler__Group__0__Impl rule__BagHandler__Group__1 ;
     public final void rule__BagHandler__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1761:1: ( rule__BagHandler__Group__0__Impl rule__BagHandler__Group__1 )
-            // InternalAir.g:1762:2: rule__BagHandler__Group__0__Impl rule__BagHandler__Group__1
+            // InternalAir.g:1954:1: ( rule__BagHandler__Group__0__Impl rule__BagHandler__Group__1 )
+            // InternalAir.g:1955:2: rule__BagHandler__Group__0__Impl rule__BagHandler__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__BagHandler__Group__0__Impl();
@@ -5368,20 +5941,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__0__Impl"
-    // InternalAir.g:1769:1: rule__BagHandler__Group__0__Impl : ( 'BagHandler' ) ;
+    // InternalAir.g:1962:1: rule__BagHandler__Group__0__Impl : ( 'BagHandler' ) ;
     public final void rule__BagHandler__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1773:1: ( ( 'BagHandler' ) )
-            // InternalAir.g:1774:1: ( 'BagHandler' )
+            // InternalAir.g:1966:1: ( ( 'BagHandler' ) )
+            // InternalAir.g:1967:1: ( 'BagHandler' )
             {
-            // InternalAir.g:1774:1: ( 'BagHandler' )
-            // InternalAir.g:1775:2: 'BagHandler'
+            // InternalAir.g:1967:1: ( 'BagHandler' )
+            // InternalAir.g:1968:2: 'BagHandler'
             {
              before(grammarAccess.getBagHandlerAccess().getBagHandlerKeyword_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getBagHandlerAccess().getBagHandlerKeyword_0()); 
 
             }
@@ -5405,14 +5978,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__1"
-    // InternalAir.g:1784:1: rule__BagHandler__Group__1 : rule__BagHandler__Group__1__Impl rule__BagHandler__Group__2 ;
+    // InternalAir.g:1977:1: rule__BagHandler__Group__1 : rule__BagHandler__Group__1__Impl rule__BagHandler__Group__2 ;
     public final void rule__BagHandler__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1788:1: ( rule__BagHandler__Group__1__Impl rule__BagHandler__Group__2 )
-            // InternalAir.g:1789:2: rule__BagHandler__Group__1__Impl rule__BagHandler__Group__2
+            // InternalAir.g:1981:1: ( rule__BagHandler__Group__1__Impl rule__BagHandler__Group__2 )
+            // InternalAir.g:1982:2: rule__BagHandler__Group__1__Impl rule__BagHandler__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__BagHandler__Group__1__Impl();
@@ -5443,21 +6016,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__1__Impl"
-    // InternalAir.g:1796:1: rule__BagHandler__Group__1__Impl : ( ( rule__BagHandler__NameAssignment_1 ) ) ;
+    // InternalAir.g:1989:1: rule__BagHandler__Group__1__Impl : ( ( rule__BagHandler__NameAssignment_1 ) ) ;
     public final void rule__BagHandler__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1800:1: ( ( ( rule__BagHandler__NameAssignment_1 ) ) )
-            // InternalAir.g:1801:1: ( ( rule__BagHandler__NameAssignment_1 ) )
+            // InternalAir.g:1993:1: ( ( ( rule__BagHandler__NameAssignment_1 ) ) )
+            // InternalAir.g:1994:1: ( ( rule__BagHandler__NameAssignment_1 ) )
             {
-            // InternalAir.g:1801:1: ( ( rule__BagHandler__NameAssignment_1 ) )
-            // InternalAir.g:1802:2: ( rule__BagHandler__NameAssignment_1 )
+            // InternalAir.g:1994:1: ( ( rule__BagHandler__NameAssignment_1 ) )
+            // InternalAir.g:1995:2: ( rule__BagHandler__NameAssignment_1 )
             {
              before(grammarAccess.getBagHandlerAccess().getNameAssignment_1()); 
-            // InternalAir.g:1803:2: ( rule__BagHandler__NameAssignment_1 )
-            // InternalAir.g:1803:3: rule__BagHandler__NameAssignment_1
+            // InternalAir.g:1996:2: ( rule__BagHandler__NameAssignment_1 )
+            // InternalAir.g:1996:3: rule__BagHandler__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__BagHandler__NameAssignment_1();
@@ -5490,14 +6063,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__2"
-    // InternalAir.g:1811:1: rule__BagHandler__Group__2 : rule__BagHandler__Group__2__Impl rule__BagHandler__Group__3 ;
+    // InternalAir.g:2004:1: rule__BagHandler__Group__2 : rule__BagHandler__Group__2__Impl rule__BagHandler__Group__3 ;
     public final void rule__BagHandler__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1815:1: ( rule__BagHandler__Group__2__Impl rule__BagHandler__Group__3 )
-            // InternalAir.g:1816:2: rule__BagHandler__Group__2__Impl rule__BagHandler__Group__3
+            // InternalAir.g:2008:1: ( rule__BagHandler__Group__2__Impl rule__BagHandler__Group__3 )
+            // InternalAir.g:2009:2: rule__BagHandler__Group__2__Impl rule__BagHandler__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__BagHandler__Group__2__Impl();
@@ -5528,21 +6101,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__2__Impl"
-    // InternalAir.g:1823:1: rule__BagHandler__Group__2__Impl : ( ( rule__BagHandler__BhnameAssignment_2 ) ) ;
+    // InternalAir.g:2016:1: rule__BagHandler__Group__2__Impl : ( ( rule__BagHandler__BhnameAssignment_2 ) ) ;
     public final void rule__BagHandler__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1827:1: ( ( ( rule__BagHandler__BhnameAssignment_2 ) ) )
-            // InternalAir.g:1828:1: ( ( rule__BagHandler__BhnameAssignment_2 ) )
+            // InternalAir.g:2020:1: ( ( ( rule__BagHandler__BhnameAssignment_2 ) ) )
+            // InternalAir.g:2021:1: ( ( rule__BagHandler__BhnameAssignment_2 ) )
             {
-            // InternalAir.g:1828:1: ( ( rule__BagHandler__BhnameAssignment_2 ) )
-            // InternalAir.g:1829:2: ( rule__BagHandler__BhnameAssignment_2 )
+            // InternalAir.g:2021:1: ( ( rule__BagHandler__BhnameAssignment_2 ) )
+            // InternalAir.g:2022:2: ( rule__BagHandler__BhnameAssignment_2 )
             {
              before(grammarAccess.getBagHandlerAccess().getBhnameAssignment_2()); 
-            // InternalAir.g:1830:2: ( rule__BagHandler__BhnameAssignment_2 )
-            // InternalAir.g:1830:3: rule__BagHandler__BhnameAssignment_2
+            // InternalAir.g:2023:2: ( rule__BagHandler__BhnameAssignment_2 )
+            // InternalAir.g:2023:3: rule__BagHandler__BhnameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__BagHandler__BhnameAssignment_2();
@@ -5575,14 +6148,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__3"
-    // InternalAir.g:1838:1: rule__BagHandler__Group__3 : rule__BagHandler__Group__3__Impl rule__BagHandler__Group__4 ;
+    // InternalAir.g:2031:1: rule__BagHandler__Group__3 : rule__BagHandler__Group__3__Impl rule__BagHandler__Group__4 ;
     public final void rule__BagHandler__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1842:1: ( rule__BagHandler__Group__3__Impl rule__BagHandler__Group__4 )
-            // InternalAir.g:1843:2: rule__BagHandler__Group__3__Impl rule__BagHandler__Group__4
+            // InternalAir.g:2035:1: ( rule__BagHandler__Group__3__Impl rule__BagHandler__Group__4 )
+            // InternalAir.g:2036:2: rule__BagHandler__Group__3__Impl rule__BagHandler__Group__4
             {
             pushFollow(FOLLOW_4);
             rule__BagHandler__Group__3__Impl();
@@ -5613,17 +6186,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__3__Impl"
-    // InternalAir.g:1850:1: rule__BagHandler__Group__3__Impl : ( 'with' ) ;
+    // InternalAir.g:2043:1: rule__BagHandler__Group__3__Impl : ( 'with' ) ;
     public final void rule__BagHandler__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1854:1: ( ( 'with' ) )
-            // InternalAir.g:1855:1: ( 'with' )
+            // InternalAir.g:2047:1: ( ( 'with' ) )
+            // InternalAir.g:2048:1: ( 'with' )
             {
-            // InternalAir.g:1855:1: ( 'with' )
-            // InternalAir.g:1856:2: 'with'
+            // InternalAir.g:2048:1: ( 'with' )
+            // InternalAir.g:2049:2: 'with'
             {
              before(grammarAccess.getBagHandlerAccess().getWithKeyword_3()); 
             match(input,17,FOLLOW_2); 
@@ -5650,14 +6223,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__4"
-    // InternalAir.g:1865:1: rule__BagHandler__Group__4 : rule__BagHandler__Group__4__Impl ;
+    // InternalAir.g:2058:1: rule__BagHandler__Group__4 : rule__BagHandler__Group__4__Impl ;
     public final void rule__BagHandler__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1869:1: ( rule__BagHandler__Group__4__Impl )
-            // InternalAir.g:1870:2: rule__BagHandler__Group__4__Impl
+            // InternalAir.g:2062:1: ( rule__BagHandler__Group__4__Impl )
+            // InternalAir.g:2063:2: rule__BagHandler__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BagHandler__Group__4__Impl();
@@ -5683,21 +6256,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__Group__4__Impl"
-    // InternalAir.g:1876:1: rule__BagHandler__Group__4__Impl : ( ( rule__BagHandler__AirportAssignment_4 ) ) ;
+    // InternalAir.g:2069:1: rule__BagHandler__Group__4__Impl : ( ( rule__BagHandler__AirportAssignment_4 ) ) ;
     public final void rule__BagHandler__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1880:1: ( ( ( rule__BagHandler__AirportAssignment_4 ) ) )
-            // InternalAir.g:1881:1: ( ( rule__BagHandler__AirportAssignment_4 ) )
+            // InternalAir.g:2073:1: ( ( ( rule__BagHandler__AirportAssignment_4 ) ) )
+            // InternalAir.g:2074:1: ( ( rule__BagHandler__AirportAssignment_4 ) )
             {
-            // InternalAir.g:1881:1: ( ( rule__BagHandler__AirportAssignment_4 ) )
-            // InternalAir.g:1882:2: ( rule__BagHandler__AirportAssignment_4 )
+            // InternalAir.g:2074:1: ( ( rule__BagHandler__AirportAssignment_4 ) )
+            // InternalAir.g:2075:2: ( rule__BagHandler__AirportAssignment_4 )
             {
              before(grammarAccess.getBagHandlerAccess().getAirportAssignment_4()); 
-            // InternalAir.g:1883:2: ( rule__BagHandler__AirportAssignment_4 )
-            // InternalAir.g:1883:3: rule__BagHandler__AirportAssignment_4
+            // InternalAir.g:2076:2: ( rule__BagHandler__AirportAssignment_4 )
+            // InternalAir.g:2076:3: rule__BagHandler__AirportAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__BagHandler__AirportAssignment_4();
@@ -5730,14 +6303,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__0"
-    // InternalAir.g:1892:1: rule__GatePersonnel__Group__0 : rule__GatePersonnel__Group__0__Impl rule__GatePersonnel__Group__1 ;
+    // InternalAir.g:2085:1: rule__GatePersonnel__Group__0 : rule__GatePersonnel__Group__0__Impl rule__GatePersonnel__Group__1 ;
     public final void rule__GatePersonnel__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1896:1: ( rule__GatePersonnel__Group__0__Impl rule__GatePersonnel__Group__1 )
-            // InternalAir.g:1897:2: rule__GatePersonnel__Group__0__Impl rule__GatePersonnel__Group__1
+            // InternalAir.g:2089:1: ( rule__GatePersonnel__Group__0__Impl rule__GatePersonnel__Group__1 )
+            // InternalAir.g:2090:2: rule__GatePersonnel__Group__0__Impl rule__GatePersonnel__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__GatePersonnel__Group__0__Impl();
@@ -5768,20 +6341,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__0__Impl"
-    // InternalAir.g:1904:1: rule__GatePersonnel__Group__0__Impl : ( 'GatePersonnel' ) ;
+    // InternalAir.g:2097:1: rule__GatePersonnel__Group__0__Impl : ( 'GatePersonnel' ) ;
     public final void rule__GatePersonnel__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1908:1: ( ( 'GatePersonnel' ) )
-            // InternalAir.g:1909:1: ( 'GatePersonnel' )
+            // InternalAir.g:2101:1: ( ( 'GatePersonnel' ) )
+            // InternalAir.g:2102:1: ( 'GatePersonnel' )
             {
-            // InternalAir.g:1909:1: ( 'GatePersonnel' )
-            // InternalAir.g:1910:2: 'GatePersonnel'
+            // InternalAir.g:2102:1: ( 'GatePersonnel' )
+            // InternalAir.g:2103:2: 'GatePersonnel'
             {
              before(grammarAccess.getGatePersonnelAccess().getGatePersonnelKeyword_0()); 
-            match(input,27,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getGatePersonnelAccess().getGatePersonnelKeyword_0()); 
 
             }
@@ -5805,14 +6378,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__1"
-    // InternalAir.g:1919:1: rule__GatePersonnel__Group__1 : rule__GatePersonnel__Group__1__Impl rule__GatePersonnel__Group__2 ;
+    // InternalAir.g:2112:1: rule__GatePersonnel__Group__1 : rule__GatePersonnel__Group__1__Impl rule__GatePersonnel__Group__2 ;
     public final void rule__GatePersonnel__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1923:1: ( rule__GatePersonnel__Group__1__Impl rule__GatePersonnel__Group__2 )
-            // InternalAir.g:1924:2: rule__GatePersonnel__Group__1__Impl rule__GatePersonnel__Group__2
+            // InternalAir.g:2116:1: ( rule__GatePersonnel__Group__1__Impl rule__GatePersonnel__Group__2 )
+            // InternalAir.g:2117:2: rule__GatePersonnel__Group__1__Impl rule__GatePersonnel__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__GatePersonnel__Group__1__Impl();
@@ -5843,21 +6416,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__1__Impl"
-    // InternalAir.g:1931:1: rule__GatePersonnel__Group__1__Impl : ( ( rule__GatePersonnel__NameAssignment_1 ) ) ;
+    // InternalAir.g:2124:1: rule__GatePersonnel__Group__1__Impl : ( ( rule__GatePersonnel__NameAssignment_1 ) ) ;
     public final void rule__GatePersonnel__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1935:1: ( ( ( rule__GatePersonnel__NameAssignment_1 ) ) )
-            // InternalAir.g:1936:1: ( ( rule__GatePersonnel__NameAssignment_1 ) )
+            // InternalAir.g:2128:1: ( ( ( rule__GatePersonnel__NameAssignment_1 ) ) )
+            // InternalAir.g:2129:1: ( ( rule__GatePersonnel__NameAssignment_1 ) )
             {
-            // InternalAir.g:1936:1: ( ( rule__GatePersonnel__NameAssignment_1 ) )
-            // InternalAir.g:1937:2: ( rule__GatePersonnel__NameAssignment_1 )
+            // InternalAir.g:2129:1: ( ( rule__GatePersonnel__NameAssignment_1 ) )
+            // InternalAir.g:2130:2: ( rule__GatePersonnel__NameAssignment_1 )
             {
              before(grammarAccess.getGatePersonnelAccess().getNameAssignment_1()); 
-            // InternalAir.g:1938:2: ( rule__GatePersonnel__NameAssignment_1 )
-            // InternalAir.g:1938:3: rule__GatePersonnel__NameAssignment_1
+            // InternalAir.g:2131:2: ( rule__GatePersonnel__NameAssignment_1 )
+            // InternalAir.g:2131:3: rule__GatePersonnel__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__GatePersonnel__NameAssignment_1();
@@ -5890,14 +6463,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__2"
-    // InternalAir.g:1946:1: rule__GatePersonnel__Group__2 : rule__GatePersonnel__Group__2__Impl rule__GatePersonnel__Group__3 ;
+    // InternalAir.g:2139:1: rule__GatePersonnel__Group__2 : rule__GatePersonnel__Group__2__Impl rule__GatePersonnel__Group__3 ;
     public final void rule__GatePersonnel__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1950:1: ( rule__GatePersonnel__Group__2__Impl rule__GatePersonnel__Group__3 )
-            // InternalAir.g:1951:2: rule__GatePersonnel__Group__2__Impl rule__GatePersonnel__Group__3
+            // InternalAir.g:2143:1: ( rule__GatePersonnel__Group__2__Impl rule__GatePersonnel__Group__3 )
+            // InternalAir.g:2144:2: rule__GatePersonnel__Group__2__Impl rule__GatePersonnel__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__GatePersonnel__Group__2__Impl();
@@ -5928,21 +6501,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__2__Impl"
-    // InternalAir.g:1958:1: rule__GatePersonnel__Group__2__Impl : ( ( rule__GatePersonnel__GpnameAssignment_2 ) ) ;
+    // InternalAir.g:2151:1: rule__GatePersonnel__Group__2__Impl : ( ( rule__GatePersonnel__GpnameAssignment_2 ) ) ;
     public final void rule__GatePersonnel__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1962:1: ( ( ( rule__GatePersonnel__GpnameAssignment_2 ) ) )
-            // InternalAir.g:1963:1: ( ( rule__GatePersonnel__GpnameAssignment_2 ) )
+            // InternalAir.g:2155:1: ( ( ( rule__GatePersonnel__GpnameAssignment_2 ) ) )
+            // InternalAir.g:2156:1: ( ( rule__GatePersonnel__GpnameAssignment_2 ) )
             {
-            // InternalAir.g:1963:1: ( ( rule__GatePersonnel__GpnameAssignment_2 ) )
-            // InternalAir.g:1964:2: ( rule__GatePersonnel__GpnameAssignment_2 )
+            // InternalAir.g:2156:1: ( ( rule__GatePersonnel__GpnameAssignment_2 ) )
+            // InternalAir.g:2157:2: ( rule__GatePersonnel__GpnameAssignment_2 )
             {
              before(grammarAccess.getGatePersonnelAccess().getGpnameAssignment_2()); 
-            // InternalAir.g:1965:2: ( rule__GatePersonnel__GpnameAssignment_2 )
-            // InternalAir.g:1965:3: rule__GatePersonnel__GpnameAssignment_2
+            // InternalAir.g:2158:2: ( rule__GatePersonnel__GpnameAssignment_2 )
+            // InternalAir.g:2158:3: rule__GatePersonnel__GpnameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__GatePersonnel__GpnameAssignment_2();
@@ -5975,14 +6548,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__3"
-    // InternalAir.g:1973:1: rule__GatePersonnel__Group__3 : rule__GatePersonnel__Group__3__Impl rule__GatePersonnel__Group__4 ;
+    // InternalAir.g:2166:1: rule__GatePersonnel__Group__3 : rule__GatePersonnel__Group__3__Impl rule__GatePersonnel__Group__4 ;
     public final void rule__GatePersonnel__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1977:1: ( rule__GatePersonnel__Group__3__Impl rule__GatePersonnel__Group__4 )
-            // InternalAir.g:1978:2: rule__GatePersonnel__Group__3__Impl rule__GatePersonnel__Group__4
+            // InternalAir.g:2170:1: ( rule__GatePersonnel__Group__3__Impl rule__GatePersonnel__Group__4 )
+            // InternalAir.g:2171:2: rule__GatePersonnel__Group__3__Impl rule__GatePersonnel__Group__4
             {
             pushFollow(FOLLOW_4);
             rule__GatePersonnel__Group__3__Impl();
@@ -6013,17 +6586,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__3__Impl"
-    // InternalAir.g:1985:1: rule__GatePersonnel__Group__3__Impl : ( 'with' ) ;
+    // InternalAir.g:2178:1: rule__GatePersonnel__Group__3__Impl : ( 'with' ) ;
     public final void rule__GatePersonnel__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:1989:1: ( ( 'with' ) )
-            // InternalAir.g:1990:1: ( 'with' )
+            // InternalAir.g:2182:1: ( ( 'with' ) )
+            // InternalAir.g:2183:1: ( 'with' )
             {
-            // InternalAir.g:1990:1: ( 'with' )
-            // InternalAir.g:1991:2: 'with'
+            // InternalAir.g:2183:1: ( 'with' )
+            // InternalAir.g:2184:2: 'with'
             {
              before(grammarAccess.getGatePersonnelAccess().getWithKeyword_3()); 
             match(input,17,FOLLOW_2); 
@@ -6050,14 +6623,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__4"
-    // InternalAir.g:2000:1: rule__GatePersonnel__Group__4 : rule__GatePersonnel__Group__4__Impl ;
+    // InternalAir.g:2193:1: rule__GatePersonnel__Group__4 : rule__GatePersonnel__Group__4__Impl ;
     public final void rule__GatePersonnel__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2004:1: ( rule__GatePersonnel__Group__4__Impl )
-            // InternalAir.g:2005:2: rule__GatePersonnel__Group__4__Impl
+            // InternalAir.g:2197:1: ( rule__GatePersonnel__Group__4__Impl )
+            // InternalAir.g:2198:2: rule__GatePersonnel__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GatePersonnel__Group__4__Impl();
@@ -6083,21 +6656,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__Group__4__Impl"
-    // InternalAir.g:2011:1: rule__GatePersonnel__Group__4__Impl : ( ( rule__GatePersonnel__AirportAssignment_4 ) ) ;
+    // InternalAir.g:2204:1: rule__GatePersonnel__Group__4__Impl : ( ( rule__GatePersonnel__AirportAssignment_4 ) ) ;
     public final void rule__GatePersonnel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2015:1: ( ( ( rule__GatePersonnel__AirportAssignment_4 ) ) )
-            // InternalAir.g:2016:1: ( ( rule__GatePersonnel__AirportAssignment_4 ) )
+            // InternalAir.g:2208:1: ( ( ( rule__GatePersonnel__AirportAssignment_4 ) ) )
+            // InternalAir.g:2209:1: ( ( rule__GatePersonnel__AirportAssignment_4 ) )
             {
-            // InternalAir.g:2016:1: ( ( rule__GatePersonnel__AirportAssignment_4 ) )
-            // InternalAir.g:2017:2: ( rule__GatePersonnel__AirportAssignment_4 )
+            // InternalAir.g:2209:1: ( ( rule__GatePersonnel__AirportAssignment_4 ) )
+            // InternalAir.g:2210:2: ( rule__GatePersonnel__AirportAssignment_4 )
             {
              before(grammarAccess.getGatePersonnelAccess().getAirportAssignment_4()); 
-            // InternalAir.g:2018:2: ( rule__GatePersonnel__AirportAssignment_4 )
-            // InternalAir.g:2018:3: rule__GatePersonnel__AirportAssignment_4
+            // InternalAir.g:2211:2: ( rule__GatePersonnel__AirportAssignment_4 )
+            // InternalAir.g:2211:3: rule__GatePersonnel__AirportAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__GatePersonnel__AirportAssignment_4();
@@ -6130,14 +6703,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__0"
-    // InternalAir.g:2027:1: rule__Passenger__Group__0 : rule__Passenger__Group__0__Impl rule__Passenger__Group__1 ;
+    // InternalAir.g:2220:1: rule__Passenger__Group__0 : rule__Passenger__Group__0__Impl rule__Passenger__Group__1 ;
     public final void rule__Passenger__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2031:1: ( rule__Passenger__Group__0__Impl rule__Passenger__Group__1 )
-            // InternalAir.g:2032:2: rule__Passenger__Group__0__Impl rule__Passenger__Group__1
+            // InternalAir.g:2224:1: ( rule__Passenger__Group__0__Impl rule__Passenger__Group__1 )
+            // InternalAir.g:2225:2: rule__Passenger__Group__0__Impl rule__Passenger__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__Passenger__Group__0__Impl();
@@ -6168,20 +6741,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__0__Impl"
-    // InternalAir.g:2039:1: rule__Passenger__Group__0__Impl : ( 'Passenger' ) ;
+    // InternalAir.g:2232:1: rule__Passenger__Group__0__Impl : ( 'Passenger' ) ;
     public final void rule__Passenger__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2043:1: ( ( 'Passenger' ) )
-            // InternalAir.g:2044:1: ( 'Passenger' )
+            // InternalAir.g:2236:1: ( ( 'Passenger' ) )
+            // InternalAir.g:2237:1: ( 'Passenger' )
             {
-            // InternalAir.g:2044:1: ( 'Passenger' )
-            // InternalAir.g:2045:2: 'Passenger'
+            // InternalAir.g:2237:1: ( 'Passenger' )
+            // InternalAir.g:2238:2: 'Passenger'
             {
              before(grammarAccess.getPassengerAccess().getPassengerKeyword_0()); 
-            match(input,28,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getPassengerAccess().getPassengerKeyword_0()); 
 
             }
@@ -6205,14 +6778,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__1"
-    // InternalAir.g:2054:1: rule__Passenger__Group__1 : rule__Passenger__Group__1__Impl rule__Passenger__Group__2 ;
+    // InternalAir.g:2247:1: rule__Passenger__Group__1 : rule__Passenger__Group__1__Impl rule__Passenger__Group__2 ;
     public final void rule__Passenger__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2058:1: ( rule__Passenger__Group__1__Impl rule__Passenger__Group__2 )
-            // InternalAir.g:2059:2: rule__Passenger__Group__1__Impl rule__Passenger__Group__2
+            // InternalAir.g:2251:1: ( rule__Passenger__Group__1__Impl rule__Passenger__Group__2 )
+            // InternalAir.g:2252:2: rule__Passenger__Group__1__Impl rule__Passenger__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Passenger__Group__1__Impl();
@@ -6243,21 +6816,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__1__Impl"
-    // InternalAir.g:2066:1: rule__Passenger__Group__1__Impl : ( ( rule__Passenger__NameAssignment_1 ) ) ;
+    // InternalAir.g:2259:1: rule__Passenger__Group__1__Impl : ( ( rule__Passenger__NameAssignment_1 ) ) ;
     public final void rule__Passenger__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2070:1: ( ( ( rule__Passenger__NameAssignment_1 ) ) )
-            // InternalAir.g:2071:1: ( ( rule__Passenger__NameAssignment_1 ) )
+            // InternalAir.g:2263:1: ( ( ( rule__Passenger__NameAssignment_1 ) ) )
+            // InternalAir.g:2264:1: ( ( rule__Passenger__NameAssignment_1 ) )
             {
-            // InternalAir.g:2071:1: ( ( rule__Passenger__NameAssignment_1 ) )
-            // InternalAir.g:2072:2: ( rule__Passenger__NameAssignment_1 )
+            // InternalAir.g:2264:1: ( ( rule__Passenger__NameAssignment_1 ) )
+            // InternalAir.g:2265:2: ( rule__Passenger__NameAssignment_1 )
             {
              before(grammarAccess.getPassengerAccess().getNameAssignment_1()); 
-            // InternalAir.g:2073:2: ( rule__Passenger__NameAssignment_1 )
-            // InternalAir.g:2073:3: rule__Passenger__NameAssignment_1
+            // InternalAir.g:2266:2: ( rule__Passenger__NameAssignment_1 )
+            // InternalAir.g:2266:3: rule__Passenger__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Passenger__NameAssignment_1();
@@ -6290,14 +6863,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__2"
-    // InternalAir.g:2081:1: rule__Passenger__Group__2 : rule__Passenger__Group__2__Impl rule__Passenger__Group__3 ;
+    // InternalAir.g:2274:1: rule__Passenger__Group__2 : rule__Passenger__Group__2__Impl rule__Passenger__Group__3 ;
     public final void rule__Passenger__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2085:1: ( rule__Passenger__Group__2__Impl rule__Passenger__Group__3 )
-            // InternalAir.g:2086:2: rule__Passenger__Group__2__Impl rule__Passenger__Group__3
+            // InternalAir.g:2278:1: ( rule__Passenger__Group__2__Impl rule__Passenger__Group__3 )
+            // InternalAir.g:2279:2: rule__Passenger__Group__2__Impl rule__Passenger__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__Passenger__Group__2__Impl();
@@ -6328,21 +6901,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__2__Impl"
-    // InternalAir.g:2093:1: rule__Passenger__Group__2__Impl : ( ( rule__Passenger__PanameAssignment_2 ) ) ;
+    // InternalAir.g:2286:1: rule__Passenger__Group__2__Impl : ( ( rule__Passenger__PanameAssignment_2 ) ) ;
     public final void rule__Passenger__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2097:1: ( ( ( rule__Passenger__PanameAssignment_2 ) ) )
-            // InternalAir.g:2098:1: ( ( rule__Passenger__PanameAssignment_2 ) )
+            // InternalAir.g:2290:1: ( ( ( rule__Passenger__PanameAssignment_2 ) ) )
+            // InternalAir.g:2291:1: ( ( rule__Passenger__PanameAssignment_2 ) )
             {
-            // InternalAir.g:2098:1: ( ( rule__Passenger__PanameAssignment_2 ) )
-            // InternalAir.g:2099:2: ( rule__Passenger__PanameAssignment_2 )
+            // InternalAir.g:2291:1: ( ( rule__Passenger__PanameAssignment_2 ) )
+            // InternalAir.g:2292:2: ( rule__Passenger__PanameAssignment_2 )
             {
              before(grammarAccess.getPassengerAccess().getPanameAssignment_2()); 
-            // InternalAir.g:2100:2: ( rule__Passenger__PanameAssignment_2 )
-            // InternalAir.g:2100:3: rule__Passenger__PanameAssignment_2
+            // InternalAir.g:2293:2: ( rule__Passenger__PanameAssignment_2 )
+            // InternalAir.g:2293:3: rule__Passenger__PanameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Passenger__PanameAssignment_2();
@@ -6375,14 +6948,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__3"
-    // InternalAir.g:2108:1: rule__Passenger__Group__3 : rule__Passenger__Group__3__Impl rule__Passenger__Group__4 ;
+    // InternalAir.g:2301:1: rule__Passenger__Group__3 : rule__Passenger__Group__3__Impl rule__Passenger__Group__4 ;
     public final void rule__Passenger__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2112:1: ( rule__Passenger__Group__3__Impl rule__Passenger__Group__4 )
-            // InternalAir.g:2113:2: rule__Passenger__Group__3__Impl rule__Passenger__Group__4
+            // InternalAir.g:2305:1: ( rule__Passenger__Group__3__Impl rule__Passenger__Group__4 )
+            // InternalAir.g:2306:2: rule__Passenger__Group__3__Impl rule__Passenger__Group__4
             {
             pushFollow(FOLLOW_4);
             rule__Passenger__Group__3__Impl();
@@ -6413,17 +6986,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__3__Impl"
-    // InternalAir.g:2120:1: rule__Passenger__Group__3__Impl : ( 'with' ) ;
+    // InternalAir.g:2313:1: rule__Passenger__Group__3__Impl : ( 'with' ) ;
     public final void rule__Passenger__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2124:1: ( ( 'with' ) )
-            // InternalAir.g:2125:1: ( 'with' )
+            // InternalAir.g:2317:1: ( ( 'with' ) )
+            // InternalAir.g:2318:1: ( 'with' )
             {
-            // InternalAir.g:2125:1: ( 'with' )
-            // InternalAir.g:2126:2: 'with'
+            // InternalAir.g:2318:1: ( 'with' )
+            // InternalAir.g:2319:2: 'with'
             {
              before(grammarAccess.getPassengerAccess().getWithKeyword_3()); 
             match(input,17,FOLLOW_2); 
@@ -6450,16 +7023,16 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__4"
-    // InternalAir.g:2135:1: rule__Passenger__Group__4 : rule__Passenger__Group__4__Impl rule__Passenger__Group__5 ;
+    // InternalAir.g:2328:1: rule__Passenger__Group__4 : rule__Passenger__Group__4__Impl rule__Passenger__Group__5 ;
     public final void rule__Passenger__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2139:1: ( rule__Passenger__Group__4__Impl rule__Passenger__Group__5 )
-            // InternalAir.g:2140:2: rule__Passenger__Group__4__Impl rule__Passenger__Group__5
+            // InternalAir.g:2332:1: ( rule__Passenger__Group__4__Impl rule__Passenger__Group__5 )
+            // InternalAir.g:2333:2: rule__Passenger__Group__4__Impl rule__Passenger__Group__5
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__Passenger__Group__4__Impl();
 
             state._fsp--;
@@ -6488,31 +7061,31 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__4__Impl"
-    // InternalAir.g:2147:1: rule__Passenger__Group__4__Impl : ( ( rule__Passenger__FlightAssignment_4 ) ) ;
+    // InternalAir.g:2340:1: rule__Passenger__Group__4__Impl : ( ( rule__Passenger__SpecificFlightAssignment_4 ) ) ;
     public final void rule__Passenger__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2151:1: ( ( ( rule__Passenger__FlightAssignment_4 ) ) )
-            // InternalAir.g:2152:1: ( ( rule__Passenger__FlightAssignment_4 ) )
+            // InternalAir.g:2344:1: ( ( ( rule__Passenger__SpecificFlightAssignment_4 ) ) )
+            // InternalAir.g:2345:1: ( ( rule__Passenger__SpecificFlightAssignment_4 ) )
             {
-            // InternalAir.g:2152:1: ( ( rule__Passenger__FlightAssignment_4 ) )
-            // InternalAir.g:2153:2: ( rule__Passenger__FlightAssignment_4 )
+            // InternalAir.g:2345:1: ( ( rule__Passenger__SpecificFlightAssignment_4 ) )
+            // InternalAir.g:2346:2: ( rule__Passenger__SpecificFlightAssignment_4 )
             {
-             before(grammarAccess.getPassengerAccess().getFlightAssignment_4()); 
-            // InternalAir.g:2154:2: ( rule__Passenger__FlightAssignment_4 )
-            // InternalAir.g:2154:3: rule__Passenger__FlightAssignment_4
+             before(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_4()); 
+            // InternalAir.g:2347:2: ( rule__Passenger__SpecificFlightAssignment_4 )
+            // InternalAir.g:2347:3: rule__Passenger__SpecificFlightAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Passenger__FlightAssignment_4();
+            rule__Passenger__SpecificFlightAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPassengerAccess().getFlightAssignment_4()); 
+             after(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_4()); 
 
             }
 
@@ -6535,14 +7108,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__5"
-    // InternalAir.g:2162:1: rule__Passenger__Group__5 : rule__Passenger__Group__5__Impl ;
+    // InternalAir.g:2355:1: rule__Passenger__Group__5 : rule__Passenger__Group__5__Impl ;
     public final void rule__Passenger__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2166:1: ( rule__Passenger__Group__5__Impl )
-            // InternalAir.g:2167:2: rule__Passenger__Group__5__Impl
+            // InternalAir.g:2359:1: ( rule__Passenger__Group__5__Impl )
+            // InternalAir.g:2360:2: rule__Passenger__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Passenger__Group__5__Impl();
@@ -6568,35 +7141,35 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group__5__Impl"
-    // InternalAir.g:2173:1: rule__Passenger__Group__5__Impl : ( ( rule__Passenger__Group_5__0 )* ) ;
+    // InternalAir.g:2366:1: rule__Passenger__Group__5__Impl : ( ( rule__Passenger__Group_5__0 )* ) ;
     public final void rule__Passenger__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2177:1: ( ( ( rule__Passenger__Group_5__0 )* ) )
-            // InternalAir.g:2178:1: ( ( rule__Passenger__Group_5__0 )* )
+            // InternalAir.g:2370:1: ( ( ( rule__Passenger__Group_5__0 )* ) )
+            // InternalAir.g:2371:1: ( ( rule__Passenger__Group_5__0 )* )
             {
-            // InternalAir.g:2178:1: ( ( rule__Passenger__Group_5__0 )* )
-            // InternalAir.g:2179:2: ( rule__Passenger__Group_5__0 )*
+            // InternalAir.g:2371:1: ( ( rule__Passenger__Group_5__0 )* )
+            // InternalAir.g:2372:2: ( rule__Passenger__Group_5__0 )*
             {
              before(grammarAccess.getPassengerAccess().getGroup_5()); 
-            // InternalAir.g:2180:2: ( rule__Passenger__Group_5__0 )*
+            // InternalAir.g:2373:2: ( rule__Passenger__Group_5__0 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==22) ) {
+                if ( (LA6_0==25) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalAir.g:2180:3: rule__Passenger__Group_5__0
+            	    // InternalAir.g:2373:3: rule__Passenger__Group_5__0
             	    {
-            	    pushFollow(FOLLOW_15);
+            	    pushFollow(FOLLOW_17);
             	    rule__Passenger__Group_5__0();
 
             	    state._fsp--;
@@ -6633,14 +7206,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group_5__0"
-    // InternalAir.g:2189:1: rule__Passenger__Group_5__0 : rule__Passenger__Group_5__0__Impl rule__Passenger__Group_5__1 ;
+    // InternalAir.g:2382:1: rule__Passenger__Group_5__0 : rule__Passenger__Group_5__0__Impl rule__Passenger__Group_5__1 ;
     public final void rule__Passenger__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2193:1: ( rule__Passenger__Group_5__0__Impl rule__Passenger__Group_5__1 )
-            // InternalAir.g:2194:2: rule__Passenger__Group_5__0__Impl rule__Passenger__Group_5__1
+            // InternalAir.g:2386:1: ( rule__Passenger__Group_5__0__Impl rule__Passenger__Group_5__1 )
+            // InternalAir.g:2387:2: rule__Passenger__Group_5__0__Impl rule__Passenger__Group_5__1
             {
             pushFollow(FOLLOW_4);
             rule__Passenger__Group_5__0__Impl();
@@ -6671,20 +7244,20 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group_5__0__Impl"
-    // InternalAir.g:2201:1: rule__Passenger__Group_5__0__Impl : ( ',' ) ;
+    // InternalAir.g:2394:1: rule__Passenger__Group_5__0__Impl : ( ',' ) ;
     public final void rule__Passenger__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2205:1: ( ( ',' ) )
-            // InternalAir.g:2206:1: ( ',' )
+            // InternalAir.g:2398:1: ( ( ',' ) )
+            // InternalAir.g:2399:1: ( ',' )
             {
-            // InternalAir.g:2206:1: ( ',' )
-            // InternalAir.g:2207:2: ','
+            // InternalAir.g:2399:1: ( ',' )
+            // InternalAir.g:2400:2: ','
             {
              before(grammarAccess.getPassengerAccess().getCommaKeyword_5_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getPassengerAccess().getCommaKeyword_5_0()); 
 
             }
@@ -6708,14 +7281,14 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group_5__1"
-    // InternalAir.g:2216:1: rule__Passenger__Group_5__1 : rule__Passenger__Group_5__1__Impl ;
+    // InternalAir.g:2409:1: rule__Passenger__Group_5__1 : rule__Passenger__Group_5__1__Impl ;
     public final void rule__Passenger__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2220:1: ( rule__Passenger__Group_5__1__Impl )
-            // InternalAir.g:2221:2: rule__Passenger__Group_5__1__Impl
+            // InternalAir.g:2413:1: ( rule__Passenger__Group_5__1__Impl )
+            // InternalAir.g:2414:2: rule__Passenger__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Passenger__Group_5__1__Impl();
@@ -6741,31 +7314,31 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__Group_5__1__Impl"
-    // InternalAir.g:2227:1: rule__Passenger__Group_5__1__Impl : ( ( rule__Passenger__FlightAssignment_5_1 ) ) ;
+    // InternalAir.g:2420:1: rule__Passenger__Group_5__1__Impl : ( ( rule__Passenger__SpecificFlightAssignment_5_1 ) ) ;
     public final void rule__Passenger__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2231:1: ( ( ( rule__Passenger__FlightAssignment_5_1 ) ) )
-            // InternalAir.g:2232:1: ( ( rule__Passenger__FlightAssignment_5_1 ) )
+            // InternalAir.g:2424:1: ( ( ( rule__Passenger__SpecificFlightAssignment_5_1 ) ) )
+            // InternalAir.g:2425:1: ( ( rule__Passenger__SpecificFlightAssignment_5_1 ) )
             {
-            // InternalAir.g:2232:1: ( ( rule__Passenger__FlightAssignment_5_1 ) )
-            // InternalAir.g:2233:2: ( rule__Passenger__FlightAssignment_5_1 )
+            // InternalAir.g:2425:1: ( ( rule__Passenger__SpecificFlightAssignment_5_1 ) )
+            // InternalAir.g:2426:2: ( rule__Passenger__SpecificFlightAssignment_5_1 )
             {
-             before(grammarAccess.getPassengerAccess().getFlightAssignment_5_1()); 
-            // InternalAir.g:2234:2: ( rule__Passenger__FlightAssignment_5_1 )
-            // InternalAir.g:2234:3: rule__Passenger__FlightAssignment_5_1
+             before(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_5_1()); 
+            // InternalAir.g:2427:2: ( rule__Passenger__SpecificFlightAssignment_5_1 )
+            // InternalAir.g:2427:3: rule__Passenger__SpecificFlightAssignment_5_1
             {
             pushFollow(FOLLOW_2);
-            rule__Passenger__FlightAssignment_5_1();
+            rule__Passenger__SpecificFlightAssignment_5_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPassengerAccess().getFlightAssignment_5_1()); 
+             after(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_5_1()); 
 
             }
 
@@ -6788,17 +7361,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__EntitiesAssignment"
-    // InternalAir.g:2243:1: rule__Model__EntitiesAssignment : ( ruleEntity ) ;
+    // InternalAir.g:2436:1: rule__Model__EntitiesAssignment : ( ruleEntity ) ;
     public final void rule__Model__EntitiesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2247:1: ( ( ruleEntity ) )
-            // InternalAir.g:2248:2: ( ruleEntity )
+            // InternalAir.g:2440:1: ( ( ruleEntity ) )
+            // InternalAir.g:2441:2: ( ruleEntity )
             {
-            // InternalAir.g:2248:2: ( ruleEntity )
-            // InternalAir.g:2249:3: ruleEntity
+            // InternalAir.g:2441:2: ( ruleEntity )
+            // InternalAir.g:2442:3: ruleEntity
             {
              before(grammarAccess.getModelAccess().getEntitiesEntityParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -6829,17 +7402,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__NameAssignment_1"
-    // InternalAir.g:2258:1: rule__Airport__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAir.g:2451:1: rule__Airport__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Airport__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2262:1: ( ( RULE_ID ) )
-            // InternalAir.g:2263:2: ( RULE_ID )
+            // InternalAir.g:2455:1: ( ( RULE_ID ) )
+            // InternalAir.g:2456:2: ( RULE_ID )
             {
-            // InternalAir.g:2263:2: ( RULE_ID )
-            // InternalAir.g:2264:3: RULE_ID
+            // InternalAir.g:2456:2: ( RULE_ID )
+            // InternalAir.g:2457:3: RULE_ID
             {
              before(grammarAccess.getAirportAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6866,17 +7439,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__AnameAssignment_2"
-    // InternalAir.g:2273:1: rule__Airport__AnameAssignment_2 : ( RULE_STRING ) ;
+    // InternalAir.g:2466:1: rule__Airport__AnameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Airport__AnameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2277:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2278:2: ( RULE_STRING )
+            // InternalAir.g:2470:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2471:2: ( RULE_STRING )
             {
-            // InternalAir.g:2278:2: ( RULE_STRING )
-            // InternalAir.g:2279:3: RULE_STRING
+            // InternalAir.g:2471:2: ( RULE_STRING )
+            // InternalAir.g:2472:3: RULE_STRING
             {
              before(grammarAccess.getAirportAccess().getAnameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6903,17 +7476,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airport__LocationAssignment_3"
-    // InternalAir.g:2288:1: rule__Airport__LocationAssignment_3 : ( RULE_STRING ) ;
+    // InternalAir.g:2481:1: rule__Airport__LocationAssignment_3 : ( RULE_STRING ) ;
     public final void rule__Airport__LocationAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2292:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2293:2: ( RULE_STRING )
+            // InternalAir.g:2485:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2486:2: ( RULE_STRING )
             {
-            // InternalAir.g:2293:2: ( RULE_STRING )
-            // InternalAir.g:2294:3: RULE_STRING
+            // InternalAir.g:2486:2: ( RULE_STRING )
+            // InternalAir.g:2487:3: RULE_STRING
             {
              before(grammarAccess.getAirportAccess().getLocationSTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6940,17 +7513,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airline__NameAssignment_1"
-    // InternalAir.g:2303:1: rule__Airline__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAir.g:2496:1: rule__Airline__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Airline__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2307:1: ( ( RULE_ID ) )
-            // InternalAir.g:2308:2: ( RULE_ID )
+            // InternalAir.g:2500:1: ( ( RULE_ID ) )
+            // InternalAir.g:2501:2: ( RULE_ID )
             {
-            // InternalAir.g:2308:2: ( RULE_ID )
-            // InternalAir.g:2309:3: RULE_ID
+            // InternalAir.g:2501:2: ( RULE_ID )
+            // InternalAir.g:2502:3: RULE_ID
             {
              before(grammarAccess.getAirlineAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6977,17 +7550,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airline__DescriptionAssignment_2"
-    // InternalAir.g:2318:1: rule__Airline__DescriptionAssignment_2 : ( RULE_STRING ) ;
+    // InternalAir.g:2511:1: rule__Airline__DescriptionAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Airline__DescriptionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2322:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2323:2: ( RULE_STRING )
+            // InternalAir.g:2515:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2516:2: ( RULE_STRING )
             {
-            // InternalAir.g:2323:2: ( RULE_STRING )
-            // InternalAir.g:2324:3: RULE_STRING
+            // InternalAir.g:2516:2: ( RULE_STRING )
+            // InternalAir.g:2517:3: RULE_STRING
             {
              before(grammarAccess.getAirlineAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7014,17 +7587,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__NameAssignment_1"
-    // InternalAir.g:2333:1: rule__Airplane__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAir.g:2526:1: rule__Airplane__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Airplane__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2337:1: ( ( RULE_ID ) )
-            // InternalAir.g:2338:2: ( RULE_ID )
+            // InternalAir.g:2530:1: ( ( RULE_ID ) )
+            // InternalAir.g:2531:2: ( RULE_ID )
             {
-            // InternalAir.g:2338:2: ( RULE_ID )
-            // InternalAir.g:2339:3: RULE_ID
+            // InternalAir.g:2531:2: ( RULE_ID )
+            // InternalAir.g:2532:3: RULE_ID
             {
              before(grammarAccess.getAirplaneAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7051,17 +7624,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__TypeAssignment_2"
-    // InternalAir.g:2348:1: rule__Airplane__TypeAssignment_2 : ( RULE_STRING ) ;
+    // InternalAir.g:2541:1: rule__Airplane__TypeAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Airplane__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2352:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2353:2: ( RULE_STRING )
+            // InternalAir.g:2545:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2546:2: ( RULE_STRING )
             {
-            // InternalAir.g:2353:2: ( RULE_STRING )
-            // InternalAir.g:2354:3: RULE_STRING
+            // InternalAir.g:2546:2: ( RULE_STRING )
+            // InternalAir.g:2547:3: RULE_STRING
             {
              before(grammarAccess.getAirplaneAccess().getTypeSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7088,17 +7661,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Airplane__SeatsAssignment_3"
-    // InternalAir.g:2363:1: rule__Airplane__SeatsAssignment_3 : ( RULE_INT ) ;
+    // InternalAir.g:2556:1: rule__Airplane__SeatsAssignment_3 : ( RULE_INT ) ;
     public final void rule__Airplane__SeatsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2367:1: ( ( RULE_INT ) )
-            // InternalAir.g:2368:2: ( RULE_INT )
+            // InternalAir.g:2560:1: ( ( RULE_INT ) )
+            // InternalAir.g:2561:2: ( RULE_INT )
             {
-            // InternalAir.g:2368:2: ( RULE_INT )
-            // InternalAir.g:2369:3: RULE_INT
+            // InternalAir.g:2561:2: ( RULE_INT )
+            // InternalAir.g:2562:3: RULE_INT
             {
              before(grammarAccess.getAirplaneAccess().getSeatsINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -7124,22 +7697,22 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Airplane__SeatsAssignment_3"
 
 
-    // $ANTLR start "rule__Flight__NameAssignment_1"
-    // InternalAir.g:2378:1: rule__Flight__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Flight__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__NameAssignment_1"
+    // InternalAir.g:2571:1: rule__ScheduledFlight__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__ScheduledFlight__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2382:1: ( ( RULE_ID ) )
-            // InternalAir.g:2383:2: ( RULE_ID )
+            // InternalAir.g:2575:1: ( ( RULE_ID ) )
+            // InternalAir.g:2576:2: ( RULE_ID )
             {
-            // InternalAir.g:2383:2: ( RULE_ID )
-            // InternalAir.g:2384:3: RULE_ID
+            // InternalAir.g:2576:2: ( RULE_ID )
+            // InternalAir.g:2577:3: RULE_ID
             {
-             before(grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getScheduledFlightAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getScheduledFlightAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -7158,25 +7731,160 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__NameAssignment_1"
+    // $ANTLR end "rule__ScheduledFlight__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Flight__FnameAssignment_2"
-    // InternalAir.g:2393:1: rule__Flight__FnameAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__Flight__FnameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ScheduledFlight__FromAssignment_3"
+    // InternalAir.g:2586:1: rule__ScheduledFlight__FromAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__ScheduledFlight__FromAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2397:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2398:2: ( RULE_STRING )
+            // InternalAir.g:2590:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2591:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2398:2: ( RULE_STRING )
-            // InternalAir.g:2399:3: RULE_STRING
+            // InternalAir.g:2591:2: ( ( RULE_ID ) )
+            // InternalAir.g:2592:3: ( RULE_ID )
             {
-             before(grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getScheduledFlightAccess().getFromAirportCrossReference_3_0()); 
+            // InternalAir.g:2593:3: ( RULE_ID )
+            // InternalAir.g:2594:4: RULE_ID
+            {
+             before(grammarAccess.getScheduledFlightAccess().getFromAirportIDTerminalRuleCall_3_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getScheduledFlightAccess().getFromAirportIDTerminalRuleCall_3_0_1()); 
+
+            }
+
+             after(grammarAccess.getScheduledFlightAccess().getFromAirportCrossReference_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ScheduledFlight__FromAssignment_3"
+
+
+    // $ANTLR start "rule__ScheduledFlight__ToAssignment_5"
+    // InternalAir.g:2605:1: rule__ScheduledFlight__ToAssignment_5 : ( ( RULE_ID ) ) ;
+    public final void rule__ScheduledFlight__ToAssignment_5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:2609:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2610:2: ( ( RULE_ID ) )
+            {
+            // InternalAir.g:2610:2: ( ( RULE_ID ) )
+            // InternalAir.g:2611:3: ( RULE_ID )
+            {
+             before(grammarAccess.getScheduledFlightAccess().getToAirportCrossReference_5_0()); 
+            // InternalAir.g:2612:3: ( RULE_ID )
+            // InternalAir.g:2613:4: RULE_ID
+            {
+             before(grammarAccess.getScheduledFlightAccess().getToAirportIDTerminalRuleCall_5_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getScheduledFlightAccess().getToAirportIDTerminalRuleCall_5_0_1()); 
+
+            }
+
+             after(grammarAccess.getScheduledFlightAccess().getToAirportCrossReference_5_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ScheduledFlight__ToAssignment_5"
+
+
+    // $ANTLR start "rule__ScheduledFlight__AirlineAssignment_7"
+    // InternalAir.g:2624:1: rule__ScheduledFlight__AirlineAssignment_7 : ( ( RULE_ID ) ) ;
+    public final void rule__ScheduledFlight__AirlineAssignment_7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:2628:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2629:2: ( ( RULE_ID ) )
+            {
+            // InternalAir.g:2629:2: ( ( RULE_ID ) )
+            // InternalAir.g:2630:3: ( RULE_ID )
+            {
+             before(grammarAccess.getScheduledFlightAccess().getAirlineAirlineCrossReference_7_0()); 
+            // InternalAir.g:2631:3: ( RULE_ID )
+            // InternalAir.g:2632:4: RULE_ID
+            {
+             before(grammarAccess.getScheduledFlightAccess().getAirlineAirlineIDTerminalRuleCall_7_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getScheduledFlightAccess().getAirlineAirlineIDTerminalRuleCall_7_0_1()); 
+
+            }
+
+             after(grammarAccess.getScheduledFlightAccess().getAirlineAirlineCrossReference_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ScheduledFlight__AirlineAssignment_7"
+
+
+    // $ANTLR start "rule__ScheduledFlight__TimeAssignment_9"
+    // InternalAir.g:2643:1: rule__ScheduledFlight__TimeAssignment_9 : ( RULE_STRING ) ;
+    public final void rule__ScheduledFlight__TimeAssignment_9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:2647:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2648:2: ( RULE_STRING )
+            {
+            // InternalAir.g:2648:2: ( RULE_STRING )
+            // InternalAir.g:2649:3: RULE_STRING
+            {
+             before(grammarAccess.getScheduledFlightAccess().getTimeSTRINGTerminalRuleCall_9_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); 
+             after(grammarAccess.getScheduledFlightAccess().getTimeSTRINGTerminalRuleCall_9_0()); 
 
             }
 
@@ -7195,33 +7903,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__FnameAssignment_2"
+    // $ANTLR end "rule__ScheduledFlight__TimeAssignment_9"
 
 
-    // $ANTLR start "rule__Flight__FromAssignment_4"
-    // InternalAir.g:2408:1: rule__Flight__FromAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__Flight__FromAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__NameAssignment_1"
+    // InternalAir.g:2658:1: rule__SpecificFlight__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__SpecificFlight__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2412:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2413:2: ( ( RULE_ID ) )
+            // InternalAir.g:2662:1: ( ( RULE_ID ) )
+            // InternalAir.g:2663:2: ( RULE_ID )
             {
-            // InternalAir.g:2413:2: ( ( RULE_ID ) )
-            // InternalAir.g:2414:3: ( RULE_ID )
+            // InternalAir.g:2663:2: ( RULE_ID )
+            // InternalAir.g:2664:3: RULE_ID
             {
-             before(grammarAccess.getFlightAccess().getFromAirportCrossReference_4_0()); 
-            // InternalAir.g:2415:3: ( RULE_ID )
-            // InternalAir.g:2416:4: RULE_ID
-            {
-             before(grammarAccess.getFlightAccess().getFromAirportIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getSpecificFlightAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getFromAirportIDTerminalRuleCall_4_0_1()); 
-
-            }
-
-             after(grammarAccess.getFlightAccess().getFromAirportCrossReference_4_0()); 
+             after(grammarAccess.getSpecificFlightAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -7240,115 +7940,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__FromAssignment_4"
+    // $ANTLR end "rule__SpecificFlight__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Flight__ToAssignment_6"
-    // InternalAir.g:2427:1: rule__Flight__ToAssignment_6 : ( ( RULE_ID ) ) ;
-    public final void rule__Flight__ToAssignment_6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalAir.g:2431:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2432:2: ( ( RULE_ID ) )
-            {
-            // InternalAir.g:2432:2: ( ( RULE_ID ) )
-            // InternalAir.g:2433:3: ( RULE_ID )
-            {
-             before(grammarAccess.getFlightAccess().getToAirportCrossReference_6_0()); 
-            // InternalAir.g:2434:3: ( RULE_ID )
-            // InternalAir.g:2435:4: RULE_ID
-            {
-             before(grammarAccess.getFlightAccess().getToAirportIDTerminalRuleCall_6_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getToAirportIDTerminalRuleCall_6_0_1()); 
-
-            }
-
-             after(grammarAccess.getFlightAccess().getToAirportCrossReference_6_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Flight__ToAssignment_6"
-
-
-    // $ANTLR start "rule__Flight__AirlineAssignment_8"
-    // InternalAir.g:2446:1: rule__Flight__AirlineAssignment_8 : ( ( RULE_ID ) ) ;
-    public final void rule__Flight__AirlineAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__FnameAssignment_2"
+    // InternalAir.g:2673:1: rule__SpecificFlight__FnameAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__SpecificFlight__FnameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2450:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2451:2: ( ( RULE_ID ) )
+            // InternalAir.g:2677:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2678:2: ( RULE_STRING )
             {
-            // InternalAir.g:2451:2: ( ( RULE_ID ) )
-            // InternalAir.g:2452:3: ( RULE_ID )
+            // InternalAir.g:2678:2: ( RULE_STRING )
+            // InternalAir.g:2679:3: RULE_STRING
             {
-             before(grammarAccess.getFlightAccess().getAirlineAirlineCrossReference_8_0()); 
-            // InternalAir.g:2453:3: ( RULE_ID )
-            // InternalAir.g:2454:4: RULE_ID
-            {
-             before(grammarAccess.getFlightAccess().getAirlineAirlineIDTerminalRuleCall_8_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getAirlineAirlineIDTerminalRuleCall_8_0_1()); 
-
-            }
-
-             after(grammarAccess.getFlightAccess().getAirlineAirlineCrossReference_8_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Flight__AirlineAssignment_8"
-
-
-    // $ANTLR start "rule__Flight__TimeAssignment_10"
-    // InternalAir.g:2465:1: rule__Flight__TimeAssignment_10 : ( RULE_STRING ) ;
-    public final void rule__Flight__TimeAssignment_10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalAir.g:2469:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2470:2: ( RULE_STRING )
-            {
-            // InternalAir.g:2470:2: ( RULE_STRING )
-            // InternalAir.g:2471:3: RULE_STRING
-            {
-             before(grammarAccess.getFlightAccess().getTimeSTRINGTerminalRuleCall_10_0()); 
+             before(grammarAccess.getSpecificFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getTimeSTRINGTerminalRuleCall_10_0()); 
+             after(grammarAccess.getSpecificFlightAccess().getFnameSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -7367,33 +7977,33 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__TimeAssignment_10"
+    // $ANTLR end "rule__SpecificFlight__FnameAssignment_2"
 
 
-    // $ANTLR start "rule__Flight__PilotAssignment_12"
-    // InternalAir.g:2480:1: rule__Flight__PilotAssignment_12 : ( ( RULE_ID ) ) ;
-    public final void rule__Flight__PilotAssignment_12() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__ScheduledFlightAssignment_4"
+    // InternalAir.g:2688:1: rule__SpecificFlight__ScheduledFlightAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__SpecificFlight__ScheduledFlightAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2484:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2485:2: ( ( RULE_ID ) )
+            // InternalAir.g:2692:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2693:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2485:2: ( ( RULE_ID ) )
-            // InternalAir.g:2486:3: ( RULE_ID )
+            // InternalAir.g:2693:2: ( ( RULE_ID ) )
+            // InternalAir.g:2694:3: ( RULE_ID )
             {
-             before(grammarAccess.getFlightAccess().getPilotPilotCrossReference_12_0()); 
-            // InternalAir.g:2487:3: ( RULE_ID )
-            // InternalAir.g:2488:4: RULE_ID
+             before(grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightCrossReference_4_0()); 
+            // InternalAir.g:2695:3: ( RULE_ID )
+            // InternalAir.g:2696:4: RULE_ID
             {
-             before(grammarAccess.getFlightAccess().getPilotPilotIDTerminalRuleCall_12_0_1()); 
+             before(grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getPilotPilotIDTerminalRuleCall_12_0_1()); 
+             after(grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightIDTerminalRuleCall_4_0_1()); 
 
             }
 
-             after(grammarAccess.getFlightAccess().getPilotPilotCrossReference_12_0()); 
+             after(grammarAccess.getSpecificFlightAccess().getScheduledFlightScheduledFlightCrossReference_4_0()); 
 
             }
 
@@ -7412,33 +8022,25 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__PilotAssignment_12"
+    // $ANTLR end "rule__SpecificFlight__ScheduledFlightAssignment_4"
 
 
-    // $ANTLR start "rule__Flight__PlaneAssignment_14"
-    // InternalAir.g:2499:1: rule__Flight__PlaneAssignment_14 : ( ( RULE_ID ) ) ;
-    public final void rule__Flight__PlaneAssignment_14() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__DateAssignment_6"
+    // InternalAir.g:2707:1: rule__SpecificFlight__DateAssignment_6 : ( RULE_STRING ) ;
+    public final void rule__SpecificFlight__DateAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2503:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2504:2: ( ( RULE_ID ) )
+            // InternalAir.g:2711:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2712:2: ( RULE_STRING )
             {
-            // InternalAir.g:2504:2: ( ( RULE_ID ) )
-            // InternalAir.g:2505:3: ( RULE_ID )
+            // InternalAir.g:2712:2: ( RULE_STRING )
+            // InternalAir.g:2713:3: RULE_STRING
             {
-             before(grammarAccess.getFlightAccess().getPlaneAirplaneCrossReference_14_0()); 
-            // InternalAir.g:2506:3: ( RULE_ID )
-            // InternalAir.g:2507:4: RULE_ID
-            {
-             before(grammarAccess.getFlightAccess().getPlaneAirplaneIDTerminalRuleCall_14_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getPlaneAirplaneIDTerminalRuleCall_14_0_1()); 
-
-            }
-
-             after(grammarAccess.getFlightAccess().getPlaneAirplaneCrossReference_14_0()); 
+             before(grammarAccess.getSpecificFlightAccess().getDateSTRINGTerminalRuleCall_6_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getDateSTRINGTerminalRuleCall_6_0()); 
 
             }
 
@@ -7457,33 +8059,33 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__PlaneAssignment_14"
+    // $ANTLR end "rule__SpecificFlight__DateAssignment_6"
 
 
-    // $ANTLR start "rule__Flight__StaffAssignment_16"
-    // InternalAir.g:2518:1: rule__Flight__StaffAssignment_16 : ( ( RULE_ID ) ) ;
-    public final void rule__Flight__StaffAssignment_16() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__PilotAssignment_8"
+    // InternalAir.g:2722:1: rule__SpecificFlight__PilotAssignment_8 : ( ( RULE_ID ) ) ;
+    public final void rule__SpecificFlight__PilotAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2522:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2523:2: ( ( RULE_ID ) )
+            // InternalAir.g:2726:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2727:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2523:2: ( ( RULE_ID ) )
-            // InternalAir.g:2524:3: ( RULE_ID )
+            // InternalAir.g:2727:2: ( ( RULE_ID ) )
+            // InternalAir.g:2728:3: ( RULE_ID )
             {
-             before(grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_16_0()); 
-            // InternalAir.g:2525:3: ( RULE_ID )
-            // InternalAir.g:2526:4: RULE_ID
+             before(grammarAccess.getSpecificFlightAccess().getPilotPilotCrossReference_8_0()); 
+            // InternalAir.g:2729:3: ( RULE_ID )
+            // InternalAir.g:2730:4: RULE_ID
             {
-             before(grammarAccess.getFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_16_0_1()); 
+             before(grammarAccess.getSpecificFlightAccess().getPilotPilotIDTerminalRuleCall_8_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_16_0_1()); 
+             after(grammarAccess.getSpecificFlightAccess().getPilotPilotIDTerminalRuleCall_8_0_1()); 
 
             }
 
-             after(grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_16_0()); 
+             after(grammarAccess.getSpecificFlightAccess().getPilotPilotCrossReference_8_0()); 
 
             }
 
@@ -7502,33 +8104,33 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__StaffAssignment_16"
+    // $ANTLR end "rule__SpecificFlight__PilotAssignment_8"
 
 
-    // $ANTLR start "rule__Flight__StaffAssignment_17_1"
-    // InternalAir.g:2537:1: rule__Flight__StaffAssignment_17_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Flight__StaffAssignment_17_1() throws RecognitionException {
+    // $ANTLR start "rule__SpecificFlight__PlaneAssignment_10"
+    // InternalAir.g:2741:1: rule__SpecificFlight__PlaneAssignment_10 : ( ( RULE_ID ) ) ;
+    public final void rule__SpecificFlight__PlaneAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2541:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2542:2: ( ( RULE_ID ) )
+            // InternalAir.g:2745:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2746:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2542:2: ( ( RULE_ID ) )
-            // InternalAir.g:2543:3: ( RULE_ID )
+            // InternalAir.g:2746:2: ( ( RULE_ID ) )
+            // InternalAir.g:2747:3: ( RULE_ID )
             {
-             before(grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_17_1_0()); 
-            // InternalAir.g:2544:3: ( RULE_ID )
-            // InternalAir.g:2545:4: RULE_ID
+             before(grammarAccess.getSpecificFlightAccess().getPlaneAirplaneCrossReference_10_0()); 
+            // InternalAir.g:2748:3: ( RULE_ID )
+            // InternalAir.g:2749:4: RULE_ID
             {
-             before(grammarAccess.getFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_17_1_0_1()); 
+             before(grammarAccess.getSpecificFlightAccess().getPlaneAirplaneIDTerminalRuleCall_10_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_17_1_0_1()); 
+             after(grammarAccess.getSpecificFlightAccess().getPlaneAirplaneIDTerminalRuleCall_10_0_1()); 
 
             }
 
-             after(grammarAccess.getFlightAccess().getStaffFlightAttendantCrossReference_17_1_0()); 
+             after(grammarAccess.getSpecificFlightAccess().getPlaneAirplaneCrossReference_10_0()); 
 
             }
 
@@ -7547,21 +8149,111 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Flight__StaffAssignment_17_1"
+    // $ANTLR end "rule__SpecificFlight__PlaneAssignment_10"
+
+
+    // $ANTLR start "rule__SpecificFlight__StaffAssignment_12"
+    // InternalAir.g:2760:1: rule__SpecificFlight__StaffAssignment_12 : ( ( RULE_ID ) ) ;
+    public final void rule__SpecificFlight__StaffAssignment_12() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:2764:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2765:2: ( ( RULE_ID ) )
+            {
+            // InternalAir.g:2765:2: ( ( RULE_ID ) )
+            // InternalAir.g:2766:3: ( RULE_ID )
+            {
+             before(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_12_0()); 
+            // InternalAir.g:2767:3: ( RULE_ID )
+            // InternalAir.g:2768:4: RULE_ID
+            {
+             before(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_12_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_12_0_1()); 
+
+            }
+
+             after(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_12_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__StaffAssignment_12"
+
+
+    // $ANTLR start "rule__SpecificFlight__StaffAssignment_13_1"
+    // InternalAir.g:2779:1: rule__SpecificFlight__StaffAssignment_13_1 : ( ( RULE_ID ) ) ;
+    public final void rule__SpecificFlight__StaffAssignment_13_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalAir.g:2783:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2784:2: ( ( RULE_ID ) )
+            {
+            // InternalAir.g:2784:2: ( ( RULE_ID ) )
+            // InternalAir.g:2785:3: ( RULE_ID )
+            {
+             before(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_13_1_0()); 
+            // InternalAir.g:2786:3: ( RULE_ID )
+            // InternalAir.g:2787:4: RULE_ID
+            {
+             before(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_13_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantIDTerminalRuleCall_13_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getSpecificFlightAccess().getStaffFlightAttendantCrossReference_13_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SpecificFlight__StaffAssignment_13_1"
 
 
     // $ANTLR start "rule__Schedule__NameAssignment_0"
-    // InternalAir.g:2556:1: rule__Schedule__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalAir.g:2798:1: rule__Schedule__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Schedule__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2560:1: ( ( RULE_ID ) )
-            // InternalAir.g:2561:2: ( RULE_ID )
+            // InternalAir.g:2802:1: ( ( RULE_ID ) )
+            // InternalAir.g:2803:2: ( RULE_ID )
             {
-            // InternalAir.g:2561:2: ( RULE_ID )
-            // InternalAir.g:2562:3: RULE_ID
+            // InternalAir.g:2803:2: ( RULE_ID )
+            // InternalAir.g:2804:3: RULE_ID
             {
              before(grammarAccess.getScheduleAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7587,26 +8279,30 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Schedule__NameAssignment_0"
 
 
-    // $ANTLR start "rule__Schedule__FlightsAssignment_3"
-    // InternalAir.g:2571:1: rule__Schedule__FlightsAssignment_3 : ( ruleFlight ) ;
-    public final void rule__Schedule__FlightsAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Schedule__SpecificFlightsAssignment_3"
+    // InternalAir.g:2813:1: rule__Schedule__SpecificFlightsAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__Schedule__SpecificFlightsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2575:1: ( ( ruleFlight ) )
-            // InternalAir.g:2576:2: ( ruleFlight )
+            // InternalAir.g:2817:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2818:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2576:2: ( ruleFlight )
-            // InternalAir.g:2577:3: ruleFlight
+            // InternalAir.g:2818:2: ( ( RULE_ID ) )
+            // InternalAir.g:2819:3: ( RULE_ID )
             {
-             before(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_2);
-            ruleFlight();
+             before(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_3_0()); 
+            // InternalAir.g:2820:3: ( RULE_ID )
+            // InternalAir.g:2821:4: RULE_ID
+            {
+             before(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightIDTerminalRuleCall_3_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightIDTerminalRuleCall_3_0_1()); 
 
-            state._fsp--;
+            }
 
-             after(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_3_0()); 
+             after(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_3_0()); 
 
             }
 
@@ -7625,29 +8321,33 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Schedule__FlightsAssignment_3"
+    // $ANTLR end "rule__Schedule__SpecificFlightsAssignment_3"
 
 
-    // $ANTLR start "rule__Schedule__FlightsAssignment_4_1"
-    // InternalAir.g:2586:1: rule__Schedule__FlightsAssignment_4_1 : ( ruleFlight ) ;
-    public final void rule__Schedule__FlightsAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Schedule__SpecificFlightsAssignment_4_1"
+    // InternalAir.g:2832:1: rule__Schedule__SpecificFlightsAssignment_4_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Schedule__SpecificFlightsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2590:1: ( ( ruleFlight ) )
-            // InternalAir.g:2591:2: ( ruleFlight )
+            // InternalAir.g:2836:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2837:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2591:2: ( ruleFlight )
-            // InternalAir.g:2592:3: ruleFlight
+            // InternalAir.g:2837:2: ( ( RULE_ID ) )
+            // InternalAir.g:2838:3: ( RULE_ID )
             {
-             before(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_4_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleFlight();
+             before(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_4_1_0()); 
+            // InternalAir.g:2839:3: ( RULE_ID )
+            // InternalAir.g:2840:4: RULE_ID
+            {
+             before(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightIDTerminalRuleCall_4_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightIDTerminalRuleCall_4_1_0_1()); 
 
-            state._fsp--;
+            }
 
-             after(grammarAccess.getScheduleAccess().getFlightsFlightParserRuleCall_4_1_0()); 
+             after(grammarAccess.getScheduleAccess().getSpecificFlightsSpecificFlightCrossReference_4_1_0()); 
 
             }
 
@@ -7666,21 +8366,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Schedule__FlightsAssignment_4_1"
+    // $ANTLR end "rule__Schedule__SpecificFlightsAssignment_4_1"
 
 
     // $ANTLR start "rule__Pilot__NameAssignment_1"
-    // InternalAir.g:2601:1: rule__Pilot__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAir.g:2851:1: rule__Pilot__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Pilot__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2605:1: ( ( RULE_ID ) )
-            // InternalAir.g:2606:2: ( RULE_ID )
+            // InternalAir.g:2855:1: ( ( RULE_ID ) )
+            // InternalAir.g:2856:2: ( RULE_ID )
             {
-            // InternalAir.g:2606:2: ( RULE_ID )
-            // InternalAir.g:2607:3: RULE_ID
+            // InternalAir.g:2856:2: ( RULE_ID )
+            // InternalAir.g:2857:3: RULE_ID
             {
              before(grammarAccess.getPilotAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7707,17 +8407,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__PinameAssignment_2"
-    // InternalAir.g:2616:1: rule__Pilot__PinameAssignment_2 : ( RULE_STRING ) ;
+    // InternalAir.g:2866:1: rule__Pilot__PinameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Pilot__PinameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2620:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2621:2: ( RULE_STRING )
+            // InternalAir.g:2870:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2871:2: ( RULE_STRING )
             {
-            // InternalAir.g:2621:2: ( RULE_STRING )
-            // InternalAir.g:2622:3: RULE_STRING
+            // InternalAir.g:2871:2: ( RULE_STRING )
+            // InternalAir.g:2872:3: RULE_STRING
             {
              before(grammarAccess.getPilotAccess().getPinameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7744,21 +8444,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pilot__AirlineAssignment_4"
-    // InternalAir.g:2631:1: rule__Pilot__AirlineAssignment_4 : ( ( RULE_ID ) ) ;
+    // InternalAir.g:2881:1: rule__Pilot__AirlineAssignment_4 : ( ( RULE_ID ) ) ;
     public final void rule__Pilot__AirlineAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2635:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2636:2: ( ( RULE_ID ) )
+            // InternalAir.g:2885:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2886:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2636:2: ( ( RULE_ID ) )
-            // InternalAir.g:2637:3: ( RULE_ID )
+            // InternalAir.g:2886:2: ( ( RULE_ID ) )
+            // InternalAir.g:2887:3: ( RULE_ID )
             {
              before(grammarAccess.getPilotAccess().getAirlineAirlineCrossReference_4_0()); 
-            // InternalAir.g:2638:3: ( RULE_ID )
-            // InternalAir.g:2639:4: RULE_ID
+            // InternalAir.g:2888:3: ( RULE_ID )
+            // InternalAir.g:2889:4: RULE_ID
             {
              before(grammarAccess.getPilotAccess().getAirlineAirlineIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7789,17 +8489,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__NameAssignment_1"
-    // InternalAir.g:2650:1: rule__FlightAttendant__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAir.g:2900:1: rule__FlightAttendant__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__FlightAttendant__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2654:1: ( ( RULE_ID ) )
-            // InternalAir.g:2655:2: ( RULE_ID )
+            // InternalAir.g:2904:1: ( ( RULE_ID ) )
+            // InternalAir.g:2905:2: ( RULE_ID )
             {
-            // InternalAir.g:2655:2: ( RULE_ID )
-            // InternalAir.g:2656:3: RULE_ID
+            // InternalAir.g:2905:2: ( RULE_ID )
+            // InternalAir.g:2906:3: RULE_ID
             {
              before(grammarAccess.getFlightAttendantAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7826,17 +8526,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__FanameAssignment_2"
-    // InternalAir.g:2665:1: rule__FlightAttendant__FanameAssignment_2 : ( RULE_STRING ) ;
+    // InternalAir.g:2915:1: rule__FlightAttendant__FanameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__FlightAttendant__FanameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2669:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2670:2: ( RULE_STRING )
+            // InternalAir.g:2919:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2920:2: ( RULE_STRING )
             {
-            // InternalAir.g:2670:2: ( RULE_STRING )
-            // InternalAir.g:2671:3: RULE_STRING
+            // InternalAir.g:2920:2: ( RULE_STRING )
+            // InternalAir.g:2921:3: RULE_STRING
             {
              before(grammarAccess.getFlightAttendantAccess().getFanameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7863,21 +8563,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FlightAttendant__AirlineAssignment_4"
-    // InternalAir.g:2680:1: rule__FlightAttendant__AirlineAssignment_4 : ( ( RULE_ID ) ) ;
+    // InternalAir.g:2930:1: rule__FlightAttendant__AirlineAssignment_4 : ( ( RULE_ID ) ) ;
     public final void rule__FlightAttendant__AirlineAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2684:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2685:2: ( ( RULE_ID ) )
+            // InternalAir.g:2934:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2935:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2685:2: ( ( RULE_ID ) )
-            // InternalAir.g:2686:3: ( RULE_ID )
+            // InternalAir.g:2935:2: ( ( RULE_ID ) )
+            // InternalAir.g:2936:3: ( RULE_ID )
             {
              before(grammarAccess.getFlightAttendantAccess().getAirlineAirlineCrossReference_4_0()); 
-            // InternalAir.g:2687:3: ( RULE_ID )
-            // InternalAir.g:2688:4: RULE_ID
+            // InternalAir.g:2937:3: ( RULE_ID )
+            // InternalAir.g:2938:4: RULE_ID
             {
              before(grammarAccess.getFlightAttendantAccess().getAirlineAirlineIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7908,17 +8608,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__NameAssignment_1"
-    // InternalAir.g:2699:1: rule__BagHandler__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAir.g:2949:1: rule__BagHandler__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__BagHandler__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2703:1: ( ( RULE_ID ) )
-            // InternalAir.g:2704:2: ( RULE_ID )
+            // InternalAir.g:2953:1: ( ( RULE_ID ) )
+            // InternalAir.g:2954:2: ( RULE_ID )
             {
-            // InternalAir.g:2704:2: ( RULE_ID )
-            // InternalAir.g:2705:3: RULE_ID
+            // InternalAir.g:2954:2: ( RULE_ID )
+            // InternalAir.g:2955:3: RULE_ID
             {
              before(grammarAccess.getBagHandlerAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7945,17 +8645,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__BhnameAssignment_2"
-    // InternalAir.g:2714:1: rule__BagHandler__BhnameAssignment_2 : ( RULE_STRING ) ;
+    // InternalAir.g:2964:1: rule__BagHandler__BhnameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__BagHandler__BhnameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2718:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2719:2: ( RULE_STRING )
+            // InternalAir.g:2968:1: ( ( RULE_STRING ) )
+            // InternalAir.g:2969:2: ( RULE_STRING )
             {
-            // InternalAir.g:2719:2: ( RULE_STRING )
-            // InternalAir.g:2720:3: RULE_STRING
+            // InternalAir.g:2969:2: ( RULE_STRING )
+            // InternalAir.g:2970:3: RULE_STRING
             {
              before(grammarAccess.getBagHandlerAccess().getBhnameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7982,21 +8682,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BagHandler__AirportAssignment_4"
-    // InternalAir.g:2729:1: rule__BagHandler__AirportAssignment_4 : ( ( RULE_ID ) ) ;
+    // InternalAir.g:2979:1: rule__BagHandler__AirportAssignment_4 : ( ( RULE_ID ) ) ;
     public final void rule__BagHandler__AirportAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2733:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2734:2: ( ( RULE_ID ) )
+            // InternalAir.g:2983:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:2984:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2734:2: ( ( RULE_ID ) )
-            // InternalAir.g:2735:3: ( RULE_ID )
+            // InternalAir.g:2984:2: ( ( RULE_ID ) )
+            // InternalAir.g:2985:3: ( RULE_ID )
             {
              before(grammarAccess.getBagHandlerAccess().getAirportAirportCrossReference_4_0()); 
-            // InternalAir.g:2736:3: ( RULE_ID )
-            // InternalAir.g:2737:4: RULE_ID
+            // InternalAir.g:2986:3: ( RULE_ID )
+            // InternalAir.g:2987:4: RULE_ID
             {
              before(grammarAccess.getBagHandlerAccess().getAirportAirportIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8027,17 +8727,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__NameAssignment_1"
-    // InternalAir.g:2748:1: rule__GatePersonnel__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalAir.g:2998:1: rule__GatePersonnel__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__GatePersonnel__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2752:1: ( ( RULE_ID ) )
-            // InternalAir.g:2753:2: ( RULE_ID )
+            // InternalAir.g:3002:1: ( ( RULE_ID ) )
+            // InternalAir.g:3003:2: ( RULE_ID )
             {
-            // InternalAir.g:2753:2: ( RULE_ID )
-            // InternalAir.g:2754:3: RULE_ID
+            // InternalAir.g:3003:2: ( RULE_ID )
+            // InternalAir.g:3004:3: RULE_ID
             {
              before(grammarAccess.getGatePersonnelAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8064,17 +8764,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__GpnameAssignment_2"
-    // InternalAir.g:2763:1: rule__GatePersonnel__GpnameAssignment_2 : ( RULE_STRING ) ;
+    // InternalAir.g:3013:1: rule__GatePersonnel__GpnameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__GatePersonnel__GpnameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2767:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2768:2: ( RULE_STRING )
+            // InternalAir.g:3017:1: ( ( RULE_STRING ) )
+            // InternalAir.g:3018:2: ( RULE_STRING )
             {
-            // InternalAir.g:2768:2: ( RULE_STRING )
-            // InternalAir.g:2769:3: RULE_STRING
+            // InternalAir.g:3018:2: ( RULE_STRING )
+            // InternalAir.g:3019:3: RULE_STRING
             {
              before(grammarAccess.getGatePersonnelAccess().getGpnameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8101,21 +8801,21 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GatePersonnel__AirportAssignment_4"
-    // InternalAir.g:2778:1: rule__GatePersonnel__AirportAssignment_4 : ( ( RULE_ID ) ) ;
+    // InternalAir.g:3028:1: rule__GatePersonnel__AirportAssignment_4 : ( ( RULE_ID ) ) ;
     public final void rule__GatePersonnel__AirportAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2782:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2783:2: ( ( RULE_ID ) )
+            // InternalAir.g:3032:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:3033:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2783:2: ( ( RULE_ID ) )
-            // InternalAir.g:2784:3: ( RULE_ID )
+            // InternalAir.g:3033:2: ( ( RULE_ID ) )
+            // InternalAir.g:3034:3: ( RULE_ID )
             {
              before(grammarAccess.getGatePersonnelAccess().getAirportAirportCrossReference_4_0()); 
-            // InternalAir.g:2785:3: ( RULE_ID )
-            // InternalAir.g:2786:4: RULE_ID
+            // InternalAir.g:3035:3: ( RULE_ID )
+            // InternalAir.g:3036:4: RULE_ID
             {
              before(grammarAccess.getGatePersonnelAccess().getAirportAirportIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8146,17 +8846,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__NameAssignment_1"
-    // InternalAir.g:2797:1: rule__Passenger__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalAir.g:3047:1: rule__Passenger__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Passenger__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2801:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2802:2: ( RULE_STRING )
+            // InternalAir.g:3051:1: ( ( RULE_STRING ) )
+            // InternalAir.g:3052:2: ( RULE_STRING )
             {
-            // InternalAir.g:2802:2: ( RULE_STRING )
-            // InternalAir.g:2803:3: RULE_STRING
+            // InternalAir.g:3052:2: ( RULE_STRING )
+            // InternalAir.g:3053:3: RULE_STRING
             {
              before(grammarAccess.getPassengerAccess().getNameSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8183,17 +8883,17 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Passenger__PanameAssignment_2"
-    // InternalAir.g:2812:1: rule__Passenger__PanameAssignment_2 : ( RULE_STRING ) ;
+    // InternalAir.g:3062:1: rule__Passenger__PanameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Passenger__PanameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2816:1: ( ( RULE_STRING ) )
-            // InternalAir.g:2817:2: ( RULE_STRING )
+            // InternalAir.g:3066:1: ( ( RULE_STRING ) )
+            // InternalAir.g:3067:2: ( RULE_STRING )
             {
-            // InternalAir.g:2817:2: ( RULE_STRING )
-            // InternalAir.g:2818:3: RULE_STRING
+            // InternalAir.g:3067:2: ( RULE_STRING )
+            // InternalAir.g:3068:3: RULE_STRING
             {
              before(grammarAccess.getPassengerAccess().getPanameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8219,30 +8919,30 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Passenger__PanameAssignment_2"
 
 
-    // $ANTLR start "rule__Passenger__FlightAssignment_4"
-    // InternalAir.g:2827:1: rule__Passenger__FlightAssignment_4 : ( ( RULE_ID ) ) ;
-    public final void rule__Passenger__FlightAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Passenger__SpecificFlightAssignment_4"
+    // InternalAir.g:3077:1: rule__Passenger__SpecificFlightAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__Passenger__SpecificFlightAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2831:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2832:2: ( ( RULE_ID ) )
+            // InternalAir.g:3081:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:3082:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2832:2: ( ( RULE_ID ) )
-            // InternalAir.g:2833:3: ( RULE_ID )
+            // InternalAir.g:3082:2: ( ( RULE_ID ) )
+            // InternalAir.g:3083:3: ( RULE_ID )
             {
-             before(grammarAccess.getPassengerAccess().getFlightFlightCrossReference_4_0()); 
-            // InternalAir.g:2834:3: ( RULE_ID )
-            // InternalAir.g:2835:4: RULE_ID
+             before(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_4_0()); 
+            // InternalAir.g:3084:3: ( RULE_ID )
+            // InternalAir.g:3085:4: RULE_ID
             {
-             before(grammarAccess.getPassengerAccess().getFlightFlightIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightIDTerminalRuleCall_4_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getPassengerAccess().getFlightFlightIDTerminalRuleCall_4_0_1()); 
+             after(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightIDTerminalRuleCall_4_0_1()); 
 
             }
 
-             after(grammarAccess.getPassengerAccess().getFlightFlightCrossReference_4_0()); 
+             after(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_4_0()); 
 
             }
 
@@ -8261,33 +8961,33 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Passenger__FlightAssignment_4"
+    // $ANTLR end "rule__Passenger__SpecificFlightAssignment_4"
 
 
-    // $ANTLR start "rule__Passenger__FlightAssignment_5_1"
-    // InternalAir.g:2846:1: rule__Passenger__FlightAssignment_5_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Passenger__FlightAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__Passenger__SpecificFlightAssignment_5_1"
+    // InternalAir.g:3096:1: rule__Passenger__SpecificFlightAssignment_5_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Passenger__SpecificFlightAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAir.g:2850:1: ( ( ( RULE_ID ) ) )
-            // InternalAir.g:2851:2: ( ( RULE_ID ) )
+            // InternalAir.g:3100:1: ( ( ( RULE_ID ) ) )
+            // InternalAir.g:3101:2: ( ( RULE_ID ) )
             {
-            // InternalAir.g:2851:2: ( ( RULE_ID ) )
-            // InternalAir.g:2852:3: ( RULE_ID )
+            // InternalAir.g:3101:2: ( ( RULE_ID ) )
+            // InternalAir.g:3102:3: ( RULE_ID )
             {
-             before(grammarAccess.getPassengerAccess().getFlightFlightCrossReference_5_1_0()); 
-            // InternalAir.g:2853:3: ( RULE_ID )
-            // InternalAir.g:2854:4: RULE_ID
+             before(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_5_1_0()); 
+            // InternalAir.g:3103:3: ( RULE_ID )
+            // InternalAir.g:3104:4: RULE_ID
             {
-             before(grammarAccess.getPassengerAccess().getFlightFlightIDTerminalRuleCall_5_1_0_1()); 
+             before(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightIDTerminalRuleCall_5_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getPassengerAccess().getFlightFlightIDTerminalRuleCall_5_1_0_1()); 
+             after(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightIDTerminalRuleCall_5_1_0_1()); 
 
             }
 
-             after(grammarAccess.getPassengerAccess().getFlightFlightCrossReference_5_1_0()); 
+             after(grammarAccess.getPassengerAccess().getSpecificFlightSpecificFlightCrossReference_5_1_0()); 
 
             }
 
@@ -8306,7 +9006,7 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Passenger__FlightAssignment_5_1"
+    // $ANTLR end "rule__Passenger__SpecificFlightAssignment_5_1"
 
     // Delegated rules
 
@@ -8315,7 +9015,7 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000001F007812L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000F8087812L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000040L});
@@ -8323,12 +9023,13 @@ public class InternalAirParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000004000000L});
 
 }

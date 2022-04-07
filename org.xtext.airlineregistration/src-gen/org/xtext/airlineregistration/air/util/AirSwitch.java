@@ -111,11 +111,19 @@ public class AirSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AirPackage.FLIGHT:
+      case AirPackage.SCHEDULED_FLIGHT:
       {
-        Flight flight = (Flight)theEObject;
-        T result = caseFlight(flight);
-        if (result == null) result = caseEntity(flight);
+        ScheduledFlight scheduledFlight = (ScheduledFlight)theEObject;
+        T result = caseScheduledFlight(scheduledFlight);
+        if (result == null) result = caseEntity(scheduledFlight);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AirPackage.SPECIFIC_FLIGHT:
+      {
+        SpecificFlight specificFlight = (SpecificFlight)theEObject;
+        T result = caseSpecificFlight(specificFlight);
+        if (result == null) result = caseEntity(specificFlight);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -264,17 +272,33 @@ public class AirSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Flight</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Scheduled Flight</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Flight</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Scheduled Flight</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFlight(Flight object)
+  public T caseScheduledFlight(ScheduledFlight object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Specific Flight</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Specific Flight</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpecificFlight(SpecificFlight object)
   {
     return null;
   }

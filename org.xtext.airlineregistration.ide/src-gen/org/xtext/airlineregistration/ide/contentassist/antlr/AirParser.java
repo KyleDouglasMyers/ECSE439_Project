@@ -36,8 +36,9 @@ public class AirParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAirportAccess().getGroup(), "rule__Airport__Group__0");
 			builder.put(grammarAccess.getAirlineAccess().getGroup(), "rule__Airline__Group__0");
 			builder.put(grammarAccess.getAirplaneAccess().getGroup(), "rule__Airplane__Group__0");
-			builder.put(grammarAccess.getFlightAccess().getGroup(), "rule__Flight__Group__0");
-			builder.put(grammarAccess.getFlightAccess().getGroup_17(), "rule__Flight__Group_17__0");
+			builder.put(grammarAccess.getScheduledFlightAccess().getGroup(), "rule__ScheduledFlight__Group__0");
+			builder.put(grammarAccess.getSpecificFlightAccess().getGroup(), "rule__SpecificFlight__Group__0");
+			builder.put(grammarAccess.getSpecificFlightAccess().getGroup_13(), "rule__SpecificFlight__Group_13__0");
 			builder.put(grammarAccess.getScheduleAccess().getGroup(), "rule__Schedule__Group__0");
 			builder.put(grammarAccess.getScheduleAccess().getGroup_4(), "rule__Schedule__Group_4__0");
 			builder.put(grammarAccess.getPilotAccess().getGroup(), "rule__Pilot__Group__0");
@@ -55,19 +56,22 @@ public class AirParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAirplaneAccess().getNameAssignment_1(), "rule__Airplane__NameAssignment_1");
 			builder.put(grammarAccess.getAirplaneAccess().getTypeAssignment_2(), "rule__Airplane__TypeAssignment_2");
 			builder.put(grammarAccess.getAirplaneAccess().getSeatsAssignment_3(), "rule__Airplane__SeatsAssignment_3");
-			builder.put(grammarAccess.getFlightAccess().getNameAssignment_1(), "rule__Flight__NameAssignment_1");
-			builder.put(grammarAccess.getFlightAccess().getFnameAssignment_2(), "rule__Flight__FnameAssignment_2");
-			builder.put(grammarAccess.getFlightAccess().getFromAssignment_4(), "rule__Flight__FromAssignment_4");
-			builder.put(grammarAccess.getFlightAccess().getToAssignment_6(), "rule__Flight__ToAssignment_6");
-			builder.put(grammarAccess.getFlightAccess().getAirlineAssignment_8(), "rule__Flight__AirlineAssignment_8");
-			builder.put(grammarAccess.getFlightAccess().getTimeAssignment_10(), "rule__Flight__TimeAssignment_10");
-			builder.put(grammarAccess.getFlightAccess().getPilotAssignment_12(), "rule__Flight__PilotAssignment_12");
-			builder.put(grammarAccess.getFlightAccess().getPlaneAssignment_14(), "rule__Flight__PlaneAssignment_14");
-			builder.put(grammarAccess.getFlightAccess().getStaffAssignment_16(), "rule__Flight__StaffAssignment_16");
-			builder.put(grammarAccess.getFlightAccess().getStaffAssignment_17_1(), "rule__Flight__StaffAssignment_17_1");
+			builder.put(grammarAccess.getScheduledFlightAccess().getNameAssignment_1(), "rule__ScheduledFlight__NameAssignment_1");
+			builder.put(grammarAccess.getScheduledFlightAccess().getFromAssignment_3(), "rule__ScheduledFlight__FromAssignment_3");
+			builder.put(grammarAccess.getScheduledFlightAccess().getToAssignment_5(), "rule__ScheduledFlight__ToAssignment_5");
+			builder.put(grammarAccess.getScheduledFlightAccess().getAirlineAssignment_7(), "rule__ScheduledFlight__AirlineAssignment_7");
+			builder.put(grammarAccess.getScheduledFlightAccess().getTimeAssignment_9(), "rule__ScheduledFlight__TimeAssignment_9");
+			builder.put(grammarAccess.getSpecificFlightAccess().getNameAssignment_1(), "rule__SpecificFlight__NameAssignment_1");
+			builder.put(grammarAccess.getSpecificFlightAccess().getFnameAssignment_2(), "rule__SpecificFlight__FnameAssignment_2");
+			builder.put(grammarAccess.getSpecificFlightAccess().getScheduledFlightAssignment_4(), "rule__SpecificFlight__ScheduledFlightAssignment_4");
+			builder.put(grammarAccess.getSpecificFlightAccess().getDateAssignment_6(), "rule__SpecificFlight__DateAssignment_6");
+			builder.put(grammarAccess.getSpecificFlightAccess().getPilotAssignment_8(), "rule__SpecificFlight__PilotAssignment_8");
+			builder.put(grammarAccess.getSpecificFlightAccess().getPlaneAssignment_10(), "rule__SpecificFlight__PlaneAssignment_10");
+			builder.put(grammarAccess.getSpecificFlightAccess().getStaffAssignment_12(), "rule__SpecificFlight__StaffAssignment_12");
+			builder.put(grammarAccess.getSpecificFlightAccess().getStaffAssignment_13_1(), "rule__SpecificFlight__StaffAssignment_13_1");
 			builder.put(grammarAccess.getScheduleAccess().getNameAssignment_0(), "rule__Schedule__NameAssignment_0");
-			builder.put(grammarAccess.getScheduleAccess().getFlightsAssignment_3(), "rule__Schedule__FlightsAssignment_3");
-			builder.put(grammarAccess.getScheduleAccess().getFlightsAssignment_4_1(), "rule__Schedule__FlightsAssignment_4_1");
+			builder.put(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_3(), "rule__Schedule__SpecificFlightsAssignment_3");
+			builder.put(grammarAccess.getScheduleAccess().getSpecificFlightsAssignment_4_1(), "rule__Schedule__SpecificFlightsAssignment_4_1");
 			builder.put(grammarAccess.getPilotAccess().getNameAssignment_1(), "rule__Pilot__NameAssignment_1");
 			builder.put(grammarAccess.getPilotAccess().getPinameAssignment_2(), "rule__Pilot__PinameAssignment_2");
 			builder.put(grammarAccess.getPilotAccess().getAirlineAssignment_4(), "rule__Pilot__AirlineAssignment_4");
@@ -82,8 +86,8 @@ public class AirParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGatePersonnelAccess().getAirportAssignment_4(), "rule__GatePersonnel__AirportAssignment_4");
 			builder.put(grammarAccess.getPassengerAccess().getNameAssignment_1(), "rule__Passenger__NameAssignment_1");
 			builder.put(grammarAccess.getPassengerAccess().getPanameAssignment_2(), "rule__Passenger__PanameAssignment_2");
-			builder.put(grammarAccess.getPassengerAccess().getFlightAssignment_4(), "rule__Passenger__FlightAssignment_4");
-			builder.put(grammarAccess.getPassengerAccess().getFlightAssignment_5_1(), "rule__Passenger__FlightAssignment_5_1");
+			builder.put(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_4(), "rule__Passenger__SpecificFlightAssignment_4");
+			builder.put(grammarAccess.getPassengerAccess().getSpecificFlightAssignment_5_1(), "rule__Passenger__SpecificFlightAssignment_5_1");
 		}
 	}
 	
