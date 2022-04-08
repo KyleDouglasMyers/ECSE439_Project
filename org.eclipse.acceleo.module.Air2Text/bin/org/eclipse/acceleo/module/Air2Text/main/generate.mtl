@@ -79,6 +79,10 @@
 function myFilter(inputStr, tableStr) {
   	var input, filter, table, tr, td, i, txtValue;
   	input = document.getElementById(inputStr);
+	if(input.value.length == 0){
+		hidePassengers();
+		return;
+	}
   	filter = input.value.toUpperCase();
   	table = document.getElementById(tableStr);
   	tr = table.getElementsByTagName("tr");

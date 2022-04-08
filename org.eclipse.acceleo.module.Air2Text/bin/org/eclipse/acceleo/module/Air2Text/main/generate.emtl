@@ -346,7 +346,7 @@
             <referredProperty xsi:type="ecore:EReference" href="http://www.xtext.org/airlineregistration/Air#//Model/entities"/>
           </iterSet>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/table>&#xA;&#xA;&lt;script type=&quot;text/javascript&quot;>&#xA;function myFilter(inputStr, tableStr) {&#xA;  &#x9;var input, filter, table, tr, td, i, txtValue;&#xA;  &#x9;input = document.getElementById(inputStr);&#xA;  &#x9;filter = input.value.toUpperCase();&#xA;  &#x9;table = document.getElementById(tableStr);&#xA;  &#x9;tr = table.getElementsByTagName(&quot;tr&quot;);&#xA;  &#x9;for (i = 0; i &lt; tr.length; i++) {&#xA;&#x9;    td = tr "/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/table>&#xA;&#xA;&lt;script type=&quot;text/javascript&quot;>&#xA;function myFilter(inputStr, tableStr) {&#xA;  &#x9;var input, filter, table, tr, td, i, txtValue;&#xA;  &#x9;input = document.getElementById(inputStr);&#xA;&#x9;if(input.value.length == 0){&#xA;&#x9;&#x9;hidePassengers();&#xA;&#x9;&#x9;return;&#xA;&#x9;}&#xA;  &#x9;filter = input.value.toUpperCase();&#xA;  &#x9;table = document.getElementById(tableStr);&#xA;  &#x9;tr = table.getElementsByTagName(&quot;tr&quot;);&#xA;  &#x9;for (i = 0; i &lt; tr.length; i++) {&#xA;&#x9;    td = tr "/>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </body>
@@ -584,12 +584,12 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/generate">
       <details key="start" value="97"/>
-      <details key="end" value="3598"/>
+      <details key="end" value="3661"/>
       <details key="line" value="5"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generate/%">
       <details key="start" value="157"/>
-      <details key="end" value="3586"/>
+      <details key="end" value="3649"/>
       <details key="line" value="7"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generate/%/%">
@@ -1159,58 +1159,58 @@
     </eAnnotations>
     <eAnnotations source="positions.115" references="/0/generate/%/%.4">
       <details key="start" value="2346"/>
-      <details key="end" value="2701"/>
+      <details key="end" value="2764"/>
       <details key="line" value="76"/>
     </eAnnotations>
     <eAnnotations source="positions.116" references="/0/generate/%/%.5">
-      <details key="start" value="2702"/>
-      <details key="end" value="2705"/>
+      <details key="start" value="2765"/>
+      <details key="end" value="2768"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.117" references="/0/generate/%/%.6">
-      <details key="start" value="2707"/>
-      <details key="end" value="2736"/>
-      <details key="line" value="86"/>
+      <details key="start" value="2770"/>
+      <details key="end" value="2799"/>
+      <details key="line" value="90"/>
     </eAnnotations>
     <eAnnotations source="positions.118" references="/0/generate/%/%.7">
-      <details key="start" value="2737"/>
-      <details key="end" value="2740"/>
+      <details key="start" value="2800"/>
+      <details key="end" value="2803"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.119" references="/0/generate/%/%.8">
-      <details key="start" value="2742"/>
-      <details key="end" value="2880"/>
-      <details key="line" value="86"/>
+      <details key="start" value="2805"/>
+      <details key="end" value="2943"/>
+      <details key="line" value="90"/>
     </eAnnotations>
     <eAnnotations source="positions.120" references="/0/generate/%/%.9">
-      <details key="start" value="2881"/>
-      <details key="end" value="2884"/>
+      <details key="start" value="2944"/>
+      <details key="end" value="2947"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.121" references="/0/generate/%/%.10">
-      <details key="start" value="2886"/>
-      <details key="end" value="2936"/>
-      <details key="line" value="90"/>
+      <details key="start" value="2949"/>
+      <details key="end" value="2999"/>
+      <details key="line" value="94"/>
     </eAnnotations>
     <eAnnotations source="positions.122" references="/0/generate/%/%.11">
-      <details key="start" value="2937"/>
-      <details key="end" value="2940"/>
+      <details key="start" value="3000"/>
+      <details key="end" value="3003"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.123" references="/0/generate/%/%.12">
-      <details key="start" value="2942"/>
-      <details key="end" value="3193"/>
-      <details key="line" value="92"/>
+      <details key="start" value="3005"/>
+      <details key="end" value="3256"/>
+      <details key="line" value="96"/>
     </eAnnotations>
     <eAnnotations source="positions.124" references="/0/generate/%/%.13">
-      <details key="start" value="3194"/>
-      <details key="end" value="3197"/>
+      <details key="start" value="3257"/>
+      <details key="end" value="3260"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.125" references="/0/generate/%/%.14">
-      <details key="start" value="3199"/>
-      <details key="end" value="3579"/>
-      <details key="line" value="103"/>
+      <details key="start" value="3262"/>
+      <details key="end" value="3642"/>
+      <details key="line" value="107"/>
     </eAnnotations>
     <eAnnotations source="positions.126" references="/0/generate/%/%.15">
       <details key="start" value="164"/>
