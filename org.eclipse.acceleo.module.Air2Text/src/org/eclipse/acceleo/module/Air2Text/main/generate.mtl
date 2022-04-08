@@ -1,0 +1,75 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.xtext.org/airlineregistration/Air')]
+
+
+[template public generate(aModel : Model)]
+[comment @main/]
+[file ('Air.html', false, 'UTF-8')]
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>Flight Details</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter by flight number..">
+
+<table id="myTable">
+  	<tr class="header">
+		<th>Flight Number</th>
+	    <th>Departure Airport</th>
+		<th>Arrival Airport</th>
+		<th>Airline</th>
+		<th>Date</th>
+		<th>Time</th>
+		<th>Pilot</th>
+		<th>Airplane Type</th>
+		<th>Staff</th>
+  	</tr>
+	
+	
+  	[for (aEntity : Entity | aModel.entities)]
+  	[if (aEntity.eClass() = "SpecificFlight")]
+[comment]	[if (aEntity.oclIsTypeOf(SpecificFlight))][/comment]
+    	<tr>
+			<td>[aEntity.oclAsType(SpecificFlight).fname/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).scheduledFlight.from.aname/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).scheduledFlight.to.aname/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).scheduledFlight.airline.name/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).date/]</td>			
+			<td>[aEntity.oclAsType(SpecificFlight).scheduledFlight.time/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).pilot.name/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).plane.type/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).staff -> collect(s | s.name.concat(', '))/]</td>
+		</tr>
+	[/if]
+  	[/for]
+</table>
+
+<script>
+function myFunction() {
+  	var input, filter, table, tr, td, i, txtValue;
+  	input = document.getElementById("myInput");
+  	filter = input.value.toUpperCase();
+  	table = document.getElementById("myTable");
+  	tr = table.getElementsByTagName("tr");
+  	for (i = 0; i < tr.length; i++) {
+	    td = tr ['['/]i].getElementsByTagName("td")['['/]0];
+	    if (td) {
+      	txtValue = td.textContent || td.innerText;
+      	if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        	tr['['/]i].style.display = "";
+      	} else {
+	        tr['['/]i].style.display = "none";
+    	  }
+    	}       
+  	}
+}
+</script>
+</body>
+</html>
+[/file]
+[/template]

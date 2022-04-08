@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<air:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:air="http://www.xtext.org/airlineregistration/Air">
+  <entities xsi:type="air:Airport" name="YUL" aname="Pierre Elliott Trudeau" location="Montreal"/>
+  <entities xsi:type="air:Airport" name="TRT" aname="Pearson" location="Toronto"/>
+  <entities xsi:type="air:Airport" name="LAX" aname="Los Angeles International Airport" location="Los Angeles"/>
+  <entities xsi:type="air:Airline" name="AirCanada" description="Flights out of Canada"/>
+  <entities xsi:type="air:Airline" name="Delta" description="Flights in the US of A"/>
+  <entities xsi:type="air:Airplane" name="a1" type="BOEING777" seats="500"/>
+  <entities xsi:type="air:Airplane" name="a2" type="Millenium Falcon" seats="3"/>
+  <entities xsi:type="air:ScheduledFlight" name="sf1" from="//@entities.0" to="//@entities.1" airline="//@entities.3" time="10:00AM"/>
+  <entities xsi:type="air:ScheduledFlight" name="sf2" from="//@entities.1" to="//@entities.0" airline="//@entities.3" time="10:00AM"/>
+  <entities xsi:type="air:ScheduledFlight" name="sf3" from="//@entities.0" to="//@entities.1" airline="//@entities.3" time="05:00PM"/>
+  <entities xsi:type="air:ScheduledFlight" name="sf4" from="//@entities.1" to="//@entities.0" airline="//@entities.3" time="05:00PM"/>
+  <entities xsi:type="air:ScheduledFlight" name="sf5" from="//@entities.0" to="//@entities.2" airline="//@entities.4" time="12:00PM"/>
+  <entities xsi:type="air:ScheduledFlight" name="sf6" from="//@entities.2" to="//@entities.0" airline="//@entities.4" time="12:00PM"/>
+  <entities xsi:type="air:SpecificFlight" name="f1" fname="AC100" scheduledFlight="//@entities.7" date="20/08/2022" pilot="//@entities.16" plane="//@entities.5" staff="//@entities.20"/>
+  <entities xsi:type="air:SpecificFlight" name="f2" fname="DT200" scheduledFlight="//@entities.11" date="29/04/2022" pilot="//@entities.15" plane="//@entities.6" staff="//@entities.18 //@entities.19"/>
+  <entities xsi:type="air:Pilot" name="pid1" piname="Kvothe" airline="//@entities.3"/>
+  <entities xsi:type="air:Pilot" name="pid2" piname="Kaladin" airline="//@entities.3"/>
+  <entities xsi:type="air:Pilot" name="pid3" piname="Dalinar" airline="//@entities.4"/>
+  <entities xsi:type="air:FlightAttendant" name="faid1" faname="Simmon" airline="//@entities.3"/>
+  <entities xsi:type="air:FlightAttendant" name="faid2" faname="Willem" airline="//@entities.3"/>
+  <entities xsi:type="air:FlightAttendant" name="faid3" faname="Shallan" airline="//@entities.4"/>
+  <entities xsi:type="air:BagHandler" name="bhid1" bhname="Teft" airport="//@entities.0"/>
+  <entities xsi:type="air:GatePersonnel" name="gpid1" gpname="Moash" airport="//@entities.0"/>
+  <entities xsi:type="air:BagHandler" name="bhid2" bhname="Rock" airport="//@entities.1"/>
+  <entities xsi:type="air:GatePersonnel" name="gpid2" gpname="Lopen" airport="//@entities.1"/>
+  <entities xsi:type="air:BagHandler" name="bhid3" bhname="Fela" airport="//@entities.2"/>
+  <entities xsi:type="air:GatePersonnel" name="gpid3" gpname="Mola" airport="//@entities.2"/>
+  <entities xsi:type="air:Passenger" name="mikachu2904@gmail.com" paname="Michael Beyrouthy" specificFlight="//@entities.13 //@entities.14"/>
+  <entities xsi:type="air:Passenger" name="maelmugerwa99@gmail.com" paname="Mael Mugerwa" specificFlight="//@entities.13"/>
+  <entities xsi:type="air:Passenger" name="kyledaboss@gmail.com" paname="Kyle Myers" specificFlight="//@entities.14"/>
+</air:Model>
