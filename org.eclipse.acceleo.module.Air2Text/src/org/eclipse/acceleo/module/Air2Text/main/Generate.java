@@ -23,6 +23,9 @@ import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import org.xtext.airlineregistration.air.AirPackage;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -335,7 +338,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
@@ -372,6 +375,10 @@ public class Generate extends AbstractAcceleoGenerator {
          * 
          * To learn more about Package Registration, have a look at the Acceleo documentation (Help -> Help Contents).
          */
+        if (!isInWorkspace(AirPackage.class)) {
+            // The normal package registration if your metamodel is in a plugin.
+            resourceSet.getPackageRegistry().put(AirPackage.eNS_URI, AirPackage.eINSTANCE);
+        }
     }
 
     /**
@@ -379,7 +386,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
     @Override
     public void registerResourceFactories(ResourceSet resourceSet) {
@@ -401,7 +408,8 @@ public class Generate extends AbstractAcceleoGenerator {
          */ 
         
         // resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(XyzResource.FILE_EXTENSION, XyzResource.Factory.INSTANCE);
-        
+        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("org.xtext.airlineregistration.air", new XMIResourceFactoryImpl());
+
         /*
          * Some metamodels require a very complex setup for standalone usage. For example, if you want to use a generator
          * targetting UML models in standalone, you NEED to use the following:

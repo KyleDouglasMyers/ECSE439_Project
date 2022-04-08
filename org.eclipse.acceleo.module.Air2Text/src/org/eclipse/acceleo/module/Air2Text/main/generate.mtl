@@ -13,11 +13,38 @@
 </head>
 <body>
 
+<h2>Passenger Flights</h2>
+<input type="text" id="passengerInput" onkeyup="passengerFilter()" placeholder="Enter Passenger Name...">
+<table id="passengerFlightsTable">
+  	<tr class="header">
+		<th>Passenger Name</th>
+		<th>Flight Number</th>
+	    <th>Departing from</th>
+		<th>Arriving at</th>
+		<th>on</th>
+		<th>at</th>
+  	</tr>
+	
+	
+  	[for (aEntity : Entity | aModel.entities)]
+  	[if (aEntity.eClass() = "Passenger")]
+  	[for (aFlight : SpecificFlight | aEntity.oclAsType(Passenger).specificFlight)]
+    	<tr>
+			<td>[aEntity.oclAsType(Passenger).paname/]</td>	
+			<td>[aFlight.fname/]</td>
+			<td>[aFlight.scheduledFlight.from.aname/]</td>
+			<td>[aFlight.scheduledFlight.to.aname/]</td>
+			<td>[aFlight.date/]</td>			
+			<td>[aFlight.scheduledFlight.time/]</td>
+		</tr>
+	[/for]
+	[/if]
+  	[/for]
+</table>
+
 <h2>Flight Details</h2>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter by flight number..">
-
-<table id="myTable">
+<input type="text" id="flightInput" onkeyup="flightDetailsFilter()" placeholder="Filter by flight number..">
+<table id="flightDetailsTable">
   	<tr class="header">
 		<th>Flight Number</th>
 	    <th>Departure Airport</th>
@@ -33,7 +60,6 @@
 	
   	[for (aEntity : Entity | aModel.entities)]
   	[if (aEntity.eClass() = "SpecificFlight")]
-[comment]	[if (aEntity.oclIsTypeOf(SpecificFlight))][/comment]
     	<tr>
 			<td>[aEntity.oclAsType(SpecificFlight).fname/]</td>
 			<td>[aEntity.oclAsType(SpecificFlight).scheduledFlight.from.aname/]</td>
@@ -41,20 +67,20 @@
 			<td>[aEntity.oclAsType(SpecificFlight).scheduledFlight.airline.name/]</td>
 			<td>[aEntity.oclAsType(SpecificFlight).date/]</td>			
 			<td>[aEntity.oclAsType(SpecificFlight).scheduledFlight.time/]</td>
-			<td>[aEntity.oclAsType(SpecificFlight).pilot.name/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).pilot.piname/]</td>
 			<td>[aEntity.oclAsType(SpecificFlight).plane.type/]</td>
-			<td>[aEntity.oclAsType(SpecificFlight).staff -> collect(s | s.name.concat(', '))/]</td>
+			<td>[aEntity.oclAsType(SpecificFlight).staff -> collect(s | s.faname.concat(', '))/]</td>
 		</tr>
 	[/if]
   	[/for]
 </table>
 
-<script>
-function myFunction() {
+<script type="text/javascript">
+function myFilter(inputStr, tableStr) {
   	var input, filter, table, tr, td, i, txtValue;
-  	input = document.getElementById("myInput");
+  	input = document.getElementById(inputStr);
   	filter = input.value.toUpperCase();
-  	table = document.getElementById("myTable");
+  	table = document.getElementById(tableStr);
   	tr = table.getElementsByTagName("tr");
   	for (i = 0; i < tr.length; i++) {
 	    td = tr ['['/]i].getElementsByTagName("td")['['/]0];
@@ -68,7 +94,35 @@ function myFunction() {
     	}       
   	}
 }
+
+function hidePassengers() {
+  	var table, tr, i;
+  	table = document.getElementById("passengerFlightsTable");
+  	tr = table.getElementsByTagName("tr");
+  	for (i = 1; i < tr.length; i++) {
+		tr['['/]i].style.display = "none";       
+  	}
+}
+
+function flightDetailsFilter() {
+	myFilter("flightInput", "flightDetailsTable");
+}
+function passengerFilter() {
+    myFilter("passengerInput", "passengerFlightsTable");
+}
+window.onload = hidePassengers();
 </script>
+
+<style>
+th {
+  border: 1px solid #000;
+}
+
+td {
+  border: 1px solid #000;
+  width: fit-content;
+}
+</style>
 </body>
 </html>
 [/file]
